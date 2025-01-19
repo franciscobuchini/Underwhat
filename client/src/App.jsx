@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import './App.css'
 import axios from 'axios';
 
 function App() {
@@ -18,10 +17,10 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='flex flex-col items-center justify-center h-screen bg-gray-800 text-white'>
         {
           array.map((fruit, index) => (
-            <p key={index}>{fruit}</p>
+            <p className='text-3xl' key={index}>{fruit}</p>
           ))
         }
       </div>
