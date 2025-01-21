@@ -1,3 +1,4 @@
+//app.jsx
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -13,7 +14,7 @@ function App() {
       console.error('Error fetching data:', error);
     }
   };
-
+  
   useEffect(() => {
     fetchAPI();
   }, []);
@@ -24,8 +25,7 @@ function App() {
         <div key={index} className='text-left p-4 bg-gray-700 rounded-lg m-2'>
           <p className='text-3xl font-bold'>{product.product_name}</p>
           <p className='text-lg text-gray-400'>{product.product_category}</p>
-          <p className='text-xl'>${product.product_selling.toFixed(2)}</p>
-
+          <p className='text-xl'>{product.product_selling.toFixed(2)} USD</p>
         </div>
       ))}
     </div>
