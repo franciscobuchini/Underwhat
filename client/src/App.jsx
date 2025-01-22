@@ -1,11 +1,12 @@
 //app.jsx
-import ProductCard from './components/ProductCard';
+import ProductList from './components/ProductList';
+import image01 from './assets/01/01.webp';
 
 function App() {
 
   return (
     <>
-      <ProductCard />
+      <ProductList image={image01} />
     </>
   );
 }
