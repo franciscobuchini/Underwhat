@@ -1,12 +1,14 @@
+const { addDynamicIconSelectors } = require("@iconify/tailwind");
+
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}", "./node_modules/flyonui/dist/js/*.js"],
+module.exports = {
+  content: ["./index.html", "./src/**/*.{html,js,ts,jsx,tsx}", "./src/*.html", "./node_modules/flyonui/dist/js/*.js"],
   theme: {
     extend: {},
   },
   plugins: [
-    require("flyonui"),
-    require("flyonui/plugin")
+    addDynamicIconSelectors(), 
+    require("flyonui"),     
+    require("flyonui/plugin"),
   ],
-}
-
+};

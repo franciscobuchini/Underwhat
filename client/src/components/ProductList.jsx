@@ -30,7 +30,7 @@ function ProductList({ image }) {
   return (
     <div className="ProductList flex flex-wrap justify-center">
       {products.map((product, index) => (
-        <div key={index} className="ProductCard bg-white border rounded-2xl m-2 w-64">
+        <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl m-2 w-64">
           <div className="ProductImage ">
             <img src={image} alt="Product" className="rounded-2xl object-cover w-full h-auto " />
           </div>
@@ -38,10 +38,10 @@ function ProductList({ image }) {
             <p className="ProductName text-xl font-semibold">{product.product_name}</p>
             <p className="ProductCategory text-sm text-gray-400">{product.product_category}</p>
             <p className="ProductPrice">{product.product_selling.toFixed(2)} USD</p>
-            <div className="flex justify-left space-x-2 mt-4">
+            <div className="ProductInteractions flex justify-left space-x-2 mt-4">
               <select
                 id="size"
-                className="select w-24 bg-white text-gray-500"
+                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:border-gray-300 focus:outline-0"
                 aria-label="select"
                 value={selectedSizes[index] || ''}
                 onChange={(e) => handleSizeChange(index, e.target.value)}
@@ -54,12 +54,11 @@ function ProductList({ image }) {
                 <option value="XXL">XXL</option>
               </select>
               <button
-                className={`btn btn-text ${
-                  selectedSizes[index] ? 'btn-success' : 'text-gray-900 cursor-not-allowed'
-                }`}
+              btn-gradient btn-success
+                className={`ProductAdd btn ${selectedSizes[index] ? 'btn-outline btn-success' : 'text-gray-400 bg-white border border-gray-400 cursor-not-allowed'}`}
                 disabled={!selectedSizes[index]}
               >
-                + Add to cart
+                <span className='icon-[tabler--shopping-cart-plus] size-5'></span>
               </button>
             </div>
           </div>
