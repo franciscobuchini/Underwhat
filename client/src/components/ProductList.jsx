@@ -34,9 +34,9 @@ function ProductList({ image }) {
           <div className="ProductImage ">
             <img src={image} alt="Product" className="rounded-2xl object-cover w-full h-auto " />
           </div>
-          <div className="ProductDetails p-4 text-gray-500">
-            <p className="ProductName text-xl font-bold">{product.product_name}</p>
-            <p className="ProductCategory">{product.product_category}</p>
+          <div className="ProductDetails p-4 text-gray-600">
+            <p className="ProductName text-xl font-semibold">{product.product_name}</p>
+            <p className="ProductCategory text-sm text-gray-400">{product.product_category}</p>
             <p className="ProductPrice">{product.product_selling.toFixed(2)} USD</p>
             <div className="flex justify-left space-x-2 mt-4">
               <select
@@ -46,7 +46,7 @@ function ProductList({ image }) {
                 value={selectedSizes[index] || ''}
                 onChange={(e) => handleSizeChange(index, e.target.value)}
               >
-                <option value="" selected disabled>Size</option>
+                <option value="" disabled>Size</option>
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
@@ -55,14 +55,9 @@ function ProductList({ image }) {
               </select>
               <button
                 className={`btn btn-text ${
-                  selectedSizes[index] ? 'btn-success' : 'opacity-50 cursor-not-allowed'
+                  selectedSizes[index] ? 'btn-success' : 'text-gray-900 cursor-not-allowed'
                 }`}
                 disabled={!selectedSizes[index]}
-                onClick={() => {
-                  if (selectedSizes[index]) {
-                    console.log(`Product added with size: ${selectedSizes[index]}`);
-                  }
-                }}
               >
                 + Add to cart
               </button>
