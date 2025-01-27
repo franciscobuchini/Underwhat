@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useCart } from "../components/CartContext";
 
-function ProductList({ image }) {
+function ProductList() { // Elimina la prop `image` ya que no la necesitas
   const [products, setProducts] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart } = useCart();
@@ -33,7 +33,7 @@ function ProductList({ image }) {
     addToCart({ 
       ...product, 
       selectedSize: size,
-      image: image 
+      image: product.product_image // Usa la imagen de la base de datos
     });
   };
 
@@ -41,8 +41,13 @@ function ProductList({ image }) {
     <div className="ProductList flex flex-wrap justify-center">
       {products.map((product, index) => (
         <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl m-2 w-64">
-          <div className="ProductImage ">
-            <img src={image} alt="Product" className="object-cover w-full h-auto " />
+          <div className="ProductImage hover:bg-gray-300 rounded-t-2xl">
+            <img
+              src={product.product_image}
+              alt={product.product_name}
+              className="object-cover w-full h-auto"
+              loading="lazy"
+            />
           </div>
           <div className="ProductDetails p-4 text-gray-600">
             <p className="ProductName text-xl font-semibold">{product.product_name}</p>
@@ -67,11 +72,11 @@ function ProductList({ image }) {
               </select>
               <button
                 className={`ProductAdd btn ${
-                  selectedSizes[index] ? "btn-outline btn-success" : "text-gray-400 bg-white border border-gray-400 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-400 hover:shadow-none"
+                  selectedSizes[index] ? "btn-outline btn-success" : "text-gray-400 bg-white border border-gray-400 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-400 hover:shadow-none focus:bg-white focus:border-gray-400 focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();
-                  handleAddToCart(product, selectedSizes[index]); // <- Nombre correcto
+                  handleAddToCart(product, selectedSizes[index]);
                 }}
               >
                 <span className="icon-[tabler--shopping-cart-plus] size-5"></span>
@@ -85,4 +90,3 @@ function ProductList({ image }) {
 }
 
 export default ProductList;
-

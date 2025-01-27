@@ -136,6 +136,7 @@ function Header() {
                         className="w-20 object-cover" 
                         src={item.image} 
                         alt={item.product_name}
+                        loading="lazy"
                       />
                     </div>
                     <div className="w-full">

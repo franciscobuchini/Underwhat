@@ -20,13 +20,13 @@ const db = new sqlite3.Database(dbPath, (err) => {
 
 // Ruta para obtener datos desde la base de datos
 app.get('/api', (req, res) => {
-  const query = 'SELECT product_name, product_selling, product_category, product_id, product_image FROM Products'; // Consultar todas las columnas necesarias
+  const query = 'SELECT product_name, product_selling, product_category, product_id, product_image FROM Products';
   db.all(query, [], (err, rows) => {
     if (err) {
       console.error('Error ejecutando la consulta:', err.message);
       res.status(500).json({ error: 'Error ejecutando la consulta' });
     } else {
-      res.json({ products: rows }); // Enviar todas las filas al cliente
+      res.json({ products: rows });
     }
   });
 });
