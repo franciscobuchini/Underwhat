@@ -176,5 +176,3 @@ function Header() {
 }
 
 export default Header;
-
-//se estan agregando remeras del mismo talle a la misma remera del carrito de compra, x ejemplo, si agrego una Bugs talle L y una Green talle L aparecen dos remeras Bugs talle L en el carrito de compra, se debe corregir esto
