@@ -6,8 +6,8 @@ function Header() {
   const { cartItems, removeFromCart } = useCart();
 
   return (
-    <div className="Header">
-      <nav className="Navbar navbar bg-white border border-gray-200 rounded-2xl">
+    <div className="Header flex justify-center w-full my-4">
+      <nav className="Navbar navbar bg-white border border-gray-200 rounded-2xl w-4/5">
         <div className="NavbarLogo flex flex-1 items-center ">
           <a href="#">
             <img src={nav01} className="h-8" />
@@ -38,9 +38,9 @@ function Header() {
                 </a>
               </li>
               <li>
-                <a class="dropdown-item text-gray-600" href="#">
-                  <span class="flex items-center gap-x-2">
-                    <span class="icon-[tabler--message-chatbot]"></span>
+                <a className="dropdown-item text-gray-600" href="#">
+                  <span className="flex items-center gap-x-2">
+                    <span className="icon-[tabler--message-chatbot]"></span>
                     Contact
                   </span>
                 </a>
@@ -97,47 +97,73 @@ function Header() {
               aria-label="Dropdown"
             >
               <div className="CartIndicator indicator">
-                <span className="indicator-item bg-primary size-4 rounded-full text-white text-center text-xs">
-                  {cartItems.length}
-                </span>
+              <span className="indicator-item bg-primary size-4.5 rounded-full text-white text-center text-xs">
+                {cartItems.reduce((total, item) => total + item.quantity, 0)}
+              </span>
                 <span className="icon-[tabler--shopping-cart] text-gray-400 size-6"></span>
               </div>
             </button>
 
-            <div className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none min-w-60"
+            <div className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none min-w-80"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="dropdown-scrollable">
               <div className="DropdownHeader dropdown-header justify-between p-4 align-middle">
-                <h6 className="text-gray-600"> Cart </h6>
+                {cartItems.length === 0 ? (
+                  <h6 className="text-gray-600">Cart Empty</h6>
+                ) : (
+                  <h6 className="text-gray-600">
+                    Subtotal: $
+                    {cartItems
+                      .reduce((total, item) => total + item.product_selling * item.quantity, 0)
+                      .toFixed(2)}
+                  </h6>
+                )}
                 <button
-                  className={`CartContinue btn btn-text btn-circle ${
-                    cartItems.length > 0 ? " btn-success" : "text-gray-400 bg-white cursor-not-allowed"
+                  className={`CartCheckout btn btn-text btn-outline ${
+                    cartItems.length > 0 ? "btn-success btn-soft" : "text-gray-400 bg-white cursor-not-allowed"
                   }`}
                 >
+                  <small> Checkout </small>
                   <span className="icon-[tabler--shopping-cart-check] size-6"></span>
                 </button>
               </div>
               <div className="DropdownCart vertical-scrollbar rounded-scrollbar text-gray-600 overflow-auto max-md:max-w-60">
                 {cartItems.map((item, index) => (
-                  <div key={index} className="ProductAdded dropdown-item rounded-2xl flex space-x-4">
-                    <div className="ProductImage">
-                      <img className="rounded-2xl h-20 object-cover" src={item.image} />
+                  <div key={`${item.product_name}-${item.selectedSize}`} className="ProductAdded dropdown-item rounded-2xl flex space-x-2">
+                    <div className="ProductImage rounded-md">
+                      <img 
+                        className="w-20 object-cover" 
+                        src={item.image} 
+                        alt={item.product_name}
+                      />
                     </div>
-                    <div>
-                      <h6 className="ProductName text-gray-600">{item.product_name}</h6>
-                      <p className="ProductSize text-gray-400">
-                        <small>Size: {item.selectedSize}</small>
-                      </p>
-                      <p className="ProductPrice text-gray-400">
-                        <small>{item.product_selling.toFixed(2)} USD</small>
-                      </p>
-                      <button
-                        className="ProductDelete text-red-400"
-                        onClick={() => removeFromCart(index)}
-                      >
-                        <small>Delete</small>
-                      </button>
+                    <div className="w-full">
+                      <div className="flex justify-between items-center">
+                        <h6 className="ProductName text-gray-600">{item.product_name}</h6>
+                        <p className="ProductPrice text-gray-600">
+                          <small>${(item.product_selling * item.quantity).toFixed(2)} USD</small>
+                        </p>
+                      </div>
+                      <div className="flex flex-col items-left">
+                        <p className="ProductCategory text-gray-400">
+                          <small>{item.product_category}</small>
+                        </p>
+                        <p className="ProductSize text-gray-400">
+                          <small>Size: {item.selectedSize}</small>
+                        </p>
+                        <p className="ProductPieces text-gray-400">
+                          <small>Pieces: {item.quantity}</small>
+                        </p>
+
+                        <button
+                          className="ProductRemove text-red-400 hover:text-red-700 w-min"
+                          onClick={() => removeFromCart(index)}
+                        >
+                          <small>Remove</small>
+                        </button>
+
+                      </div>
                     </div>
                   </div>
                 ))}
@@ -151,4 +177,3 @@ function Header() {
 }
 
 export default Header;
-

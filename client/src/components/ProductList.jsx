@@ -30,7 +30,11 @@ function ProductList({ image }) {
   };
 
   const handleAddToCart = (product, size) => {
-    addToCart({ ...product, selectedSize: size });
+    addToCart({ 
+      ...product, 
+      selectedSize: size,
+      image: image 
+    });
   };
 
   return (
@@ -38,7 +42,7 @@ function ProductList({ image }) {
       {products.map((product, index) => (
         <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl m-2 w-64">
           <div className="ProductImage ">
-            <img src={image} alt="Product" className="rounded-2xl object-cover w-full h-auto " />
+            <img src={image} alt="Product" className="object-cover w-full h-auto " />
           </div>
           <div className="ProductDetails p-4 text-gray-600">
             <p className="ProductName text-xl font-semibold">{product.product_name}</p>
@@ -63,10 +67,12 @@ function ProductList({ image }) {
               </select>
               <button
                 className={`ProductAdd btn ${
-                  selectedSizes[index] ? "btn-outline btn-success" : "text-gray-400 bg-white border border-gray-400 cursor-not-allowed"
+                  selectedSizes[index] ? "btn-outline btn-success" : "text-gray-400 bg-white border border-gray-400 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-400 hover:shadow-none"
                 }`}
-                disabled={!selectedSizes[index]}
-                onClick={() => handleAddToCart(product, selectedSizes[index])}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleAddToCart(product, selectedSizes[index]); // <- Nombre correcto
+                }}
               >
                 <span className="icon-[tabler--shopping-cart-plus] size-5"></span>
               </button>
