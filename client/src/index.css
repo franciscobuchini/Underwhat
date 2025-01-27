@@ -6,3 +6,14 @@
   /* background-color: #FAFAFA; */
   background-color: #1b1b1b;
 }
+
+.Header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem 0;
+
+  nav {
+    width: 80%;
+  }
+}
