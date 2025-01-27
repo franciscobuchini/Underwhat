@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 :root {
-  /* background-color: #FAFAFA; */
   background-color: #1b1b1b;
+  background-color: #FAFAFA;
 }
 
 .Header {
