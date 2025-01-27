@@ -1,28 +1,31 @@
 //CartContext.jsx
 import { createContext, useContext, useState } from "react";
 
-// 1. Primero crea el contexto
 const CartContext = createContext();
 
-// 2. Luego crea el Provider y el hook
+export const useCart = () => useContext(CartContext);
+
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
-      const existingItem = prevItems.find(item => 
-        item.id === product.id && // <- Asume que cada producto tiene un ID único
-        item.selectedSize === product.selectedSize
+      // Busca si ya existe el mismo producto con el mismo talle
+      const existingItemIndex = prevItems.findIndex(
+        (item) =>
+          item.product_name === product.product_name &&
+          item.selectedSize === product.selectedSize
       );
-      
-      if (existingItem) {
-        return prevItems.map(item => 
-          item.id === product.id && item.selectedSize === product.selectedSize
-            ? { ...item, quantity: item.quantity + 1 }
-            : item
-        );
+
+      if (existingItemIndex > -1) {
+        // Si existe, actualiza la cantidad
+        const updatedItems = [...prevItems];
+        updatedItems[existingItemIndex].quantity += 1;
+        return updatedItems;
       }
-      return [...prevItems, { ...product, id: product.id, quantity: 1 }];
+
+      // Si no existe, agrega el nuevo producto
+      return [...prevItems, { ...product, quantity: 1 }];
     });
   };
 
@@ -30,7 +33,7 @@ export const CartProvider = ({ children }) => {
     setCartItems((prevItems) => {
       const item = prevItems[index];
       if (!item) return prevItems;
-      
+
       if (item.quantity > 1) {
         const updatedItems = [...prevItems];
         updatedItems[index] = { ...item, quantity: item.quantity - 1 };
@@ -45,13 +48,4 @@ export const CartProvider = ({ children }) => {
       {children}
     </CartContext.Provider>
   );
-};
-
-// 3. Exporta el hook que usa el contexto
-export const useCart = () => {
-  const context = useContext(CartContext);
-  if (!context) {
-    throw new Error("useCart debe usarse dentro de un CartProvider");
-  }
-  return context;
 };

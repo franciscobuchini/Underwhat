@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useCart } from "../components/CartContext";
 
-function ProductList() { // Elimina la prop `image` ya que no la necesitas
+function ProductList() {
   const [products, setProducts] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart } = useCart();
@@ -41,7 +41,7 @@ function ProductList() { // Elimina la prop `image` ya que no la necesitas
     <div className="ProductList flex flex-wrap justify-center">
       {products.map((product, index) => (
         <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl m-2 w-64">
-          <div className="ProductImage hover:bg-gray-300 rounded-t-2xl">
+          <div className="ProductImage hover:bg-gray-100 rounded-t-2xl">
             <img
               src={product.product_image}
               alt={product.product_name}
@@ -72,12 +72,16 @@ function ProductList() { // Elimina la prop `image` ya que no la necesitas
               </select>
               <button
                 className={`ProductAdd btn ${
-                  selectedSizes[index] ? "btn-outline btn-success" : "text-gray-400 bg-white border border-gray-400 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-400 hover:shadow-none focus:bg-white focus:border-gray-400 focus:bg-gray-100 focus:shadow-none"
+                  selectedSizes[index]
+                    ? "btn-outline btn-success"
+                    : "text-gray-400 bg-white border border-gray-400 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-400 hover:shadow-none focus:bg-white focus:border-gray-400 focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (!selectedSizes[index]) return; // Evita agregar si no hay talle seleccionado
                   handleAddToCart(product, selectedSizes[index]);
                 }}
+                disabled={!selectedSizes[index]} // Deshabilita el botón si no hay talle seleccionado
               >
                 <span className="icon-[tabler--shopping-cart-plus] size-5"></span>
               </button>

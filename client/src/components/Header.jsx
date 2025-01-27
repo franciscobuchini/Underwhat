@@ -129,45 +129,43 @@ function Header() {
                 </button>
               </div>
               <div className="DropdownCart vertical-scrollbar rounded-scrollbar text-gray-600 overflow-auto max-md:max-w-60">
-                {cartItems.map((item, index) => (
-                  <div key={`${item.product_name}-${item.selectedSize}`} className="ProductAdded dropdown-item rounded-2xl flex space-x-2">
-                    <div className="ProductImage rounded-md">
-                      <img 
-                        className="w-20 object-cover" 
-                        src={item.image} 
-                        alt={item.product_name}
-                        loading="lazy"
-                      />
+              {cartItems.map((item, index) => (
+                <div key={`${item.product_name}-${item.selectedSize}`} className="ProductAdded dropdown-item rounded-2xl flex space-x-2">
+                  <div className="ProductImage rounded-md">
+                    <img 
+                      className="w-20 object-cover" 
+                      src={item.image} 
+                      alt={item.product_name}
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <div className="flex justify-between items-center">
+                      <h6 className="ProductName text-gray-600">{item.product_name}</h6>
+                      <p className="ProductPrice text-gray-600">
+                        <small>${(item.product_selling * item.quantity).toFixed(2)} USD</small>
+                      </p>
                     </div>
-                    <div className="w-full">
-                      <div className="flex justify-between items-center">
-                        <h6 className="ProductName text-gray-600">{item.product_name}</h6>
-                        <p className="ProductPrice text-gray-600">
-                          <small>${(item.product_selling * item.quantity).toFixed(2)} USD</small>
-                        </p>
-                      </div>
-                      <div className="flex flex-col items-left">
-                        <p className="ProductCategory text-gray-400">
-                          <small>{item.product_category}</small>
-                        </p>
-                        <p className="ProductSize text-gray-400">
-                          <small>Size: {item.selectedSize}</small>
-                        </p>
-                        <p className="ProductPieces text-gray-400">
-                          <small>Pieces: {item.quantity}</small>
-                        </p>
-
-                        <button
-                          className="ProductRemove text-red-400 hover:text-red-700 w-min"
-                          onClick={() => removeFromCart(index)}
-                        >
-                          <small>Remove</small>
-                        </button>
-
-                      </div>
+                    <div className="flex flex-col items-left">
+                      <p className="ProductCategory text-gray-400">
+                        <small>{item.product_category}</small>
+                      </p>
+                      <p className="ProductSize text-gray-400">
+                        <small>Size: {item.selectedSize}</small>
+                      </p>
+                      <p className="ProductPieces text-gray-400">
+                        <small>Pieces: {item.quantity}</small>
+                      </p>
+                      <button
+                        className="ProductRemove text-red-400 hover:text-red-700 w-min"
+                        onClick={() => removeFromCart(index)}
+                      >
+                        <small>Remove</small>
+                      </button>
                     </div>
                   </div>
-                ))}
+                </div>
+              ))}
               </div>
             </div>
           </div>
@@ -178,3 +176,5 @@ function Header() {
 }
 
 export default Header;
+
+//se estan agregando remeras del mismo talle a la misma remera del carrito de compra, x ejemplo, si agrego una Bugs talle L y una Green talle L aparecen dos remeras Bugs talle L en el carrito de compra, se debe corregir esto
