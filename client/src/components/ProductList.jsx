@@ -1,18 +1,20 @@
 //ProductList.jsx
-import { useState, useEffect } from 'react';
-import axios from 'axios';
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { useCart } from "../components/CartContext";
 
 function ProductList({ image }) {
   const [products, setProducts] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState({});
+  const { addToCart } = useCart();
 
   const fetchAPI = async () => {
     try {
-      const response = await axios.get('http://localhost:3002/api');
+      const response = await axios.get("http://localhost:3002/api");
       setProducts(response.data.products);
       console.log(response.data.products);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
   };
 
@@ -25,6 +27,10 @@ function ProductList({ image }) {
       ...prevSizes,
       [index]: size,
     }));
+  };
+
+  const handleAddToCart = (product, size) => {
+    addToCart({ ...product, selectedSize: size });
   };
 
   return (
@@ -43,10 +49,12 @@ function ProductList({ image }) {
                 id="size"
                 className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:border-gray-300 focus:outline-0"
                 aria-label="select"
-                value={selectedSizes[index] || ''}
+                value={selectedSizes[index] || ""}
                 onChange={(e) => handleSizeChange(index, e.target.value)}
               >
-                <option value="" disabled>Size</option>
+                <option value="" disabled>
+                  Size
+                </option>
                 <option value="S">S</option>
                 <option value="M">M</option>
                 <option value="L">L</option>
@@ -54,15 +62,16 @@ function ProductList({ image }) {
                 <option value="XXL">XXL</option>
               </select>
               <button
-              btn-gradient btn-success
-                className={`ProductAdd btn ${selectedSizes[index] ? 'btn-outline btn-success' : 'text-gray-400 bg-white border border-gray-400 cursor-not-allowed'}`}
+                className={`ProductAdd btn ${
+                  selectedSizes[index] ? "btn-outline btn-success" : "text-gray-400 bg-white border border-gray-400 cursor-not-allowed"
+                }`}
                 disabled={!selectedSizes[index]}
+                onClick={() => handleAddToCart(product, selectedSizes[index])}
               >
-                <span className='icon-[tabler--shopping-cart-plus] size-5'></span>
+                <span className="icon-[tabler--shopping-cart-plus] size-5"></span>
               </button>
             </div>
           </div>
-          
         </div>
       ))}
     </div>
@@ -70,3 +79,4 @@ function ProductList({ image }) {
 }
 
 export default ProductList;
+
