@@ -53,9 +53,9 @@ function ProductList() {
   };
 
   return (
-    <div className="ProductList flex flex-wrap justify-center">
+    <div className="ProductList flex flex-wrap justify-center gap-4">
       {products.map((product, index) => (
-        <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl m-2 w-64">
+        <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl w-64">
           <div className="ProductImage hover:bg-gray-100 rounded-t-2xl">
             <img
               src={product.product_image}

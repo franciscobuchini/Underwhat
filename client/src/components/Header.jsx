@@ -130,7 +130,7 @@ function Header() {
             aria-labelledby="dropdown-scrollable">
               <div className="DropdownHeader dropdown-header justify-between p-4 align-middle border-none">
                 {cartItems.length === 0 ? (
-                  <h6 className="text-gray-600 pl-4">Cart empty</h6>
+                  <h6 className="text-gray-600 pl-4">Cart is empty</h6>
                 ) : (
                   <h6 className="text-gray-600">
                     Subtotal: $
@@ -140,8 +140,8 @@ function Header() {
                   </h6>
                 )}
                 <button
-                  className={`CartCheckout btn btn-text btn-outline rounded-2xl ${
-                    cartItems.length > 0 ? "btn-success btn-soft" : "text-gray-400 bg-white cursor-not-allowed"
+                  className={`CartCheckout btn btn-text btn-outline rounded-2xl btn-success btn-soft ${
+                    cartItems.length === 0 ? "hidden" : ""
                   }`}
                 >
                   <small> Checkout </small>
