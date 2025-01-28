@@ -14,25 +14,25 @@ function Header() {
           </a>
         </div>
         <div className="NavbarMenu navbar-end flex items-center gap-2">
-          <div class="dropdown relative inline-flex [--auto-close:inside] [--offset:9] [--placement:bottom-end]">
+          <div className="dropdown relative inline-flex [--auto-close:inside] [--offset:9] [--placement:bottom-end]">
             <button
               id="dropdown-nav"
               type="button"
-              class="NavbarMenuButton dropdown-toggle btn btn-text btn-circle size-10" 
+              className="NavbarMenuButton dropdown-toggle btn btn-text btn-circle size-10" 
               aria-haspopup="menu"
               aria-expanded="false"
               aria-label="Dropdown" >
-              <span class="icon-[tabler--menu-4] text-gray-400 size-6"></span>
+              <span className="icon-[tabler--menu-4] text-gray-400 size-6"></span>
             </button>
             <ul
-              class="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none"
+              className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="dropdown-nav" >
               <li>
-                <a class="dropdown-item text-gray-600" href="#">
-                  <span class="flex items-center gap-x-2">
-                    <span class="icon-[tabler--zoom-question]"></span>
+                <a className="dropdown-item text-gray-600" href="#">
+                  <span className="flex items-center gap-x-2">
+                    <span className="icon-[tabler--zoom-question]"></span>
                     FAQ
                   </span>
                 </a>
@@ -46,39 +46,39 @@ function Header() {
                 </a>
               </li>
               <li>
-                <a class="dropdown-item text-gray-600" href="#">
-                  <span class="flex items-center gap-x-2">
-                    <span class="icon-[tabler--scuba-mask]"></span>
+                <a className="dropdown-item text-gray-600" href="#">
+                  <span className="flex items-center gap-x-2">
+                    <span className="icon-[tabler--scuba-mask]"></span>
                     About Us
                   </span>
                 </a>
               </li>
-              <hr class="border-base-content/25 -mx-2 my-3" />
+              <hr className="border-base-content/25 -mx-2 my-3" />
               <div>
                 <button id="nested-collapse-pages" className="text-gray-600 collapse-toggle dropdown-item collapse-open:text-gray-600 collapse-open:bg-base-content/10 justify-between" data-collapse="#nested-collapse-pages-content">
-                  <span class="flex items-center gap-x-2">
-                    <span class="icon-[tabler--language-hiragana]"></span>
+                  <span className="flex items-center gap-x-2">
+                    <span className="icon-[tabler--language-hiragana]"></span>
                     Language
                   </span>
-                  <span class="icon-[tabler--chevron-down] collapse-open:rotate-180 size-4"></span>
+                  <span className="icon-[tabler--chevron-down] collapse-open:rotate-180 size-4"></span>
                 </button>
-                <div class="collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="nested-collapse-pages" id="nested-collapse-pages-content">
-                  <ul class="py-3 ps-3">
+                <div className="collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="nested-collapse-pages" id="nested-collapse-pages-content">
+                  <ul className="py-3 ps-3">
                     <li>
-                      <a class="dropdown-item text-gray-600" href="#">
-                        <span class="icon-[tabler--point]"></span>
+                      <a className="dropdown-item text-gray-600" href="#">
+                        <span className="icon-[tabler--point]"></span>
                         English
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item text-gray-600" href="#">
-                        <span class="icon-[tabler--point]"></span>
+                      <a className="dropdown-item text-gray-600" href="#">
+                        <span className="icon-[tabler--point]"></span>
                         Spanish
                       </a>
                     </li>
                     <li>
-                      <a class="dropdown-item text-gray-600" href="#">
-                        <span class="icon-[tabler--point]"></span>
+                      <a className="dropdown-item text-gray-600" href="#">
+                        <span className="icon-[tabler--point]"></span>
                         French
                       </a>
                     </li>
