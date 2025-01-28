@@ -10,21 +10,22 @@ export const CartProvider = ({ children }) => {
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
-      // Busca si ya existe el mismo producto con el mismo talle
       const existingItemIndex = prevItems.findIndex(
         (item) =>
           item.product_name === product.product_name &&
           item.selectedSize === product.selectedSize
       );
-
+  
       if (existingItemIndex > -1) {
-        // Si existe, actualiza la cantidad
-        const updatedItems = [...prevItems];
-        updatedItems[existingItemIndex].quantity += 1;
-        return updatedItems;
+        // Si existe, actualiza la cantidad sin mutar el estado original
+        return prevItems.map((item, index) =>
+          index === existingItemIndex
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        );
       }
-
-      // Si no existe, agrega el nuevo producto
+  
+      // Si no existe, agrega el producto con cantidad inicial 1
       return [...prevItems, { ...product, quantity: 1 }];
     });
   };

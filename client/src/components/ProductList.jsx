@@ -77,7 +77,7 @@ function ProductList() {
                     : "text-gray-400 bg-white border border-gray-400 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-400 hover:shadow-none focus:bg-white focus:border-gray-400 focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {
-                  e.stopPropagation();
+                  e.stopPropagation(); // Evita propagación de eventos
                   if (!selectedSizes[index]) return; // Evita agregar si no hay talle seleccionado
                   handleAddToCart(product, selectedSizes[index]);
                 }}
