@@ -16,14 +16,8 @@ function ProductList() {
       {
         type: "success",
         background: "#4caf50", // Verde
-        duration: 3000,
-        dismissible: true,
-      },
-      {
-        type: "error",
-        background: "#f44336", // Rojo
-        duration: 3000,
-        dismissible: true,
+        duration: 2000,
+        dismissible: false,
       },
     ],
   });
@@ -70,6 +64,7 @@ function ProductList() {
               loading="lazy"
             />
           </div>
+          <hr className="border-base-content/50 mx-6" />
           <div className="ProductDetails p-4 text-gray-600">
             <p className="ProductName text-xl font-semibold">{product.product_name}</p>
             <p className="ProductCategory text-sm text-gray-400">{product.product_category}</p>

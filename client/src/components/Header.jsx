@@ -12,16 +12,10 @@ function Header() {
     const notyf = new Notyf({
       types: [
         {
-          type: "success",
-          background: "#4caf50", // Verde
-          duration: 3000,
-          dismissible: true,
-        },
-        {
           type: "error",
           background: "#f44336", // Rojo
-          duration: 3000,
-          dismissible: true,
+          duration: 2000,
+          dismissible: false,
         },
       ],
     });
@@ -33,7 +27,7 @@ function Header() {
 
   return (
     <div className="Header flex justify-center w-full my-4">
-      <nav className="Navbar navbar bg-white border border-gray-200 rounded-2xl w-4/5">
+      <nav className="Navbar navbar bg-white border border-gray-200 rounded-2xl w-full">
         <div className="NavbarLogo flex flex-1 items-center ">
           <a href="#">
             <img src={nav01} className="h-8" />
@@ -79,7 +73,7 @@ function Header() {
                   </span>
                 </a>
               </li>
-              <hr className="border-base-content/25 -mx-2 my-3" />
+              <hr className="border-base-content/50 mx-4" />
               <div>
                 <button id="nested-collapse-pages" className="text-gray-600 collapse-toggle dropdown-item collapse-open:text-gray-600 collapse-open:bg-base-content/10 justify-between" data-collapse="#nested-collapse-pages-content">
                   <span className="flex items-center gap-x-2">
@@ -134,7 +128,7 @@ function Header() {
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="dropdown-scrollable">
-              <div className="DropdownHeader dropdown-header justify-between p-4 align-middle">
+              <div className="DropdownHeader dropdown-header justify-between p-4 align-middle border-none">
                 {cartItems.length === 0 ? (
                   <h6 className="text-gray-600">Cart Empty</h6>
                 ) : (
@@ -146,7 +140,7 @@ function Header() {
                   </h6>
                 )}
                 <button
-                  className={`CartCheckout btn btn-text btn-outline ${
+                  className={`CartCheckout btn btn-text btn-outline rounded-2xl ${
                     cartItems.length > 0 ? "btn-success btn-soft" : "text-gray-400 bg-white cursor-not-allowed"
                   }`}
                 >
@@ -154,6 +148,7 @@ function Header() {
                   <span className="icon-[tabler--shopping-cart-check] size-6"></span>
                 </button>
               </div>
+              <hr className="border-base-content/50 mx-4" />
               <div className="DropdownCart vertical-scrollbar rounded-scrollbar text-gray-600 overflow-auto max-md:max-w-60">
               {cartItems.map((item, index) => (
                 <div key={`${item.product_name}-${item.selectedSize}`} className="ProductAdded dropdown-item rounded-2xl flex space-x-2">
