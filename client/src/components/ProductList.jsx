@@ -2,11 +2,31 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useCart } from "../components/CartContext";
+import { Notyf } from "notyf";
+import "notyf/notyf.min.css";
 
 function ProductList() {
   const [products, setProducts] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart } = useCart();
+
+  // Configuración de Notyf con estilos personalizados
+  const notyf = new Notyf({
+    types: [
+      {
+        type: "success",
+        background: "#4caf50", // Verde
+        duration: 3000,
+        dismissible: true,
+      },
+      {
+        type: "error",
+        background: "#f44336", // Rojo
+        duration: 3000,
+        dismissible: true,
+      },
+    ],
+  });
 
   const fetchAPI = async () => {
     try {
@@ -30,11 +50,12 @@ function ProductList() {
   };
 
   const handleAddToCart = (product, size) => {
-    addToCart({ 
-      ...product, 
+    addToCart({
+      ...product,
       selectedSize: size,
-      image: product.product_image // Usa la imagen de la base de datos
+      image: product.product_image,
     });
+    notyf.success("Product added to cart!");
   };
 
   return (
@@ -77,11 +98,11 @@ function ProductList() {
                     : "text-gray-400 bg-white border border-gray-400 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-400 hover:shadow-none focus:bg-white focus:border-gray-400 focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {
-                  e.stopPropagation(); // Evita propagación de eventos
-                  if (!selectedSizes[index]) return; // Evita agregar si no hay talle seleccionado
+                  e.stopPropagation();
+                  if (!selectedSizes[index]) return;
                   handleAddToCart(product, selectedSizes[index]);
                 }}
-                disabled={!selectedSizes[index]} // Deshabilita el botón si no hay talle seleccionado
+                disabled={!selectedSizes[index]}
               >
                 <span className="icon-[tabler--shopping-cart-plus] size-5"></span>
               </button>

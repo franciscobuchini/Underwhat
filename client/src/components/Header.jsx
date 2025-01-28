@@ -1,9 +1,35 @@
 //Header.jsx
 import { useCart } from "../components/CartContext";
 import nav01 from "../assets/Logo/nav01.webp";
+import { Notyf } from 'notyf';
+import 'notyf/notyf.min.css';
+
 
 function Header() {
   const { cartItems, removeFromCart } = useCart();
+
+    // Configuración de Notyf
+    const notyf = new Notyf({
+      types: [
+        {
+          type: "success",
+          background: "#4caf50", // Verde
+          duration: 3000,
+          dismissible: true,
+        },
+        {
+          type: "error",
+          background: "#f44336", // Rojo
+          duration: 3000,
+          dismissible: true,
+        },
+      ],
+    });
+  
+    const handleRemoveFromCart = (index) => {
+      removeFromCart(index);
+      notyf.error("Product removed from cart!");
+    };
 
   return (
     <div className="Header flex justify-center w-full my-4">
@@ -158,7 +184,7 @@ function Header() {
                       </p>
                       <button
                         className="ProductRemove text-red-400 hover:text-red-700 w-min"
-                        onClick={() => removeFromCart(index)}
+                        onClick={() => handleRemoveFromCart(index)}
                       >
                         <small>Remove</small>
                       </button>
