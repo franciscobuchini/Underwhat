@@ -130,7 +130,7 @@ function Header() {
             aria-labelledby="dropdown-scrollable">
               <div className="DropdownHeader dropdown-header justify-between p-4 align-middle border-none">
                 {cartItems.length === 0 ? (
-                  <h6 className="text-gray-600">Cart Empty</h6>
+                  <h6 className="text-gray-600 pl-4">Cart empty</h6>
                 ) : (
                   <h6 className="text-gray-600">
                     Subtotal: $
