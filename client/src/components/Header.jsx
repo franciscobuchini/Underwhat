@@ -1,38 +1,38 @@
-//Header.jsx
+import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from "../components/CartContext";
 import nav01 from "../assets/Logo/nav01.webp";
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 
-
 function Header() {
   const { cartItems, removeFromCart } = useCart();
+  const navigate = useNavigate();
 
-    // Configuración de Notyf
-    const notyf = new Notyf({
-      types: [
-        {
-          type: "error",
-          background: "#f44336", // Rojo
-          duration: 2000,
-          dismissible: false,
-        },
-      ],
-    });
-  
-    const handleRemoveFromCart = (index) => {
-      removeFromCart(index);
-      notyf.error("Product removed from cart!");
-    };
+  const notyf = new Notyf({
+    types: [
+      {
+        type: "error",
+        background: "#f44336",
+        duration: 2000,
+        dismissible: false,
+      },
+    ],
+  });
+
+  const handleRemoveFromCart = (index) => {
+    removeFromCart(index);
+    notyf.error("Product removed from cart!");
+  };
 
   return (
     <div className="Header flex justify-center w-full my-4">
       <nav className="Navbar navbar bg-white border border-gray-200 rounded-2xl w-full">
-        <div className="NavbarLogo flex flex-1 items-center ">
-          <a href="#">
-            <img src={nav01} className="h-8" />
-          </a>
+        <div className="NavbarLogo flex flex-1 items-center">
+          <Link to="/">
+            <img src={nav01} className="h-8" alt="Underwhat Logo" />
+          </Link>
         </div>
+        
         <div className="NavbarMenu navbar-end flex items-center gap-2">
           <div className="dropdown relative inline-flex [--auto-close:inside] [--offset:9] [--placement:bottom-end]">
             <button
@@ -41,37 +41,40 @@ function Header() {
               className="NavbarMenuButton dropdown-toggle btn btn-text btn-circle size-10" 
               aria-haspopup="menu"
               aria-expanded="false"
-              aria-label="Dropdown" >
+              aria-label="Dropdown">
               <span className="icon-[tabler--menu-4] text-gray-400 size-6"></span>
             </button>
-            <ul
-              className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none"
-              role="menu"
-              aria-orientation="vertical"
-              aria-labelledby="dropdown-nav" >
+            
+            <ul className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none"
+                role="menu"
+                aria-orientation="vertical"
+                aria-labelledby="dropdown-nav">
+              
               <li>
-                <a className="dropdown-item text-gray-600" href="#">
+                <Link className="dropdown-item text-gray-600" to="/team-outfit">
                   <span className="flex items-center gap-x-2">
                     <span className="icon-[tabler--shirt-sport]"></span>
                     Team Outfit
                   </span>
-                </a>
+                </Link>
               </li>
+              
               <li>
-                <a className="dropdown-item text-gray-600" href="#">
+                <Link className="dropdown-item text-gray-600" to="/faq">
                   <span className="flex items-center gap-x-2">
                     <span className="icon-[tabler--zoom-question]"></span>
                     FAQ
                   </span>
-                </a>
+                </Link>
               </li>
+              
               <li>
-                <a className="dropdown-item text-gray-600" href="#">
+                <Link className="dropdown-item text-gray-600" to="/about">
                   <span className="flex items-center gap-x-2">
                     <span className="icon-[tabler--scuba-mask]"></span>
                     About Us
                   </span>
-                </a>
+                </Link>
               </li>
               <hr className="border-base-content/50 mx-4" />
               <div>
@@ -114,16 +117,15 @@ function Header() {
               className="NavbarCartButton dropdown-toggle btn btn-text btn-circle size-10"
               aria-haspopup="menu"
               aria-expanded="false"
-              aria-label="Dropdown"
-            >
+              aria-label="Dropdown">
+              
               <div className="CartIndicator indicator">
-              <span className="indicator-item bg-primary size-4.5 rounded-full text-white text-center text-xs">
-                {cartItems.reduce((total, item) => total + item.quantity, 0)}
-              </span>
+                <span className="indicator-item bg-primary size-4.5 rounded-full text-white text-center text-xs">
+                  {cartItems.reduce((total, item) => total + item.quantity, 0)}
+                </span>
                 <span className="icon-[tabler--shopping-cart] text-gray-400 size-6"></span>
               </div>
             </button>
-
             <div className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none min-w-80"
             role="menu"
             aria-orientation="vertical"
@@ -140,10 +142,10 @@ function Header() {
                   </h6>
                 )}
                 <button
-                  className={`CartCheckout btn btn-text btn-outline rounded-2xl btn-success btn-soft ${
-                    cartItems.length === 0 ? "hidden" : ""
-                  }`}
-                >
+                className={`CartCheckout btn btn-text btn-outline rounded-2xl btn-success btn-soft ${
+                  cartItems.length === 0 ? "hidden" : ""
+                }`}
+                onClick={() => navigate('/checkout')}>
                   <small> Checkout </small>
                   <span className="icon-[tabler--shopping-cart-check] size-6"></span>
                 </button>
