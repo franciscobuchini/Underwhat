@@ -60,7 +60,7 @@ function ProductList() {
             <img
               src={product.product_image}
               alt={product.product_name}
-              className="object-cover w-full h-auto"
+              className="Image01 object-cover w-full h-auto"
               loading="lazy"
             />
           </div>

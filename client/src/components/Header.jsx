@@ -52,16 +52,16 @@ function Header() {
               <li>
                 <a className="dropdown-item text-gray-600" href="#">
                   <span className="flex items-center gap-x-2">
-                    <span className="icon-[tabler--zoom-question]"></span>
-                    FAQ
+                    <span className="icon-[tabler--shirt-sport]"></span>
+                    Team Outfit
                   </span>
                 </a>
               </li>
               <li>
                 <a className="dropdown-item text-gray-600" href="#">
                   <span className="flex items-center gap-x-2">
-                    <span className="icon-[tabler--message-chatbot]"></span>
-                    Contact
+                    <span className="icon-[tabler--zoom-question]"></span>
+                    FAQ
                   </span>
                 </a>
               </li>
