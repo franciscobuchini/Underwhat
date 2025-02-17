@@ -13,15 +13,19 @@ function App() {
   return (
     <Router>
       <CartProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/team-outfit" element={<TeamOutfit />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/about" element={<AboutUs />} />
-          <Route path="/checkout" element={<Checkout />} />
-        </Routes>
-        <Footer />
+        <div className="flex flex-col min-h-screen">
+          <Header />
+          <main className="flex-1">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/team-outfit" element={<TeamOutfit />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/checkout" element={<Checkout />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
       </CartProvider>
     </Router>
   );
