@@ -164,16 +164,15 @@ const FAQ = () => {
         <div className="accordion-item" id="faq-02">
           <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-01-collapse" aria-expanded="false">
             <span className="inline-flex items-center gap-x-4 text-gray-600">
-              <span className="icon-[tabler--shopping-bag] size-6"></span>
-              How would you ship my order?
+              <span className="icon-[tabler--receipt-tax] size-6"></span>
+              Will I be charged taxes when receiving my order?
             </span>
             <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180" ></span>
           </button>
           <div id="faq-02-collapse" className="accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="faq-02" role="region">
             <div className="px-5 pb-4">
               <p className="font-normal text-gray-400">
-                For large products, we deliver your product via a third party logistics company offering you the “room of
-                choice” scheduled delivery service. For small products, we offer free parcel delivery.
+              Customs authorities in most countries are tightening the application of import fees, VAT/local taxes and additional charges for products purchased abroad. These regulations affect all types of items, regardless of their category or sector. Therefore, it is advisable to be prepared to cover these additional costs when your package enters your country. Always check local regulations and consider these potential expenses when making international purchases.
               </p>
             </div>
           </div>
@@ -182,16 +181,15 @@ const FAQ = () => {
         <div className="accordion-item" id="faq-03">
           <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-01-collapse" aria-expanded="false">
             <span className="inline-flex items-center gap-x-4 text-gray-600">
-              <span className="icon-[tabler--shopping-bag] size-6"></span>
-              How would you ship my order?
+              <span className="icon-[tabler--plane-tilt] size-6"></span>
+              How long will it take to receive my order?
             </span>
             <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180" ></span>
           </button>
           <div id="faq-03-collapse" className="accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="faq-03" role="region">
             <div className="px-5 pb-4">
               <p className="font-normal text-gray-400">
-                For large products, we deliver your product via a third party logistics company offering you the “room of
-                choice” scheduled delivery service. For small products, we offer free parcel delivery.
+              Delivery times can vary significantly depending on several factors. If your order includes custom or made-to-order items, these may take longer to manufacture, adding days or even weeks to the process. Additionally, shipping times are often high and depend greatly on where you are purchasing from. For example, if the product is coming from another country or continent, shipping may take longer due to customs procedures and distances. To keep you up to date with the progress of your order, we will provide you with a tracking number once your purchase has been dispatched. This will allow you to monitor the status of the shipment and receive real-time updates.
               </p>
             </div>
           </div>
