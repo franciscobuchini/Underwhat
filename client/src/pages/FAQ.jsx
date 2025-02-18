@@ -15,7 +15,7 @@ const FAQ = () => {
             <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180" ></span>
           </button>
           <div id="faq-01-collapse" className="accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="faq-01" role="region">
-            <div class="w-full overflow-x-auto flex flex-col gap-4 px-5 pb-4">
+            <div className="w-full overflow-x-auto flex flex-col gap-4 px-5 pb-4">
 
               <div>
                 <h3 className='font-semibold'>Regular T-Shirt</h3>
@@ -162,7 +162,7 @@ const FAQ = () => {
         </div>
 
         <div className="accordion-item" id="faq-02">
-          <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-01-collapse" aria-expanded="false">
+          <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-02-collapse" aria-expanded="false">
             <span className="inline-flex items-center gap-x-4 text-gray-600">
               <span className="icon-[tabler--receipt-tax] size-6"></span>
               Will I be charged taxes when receiving my order?
@@ -179,7 +179,7 @@ const FAQ = () => {
         </div>
 
         <div className="accordion-item" id="faq-03">
-          <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-01-collapse" aria-expanded="false">
+          <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-03-collapse" aria-expanded="false">
             <span className="inline-flex items-center gap-x-4 text-gray-600">
               <span className="icon-[tabler--plane-tilt] size-6"></span>
               How long will it take to receive my order?
@@ -194,6 +194,43 @@ const FAQ = () => {
             </div>
           </div>
         </div>
+
+        <div className="accordion-item" id="faq-04">
+          <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-04-collapse" aria-expanded="false">
+            <span className="inline-flex items-center gap-x-4 text-gray-600">
+              <span className="icon-[tabler--shirt-sport] size-6"></span>
+              Do you offer custom gear for teams?
+            </span>
+            <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180"></span>
+          </button>
+          <div id="faq-04-collapse" className="accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="faq-04" role="region">
+            <div className="px-5 pb-4">
+              <p className="font-normal text-gray-400">
+                Yes! We design and produce custom gear for underwater hockey clubs and teams. If you don't have a design yet, we can help create one from scratch or adjust an existing one to perfectly match your team's identity. We use high-quality materials and pay attention to every detail in production. Visit the <strong>Team Outfit</strong> section to get started!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div className="accordion-item" id="faq-05">
+          <button className="accordion-toggle inline-flex items-center justify-between text-start" aria-controls="faq-05-collapse" aria-expanded="false">
+            <span className="inline-flex items-center gap-x-4 text-gray-600">
+              <span className="icon-[tabler--truck-return] size-6"></span>
+              What is your return policy?
+            </span>
+            <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180"></span>
+          </button>
+          <div id="faq-05-collapse" className="accordion-content hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="faq-05" role="region">
+            <div className="px-5 pb-4">
+              <p className="font-normal text-gray-400">
+                We are currently working on this section, as shipping costs can sometimes be higher than the product itself, making returns inconvenient for both parties. 
+                However, we understand that each case is unique, and we are open to handling requests on a case-by-case basis to find a solution that works for both sides. 
+                If you have any issues with your order, please don’t hesitate to contact us.
+              </p>
+            </div>
+          </div>
+        </div>
+
 
       </div>
       
