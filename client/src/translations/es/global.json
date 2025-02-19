@@ -7,9 +7,9 @@
     "logo_alt": "Logo de Underwhat",
     "menu": {
       "team": "Equipamiento",
-      "faq": "FAQs",
+      "faq": "Preguntas Frecuentes",
       "about": "Sobre Nosotros",
-      "language": "Idiomas"
+      "language": "Idioma"
     },
     "language_options": {
       "en": "Inglés",
@@ -21,13 +21,62 @@
       "subtotal": "Subtotal: $",
       "checkout": "Pagar",
       "size": "Talla:",
-      "pieces": "Cantidad:",
-      "remove": "Quitar"
+      "pieces": "Piezas:",
+      "remove": "Eliminar"
     }
   },
   "product": {
     "size_placeholder": "Talla",
     "add_to_cart": "¡Producto añadido al carrito!",
     "remove_from_cart": "¡Producto eliminado del carrito!"
+  },
+  "about": {
+    "title": "Quiénes somos!?",
+    "content": "Underwhat!? fue creado por jugadores de UWH para jugadores de UWH. Sabemos lo importante que es representar el deporte con orgullo y estilo, tanto dentro como fuera de la piscina. Por eso decidimos crear una marca de ropa casual diseñada no solo para uso diario sino también para llevar el espíritu de UWH a todas partes, manteniendo siempre un toque de estilo. Cada artículo que ofrecemos está diseñado con una meticulosa atención al detalle. Desde el principio, dejamos claro que la calidad sería una prioridad. No solo buscamos comodidad y durabilidad, sino también la mejor estética para que nosotros, como jugadores, podamos mostrar con orgullo nuestro compromiso con el deporte de una manera elegante y moderna. Nuestro mayor objetivo es llegar a todos los países con UWH, llevando nuestra marca y la pasión por este deporte a todos los rincones del mundo. Creemos en la importancia de construir una comunidad global de jugadores que puedan sentirse representados y conectados a través de nuestra ropa. Estamos comprometidos a ofrecer productos que no solo brinden alta calidad sino que también te permitan expresar tu identidad como jugador de UWH, sin importar dónde te encuentres. Esta marca está aquí para mostrar nuestra forma de vida y compartir la pasión por un deporte que es mucho más que un juego."
+  },
+  "faq": {
+    "title": "Preguntas Frecuentes",
+    "questions": {
+      "sizes": "Tabla de tallas: ¿Cómo elegir la talla correcta?",
+      "taxes": "¿Me cobrarán impuestos al recibir mi pedido?",
+      "shipping": "¿Cuánto tardará en llegar mi pedido?",
+      "custom": "¿Hacen equipamiento personalizado para equipos?",
+      "returns": "¿Cuál es su política de devoluciones?"
+    },
+    "answers": {
+      "taxes": "Las autoridades aduaneras en la mayoría de los países...",
+      "shipping": "Los tiempos de entrega pueden variar significativamente...",
+      "custom": "¡Sí! Diseñamos y producimos equipamiento personalizado...",
+      "returns": "Actualmente estamos trabajando en esta sección..."
+    },
+    "products": {
+      "regular_tshirt": "Camiseta Regular",
+      "sleeveless": "Camiseta sin mangas",
+      "oversized": "Camiseta Oversize",
+      "zip_hoodie": "Sudadera con Cremallera",
+      "hoodie": "Sudadera",
+      "round_hoodie": "Sudadera Cuello Redondo"
+    },
+    "materials": {
+      "cotton": "100% algodón peinado",
+      "blend": "95% algodón 5% spandex",
+      "poly": "59% algodón 41% fibra de acetato de polivinilo"
+    },
+    "table": {
+      "size": "Talla",
+      "chest": "Ancho de Pecho",
+      "shoulder": "Ancho de Hombros",
+      "length": "Largo"
+    }
+  },
+  "home": {
+    "products_title": "Nuestros productos",
+    "brand_title": "La marca para tu equipo"
+  },
+  "team": {
+    "title": "Equipamiento para equipos de UWH"
+  },
+  "checkout": {
+    "title": "Pago"
   }
 }
