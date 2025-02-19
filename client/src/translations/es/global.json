@@ -7,7 +7,7 @@
     "logo_alt": "Logo de Underwhat",
     "menu": {
       "team": "Equipamiento",
-      "faq": "Preguntas Frecuentes",
+      "faq": "FAQ",
       "about": "Sobre Nosotros",
       "language": "Idioma"
     },
@@ -41,13 +41,15 @@
       "taxes": "¿Me cobrarán impuestos al recibir mi pedido?",
       "shipping": "¿Cuánto tardará en llegar mi pedido?",
       "custom": "¿Hacen equipamiento personalizado para equipos?",
-      "returns": "¿Cuál es su política de devoluciones?"
+      "returns": "¿Cuál es su política de devoluciones?",
+      "origin": "¿De dónde vienen los productos?"
     },
     "answers": {
-      "taxes": "Las autoridades aduaneras en la mayoría de los países...",
-      "shipping": "Los tiempos de entrega pueden variar significativamente...",
-      "custom": "¡Sí! Diseñamos y producimos equipamiento personalizado...",
-      "returns": "Actualmente estamos trabajando en esta sección..."
+      "taxes": "Las autoridades aduaneras de la mayoría de los países están endureciendo la aplicación de tasas de importación, IVA/impuestos locales y cargos adicionales para productos adquiridos en el extranjero. Estas regulaciones afectan a todo tipo de artículos, independientemente de su categoría o sector. Por lo tanto, es recomendable estar preparado para cubrir estos costos adicionales cuando tu paquete ingrese a tu país. Consulta siempre las regulaciones locales y considera estos posibles gastos al realizar compras internacionales.",
+      "shipping": "Los tiempos de entrega pueden variar significativamente dependiendo de varios factores. Si tu pedido incluye artículos personalizados o hechos a pedido, estos pueden demorar más en fabricarse, agregando días o incluso semanas al proceso. Además, los tiempos de envío suelen ser altos y dependen en gran medida del lugar donde realices la compra. Por ejemplo, si el producto proviene de otro país o continente, el envío puede demorar más debido a los procedimientos aduaneros y las distancias. Para mantenerte informado sobre el progreso de tu pedido, te proporcionaremos un número de seguimiento una vez que se haya enviado tu compra. Esto te permitirá monitorear el estado del envío y recibir actualizaciones en tiempo real.",
+      "custom": "¡Sí! Diseñamos y producimos equipos personalizados para clubes y equipos de hockey subacuático. Si aún no tienes un diseño, podemos ayudarte a crear uno desde cero o ajustar uno existente para que combine perfectamente con la identidad de tu equipo. Utilizamos materiales de alta calidad y prestamos atención a cada detalle en la producción. ¡Visita la sección de atuendos de equipo para comenzar!",
+      "returns": "Actualmente estamos trabajando en esta sección, ya que los costos de envío a veces pueden ser más altos que el producto en sí, lo que hace que las devoluciones sean infavorables para ambas partes. Sin embargo, entendemos que cada caso es único y estamos abiertos a manejar las solicitudes caso por caso para encontrar una solución que funcione para ambas partes. Si tienes algún problema con tu pedido, no dudes en contactarnos.",
+      "origin": "Trabajamos con proveedores en todo el mundo para garantizar la mejor calidad y precios. Sin embargo, la mayoría de nuestros envíos se procesan y despachan desde China, donde tenemos nuestro centro principal de producción y logística para atender pedidos internacionales de manera eficiente."
     },
     "products": {
       "regular_tshirt": "Camiseta Regular",

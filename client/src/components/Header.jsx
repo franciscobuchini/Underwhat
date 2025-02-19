@@ -138,7 +138,7 @@ function Header() {
                 {cartItems.length === 0 ? (
                   <h6 className="text-gray-600 pl-4">{t("header.cart.empty")}</h6>
                 ) : (
-                  <h6 className="text-gray-600">
+                  <h6 className="text-gray-600 flex">
                     <h6 className="text-gray-600">{t("header.cart.subtotal")}</h6>
                     {cartItems
                       .reduce((total, item) => total + item.product_selling * item.quantity, 0)

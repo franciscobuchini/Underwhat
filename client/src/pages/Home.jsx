@@ -7,7 +7,6 @@ const Home = () => {
   const { t } = useTranslation("global");
   return (
     <>
-      <Title title="Our products" />
       <ProductList />
       <Title title="The brand for your team" />
     </>

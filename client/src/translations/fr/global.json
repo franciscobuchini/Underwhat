@@ -41,13 +41,15 @@
       "taxes": "Serai-je taxé lors de la réception de ma commande ?",
       "shipping": "Combien de temps faut-il pour recevoir ma commande ?",
       "custom": "Proposez-vous des équipements personnalisés pour les équipes ?",
-      "returns": "Quelle est votre politique de retour ?"
+      "returns": "Quelle est votre politique de retour ?",
+      "origin": "D'où viennent les produits ?"
     },
     "answers": {
-      "taxes": "Les autorités douanières dans la plupart des pays...",
-      "shipping": "Les délais de livraison peuvent varier considérablement...",
-      "custom": "Oui ! Nous concevons et produisons des équipements personnalisés...",
-      "returns": "Nous travaillons actuellement sur cette section..."
+      "taxes": "Les autorités douanières de la plupart des pays durcissent l'application des droits d'importation, de la TVA/des taxes locales et des frais supplémentaires pour les produits achetés à l'étranger. Ces réglementations concernent tous les types d'articles, quelle que soit leur catégorie ou leur secteur. Il est donc conseillé d'être prêt à couvrir ces frais supplémentaires lorsque votre colis entre dans votre pays. Vérifiez toujours les réglementations locales et tenez compte de ces dépenses potentielles lorsque vous effectuez des achats internationaux.",
+      "shipping": "Les délais de livraison peuvent varier considérablement en fonction de plusieurs facteurs. Si votre commande comprend des articles personnalisés ou fabriqués sur commande, leur fabrication peut prendre plus de temps, ce qui ajoute des jours, voire des semaines, au processus. De plus, les délais d'expédition sont souvent élevés et dépendent grandement du lieu d'achat. Par exemple, si le produit provient d'un autre pays ou continent, l'expédition peut prendre plus de temps en raison des procédures douanières et des distances. Pour vous tenir au courant de l'avancement de votre commande, nous vous fournirons un numéro de suivi une fois votre achat expédié. Cela vous permettra de surveiller l'état de l'envoi et de recevoir des mises à jour en temps réel.",
+      "custom": "Oui ! Nous concevons et produisons des équipements personnalisés pour les clubs et équipes de hockey sous-marin. Si vous n'avez pas encore de design, nous pouvons vous aider à en créer un à partir de zéro ou à en adapter un existant pour qu'il corresponde parfaitement à l'identité de votre équipe. Nous utilisons des matériaux de haute qualité et prêtons attention à chaque détail de la production. Visitez la section Tenue d'équipe pour commencer!",
+      "returns": "Nous travaillons actuellement sur cette section, car les frais d'expédition peuvent parfois être plus élevés que le produit lui-même, ce qui rend les retours gênants pour les deux parties. Cependant, nous comprenons que chaque cas est unique et nous sommes ouverts à traiter les demandes au cas par cas pour trouver une solution qui convienne aux deux parties. Si vous rencontrez des problèmes avec votre commande, n'hésitez pas à nous contacter.",
+      "origin": "Nous travaillons avec des fournisseurs dans le monde entier pour garantir la meilleure qualité et les meilleurs prix. Cependant, la plupart de nos expéditions sont traitées et expédiées depuis la Chine, où nous avons notre principal centre de production et de logistique pour traiter les commandes mondiales de manière efficace."
     },
     "products": {
       "regular_tshirt": "T-Shirt Classique",
