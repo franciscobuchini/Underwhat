@@ -1,6 +1,10 @@
+//Footer.jsx
+import { Link } from "react-router-dom";
 import nav02 from "../assets/Logo/nav02.webp";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t, i18n } = useTranslation("global");
   return (
     <footer className="footer bg-white rounded-t-2xl border border-gray-200 px-6 py-4">
     <div className="flex w-full flex-wrap items-center justify-between">
@@ -15,10 +19,10 @@ function Footer() {
           <span className="icon-[tabler--brand-gmail] size-5"></span>
         </a>
       </div>
-      <p className="text-base-content">The most iconic wear for UWH players.</p>
+      <p className="text-base-content">{t("footer.tagline")}</p>
       <div className="flex flex-col items-center gap-1">
-        <img src={nav02} className="h-6" />
-        <small className="font-semibold">Underwhat!?</small>
+        <img src={nav02} className="h-6" alt={t("header.logo_alt")} />
+        <small className="font-semibold">{t("footer.brand")}</small>
       </div>
 
     </div>

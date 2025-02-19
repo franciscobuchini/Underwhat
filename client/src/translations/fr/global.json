@@ -1,0 +1,33 @@
+{
+  "footer": {
+    "tagline": "La tenue la plus emblématique pour les joueurs de l'UWH.",
+    "brand": "Underwhat!?"
+  },
+  "header": {
+    "logo_alt": "Logo Underwhat",
+    "menu": {
+      "team": "Équipement",
+      "faq": "FAQ",
+      "about": "À propos",
+      "language": "Langue"
+    },
+    "language_options": {
+      "en": "Anglais",
+      "es": "Espagnol",
+      "fr": "Français"
+    },
+    "cart": {
+      "empty": "Panier vide",
+      "subtotal": "Sous-total: $",
+      "checkout": "Commander",
+      "size": "Taille:",
+      "pieces": "Pièces:",
+      "remove": "Supprimer"
+    }
+  },
+  "product": {
+    "size_placeholder": "Taille",
+    "add_to_cart": "Produit ajouté au panier !",
+    "remove_from_cart": "Produit retiré du panier !"
+  }
+}

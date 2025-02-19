@@ -1,6 +1,9 @@
+//FAQ.jsx
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const FAQ = () => {
+  const { t } = useTranslation("global");
   return (
     <div className="container mx-auto px-4 py-8 mt-20">
       <h1 className="text-3xl font-bold mb-8 text-gray-600 flex items-center gap-4"> <span className="icon-[tabler--zoom-question]"></span>Frequently Asked Questions </h1>

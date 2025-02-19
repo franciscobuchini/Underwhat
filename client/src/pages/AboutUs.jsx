@@ -1,7 +1,10 @@
+//AboutUs.jsx
 import { Link } from 'react-router-dom';
 import nav01 from "../assets/Logo/nav01.webp";
+import { useTranslation } from 'react-i18next';
 
 const AboutUs = () => {
+  const { t } = useTranslation("global");
   return (
     <div className="container mx-auto px-4 py-8 mt-20 flex flex-col items-center gap-10">
       <h1 className="text-3xl font-bold mb-8 text-gray-600 flex items-center gap-4"> <span className="icon-[tabler--scuba-mask]"></span>Who we are!?</h1>
@@ -12,7 +15,6 @@ const AboutUs = () => {
       Our biggest goal is to reach every country with UWH, bringing our brand and the passion for this sport to every corner of the world. We believe in the importance of building a global community of players who can feel represented and connected through our clothing.
 
       We are committed to offering products that not only provide high quality but also allow you to express your identity as an UWH player, no matter where you are. This brand is here to showcase our way of life and share the passion for a sport that is much more than just a game.</p>
-      <img src={nav01} className="h-16"></img>
     </div>
   );
 };

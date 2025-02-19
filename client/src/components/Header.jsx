@@ -1,10 +1,14 @@
+//Header.jsx
 import { Link, useNavigate } from 'react-router-dom';
 import { useCart } from "../components/CartContext";
 import nav01 from "../assets/Logo/nav01.webp";
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
+import i18next from 'i18next';
+import { useTranslation } from "react-i18next";
 
 function Header() {
+  const { t, i18n } = useTranslation("global");
   const { cartItems, removeFromCart } = useCart();
   const navigate = useNavigate();
 
@@ -21,7 +25,7 @@ function Header() {
 
   const handleRemoveFromCart = (index) => {
     removeFromCart(index);
-    notyf.error("Product removed from cart!");
+    notyf.error(t("product.remove_from_cart"));
   };
 
   return (
@@ -29,7 +33,7 @@ function Header() {
       <nav className="Navbar navbar bg-white border border-gray-200 rounded-2xl w-full">
         <div className="NavbarLogo flex flex-1 items-center">
           <Link to="/">
-            <img src={nav01} className="h-8" alt="Underwhat Logo" />
+            <img src={nav01} className="h-8" alt={t("header.logo_alt")} />
           </Link>
         </div>
         
@@ -54,7 +58,7 @@ function Header() {
                 <Link className="dropdown-item text-gray-600" to="/team-outfit">
                   <span className="flex items-center gap-x-2">
                     <span className="icon-[tabler--shirt-sport]"></span>
-                    Team Outfit
+                    {t("header.menu.team")}
                   </span>
                 </Link>
               </li>
@@ -63,7 +67,7 @@ function Header() {
                 <Link className="dropdown-item text-gray-600" to="/faq">
                   <span className="flex items-center gap-x-2">
                     <span className="icon-[tabler--zoom-question]"></span>
-                    FAQ
+                    {t("header.menu.faq")}
                   </span>
                 </Link>
               </li>
@@ -72,7 +76,7 @@ function Header() {
                 <Link className="dropdown-item text-gray-600" to="/about">
                   <span className="flex items-center gap-x-2">
                     <span className="icon-[tabler--scuba-mask]"></span>
-                    About Us
+                    {t("header.menu.about")}
                   </span>
                 </Link>
               </li>
@@ -81,31 +85,31 @@ function Header() {
                 <button id="nested-collapse-pages" className="text-gray-600 collapse-toggle dropdown-item collapse-open:text-gray-600 collapse-open:bg-base-content/10 justify-between" data-collapse="#nested-collapse-pages-content">
                   <span className="flex items-center gap-x-2">
                     <span className="icon-[tabler--language-hiragana]"></span>
-                    Language
+                    {t("header.menu.language")}
                   </span>
                   <span className="icon-[tabler--chevron-down] collapse-open:rotate-180 size-4"></span>
                 </button>
                 <div className="collapse hidden w-full overflow-hidden transition-[height] duration-300" aria-labelledby="nested-collapse-pages" id="nested-collapse-pages-content">
-                  <ul className="py-3 ps-3">
-                    <li>
-                      <a className="dropdown-item text-gray-600" href="#">
-                        <span className="icon-[tabler--point]"></span>
-                        English
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item text-gray-600" href="#">
-                        <span className="icon-[tabler--point]"></span>
-                        Spanish
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item text-gray-600" href="#">
-                        <span className="icon-[tabler--point]"></span>
-                        French
-                      </a>
-                    </li>
-                  </ul>
+                <ul className="py-3 ps-3">
+                  <li>
+                    <a className="dropdown-item text-gray-600" href="#" onClick={() => i18n.changeLanguage('en')}>
+                      <span className="icon-[tabler--point]"></span>
+                      {t("header.language_options.en")}
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item text-gray-600" href="#" onClick={() => i18n.changeLanguage('es')}>
+                      <span className="icon-[tabler--point]"></span>
+                      {t("header.language_options.es")}
+                    </a>
+                  </li>
+                  <li>
+                    <a className="dropdown-item text-gray-600" href="#" onClick={() => i18n.changeLanguage('fr')}>
+                      <span className="icon-[tabler--point]"></span>
+                      {t("header.language_options.fr")}
+                    </a>
+                  </li>
+                </ul>
                 </div>
               </div>
             </ul>
@@ -132,10 +136,10 @@ function Header() {
             aria-labelledby="dropdown-scrollable">
               <div className="DropdownHeader dropdown-header justify-between p-4 align-middle border-none">
                 {cartItems.length === 0 ? (
-                  <h6 className="text-gray-600 pl-4">Cart is empty</h6>
+                  <h6 className="text-gray-600 pl-4">{t("header.cart.empty")}</h6>
                 ) : (
                   <h6 className="text-gray-600">
-                    Subtotal: $
+                    <h6 className="text-gray-600">{t("header.cart.subtotal")}</h6>
                     {cartItems
                       .reduce((total, item) => total + item.product_selling * item.quantity, 0)
                       .toFixed(2)}
@@ -146,7 +150,7 @@ function Header() {
                   cartItems.length === 0 ? "hidden" : ""
                 }`}
                 onClick={() => navigate('/checkout')}>
-                  <small> Checkout </small>
+                  <small>{t("header.cart.checkout")}</small>
                   <span className="icon-[tabler--shopping-cart-check] size-6"></span>
                 </button>
               </div>
@@ -174,16 +178,16 @@ function Header() {
                         <small>{item.product_category}</small>
                       </p>
                       <p className="ProductSize text-gray-400">
-                        <small>Size: {item.selectedSize}</small>
+                      <small>{t("header.cart.size")} {item.selectedSize}</small>
                       </p>
                       <p className="ProductPieces text-gray-400">
-                        <small>Pieces: {item.quantity}</small>
+                      <small>{t("header.cart.pieces")} {item.quantity}</small>
                       </p>
                       <button
                         className="ProductRemove text-red-400 hover:text-red-700 w-min"
                         onClick={() => handleRemoveFromCart(index)}
                       >
-                        <small>Remove</small>
+                        <small>{t("header.cart.remove")}</small>
                       </button>
                     </div>
                   </div>

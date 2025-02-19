@@ -4,8 +4,10 @@ import axios from "axios";
 import { useCart } from "../components/CartContext";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
+import { useTranslation } from "react-i18next";
 
 function ProductList() {
+  const { t, i18n } = useTranslation("global");
   const [products, setProducts] = useState([]);
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart } = useCart();
@@ -49,10 +51,11 @@ function ProductList() {
       selectedSize: size,
       image: product.product_image,
     });
-    notyf.success("Product added to cart!");
+    notyf.success(t("product.add_to_cart"));
   };
 
   return (
+
     <div className="ProductList flex flex-wrap justify-center gap-4">
       {products.map((product, index) => (
         <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl w-64">
@@ -78,7 +81,7 @@ function ProductList() {
                 onChange={(e) => handleSizeChange(index, e.target.value)}
               >
                 <option value="" disabled>
-                  Size
+                  {t("product.size_placeholder")}
                 </option>
                 <option value="S">S</option>
                 <option value="M">M</option>
