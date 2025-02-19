@@ -1,82 +1,82 @@
 {
   "footer": {
-    "tagline": "La vestimenta más icónica para jugadores de UWH.",
+    "tagline": "The most iconic wear for UWH players.",
     "brand": "Underwhat!?"
   },
   "header": {
-    "logo_alt": "Logo de Underwhat",
+    "logo_alt": "Underwhat Logo",
     "menu": {
-      "team": "Equipamiento",
-      "faq": "Preguntas Frecuentes",
-      "about": "Sobre Nosotros",
-      "language": "Idioma"
+      "team": "Team Outfit",
+      "faq": "FAQ",
+      "about": "About Us",
+      "language": "Language"
     },
     "language_options": {
-      "en": "Inglés",
-      "es": "Español",
-      "fr": "Francés"
+      "en": "English",
+      "es": "Spanish",
+      "fr": "French"
     },
     "cart": {
-      "empty": "Carrito vacío",
+      "empty": "Cart is empty",
       "subtotal": "Subtotal: $",
-      "checkout": "Pagar",
-      "size": "Talla:",
-      "pieces": "Piezas:",
-      "remove": "Eliminar"
+      "checkout": "Checkout",
+      "size": "Size:",
+      "pieces": "Pieces:",
+      "remove": "Remove"
     }
   },
   "product": {
-    "size_placeholder": "Talla",
-    "add_to_cart": "¡Producto añadido al carrito!",
-    "remove_from_cart": "¡Producto eliminado del carrito!"
+    "size_placeholder": "Size",
+    "add_to_cart": "Product added to cart!",
+    "remove_from_cart": "Product removed from cart!"
   },
   "about": {
-    "title": "¿Quiénes somos?",
+    "title": "Who we are!?",
     "content": "Underwhat!? was created by UWH players for UWH players. We know how important it is to represent the sport with pride and style, both in and out of the pool. That's why we decided to create a casual clothing brand designed not only for everyday wear but also to take the spirit of UWH everywhere, always keeping a touch of style. Each item we offer is designed with meticulous attention to detail. From the very beginning, we made it clear that quality would be a priority. We're not just looking for comfort and durability, but also the best aesthetics so that we, as players, can proudly display our commitment to the sport in an elegant and modern way. Our biggest goal is to reach every country with UWH, bringing our brand and the passion for this sport to every corner of the world. We believe in the importance of building a global community of players who can feel represented and connected through our clothing. We are committed to offering products that not only provide high quality but also allow you to express your identity as an UWH player, no matter where you are. This brand is here to showcase our way of life and share the passion for a sport that is much more than just a game."
   },
   "faq": {
-    "title": "Preguntas Frecuentes",
+    "title": "Frequently Asked Questions",
     "questions": {
-      "sizes": "Tabla de tallas: ¿Cómo elegir la talla correcta?",
-      "taxes": "¿Me cobrarán impuestos al recibir mi pedido?",
-      "shipping": "¿Cuánto tardará en llegar mi pedido?",
-      "custom": "¿Hacen equipamiento personalizado para equipos?",
-      "returns": "¿Cuál es su política de devoluciones?"
+      "sizes": "Sizes table: How to choose the right size?",
+      "taxes": "Will I be charged taxes when receiving my order?",
+      "shipping": "How long will it take to receive my order?",
+      "custom": "Do you offer custom gear for teams?",
+      "returns": "What is your return policy?"
     },
     "answers": {
-      "taxes": "Las autoridades aduaneras en la mayoría de los países...",
-      "shipping": "Los tiempos de entrega pueden variar significativamente...",
-      "custom": "¡Sí! Diseñamos y producimos equipamiento personalizado...",
-      "returns": "Actualmente estamos trabajando en esta sección..."
+      "taxes": "Customs authorities in most countries...",
+      "shipping": "Delivery times can vary significantly...",
+      "custom": "Yes! We design and produce custom gear...",
+      "returns": "We are currently working on this section..."
     },
     "products": {
-      "regular_tshirt": "Camiseta Regular",
-      "sleeveless": "Chaleco sin Mangas",
-      "oversized": "Camiseta Oversize",
-      "zip_hoodie": "Sudadera con Cremallera",
-      "hoodie": "Sudadera",
-      "round_hoodie": "Sudadera Cuello Redondo"
+      "regular_tshirt": "Regular T-Shirt",
+      "sleeveless": "Sleeveless Vest",
+      "oversized": "Oversized T-Shirt",
+      "zip_hoodie": "Zip Hoodie",
+      "hoodie": "Hoodie",
+      "round_hoodie": "Round Neck Hoodie"
     },
     "materials": {
-      "cotton": "100% algodón peinado",
-      "blend": "95% algodón 5% spandex",
-      "poly": "59% algodón 41% fibra de acetato de polivinilo"
+      "cotton": "100% long-staple cotton",
+      "blend": "95% cotton 5% spandex",
+      "poly": "59% cotton 41% polyvinyl acetate fibre"
     },
     "table": {
-      "size": "Talla",
-      "chest": "Ancho de Pecho",
-      "shoulder": "Ancho de Hombros",
-      "length": "Largo"
+      "size": "Size",
+      "chest": "Chest Width",
+      "shoulder": "Shoulder Width",
+      "length": "Length"
     }
   },
   "home": {
-    "products_title": "Nuestros productos",
-    "brand_title": "La marca para tu equipo"
+    "products_title": "Our products",
+    "brand_title": "The brand for your team"
   },
   "team": {
-    "title": "Equipamiento para equipos de UWH"
+    "title": "Outfits for UWH teams"
   },
   "checkout": {
-    "title": "Pago"
+    "title": "Checkout"
   }
 }
