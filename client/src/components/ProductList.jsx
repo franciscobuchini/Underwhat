@@ -54,16 +54,33 @@ function ProductList() {
     notyf.success(t("product.add_to_cart"));
   };
 
-  return (
+  useEffect(() => {
+    products.forEach(product => {
+      const img = new Image();
+      img.src = product.product_image02; // Precarga imagen hover
+    });
+  }, [products]);
 
+  const [hoveredProductId, setHoveredProductId] = useState(null);
+
+  return (
     <div className="ProductList flex flex-wrap justify-center gap-4">
       {products.map((product, index) => (
-        <div key={index} className="ProductCard bg-white border border-gray-200 rounded-2xl w-64">
-          <div className="ProductImage hover:bg-gray-100 rounded-t-2xl">
+        <div 
+          key={index} 
+          className="ProductCard bg-white border border-gray-200 rounded-2xl w-64"
+          onMouseEnter={() => setHoveredProductId(product.product_id)}
+          onMouseLeave={() => setHoveredProductId(null)}
+        >
+          <div className="ProductImage hover:bg-gray-100 rounded-t-2xl overflow-hidden">
             <img
-              src={product.product_image}
+              src={
+                hoveredProductId === product.product_id
+                  ? product.product_image02 
+                  : product.product_image
+              }
               alt={product.product_name}
-              className="Image01 object-cover w-full h-auto"
+              className="Image01 object-cover w-full h-auto transition-all duration-1000 hover:scale-105"
               loading="lazy"
             />
           </div>
@@ -108,7 +125,7 @@ function ProductList() {
           </div>
         </div>
       ))}
-    </div>
+  </div>
   );
 }
 

@@ -18,6 +18,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
   }
 });
 
+
 // Ruta para obtener datos desde la base de datos
 app.get('/api', (req, res) => {
   const query = 'SELECT product_name, product_selling, product_category, product_id, product_image, product_image02 FROM Products';
