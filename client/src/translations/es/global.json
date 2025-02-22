@@ -22,7 +22,8 @@
       "checkout": "Pagar",
       "size": "Talla:",
       "pieces": "Piezas:",
-      "remove": "Eliminar"
+      "remove": "Eliminar",
+      "minimum_order": "Min: 2 products"
     }
   },
   "product": {

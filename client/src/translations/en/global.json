@@ -22,7 +22,8 @@
       "checkout": "Checkout",
       "size": "Size:",
       "pieces": "Pieces:",
-      "remove": "Remove"
+      "remove": "Remove",
+      "minimum_order": "Min: 2 products"
     }
   },
   "product": {

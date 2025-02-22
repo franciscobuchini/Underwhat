@@ -22,7 +22,8 @@
       "checkout": "Commander",
       "size": "Taille:",
       "pieces": "Pièces:",
-      "remove": "Supprimer"
+      "remove": "Supprimer",
+      "minimum_order": "Min: 2 products"
     }
   },
   "product": {
