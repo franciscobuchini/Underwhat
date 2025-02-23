@@ -26,7 +26,7 @@ const CheckoutForm = () => {
         <form className="needs-validation peer grid gap-y-4" noValidate>
           {/* Shipping Details */}
           <div className="w-full">
-            <h6 className="text-lg font-semibold">1. Shipping Details</h6>
+            <h6 className="text-lg font-semibold">Shipping Details</h6>
             <hr className="mb-4 mt-2" />
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -41,7 +41,7 @@ const CheckoutForm = () => {
                 required
                 onChange={handleCountryChange}
               >
-<option value="angola">Angola</option>
+                <option value="angola">Angola</option>
                 <option value="argentina">Argentina</option>
                 <option value="australia">Australia</option>
                 <option value="bahrain">Bahrain</option>
@@ -101,7 +101,7 @@ const CheckoutForm = () => {
             {showOtherCountry && (
               <div>
                 <label className="label label-text" htmlFor="otherCountry">
-                  Other Country:
+                  Other Country *
                 </label>
                 <input
                   id="otherCountry"
@@ -115,10 +115,73 @@ const CheckoutForm = () => {
               </div>
             )}
           </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label className="label label-text" htmlFor="state">
+                State / Province / Region *
+              </label>
+              <input id="state" type="text" className="input capitalize" required placeholder='California'/>
+              <span className="error-message">Please enter the state</span>
+              <span className="success-message">Looks good!</span>
+            </div>
+            <div>
+              <label className="label label-text" htmlFor="city">
+                City *
+              </label>
+              <input id="city" type="text" className="input capitalize" required placeholder='San Francisco'/>
+              <span className="error-message">Please enter the city</span>
+              <span className="success-message">Looks good!</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
+            <div>
+              <label className="label label-text" htmlFor="street">
+                Street Name *
+              </label>
+              <input id="street" type="text" className="input capitalize" required placeholder='Main Street'/>
+              <span className="error-message">Please enter the street name</span>
+              <span className="success-message">Looks good!</span>
+            </div>
+            <div>
+              <label className="label label-text" htmlFor="number">
+                Address Number *
+              </label>
+              <input id="number" type="text" className="input capitalize" required placeholder='123'/>
+              <span className="error-message">Please enter the address number</span>
+              <span className="success-message">Looks good!</span>
+            </div>
+            <div>
+              <label className="label label-text" htmlFor="apartment">
+                Apartment, Suite, etc.
+              </label>
+              <input id="apartment" type="text" className="input capitalize" placeholder='6th B'/>
+              <span className="success-message">Looks good!</span>
+            </div>
+            <div>
+              <label className="label label-text" htmlFor="zipCode">
+                ZIP Code *
+              </label>
+              <input id="zipCode" type="text" className="input capitalize" required placeholder='1234'/>
+              <span className="success-message">Looks good!</span>
+            </div>
+          </div>
+
+            <div className="w-full">
+              <label className="label label-text" htmlFor="relevantInfo">
+                Relevant shipping information
+              </label>
+              <textarea
+                className="textarea min-h-20 resize-none"
+                id="relevantInfo"
+                placeholder="Back door, ring the bell, etc."
+              ></textarea>
+              <span className="success-message">Looks good!</span>
+            </div>
+ 
 
           {/* Personal Info */}
           <div className="w-full">
-            <h6 className="text-lg font-semibold">2. Personal Info</h6>
+            <h6 className="text-lg font-semibold">Personal Info</h6>
             <hr className="mb-4 mt-2" />
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
