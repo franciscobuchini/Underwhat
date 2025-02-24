@@ -18,6 +18,7 @@ import { initReactI18next } from 'react-i18next';
 import global_en from './translations/en/global.json';
 import global_es from './translations/es/global.json';
 import global_fr from './translations/fr/global.json';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 // Configuración de i18next
 i18next
@@ -50,6 +51,7 @@ function App() {
                 <Route path="/faq" element={<FAQ />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/checkout" element={<Checkout />} />
+                <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               </Routes>
             </main>
             <Footer />

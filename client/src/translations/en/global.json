@@ -81,5 +81,33 @@
   },
   "checkout": {
     "title": "Checkout"
+  },
+  "terms": {
+    "en": {
+      "introduction": "Welcome to Underwhat!?. These terms and conditions govern the use of our website and purchases made through it. By placing an order, you agree to be bound by these terms and conditions in their entirety. If you do not agree with any part of this document, please do not use our services.",
+      "product_description": "We offer a variety of clothing. We strive to ensure that descriptions, images, and prices are accurate, but we do not guarantee that they are error-free. Our products are shipped directly from our suppliers following a dropshipping model, which means we do not have direct contact with the products before they are shipped.",
+      "purchase_process": "To make a purchase, select the desired products, add them to the cart, and complete the order process on our website. Once the order is received, we will send you a payment link via email. Payment must be made through this link to confirm your order. After receiving the payment, we will process your order and send you a confirmation email.",
+      "prices_and_payments": "All prices are displayed in USD and include taxes. The total amount to be paid includes the product cost plus shipping fees. We accept payments only via bank transfer. Prices may change without prior notice, but the price displayed at the time of placing your order will be honored.",
+      "shipping_and_delivery": "We ship through reliable third-party carriers. Delivery times are estimated and may vary depending on location and external circumstances. Once the order is handed over to the carrier, the responsibility for loss, damage, or delay of the package falls on the carrier. We recommend checking the condition of the package upon receipt and contacting us immediately if there are any issues.",
+      "returns_and_refunds": "If a product arrives defective or does not match the description, the customer must notify us within 7 days of receipt. Since we operate under a dropshipping model and shipping costs can be high, we do not offer a standard return policy. However, we evaluate each case individually to find a solution that works for both parties. We are not responsible for defects caused by misuse, negligence, normal wear and tear, or improper handling of the product by the customer. Returns due to a change of mind are not accepted unless stated otherwise. If you have any issues with your order, please feel free to contact us to review your case.",
+      "limitation_of_liability": "To the maximum extent permitted by law, Underwhat!? will not be liable for indirect, incidental, consequential, or punitive damages, including but not limited to loss of profits, data, or use, whether in a contractual, extra-contractual, or other action, even if advised of the possibility of such damages. Our liability is limited to the amount paid for the product in question.",
+      "force_majeure": "We will not be liable for failures or delays in delivery caused by circumstances beyond our control, such as natural disasters, strikes, transportation issues, acts of authorities, wars, terrorism, fires, or any other force majeure events.",
+      "intellectual_property": "All content on the website, including logos, images, and texts, is the property of Underwhat!? or its licensors and is protected by intellectual property laws.",
+      "privacy": "We collect only the personal information necessary to process your orders, such as name, address, and email. We are committed to protecting your information and do not share data with unauthorized third parties, except as necessary to process your order (e.g., with the shipping carrier). For more details, we are working on our privacy policy, which will be available soon.",
+      "modifications": "We reserve the right to modify these terms and conditions at any time. Changes will take effect upon publication on our website. It is the customer's responsibility to review this document periodically.",
+      "introduction_title": "Introduction",
+      "product_description_title": "Product Description",
+      "purchase_process_title": "Purchase Process",
+      "prices_and_payments_title": "Prices and Payments",
+      "shipping_and_delivery_title": "Shipping and Delivery",
+      "returns_and_refunds_title": "Returns and Refunds",
+      "limitation_of_liability_title": "Limitation of Liability",
+      "force_majeure_title": "Force Majeure",
+      "intellectual_property_title": "Intellectual Property",
+      "privacy_title": "Privacy",
+      "modifications_title": "Modifications"
+    }
   }
+
+  
 }

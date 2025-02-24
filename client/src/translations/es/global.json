@@ -81,5 +81,31 @@
   },
   "checkout": {
     "title": "Pago"
+  },
+  "terms": {
+    "es": {
+      "introduction": "¡Bienvenido a Underwhat!?. Estos términos y condiciones rigen el uso de nuestro sitio web y las compras realizadas a través de él. Al realizar un pedido, aceptas estar sujeto a estos términos y condiciones en su totalidad. Si no estás de acuerdo con alguna parte de este documento, por favor, no utilices nuestros servicios.",
+      "product_description": "Ofrecemos una variedad de ropa. Nos esforzamos por garantizar que las descripciones, imágenes y precios sean precisos, pero no garantizamos que estén libres de errores. Nuestros productos se envían directamente desde nuestros proveedores siguiendo un modelo de dropshipping, lo que significa que no tenemos contacto directo con los productos antes de su envío.",
+      "purchase_process": "Para realizar una compra, selecciona los productos deseados, agréguelos al carrito y completa el proceso de pedido en nuestro sitio web. Una vez recibido el pedido, te enviaremos un enlace de pago por correo electrónico. El pago debe realizarse a través de este enlace para confirmar tu pedido. Tras recibir el pago, procesaremos tu pedido y te enviaremos un correo electrónico de confirmación.",
+      "prices_and_payments": "Todos los precios se muestran en USD e incluyen impuestos. El monto total a pagar incluye el costo del producto más los gastos de envío. Aceptamos pagos solo mediante transferencia bancaria. Los precios pueden cambiar sin previo aviso, pero se respetará el precio mostrado en el momento de realizar tu pedido.",
+      "shipping_and_delivery": "Enviamos a través de transportistas de confianza. Los tiempos de entrega son estimados y pueden variar según la ubicación y circunstancias externas. Una vez que el pedido se entrega al transportista, la responsabilidad por pérdida, daño o retraso del paquete recae en el transportista. Recomendamos revisar el estado del paquete al recibirlo y contactarnos inmediatamente si hay algún problema.",
+      "returns_and_refunds": "Si un producto llega defectuoso o no coincide con la descripción, el cliente debe notificarnos dentro de los 7 días posteriores a la recepción. Dado que operamos bajo un modelo de dropshipping y los costos de envío pueden ser altos, no ofrecemos una política de devolución estándar. Sin embargo, evaluamos cada caso individualmente para encontrar una solución que funcione para ambas partes. No somos responsables de defectos causados por mal uso, negligencia, desgaste normal o manipulación inadecuada del producto. No se aceptan devoluciones por cambio de opinión, salvo que se indique lo contrario. Si tienes algún problema con tu pedido, no dudes en contactarnos para revisar tu caso.",
+      "limitation_of_liability": "En la máxima medida permitida por la ley, Underwhat!? no será responsable de daños indirectos, incidentales, consecuentes o punitivos, incluidos, entre otros, la pérdida de beneficios, datos o uso, ya sea en una acción contractual, extracontractual u otra, incluso si se ha advertido de la posibilidad de tales daños. Nuestra responsabilidad se limita al monto pagado por el producto en cuestión.",
+      "force_majeure": "No seremos responsables por fallos o retrasos en la entrega causados por circunstancias fuera de nuestro control, como desastres naturales, huelgas, problemas de transporte, actos de autoridades, guerras, terrorismo, incendios u otros eventos de fuerza mayor.",
+      "intellectual_property": "Todo el contenido del sitio web, incluidos logotipos, imágenes y textos, es propiedad de Underwhat!? o sus licenciantes y está protegido por leyes de propiedad intelectual.",
+      "privacy": "Recopilamos únicamente la información personal necesaria para procesar tus pedidos, como nombre, dirección y correo electrónico. Nos comprometemos a proteger tu información y no compartimos datos con terceros no autorizados, salvo lo necesario para procesar tu pedido (por ejemplo, con el transportista). Para más detalles, estamos trabajando en nuestra política de privacidad, que estará disponible pronto.",
+      "modifications": "Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Los cambios entrarán en vigor tras su publicación en nuestro sitio web. Es responsabilidad del cliente revisar este documento periódicamente.",
+      "introduction_title": "Introducción",
+      "product_description_title": "Descripción del Producto",
+      "purchase_process_title": "Proceso de Compra",
+      "prices_and_payments_title": "Precios y Pagos",
+      "shipping_and_delivery_title": "Envío y Entrega",
+      "returns_and_refunds_title": "Devoluciones y Reembolsos",
+      "limitation_of_liability_title": "Limitación de Responsabilidad",
+      "force_majeure_title": "Fuerza Mayor",
+      "intellectual_property_title": "Propiedad Intelectual",
+      "privacy_title": "Privacidad",
+      "modifications_title": "Modificaciones"
+    }
   }
 }

@@ -291,7 +291,13 @@ const CheckoutForm = () => {
                 required
               />
               <label className="label text-base" htmlFor="userAgre">
-                Agree to our terms and conditions
+                <a
+                href="/terms-and-conditions"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline">
+                   Agree to our terms and conditions
+                </a>
               </label>
             </div>
             <span className="error-message">Please confirm our T&C</span>
