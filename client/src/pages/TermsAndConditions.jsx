@@ -7,7 +7,7 @@ const TermsAndConditions = () => {
   return (
     <div className="container mx-auto px-4 py-8 mt-20 flex flex-col items-center gap-10">
       <h1 className="text-3xl font-bold mb-8 text-gray-600 flex items-center gap-4">
-        <span className="icon-[tabler--scuba-mask]"></span>
+        <span className="icon-[tabler--file-description]"></span>
         {t("terms.title")}
       </h1>
       <div className="text-gray-600 px-4 leading-8 max-w-3xl">

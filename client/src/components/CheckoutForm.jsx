@@ -20,8 +20,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="bg-base-100 w-full rounded-lg shadow">
-      <h5 className="bg-base-300 rounded-t-lg p-4 text-base text-xl font-bold">JS Validation</h5>
+    <div className="bg-base-100 w-full rounded-2xl shadow">
       <div className="w-full p-4">
         <form className="needs-validation peer grid gap-y-4" noValidate>
           {/* Shipping Details */}
@@ -166,7 +165,7 @@ const CheckoutForm = () => {
             </div>
           </div>
 
-            <div className="w-full">
+          <div className="w-full">
               <label className="label label-text" htmlFor="relevantInfo">
                 Relevant shipping information
               </label>
@@ -176,177 +175,22 @@ const CheckoutForm = () => {
                 placeholder="Back door, ring the bell, etc."
               ></textarea>
               <span className="success-message">Looks good!</span>
-            </div>
- 
+          </div>            
 
-          {/* Personal Info */}
-          <div className="w-full">
-            <h6 className="text-lg font-semibold">Personal Info</h6>
-            <hr className="mb-4 mt-2" />
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label className="label label-text" htmlFor="userProfile">
-                Profile Pic
-              </label>
-              <input id="userProfile" type="file" className="input" required />
-              <span className="error-message">Please select the file</span>
-              <span className="success-message">Looks good!</span>
-            </div>
-            <div>
-              <label className="label label-text" htmlFor="jsPickr">
-                DOB
-              </label>
-              <input
-                id="jsPickr"
-                type="text"
-                className="input"
-                placeholder="YYYY-MM-DD"
-                required
-              />
-              <span className="error-message">Please select your DOB</span>
-              <span className="success-message">Looks good!</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label className="label label-text" htmlFor="userCountry">
-                Pick your Country
-              </label>
-              <select
-                className="select"
-                id="userCountry"
-                aria-label="Select Country"
-                required
-              >
-                {/* Add country options here */}
-              </select>
-              <span className="error-message">Please select your country</span>
-              <span className="success-message">Looks good!</span>
-            </div>
-            <div>
-              <div className="label label-text">Gender</div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  id="male"
-                  name="radio-0"
-                  className="radio radio-primary"
-                  required
-                />
-                <label className="label label-text text-base" htmlFor="male">
-                  Male
-                </label>
-              </div>
-              <div className="flex items-center gap-2">
-                <input
-                  type="radio"
-                  id="female"
-                  name="radio-0"
-                  className="radio radio-primary"
-                  required
-                />
-                <label className="label label-text text-base" htmlFor="female">
-                  Female
-                </label>
-              </div>
-              <span className="error-message">Please select your Gender</span>
-              <span className="success-message">Looks good!</span>
-            </div>
-          </div>
-          <div className="w-full">
-            <label className="label label-text" htmlFor="userBio">
-              Bio
-            </label>
-            <textarea
-              className="textarea min-h-20 resize-none"
-              id="userBio"
-              placeholder="Hello!!!"
-              required
-            ></textarea>
-            <span className="error-message">Please write few words</span>
-            <span className="success-message">Looks good!</span>
-          </div>
-          <div>
-            <div className="flex items-center gap-3">
-              <input
-                type="checkbox"
-                id="userSwitch"
-                className="switch switch-primary"
-                required
-              />
-              <label className="label text-base" htmlFor="userSwitch">
-                Send me related emails
-              </label>
-            </div>
-            <span className="error-message">Please select your preference</span>
-            <span className="success-message">Looks good!</span>
-          </div>
-          <div>
-            <div className="flex items-center gap-3">
-              <input
-                type="checkbox"
-                className="checkbox checkbox-primary"
-                id="userAgre"
-                required
-              />
-              <label className="label text-base" htmlFor="userAgre">
-                <a
+          {/* EMAIL Y PHONE NUMBER */}
+          <div class="flex items-center gap-3">
+            <input type="checkbox" class="checkbox checkbox-primary" id="userAgre" required />
+            <label className="label text-base" htmlFor="userAgre">
+              <a
                 href="/terms-and-conditions"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline">
-                   Agree to our terms and conditions
-                </a>
-              </label>
-            </div>
+                Agree to our terms and conditions
+              </a>
+            </label>
             <span className="error-message">Please confirm our T&C</span>
             <span className="success-message">Looks good!</span>
-          </div>
-
-          {/* Email and Password */}
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label className="label label-text" htmlFor="userEmail">
-                Email
-              </label>
-              <input
-                id="userEmail"
-                type="email"
-                className="input"
-                placeholder="john@gmail.com"
-                aria-label="john@gmail.com"
-                required
-              />
-              <span className="error-message">Please enter a valid email</span>
-              <span className="success-message">Looks good!</span>
-            </div>
-            <div>
-              <label className="label label-text" htmlFor="userPassword">
-                Password
-              </label>
-              <div className="input-group">
-                <input
-                  id="userPassword"
-                  type="password"
-                  className="input"
-                  placeholder="Enter password"
-                  required
-                />
-                <span className="input-group-text">
-                  <button
-                    type="button"
-                    data-toggle-password='{ "target": "#userPassword" }'
-                    className="block"
-                  >
-                    <span className="icon-[tabler--eye] text-base-content/80 password-active:block hidden size-4 flex-shrink-0"></span>
-                    <span className="icon-[tabler--eye-off] text-base-content/80 password-active:hidden block size-4 flex-shrink-0"></span>
-                  </button>
-                </span>
-              </div>
-              <span className="error-message">Please enter a valid password</span>
-              <span className="success-message">Looks good!</span>
-            </div>
           </div>
 
           {/* Submit Button */}
@@ -355,9 +199,11 @@ const CheckoutForm = () => {
               Submit
             </button>
           </div>
+
         </form>
       </div>
     </div>
+  
   );
 };
 

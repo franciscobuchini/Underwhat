@@ -167,7 +167,7 @@ function Header() {
               <div className="DropdownCart vertical-scrollbar rounded-scrollbar text-gray-600 overflow-auto max-md:max-w-60">
                 {cartItems.map((item, index) => (
                   <div key={`${item.product_name}-${item.selectedSize}`} className="ProductAdded dropdown-item rounded-2xl flex space-x-2">
-                    <div className="ProductImage rounded-md">
+                    <div className="ProductImage rounded-2xl">
                       <img 
                         className="w-20 object-cover" 
                         src={item.image} 
