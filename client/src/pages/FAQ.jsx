@@ -10,37 +10,37 @@ const FAQ = () => {
       id: "faq-01",
       questionKey: "sizes",
       answerComponent: <SizesTable />,
-      icon: "tabler--ruler-measure-2"
+      icon: "icon-[tabler--ruler-measure-2]"
     },
     {
       id: "faq-02",
       questionKey: "taxes",
       answerKey: "taxes",
-      icon: "tabler--receipt-tax"
+      icon: "icon-[tabler--receipt-tax]"
     },
     {
       id: "faq-03",
       questionKey: "shipping",
       answerKey: "shipping",
-      icon: "tabler--plane-tilt"
+      icon: "icon-[tabler--plane-tilt]"
     },
     {
       id: "faq-04",
       questionKey: "custom",
       answerKey: "custom",
-      icon: "tabler--shirt-sport"
+      icon: "icon-[tabler--shirt-sport]"
     },
     {
       id: "faq-05",
       questionKey: "returns",
       answerKey: "returns",
-      icon: "tabler--truck-return"
+      icon: "icon-[tabler--truck-return]"
     },
     {
       id: "faq-06",
       questionKey: "origin",
       answerKey: "origin",
-      icon: "tabler--world-pin"
+      icon: "icon-[tabler--world-pin]"
     },
   ];
 
@@ -60,7 +60,7 @@ const FAQ = () => {
               aria-expanded="false"
             >
               <span className="inline-flex items-center gap-x-4 text-gray-600">
-                <span className={`icon-[${item.icon}] size-6`}></span>
+                <span className={`${item.icon} size-6`}></span>
                 {t(`faq.questions.${item.questionKey}`)}
               </span>
               <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180"></span>
