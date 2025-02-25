@@ -83,7 +83,6 @@
     "title": "Checkout"
   },
   "terms": {
-    "en": {
       "introduction": "Welcome to Underwhat!?. These terms and conditions govern the use of our website and purchases made through it. By placing an order, you agree to be bound by these terms and conditions in their entirety. If you do not agree with any part of this document, please do not use our services.",
       "product_description": "We offer a variety of clothing. We strive to ensure that descriptions, images, and prices are accurate, but we do not guarantee that they are error-free. Our products are shipped directly from our suppliers following a dropshipping model, which means we do not have direct contact with the products before they are shipped.",
       "purchase_process": "To make a purchase, select the desired products, add them to the cart, and complete the order process on our website. Once the order is received, we will send you a payment link via email. Payment must be made through this link to confirm your order. After receiving the payment, we will process your order and send you a confirmation email.",
@@ -106,7 +105,6 @@
       "intellectual_property_title": "Intellectual Property",
       "privacy_title": "Privacy",
       "modifications_title": "Modifications"
-    }
   }
 
   
