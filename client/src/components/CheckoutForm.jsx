@@ -92,7 +92,6 @@ const CheckoutForm = () => {
                 <option value="switzerland">Switzerland</option>
                 <option value="tanzania">Tanzania</option>
                 <option value="turkey">Turkey</option>
-                <option value="turkmenistan">Turkmenistan</option>
                 <option value="united_arab_emirates">United Arab Emirates</option>
                 <option value="united_kingdom">United Kingdom</option>
                 <option value="united_states">United States</option>
@@ -175,7 +174,7 @@ const CheckoutForm = () => {
                 Relevant shipping information
               </label>
               <textarea
-                className="textarea min-h-20 resize-none"
+                className="textarea min-h-20 resize-none text-gray-600"
                 id="relevantInfo"
                 placeholder="Back door, ring the bell, etc."
               ></textarea>
