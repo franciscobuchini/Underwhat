@@ -34,16 +34,16 @@ const Checkout = () => {
     <div className="container flex flex-col gap-10 mx-auto px-4 py-8 mt-20">
 
       {/* Resumen del carrito con opción de eliminar */}
-      <div className="p-4 border rounded-xl bg-white">
+      <div className="p-4 border rounded-2xl bg-white flex flex-col gap-y-4">
         <div className="w-full mt-2">
           <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-            <span className="icon-[tabler--shopping-cart]"></span>
+            <span className="icon-[tabler--shopping-cart] size-6"></span>
             {t("checkout.title")}
           </h6>
           <hr className="mt-2" />
         </div>
         {cartItems.length === 0 ? (
-          <p className="text-gray-500">{t("cart.empty")}</p>
+          <p className="text-gray-600">{t("cart.empty")}</p>
         ) : (
           <ul className="space-y-4">
             {cartItems.map((item, index) => (
@@ -64,7 +64,7 @@ const Checkout = () => {
                 </div>
 
                 <div className="flex flex-col items-end">
-                  <span className="text-gray-700 font-semibold">
+                  <span className="text-gray-600">
                     ${(item.product_selling * item.quantity).toFixed(2)} USD
                   </span>
                   
@@ -80,9 +80,9 @@ const Checkout = () => {
             ))}
           </ul>
         )}
-        <hr className="my-4 border-gray-300" />
-        <div className="flex justify-between font-bold text-gray-700">
-          <span>{t("cart.subtotal")}</span>
+        <hr className="mt-2" />
+        <div className="flex justify-between font-semibold text-gray-600">
+          <span>{t("cart.subtotal_without_shipping")}</span>
           <span>{subtotal} USD</span>
         </div>
       </div>

@@ -33,7 +33,7 @@ function Header() {
 
   return (
     <div className="Header flex justify-center w-full my-4">
-      <nav className="Navbar navbar bg-white border border-gray-200 rounded-2xl w-full">
+      <nav className="Navbar navbar bg-white border rounded-2xl w-full">
         <div className="NavbarLogo flex flex-1 items-center">
           <Link to="/">
             <img src={nav01} className="h-8" alt={t("header.logo_alt")} />
@@ -52,7 +52,7 @@ function Header() {
               <span className="icon-[tabler--menu-4] text-gray-400 size-6"></span>
             </button>
             
-            <ul className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none"
+            <ul className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border rounded-2xl shadow-none"
                 role="menu"
                 aria-orientation="vertical"
                 aria-labelledby="dropdown-nav">
@@ -83,7 +83,7 @@ function Header() {
                   </span>
                 </Link>
               </li>
-              <hr className="border-gray-200 mx-4" />
+              <hr className="border mx-4" />
               <div>
                 <button id="nested-collapse-pages" className="text-gray-600 collapse-toggle dropdown-item collapse-open:text-gray-600 collapse-open:bg-base-content/10 justify-between" data-collapse="#nested-collapse-pages-content">
                   <span className="flex items-center gap-x-2">
@@ -133,23 +133,23 @@ function Header() {
                 <span className="icon-[tabler--shopping-cart] text-gray-400 size-6"></span>
               </div>
             </button>
-            <div className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border border-gray-200 rounded-2xl shadow-none min-w-80"
+            <div className="DropdownMenu dropdown-menu dropdown-open:opacity-100 hidden bg-white border rounded-2xl shadow-none min-w-80"
               role="menu"
               aria-orientation="vertical"
               aria-labelledby="dropdown-scrollable">
-              <div className="DropdownHeader dropdown-header justify-between p-4 align-middle border-none">
+              <div className="DropdownHeader dropdown-header justify-between p-4 align-middle">
                 {cartItems.length === 0 ? (
                   <h6 className="text-gray-600 pl-4">{t("cart.empty")}</h6>
                 ) : (
                   <>
-                    <h6 className="text-gray-600 flex">
+                    <h6 className="text-gray-600 flex text-sm">
                       <span className="mr-2">{t("cart.subtotal")}</span>
                       {cartItems
                         .reduce((total, item) => total + item.product_selling * item.quantity, 0)
                         .toFixed(2)} USD
                     </h6>
                     {totalQuantity < 2 ? (
-                      <p className="text-red-400">
+                      <p className="text-red-400 text-sm">
                         {t("cart.minimum_order", { min: 2 })}
                       </p>
                     ) : (
@@ -163,7 +163,7 @@ function Header() {
                   </>
                 )}
               </div>
-              <hr className="border-gray-200 mx-4" />
+              <hr className="border mx-4" />
               <div className="DropdownCart vertical-scrollbar rounded-scrollbar text-gray-600 overflow-auto max-md:max-w-60">
                 {cartItems.map((item, index) => (
                   <div key={`${item.product_name}-${item.selectedSize}`} className="ProductAdded dropdown-item rounded-2xl flex space-x-2">

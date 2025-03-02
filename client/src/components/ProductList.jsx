@@ -68,7 +68,7 @@ function ProductList() {
       {products.map((product, index) => (
         <div 
           key={index} 
-          className="ProductCard bg-white border border-gray-200 rounded-2xl w-64"
+          className="ProductCard bg-white border rounded-2xl w-64"
           onMouseEnter={() => setHoveredProductId(product.product_id)}
           onMouseLeave={() => setHoveredProductId(null)}
         >
@@ -84,7 +84,7 @@ function ProductList() {
               loading="lazy"
             />
           </div>
-          <hr className="border-gray-200 mx-6" />
+          <hr className="border mx-6" />
           <div className="ProductDetails p-4 text-gray-600">
             <p className="ProductName text-xl font-semibold">{product.product_name}</p>
             <p className="ProductCategory text-sm text-gray-400">{product.product_category}</p>
@@ -92,7 +92,7 @@ function ProductList() {
             <div className="ProductInteractions flex justify-left space-x-2 mt-4">
               <select
                 id="size"
-                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-200 focus:outline-0"
+                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border focus:outline-0"
                 aria-label="select"
                 value={selectedSizes[index] || ""}
                 onChange={(e) => handleSizeChange(index, e.target.value)}
@@ -110,7 +110,7 @@ function ProductList() {
                 className={`ProductAdd btn ${
                   selectedSizes[index]
                     ? "btn-outline btn-success"
-                    : "text-gray-400 bg-white border border-gray-300 shadow-none cursor-not-allowed hover:bg-white hover:border-gray-300 hover:shadow-none focus:bg-white focus:border-gray-300 focus:bg-gray-100 focus:shadow-none"
+                    : "text-gray-400 bg-white border shadow-none cursor-not-allowed hover:bg-white hover:border hover:shadow-none focus:bg-white focus:border focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -119,7 +119,7 @@ function ProductList() {
                 }}
                 disabled={!selectedSizes[index]}
               >
-                <span className="icon-[tabler--shopping-cart-plus] size-5"></span>
+                <span className="icon-[tabler--shopping-cart-plus] size-4"></span>
               </button>
             </div>
           </div>

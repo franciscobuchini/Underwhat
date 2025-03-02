@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 function Footer() {
   const { t, i18n } = useTranslation("global");
   return (
-    <footer className="footer bg-white rounded-t-2xl border border-gray-200 px-6 py-4">
+    <footer className="footer bg-white rounded-t-2xl border  px-6 py-4">
     <div className="flex w-full flex-wrap items-center justify-between">
       <div className="flex h-5 gap-4">
         <a href="#" className="link" aria-label="Instagram Link">

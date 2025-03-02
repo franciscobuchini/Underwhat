@@ -15,17 +15,19 @@
       "en": "Inglés",
       "es": "Español",
       "fr": "Francés"
-    },
-    "cart": {
+    }
+  },
+  "cart": {
       "empty": "Carrito vacío",
       "subtotal": "Subtotal: $",
       "checkout": "Pagar",
       "size": "Talla",
       "pieces": "Piezas",
       "remove": "Eliminar",
-      "minimum_order": "Min: 2 products"
-    }
+      "minimum_order": "Min: 2 products",
+      "subtotal_without_shipping": "Subtotal (sin envío):"
   },
+
   "product": {
     "size_placeholder": "Talla",
     "add_to_cart": "¡Producto añadido al carrito!",

@@ -15,17 +15,19 @@
       "en": "Anglais",
       "es": "Espagnol",
       "fr": "Français"
-    },
-    "cart": {
-      "empty": "Panier vide",
-      "subtotal": "Sous-total: $",
-      "checkout": "Commander",
-      "size": "Taille",
-      "pieces": "Pièces",
-      "remove": "Supprimer",
-      "minimum_order": "Min: 2 products"
     }
   },
+  "cart": {
+    "empty": "Panier vide",
+    "subtotal": "Sous-total: $",
+    "checkout": "Commander",
+    "size": "Taille",
+    "pieces": "Pièces",
+    "remove": "Supprimer",
+    "minimum_order": "Min: 2 products",
+    "subtotal_without_shipping": "Sous-total (sans frais de port):"
+  },
+  
   "product": {
     "size_placeholder": "Taille",
     "add_to_cart": "Produit ajouté au panier !",

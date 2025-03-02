@@ -20,21 +20,25 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="bg-base-100 w-full rounded-2xl shadow">
+    <div className="bg-white w-full rounded-2xl border">
       <div className="w-full p-4">
         <form className="needs-validation peer grid gap-y-4" noValidate>
           {/* Shipping Details */}
           <div className="w-full mt-2">
-            <h6 className="text-lg font-semibold">Shipping Details</h6>
+            <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
+              <span className="icon-[tabler--truck-delivery] size-6"></span>
+              Shipping Details
+            </h6>
             <hr className="mt-2" />
           </div>
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <label className="label label-text" htmlFor="userCountry">
+              <label className="label label-text text-gray-600 text-gray-600" htmlFor="userCountry">
                 Select Country *
               </label>
               <select
-                className="select"
+                className="select bg-white text-gray-600"
                 id="userCountry"
                 aria-label="select"
                 required
@@ -100,14 +104,14 @@ const CheckoutForm = () => {
             {/* Conditionally render the "Other Country" field */}
             {showOtherCountry && (
               <div>
-                <label className="label label-text" htmlFor="otherCountry">
+                <label className="label label-text text-gray-600 text-gray-600" htmlFor="otherCountry">
                   Other Country *
                 </label>
                 <input
                   id="otherCountry"
                   type="text"
                   placeholder="Andorra"
-                  className="input"
+                  className="input bg-white text-gray-600"
                   required
                 />
                 <span className="error-message">Please enter your country.</span>
@@ -117,57 +121,57 @@ const CheckoutForm = () => {
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <label className="label label-text" htmlFor="state">
+              <label className="label label-text text-gray-600" htmlFor="state">
                 State / Province / Region *
               </label>
-              <input id="state" type="text" className="input capitalize" required placeholder='California'/>
+              <input id="state" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='California'/>
               <span className="error-message">Please enter the state</span>
               <span className="success-message">Looks good!</span>
             </div>
             <div>
-              <label className="label label-text" htmlFor="city">
+              <label className="label label-text text-gray-600" htmlFor="city">
                 City *
               </label>
-              <input id="city" type="text" className="input capitalize" required placeholder='San Francisco'/>
+              <input id="city" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='San Francisco'/>
               <span className="error-message">Please enter the city</span>
               <span className="success-message">Looks good!</span>
             </div>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
             <div>
-              <label className="label label-text" htmlFor="street">
+              <label className="label label-text text-gray-600" htmlFor="street">
                 Street Name *
               </label>
-              <input id="street" type="text" className="input capitalize" required placeholder='Main Street'/>
+              <input id="street" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='Main Street'/>
               <span className="error-message">Please enter the street name</span>
               <span className="success-message">Looks good!</span>
             </div>
             <div>
-              <label className="label label-text" htmlFor="number">
+              <label className="label label-text text-gray-600" htmlFor="number">
                 Address Number *
               </label>
-              <input id="number" type="text" className="input capitalize" required placeholder='123'/>
+              <input id="number" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='123'/>
               <span className="error-message">Please enter the address number</span>
               <span className="success-message">Looks good!</span>
             </div>
             <div>
-              <label className="label label-text" htmlFor="apartment">
+              <label className="label label-text text-gray-600" htmlFor="apartment">
                 Apartment, Suite, etc.
               </label>
-              <input id="apartment" type="text" className="input capitalize" placeholder='6th B'/>
+              <input id="apartment" type="text" className="input bg-white text-gray-600 capitalize" placeholder='6th B'/>
               <span className="success-message">Looks good!</span>
             </div>
             <div>
-              <label className="label label-text" htmlFor="zipCode">
+              <label className="label label-text text-gray-600" htmlFor="zipCode">
                 ZIP Code *
               </label>
-              <input id="zipCode" type="text" className="input capitalize" required placeholder='1234'/>
+              <input id="zipCode" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='1234'/>
               <span className="success-message">Looks good!</span>
             </div>
           </div>
 
           <div className="w-full">
-              <label className="label label-text" htmlFor="relevantInfo">
+              <label className="label label-text text-gray-600" htmlFor="relevantInfo">
                 Relevant shipping information
               </label>
               <textarea
@@ -180,33 +184,36 @@ const CheckoutForm = () => {
 
           {/* Contact Details */}
           <div className="w-full mt-2">
-            <h6 className="text-lg font-semibold">Contact Details</h6>
+            <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
+              <span className="icon-[tabler--message-user] size-6"></span>
+              Contact Details
+            </h6>
             <hr className="mt-2" />
           </div>
           
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <label className="label label-text" htmlFor="email">
+              <label className="label label-text text-gray-600" htmlFor="email">
                 Email *
               </label>
-              <input id="email" type="email" className="input" required placeholder='underwather@hockey.com'/>
+              <input id="email" type="email" className="input bg-white text-gray-600" required placeholder='underwather@hockey.com'/>
               <span className="error-message">Please enter an email</span>
               <span className="success-message">Looks good!</span>
             </div>
             <div className="grid grid-cols-1 gap-6 grid-cols-2">
               <div className=''>
-                <label className="label label-text" htmlFor="areaCode">
+                <label className="label label-text text-gray-600" htmlFor="areaCode">
                   Area Code *
                 </label>
-                <input id="areaCode" type="text" className="input" required placeholder='+01'/>
+                <input id="areaCode" type="text" className="input bg-white text-gray-600" required placeholder='+01'/>
                 <span className="error-message">Please enter the city</span>
                 <span className="success-message">Looks good!</span>
               </div>
               <div>
-                <label className="label label-text" htmlFor="phone">
+                <label className="label label-text text-gray-600" htmlFor="phone">
                   Phone Number *
                 </label>
-                <input id="phone" type="tel" className="input" required placeholder='555 123456'/>
+                <input id="phone" type="tel" className="input bg-white text-gray-600" required placeholder='555 123456'/>
                 <span className="error-message">Please enter the city</span>
                 <span className="success-message">Looks good!</span>
               </div>
@@ -216,13 +223,16 @@ const CheckoutForm = () => {
           
           {/* How do we proceed */}
           <div className="w-full mt-2">
-            <h6 className="text-lg font-semibold">How do we proceed</h6>
+            <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
+              <span className="icon-[tabler--progress-check] size-6"></span>
+              Validations
+            </h6>
             <hr className="mt-2" />
           </div>
 
           <div class="flex items-center gap-3">
-            <input type="checkbox" class="checkbox checkbox-primary" id="userAgre" required />
-            <label className="label text-base" htmlFor="userAgre">
+            <input type="checkbox" class="checkbox checkbox-primary bg-white" id="userAgre" required />
+            <label className="label text-gray-600" htmlFor="userAgre">
             The payment link will be sent to the email address you provided. Please note that this email is not automatic and may take some time to be sent. Once you receive it, it means we are aware of your order. Your order will begin production once the payment has been received. By checking this box, you confirm that you have read and understood this information.
             </label>
             <span className="error-message">Please confirm our T&C</span>
@@ -231,8 +241,8 @@ const CheckoutForm = () => {
 
 
           <div class="flex items-center gap-3">
-            <input type="checkbox" class="checkbox checkbox-primary" id="userAgre" required />
-            <label className="label text-base" htmlFor="userAgre">
+            <input type="checkbox" class="checkbox checkbox-primary bg-white" id="userAgre" required />
+            <label className="label text-gray-600" htmlFor="userAgre">
               <a
                 href="/terms-and-conditions"
                 target="_blank"

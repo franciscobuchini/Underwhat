@@ -24,7 +24,8 @@
     "size": "Size",
     "pieces": "Pieces",
     "remove": "Remove",
-    "minimum_order": "Min: 2 products"
+    "minimum_order": "Min: 2 products",
+    "subtotal_without_shipping": "Subtotal (without shipping):"
   },
   "product": {
     "size_placeholder": "Size",
