@@ -20,8 +20,8 @@
       "empty": "Panier vide",
       "subtotal": "Sous-total: $",
       "checkout": "Commander",
-      "size": "Taille:",
-      "pieces": "Pièces:",
+      "size": "Taille",
+      "pieces": "Pièces",
       "remove": "Supprimer",
       "minimum_order": "Min: 2 products"
     }

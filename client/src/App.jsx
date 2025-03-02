@@ -42,9 +42,9 @@ function App() {
     <Router>
       <I18nextProvider i18n={i18next}>
         <CartProvider>
-          <div className="flex flex-col min-h-screen">
+          <div className="flex flex-col min-h-screen mx-4 md:mx-0">
             <Header />
-            <main className="flex-1">
+            <main className="flex-1 ">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/team-outfit" element={<TeamOutfit />} />

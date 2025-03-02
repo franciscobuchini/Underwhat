@@ -15,16 +15,16 @@
       "en": "English",
       "es": "Spanish",
       "fr": "French"
-    },
-    "cart": {
-      "empty": "Cart is empty",
-      "subtotal": "Subtotal: $",
-      "checkout": "Checkout",
-      "size": "Size:",
-      "pieces": "Pieces:",
-      "remove": "Remove",
-      "minimum_order": "Min: 2 products"
     }
+  },
+  "cart": {
+    "empty": "Cart is empty",
+    "subtotal": "Subtotal:",
+    "checkout": "Checkout",
+    "size": "Size",
+    "pieces": "Pieces",
+    "remove": "Remove",
+    "minimum_order": "Min: 2 products"
   },
   "product": {
     "size_placeholder": "Size",

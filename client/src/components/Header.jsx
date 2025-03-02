@@ -139,24 +139,24 @@ function Header() {
               aria-labelledby="dropdown-scrollable">
               <div className="DropdownHeader dropdown-header justify-between p-4 align-middle border-none">
                 {cartItems.length === 0 ? (
-                  <h6 className="text-gray-600 pl-4">{t("header.cart.empty")}</h6>
+                  <h6 className="text-gray-600 pl-4">{t("cart.empty")}</h6>
                 ) : (
                   <>
                     <h6 className="text-gray-600 flex">
-                      <span className="mr-2">{t("header.cart.subtotal")}</span>
+                      <span className="mr-2">{t("cart.subtotal")}</span>
                       {cartItems
                         .reduce((total, item) => total + item.product_selling * item.quantity, 0)
-                        .toFixed(2)}
+                        .toFixed(2)} USD
                     </h6>
                     {totalQuantity < 2 ? (
                       <p className="text-red-400">
-                        {t("header.cart.minimum_order", { min: 2 })}
+                        {t("cart.minimum_order", { min: 2 })}
                       </p>
                     ) : (
                       <button
                         className="CartCheckout btn btn-text btn-outline rounded-2xl btn-success btn-soft"
                         onClick={() => navigate('/checkout')}>
-                        <small>{t("header.cart.checkout")}</small>
+                        <small>{t("cart.checkout")}</small>
                         <span className="icon-[tabler--shopping-cart-check] size-6"></span>
                       </button>
                     )}
@@ -178,25 +178,25 @@ function Header() {
                     <div className="w-full">
                       <div className="flex justify-between items-center">
                         <h6 className="ProductName text-gray-600">{item.product_name}</h6>
-                        <p className="ProductPrice text-gray-600">
-                          <small>${(item.product_selling * item.quantity).toFixed(2)} USD</small>
+                        <p className="ProductPrice text-gray-600 text-sm">
+                          {(item.product_selling * item.quantity).toFixed(2)} USD
                         </p>
                       </div>
                       <div className="flex flex-col items-left">
-                        <p className="ProductCategory text-gray-400">
-                          <small>{item.product_category}</small>
+                        <p className="ProductCategory text-gray-400 text-sm">
+                          {item.product_category}
                         </p>
-                        <p className="ProductSize text-gray-400">
-                          <small>{t("header.cart.size")} {item.selectedSize}</small>
+                        <p className="ProductSize text-gray-400 text-sm">
+                          {t("cart.size")}: {item.selectedSize}
                         </p>
-                        <p className="ProductPieces text-gray-400">
-                          <small>{t("header.cart.pieces")} {item.quantity}</small>
+                        <p className="ProductPieces text-gray-400 text-sm">
+                          {t("cart.pieces")}: {item.quantity}
                         </p>
                         <button
-                          className="ProductRemove text-red-400 hover:text-red-700 w-min"
+                          className="ProductRemove text-red-400 hover:text-red-700 w-min text-sm"
                           onClick={() => handleRemoveFromCart(index)}
                         >
-                          <small>{t("header.cart.remove")}</small>
+                          {t("cart.remove")}
                         </button>
                       </div>
                     </div>

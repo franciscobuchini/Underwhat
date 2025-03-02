@@ -24,9 +24,9 @@ const CheckoutForm = () => {
       <div className="w-full p-4">
         <form className="needs-validation peer grid gap-y-4" noValidate>
           {/* Shipping Details */}
-          <div className="w-full">
+          <div className="w-full mt-2">
             <h6 className="text-lg font-semibold">Shipping Details</h6>
-            <hr className="mb-4 mt-2" />
+            <hr className="mt-2" />
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
@@ -39,6 +39,7 @@ const CheckoutForm = () => {
                 aria-label="select"
                 required
                 onChange={handleCountryChange}
+                defaultValue="united_states"
               >
                 <option value="angola">Angola</option>
                 <option value="argentina">Argentina</option>
@@ -175,9 +176,60 @@ const CheckoutForm = () => {
                 placeholder="Back door, ring the bell, etc."
               ></textarea>
               <span className="success-message">Looks good!</span>
-          </div>            
+          </div>
 
-          {/* EMAIL Y PHONE NUMBER */}
+          {/* Contact Details */}
+          <div className="w-full mt-2">
+            <h6 className="text-lg font-semibold">Contact Details</h6>
+            <hr className="mt-2" />
+          </div>
+          
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label className="label label-text" htmlFor="email">
+                Email *
+              </label>
+              <input id="email" type="email" className="input" required placeholder='underwather@hockey.com'/>
+              <span className="error-message">Please enter an email</span>
+              <span className="success-message">Looks good!</span>
+            </div>
+            <div className="grid grid-cols-1 gap-6 grid-cols-2">
+              <div className=''>
+                <label className="label label-text" htmlFor="areaCode">
+                  Area Code *
+                </label>
+                <input id="areaCode" type="text" className="input" required placeholder='+01'/>
+                <span className="error-message">Please enter the city</span>
+                <span className="success-message">Looks good!</span>
+              </div>
+              <div>
+                <label className="label label-text" htmlFor="phone">
+                  Phone Number *
+                </label>
+                <input id="phone" type="tel" className="input" required placeholder='555 123456'/>
+                <span className="error-message">Please enter the city</span>
+                <span className="success-message">Looks good!</span>
+              </div>
+
+            </div>
+          </div>           
+          
+          {/* How do we proceed */}
+          <div className="w-full mt-2">
+            <h6 className="text-lg font-semibold">How do we proceed</h6>
+            <hr className="mt-2" />
+          </div>
+
+          <div class="flex items-center gap-3">
+            <input type="checkbox" class="checkbox checkbox-primary" id="userAgre" required />
+            <label className="label text-base" htmlFor="userAgre">
+            The payment link will be sent to the email address you provided. Please note that this email is not automatic and may take some time to be sent. Once you receive it, it means we are aware of your order. Your order will begin production once the payment has been received. By checking this box, you confirm that you have read and understood this information.
+            </label>
+            <span className="error-message">Please confirm our T&C</span>
+            <span className="success-message">Looks good!</span>
+          </div>
+
+
           <div class="flex items-center gap-3">
             <input type="checkbox" class="checkbox checkbox-primary" id="userAgre" required />
             <label className="label text-base" htmlFor="userAgre">
