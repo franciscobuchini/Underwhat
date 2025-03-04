@@ -81,7 +81,10 @@
     "title": "Outfits for UWH teams"
   },
   "checkout": {
-    "title": "Order Details"
+    "order_details": "Order Details",
+    "shipping_details": "Shipping Details",
+    "contact_details": "Contact Details",
+    "validations": "Validations"
   },
   "terms": {
     "title": "Terms and Conditions:",

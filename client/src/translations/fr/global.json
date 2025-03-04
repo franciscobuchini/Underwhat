@@ -82,7 +82,10 @@
     "title": "Équipements pour les équipes de UWH"
   },
   "checkout": {
-    "title": "Détails de la commande"
+    "order_details": "Détails de la commande",
+    "shipping_details": "Détails de l'expédition",
+    "contact_details": "Coordonnées",
+    "validations": "Validations"
   },
   "terms": {
     "title": "Termes et Conditions:",

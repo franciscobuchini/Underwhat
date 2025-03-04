@@ -1,12 +1,13 @@
 //CheckoutForm.jsx
+import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect } from 'react';
 import flatpickr from 'flatpickr';
 
 const CheckoutForm = () => {
-  // State to control the visibility of the "Other Country" field
+  const { t } = useTranslation("global");
   const [showOtherCountry, setShowOtherCountry] = useState(false);
+  const [formValid, setFormValid] = useState(false);
 
-  // Initialize flatpickr using useEffect
   useEffect(() => {
     flatpickr('#jsPickr', {
       allowInput: true,
@@ -14,10 +15,22 @@ const CheckoutForm = () => {
     });
   }, []);
 
-  // Handle changes in the country selector
   const handleCountryChange = (event) => {
     setShowOtherCountry(event.target.value === 'other');
   };
+
+  const checkFormValidity = () => {
+    const form = document.querySelector(".needs-validation");
+    if (form) {
+      setFormValid(form.checkValidity());
+    }
+  };
+
+  useEffect(() => {
+    const inputs = document.querySelectorAll(".needs-validation input, .needs-validation select, .needs-validation textarea");
+    inputs.forEach(input => input.addEventListener("input", checkFormValidity));
+    return () => inputs.forEach(input => input.removeEventListener("input", checkFormValidity));
+  }, []);
 
   return (
     <div className="bg-white w-full rounded-2xl border">
@@ -27,14 +40,14 @@ const CheckoutForm = () => {
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
               <span className="icon-[tabler--truck-delivery] size-6"></span>
-              Shipping Details
+              {t("checkout.shipping_details")}
             </h6>
             <hr className="mt-2" />
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <label className="label label-text text-gray-600 text-gray-600" htmlFor="userCountry">
+              <label className="label label-text text-gray-600" htmlFor="userCountry">
                 Select Country *
               </label>
               <select
@@ -185,7 +198,7 @@ const CheckoutForm = () => {
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
               <span className="icon-[tabler--message-user] size-6"></span>
-              Contact Details
+              {t("checkout.contact_details")}
             </h6>
             <hr className="mt-2" />
           </div>
@@ -212,7 +225,7 @@ const CheckoutForm = () => {
                 <label className="label label-text text-gray-600" htmlFor="phone">
                   Phone Number *
                 </label>
-                <input id="phone" type="tel" className="input bg-white text-gray-600" required placeholder='555 123456'/>
+                <input id="phone" type="tel" className="input bg-white text-gray-600 " required placeholder='555 123456'/>
                 <span className="error-message">Please enter the city</span>
                 <span className="success-message">Looks good!</span>
               </div>
@@ -220,11 +233,11 @@ const CheckoutForm = () => {
             </div>
           </div>           
           
-          {/* How do we proceed */}
+          {/* Validations */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
               <span className="icon-[tabler--progress-check] size-6"></span>
-              Validations
+              {t("checkout.validations")}
             </h6>
             <hr className="mt-2" />
           </div>
@@ -247,7 +260,7 @@ const CheckoutForm = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="underline">
-                Agree to our terms and conditions
+                Agree to our terms and conditions.
               </a>
             </label>
             <span className="error-message">Please confirm our T&C</span>
@@ -255,9 +268,9 @@ const CheckoutForm = () => {
           </div>
 
           {/* Submit Button */}
-          <div className="mt-4">
-            <button type="submit" name="submitButton" className="btn btn-primary">
-              Submit
+          <div className="mt-4 flex justify-center">
+            <button type="submit" name="submitButton" className="btn btn-primary disabled:bg-primary-100 disabled:text-white border-none" disabled={!formValid}>
+              Confirm order
             </button>
           </div>
 

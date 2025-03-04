@@ -38,7 +38,7 @@ const Checkout = () => {
         <div className="w-full mt-2">
           <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
             <span className="icon-[tabler--shopping-cart] size-6"></span>
-            {t("checkout.title")}
+            {t("checkout.order_details")}
           </h6>
           <hr className="mt-2" />
         </div>

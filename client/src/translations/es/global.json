@@ -82,7 +82,10 @@
     "title": "Equipamiento para equipos de UWH"
   },
   "checkout": {
-    "title": "Detalles del pedido"
+    "order_details": "Detalles del pedido",
+    "shipping_details": "Detalles del envío",
+    "contact_details": "Detalles de contacto",
+    "validations": "Validaciones"
   },
   "terms": {
     "title": "Términos y Condiciones:",
