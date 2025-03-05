@@ -78,7 +78,8 @@
     "brand_title": "The brand for your team"
   },
   "team": {
-    "title": "Outfits for UWH teams"
+    "title": "Outfits for UWH teams",
+    "content": "Don't play like a team if you don't dress like one. At Underwhat!?, we create custom apparel for Underwater Hockey teams that want to stand out in and out of the pool. We specialize in offering unique outfits, combining innovative design with the highest quality materials. Each garment is designed to provide comfort, durability and a distinctive style that elevates your team's presence in every competition."
   },
   "checkout": {
     "order_details": "Order Details",

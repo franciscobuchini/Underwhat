@@ -1,12 +1,21 @@
 //CartContext.jsx
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
+  // Cargar carrito desde localStorage al iniciar
+  const [cartItems, setCartItems] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
+    return savedCart ? JSON.parse(savedCart) : [];
+  });
+
+  // Guardar carrito en localStorage cada vez que cambia
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const addToCart = (product) => {
     setCartItems((prevItems) => {
@@ -15,17 +24,15 @@ export const CartProvider = ({ children }) => {
           item.product_name === product.product_name &&
           item.selectedSize === product.selectedSize
       );
-  
+
       if (existingItemIndex > -1) {
-        // Si existe, actualiza la cantidad sin mutar el estado original
         return prevItems.map((item, index) =>
           index === existingItemIndex
             ? { ...item, quantity: item.quantity + 1 }
             : item
         );
       }
-  
-      // Si no existe, agrega el producto con cantidad inicial 1
+
       return [...prevItems, { ...product, quantity: 1 }];
     });
   };

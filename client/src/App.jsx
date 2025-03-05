@@ -1,5 +1,7 @@
 // App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { CartProvider } from './components/CartContext';
@@ -38,6 +40,15 @@ i18next
 
 function App() {
   const { t } = useTranslation("global");
+  const [count, setCount] = useState(() => {
+    return parseInt(localStorage.getItem("count")) || 0;
+  });
+  
+
+  useEffect(() => {
+    localStorage.setItem("count", count.toString());
+  }, [count]);
+
   return (
     <Router>
       <I18nextProvider i18n={i18next}>
