@@ -13,45 +13,45 @@ const TeamOutfitForm = () => {
 
     // Mapeo de los valores de las opciones a códigos de color válidos en CSS
     const colorMapping = {
-      white: '#ffffff',
-      seagull_gray: '#b0b0b0',
-      khaki: '#c3b091',
-      glacier_blue: '#7ec8e3',
-      breeze_green: '#a3d9a5',
-      apricot: '#fbceb1',
-      ice_blue: '#d7eef5',
-      haze_blue: '#aec6cf',
-      lotus_purple: '#a18cd1',
-      sakura_pink: '#f7c8da',
-      light_green: '#b6d7a8',
-      fog_gray: '#c0c0c0',
-      pale_green: '#d0f0c0',
-      dark_green: '#006400',
-      bird_green: '#7cb342',
-      navy_blue: '#000080',
-      dark_gray: '#555555',
-      light_gray: '#d3d3d3',
-      coffee: '#6f4e37',
-      maple_leaf_red: '#d32f2f',
-      black: '#000000',
-      wood_ash: '#b2beb5',
-      light_coffee: '#a67b5b',
-      ink_blue: '#3b5998',
-      milk_apricot: '#fdd5b1',
-      jungle_green: '#29ab87',
-      wine_red: '#722f37',
-      hemp_ash: '#8e8d8a',
-      pink: '#ffc0cb',
-      asami: '#e6a8d7',
-      light_blue: '#add8e6',
-      deep_khaki: '#bdb76b',
-      burgundy: '#800020',
-      big_red: '#ff0000',
-      ash: '#b2beb5',
-      milk_tea: '#c4a484',
-      mi_xing: '#f5deb3',
-      iron_gray: '#48494b',
-      sapphire: '#0f52ba'
+      white: '#EEECED',
+      seagull_gray: '#D6D0D0',
+      khaki: '#E0D3CB',
+      glacier_blue: '#DFE8E5',
+      breeze_green: '#CFE3E2',
+      apricot: '#F4DFCC',
+      ice_blue: '#CBD7E5',
+      haze_blue: '#A7B9DD',
+      lotus_purple: '#CDCDEF',
+      sakura_pink: '#FFB9DB',
+      light_green: '#C9CAC4',
+      fog_gray: '#8B8788',
+      pale_green: '#63625E',
+      dark_green: '#2C403D',
+      bird_green: '#255E72',
+      navy_blue: '#34365C',
+      dark_gray: '#323232',
+      light_gray: '#92909B',
+      coffee: '#45342C',
+      maple_leaf_red: '#412428',
+      black: '#1E1D23',
+      wood_ash: '#D8C8B9',
+      light_coffee: '#905340',
+      ink_blue: '#32344B',
+      milk_apricot: '#EDD9BA',
+      jungle_green: '#37564E',
+      wine_red: '#983541',
+      hemp_ash: '#AFAFB1',
+      pink: '#EBB2B9',
+      asami: '#F4E7D7',
+      light_blue: '#A9B6C6',
+      deep_khaki: '#AE8E75',
+      burgundy: '#851C25',
+      big_red: '#DE012C',
+      ash: '#DADADA',
+      milk_tea: '#E3D7CB',
+      yone_anzu: '#ECD3BD',
+      iron_gray: '#59575A',
+      sapphire: '#4976D3'
     };
 
     // Función para manejar el cambio en el select
@@ -60,7 +60,7 @@ const TeamOutfitForm = () => {
     };
 
     // Se obtiene el color correspondiente o se deja transparente si no hay selección
-    const currentColor = colorMapping[selectedColor] || 'transparent';
+    const currentColor = colorMapping[selectedColor] || 'white';
 
     return (
       <div className="bg-white w-full rounded-2xl border">
@@ -91,52 +91,59 @@ const TeamOutfitForm = () => {
                   <label className="label label-text text-gray-600" htmlFor="selectColor">
                     Select Color
                   </label>
-                  <select
-                    className="select bg-white text-gray-600"
-                    id="selectColor"
-                    aria-label="select"
-                    onChange={handleColorChange}
-                  >
-                    <option value="white">White</option>
-                    <option value="seagull_gray">Seagull Gray</option>
-                    <option value="khaki">Khaki</option>
-                    <option value="glacier_blue">Glacier Blue</option>
-                    <option value="breeze_green">Breeze Green</option>
-                    <option value="apricot">Apricot</option>
-                    <option value="ice_blue">Ice Blue</option>
-                    <option value="haze_blue">Haze Blue</option>
-                    <option value="lotus_purple">Lotus Purple</option>
-                    <option value="sakura_pink">Sakura Pink</option>
-                    <option value="light_green">Light Green</option>
-                    <option value="fog_gray">Fog Gray</option>
-                    <option value="pale_green">Pale Green</option>
-                    <option value="dark_green">Dark Green</option>
-                    <option value="bird_green">Bird Green</option>
-                    <option value="navy_blue">Navy Blue</option>
-                    <option value="dark_gray">Dark Gray</option>
-                    <option value="light_gray">Light Gray</option>
-                    <option value="coffee">Coffee</option>
-                    <option value="maple_leaf_red">Maple Leaf Red</option>
-                    <option value="black">Black</option>
-                    <option value="wood_ash">Wood Ash</option>
-                    <option value="light_coffee">Light Coffee</option>
-                    <option value="ink_blue">Ink Blue</option>
-                    <option value="milk_apricot">Milk Apricot</option>
-                    <option value="jungle_green">Jungle Green</option>
-                    <option value="wine_red">Wine Red</option>
-                    <option value="hemp_ash">Hemp Ash</option>
-                    <option value="pink">Pink</option>
-                    <option value="asami">Asami</option>
-                    <option value="light_blue">Light Blue</option>
-                    <option value="deep_khaki">Deep Khaki</option>
-                    <option value="burgundy">Burgundy</option>
-                    <option value="big_red">Big Red</option>
-                    <option value="ash">Ash</option>
-                    <option value="milk_tea">Milk Tea</option>
-                    <option value="mi_xing">Mi Xing</option>
-                    <option value="iron_gray">Iron Gray</option>
-                    <option value="sapphire">Sapphire</option>
-                  </select>
+                  <div className='flex gap-2 items-center'>
+                    <select
+                      className="select bg-white text-gray-600"
+                      id="selectColor"
+                      aria-label="select"
+                      onChange={handleColorChange}
+                    >
+                      <option value="white">White</option>
+                      <option value="seagull_gray">Seagull Gray</option>
+                      <option value="khaki">Khaki</option>
+                      <option value="glacier_blue">Glacier Blue</option>
+                      <option value="breeze_green">Breeze Green</option>
+                      <option value="apricot">Apricot</option>
+                      <option value="ice_blue">Ice Blue</option>
+                      <option value="haze_blue">Haze Blue</option>
+                      <option value="lotus_purple">Lotus Purple</option>
+                      <option value="sakura_pink">Sakura Pink</option>
+                      <option value="light_green">Light Green</option>
+                      <option value="fog_gray">Fog Gray</option>
+                      <option value="pale_green">Pale Green</option>
+                      <option value="dark_green">Dark Green</option>
+                      <option value="bird_green">Bird Green</option>
+                      <option value="navy_blue">Navy Blue</option>
+                      <option value="dark_gray">Dark Gray</option>
+                      <option value="light_gray">Light Gray</option>
+                      <option value="coffee">Coffee</option>
+                      <option value="maple_leaf_red">Maple Leaf Red</option>
+                      <option value="black">Black</option>
+                      <option value="wood_ash">Wood Ash</option>
+                      <option value="light_coffee">Light Coffee</option>
+                      <option value="ink_blue">Ink Blue</option>
+                      <option value="milk_apricot">Milk Apricot</option>
+                      <option value="jungle_green">Jungle Green</option>
+                      <option value="wine_red">Wine Red</option>
+                      <option value="hemp_ash">Hemp Ash</option>
+                      <option value="pink">Pink</option>
+                      <option value="asami">Asami</option>
+                      <option value="light_blue">Light Blue</option>
+                      <option value="deep_khaki">Deep Khaki</option>
+                      <option value="burgundy">Burgundy</option>
+                      <option value="big_red">Big Red</option>
+                      <option value="ash">Ash</option>
+                      <option value="milk_tea">Milk Tea</option>
+                      <option value="yone_anzu">Yone Anzu</option>
+                      <option value="iron_gray">Iron Gray</option>
+                      <option value="sapphire">Sapphire</option>
+                    </select>
+                    <div
+                      className="colourCircle rounded-lg w-10 h-10 border"
+                      style={{ backgroundColor: currentColor }}
+                    ></div>
+                  </div>
+                  
                   <span className="error-message">Please select your country</span>
                   <span className="success-message">Looks good!</span>
                 </div>
@@ -200,24 +207,21 @@ const TeamOutfitForm = () => {
                 </div>
               </div>
               <div>
-                <div className="ProductImage hover:bg-gray-100 rounded-t-2xl overflow-hidden">
+                <div className="ProductImage rounded-t-2xl ">
                   <img
                     className="Image01 object-cover w-full h-auto transition-all duration-1000 hover:scale-105"
                     loading="lazy"
                   />
-                  <div
-                    className="colourCircle rounded-full w-12 h-12 m-4"
-                    style={{ backgroundColor: currentColor }}
-                  ></div>
                 </div>
               </div>
-              {/* Submit Button */}
-              <div className="mt-4 flex justify-center">
+            </div>
+
+            {/* Submit Button */}
+            <div className="mt-4 flex justify-center">
                 <button type="submit" name="submitButton" className="btn btn-primary border-none">
                   Confirm
                 </button>
               </div>
-            </div>
           </form>
         </div>
       </div>
