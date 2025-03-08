@@ -8,13 +8,6 @@ const CheckoutForm = () => {
   const [showOtherCountry, setShowOtherCountry] = useState(false);
   const [formValid, setFormValid] = useState(false);
 
-  useEffect(() => {
-    flatpickr('#jsPickr', {
-      allowInput: true,
-      monthSelectorType: 'static',
-    });
-  }, []);
-
   const handleCountryChange = (event) => {
     setShowOtherCountry(event.target.value === 'other');
   };
@@ -242,8 +235,8 @@ const CheckoutForm = () => {
             <hr className="mt-2" />
           </div>
 
-          <div class="flex items-center gap-3">
-            <input type="checkbox" class="checkbox checkbox-primary bg-white" id="userAgre" required />
+          <div className="flex items-center gap-3">
+            <input type="checkbox" className="checkbox checkbox-primary bg-white" id="userAgre" required />
             <label className="label text-gray-600" htmlFor="userAgre">
             The payment link will be sent to the email address you provided. Please note that this email is not automatic and may take some time to be sent. Once you receive it, it means we are aware of your order. Your order will begin production once the payment has been received. By checking this box, you confirm that you have read and understood this information.
             </label>
@@ -252,8 +245,8 @@ const CheckoutForm = () => {
           </div>
 
 
-          <div class="flex items-center gap-3">
-            <input type="checkbox" class="checkbox checkbox-primary bg-white" id="userAgre" required />
+          <div className="flex items-center gap-3">
+            <input type="checkbox" className="checkbox checkbox-primary bg-white" id="userAgre" required />
             <label className="label text-gray-600" htmlFor="userAgre">
               <a
                 href="/terms-and-conditions"

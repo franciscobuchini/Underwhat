@@ -1,4 +1,4 @@
-// App.jsx
+//App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
@@ -10,19 +10,19 @@ import TeamOutfit from './pages/TeamOutfit';
 import FAQ from './pages/FAQ';
 import AboutUs from './pages/AboutUs';
 import Checkout from './pages/Checkout';
+import TermsAndConditions from './pages/TermsAndConditions';
 
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
 import { useTranslation } from 'react-i18next';
 import { initReactI18next } from 'react-i18next';
 
-// Importa las traducciones
+// Import translations
 import global_en from './translations/en/global.json';
 import global_es from './translations/es/global.json';
 import global_fr from './translations/fr/global.json';
-import TermsAndConditions from './pages/TermsAndConditions';
 
-// Configuración de i18next
+// i18next configuration
 i18next
   .use(initReactI18next)
   .init({
@@ -43,7 +43,6 @@ function App() {
   const [count, setCount] = useState(() => {
     return parseInt(localStorage.getItem("count")) || 0;
   });
-  
 
   useEffect(() => {
     localStorage.setItem("count", count.toString());
@@ -55,7 +54,7 @@ function App() {
         <CartProvider>
           <div className="flex flex-col min-h-screen mx-2 md:mx-4">
             <Header />
-            <main className="flex-1 ">
+            <main className="flex-1">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/team-outfit" element={<TeamOutfit />} />

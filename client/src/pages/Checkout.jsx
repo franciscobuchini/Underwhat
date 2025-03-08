@@ -52,7 +52,7 @@ const Checkout = () => {
                 <img 
                   src={item.image} 
                   alt={item.product_name} 
-                  className="w-20 object-cover rounded-lg"
+                  className="w-20 object-cover rounded-2xl"
                   loading="lazy"
                 />
                 
