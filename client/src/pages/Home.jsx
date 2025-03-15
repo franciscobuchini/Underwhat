@@ -15,4 +15,4 @@ const Home = () => {
 
 export default Home;
 
-//TENGO QUE CAMBIAR TODA LA UI DE LA APLICACION LPMMMMMMMMMMMMMMMMMMMM
+//TENGO QUE CAMBIAR TODA LA UI DE LA APLICACION LPMMMMMMMMMMMMMMMMMMMM probar tailwind css solo, sin poner un peso, buscar internet

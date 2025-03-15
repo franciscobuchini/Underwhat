@@ -1,8 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../node_modules/@my-company/ui-lib";
 
 :root {
-  background-color: #1b1b1b;
-  background-color: #fafafa;
+  background-color: #FAFAFA;
 }
