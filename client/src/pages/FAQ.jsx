@@ -1,47 +1,53 @@
 //FAQ.jsx
+import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SizesTable from '../components/SizesTable';
 import { Icon } from "@iconify/react";
 
 const FAQ = () => {
   const { t } = useTranslation("global");
-  
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const toggleAccordion = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   const faqItems = [
     {
       id: "faq-01",
       questionKey: "sizes",
       answerComponent: <SizesTable />,
-      icon: "icon-[tabler--ruler-measure-2]"
+      icon: "icon-park-twotone:ruler-one"
     },
     {
       id: "faq-02",
       questionKey: "taxes",
       answerKey: "taxes",
-      icon: "icon-[tabler--receipt-tax]"
+      icon: "icon-park-twotone:bill"
     },
     {
       id: "faq-03",
       questionKey: "shipping",
       answerKey: "shipping",
-      icon: "icon-[tabler--plane-tilt]"
+      icon: "icon-park-twotone:airplane"
     },
     {
       id: "faq-04",
       questionKey: "custom",
       answerKey: "custom",
-      icon: "icon-[tabler--shirt-sport]"
+      icon: "icon-park-twotone:basketball-clothes"
     },
     {
       id: "faq-05",
       questionKey: "returns",
       answerKey: "returns",
-      icon: "icon-[tabler--truck-return]"
+      icon: "icon-park-twotone:back"
     },
     {
       id: "faq-06",
       questionKey: "origin",
       answerKey: "origin",
-      icon: "icon-[tabler--world-pin]"
+      icon: "icon-park-twotone:local-two"
     },
   ];
 
@@ -52,34 +58,26 @@ const FAQ = () => {
         {t("faq.title")}
       </h1>
       
-      <div className="accordion divide-neutral/20 divide-y">
-        {faqItems.map((item) => (
-          <div key={item.id} className="accordion-item" id={item.id}>
-            <button 
-              className="accordion-toggle inline-flex items-center justify-between text-start w-full"
-              aria-controls={`${item.id}-collapse`} 
-              aria-expanded="false"
+      <div className="divide-y divide-gray-300">
+        {faqItems.map((item, index) => (
+          <div key={item.id} className={`${index === faqItems.length - 1 ? '' : 'border-b'}` }>
+            <button
+              className="w-full flex items-center justify-between py-4 text-gray-600 hover:text-violet-500 focus:outline-none"
+              onClick={() => toggleAccordion(index)}
             >
-              <span className="inline-flex items-center gap-x-4 text-gray-600">
-                <span className={`${item.icon} size-6`}></span>
+              <span className="flex items-center gap-4">
+                <Icon icon={item.icon} className="text-violet-400 size-6" />
                 {t(`faq.questions.${item.questionKey}`)}
               </span>
-              <span className="icon-[tabler--chevron-left] accordion-item-active:-rotate-90 text-base- size-4.5 shrink-0 transition-transform duration-300 rtl:-rotate-180"></span>
+              <Icon
+                icon="mingcute:down-line" 
+                className={`size-5 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
+              />
             </button>
-
-            <div 
-              id={`${item.id}-collapse`} 
-              className="accordion-content hidden w-full overflow-hidden transition-[height] duration-300"
-              aria-labelledby={item.id}
-              role="region"
-            >
-              {item.answerComponent || (
-                <div className="px-5 pb-4">
-                  <p className="font-normal text-gray-400">
-                    {t(`faq.answers.${item.answerKey}`)}
-                  </p>
-                </div>
-              )}
+            <div className={`transition-all overflow-hidden ${openIndex === index ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0'}`}>
+              <div className="px-5 pb-4 text-gray-400">
+                {item.answerComponent || <p>{t(`faq.answers.${item.answerKey}`)}</p>}
+              </div>
             </div>
           </div>
         ))}

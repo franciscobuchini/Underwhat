@@ -11,10 +11,10 @@ function Footer() {
     <div className="flex w-full flex-wrap items-center justify-between">
       <div className="flex h-5 gap-4">
         <a href="#" className="link" aria-label="Instagram Link">
-        <Icon icon="hugeicons:instagram" className="size-6 text-gray-400" />
+        <Icon icon="icon-park-twotone:instagram" className="size-6 text-violet-400" />
         </a>
         <a href="#" className="link" aria-label="Gmail Link">
-          <Icon icon="hugeicons:mail-02" className="size-6 text-gray-400" />
+          <Icon icon="icon-park-twotone:mail" className="size-6 text-violet-400" />
         </a>
       </div>
       <p className="text-gray-400">{t("footer.tagline")}</p>
