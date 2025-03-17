@@ -1,143 +1,88 @@
+import { useState } from "react";
 
+const SizeTable = () => {
+  const products = [
+    { name: "Regular T-Shirt", weight: "230g | 100% long-staple cotton", sizes: [
+      ["S", "96 cm", "43.5 cm", "66 cm"],
+      ["M", "100 cm", "45 cm", "68 cm"],
+      ["L", "104 cm", "47 cm", "70 cm"],
+      ["XL", "108 cm", "49 cm", "72 cm"],
+      ["2XL", "112 cm", "50 cm", "74 cm"]
+    ] },
+    { name: "Sleeveless Vest", weight: "230g | 100% long-staple cotton", sizes: [
+      ["S", "96 cm", "40 cm", "66 cm"],
+      ["M", "100 cm", "41 cm", "68 cm"],
+      ["L", "104 cm", "41.5 cm", "70 cm"],
+      ["XL", "108 cm", "43 cm", "72 cm"],
+      ["2XL", "112 cm", "44 cm", "74 cm"]
+    ] },
+    { name: "Oversized T-Shirt", weight: "300g | 100% long-staple cotton", sizes: [
+      ["S", "110 cm", "54 cm", "72 cm"],
+      ["M", "114 cm", "56 cm", "74 cm"],
+      ["L", "118 cm", "58 cm", "76 cm"],
+      ["XL", "122 cm", "60 cm", "77 cm"],
+      ["2XL", "126 cm", "62 cm", "79 cm"]
+    ] },
+    { name: "Zip Hoodie", weight: "600g | 95% cotton 5% spandex", sizes: [
+      ["S", "51 cm", "48 cm", "62 cm"],
+      ["M", "54 cm", "51 cm", "65 cm"],
+      ["L", "57 cm", "54 cm", "68 cm"],
+      ["XL", "60 cm", "57 cm", "71 cm"],
+      ["2XL", "63 cm", "60 cm", "74 cm"]
+    ] },
+    { name: "Hoodie", weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
+      ["S", "51 cm", "51 cm", "65 cm"],
+      ["M", "54 cm", "54 cm", "67 cm"],
+      ["L", "57 cm", "57 cm", "69 cm"],
+      ["XL", "60 cm", "60 cm", "71 cm"],
+      ["2XL", "63 cm", "63 cm", "73 cm"]
+    ] },
+    { name: "Round Neck Hoodie", weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
+      ["S", "48 cm", "50 cm", "65 cm"],
+      ["M", "51 cm", "53 cm", "67 cm"],
+      ["L", "54 cm", "56 cm", "69 cm"],
+      ["XL", "57 cm", "59 cm", "71 cm"],
+      ["2XL", "60 cm", "62 cm", "73 cm"]
+    ] }
+  ];
 
-const SizesTable = () => {
+  const [selectedProduct, setSelectedProduct] = useState(products[0]);
+
   return (
-    <div className="w-full flex flex-col gap-4 px-5">
+    <div className="w-full flex flex-col gap-6 px-6 py-4">
 
-    <div>
-      <h4>Regular T-Shirt</h4>
-      <p>230g | 100% long-staple cotton</p>
-    </div>
-    <table className="text-gray-600 text-center">
-      <thead>
-        <tr>
-          <th>Size</th>
-          <th>Chest Width</th>
-          <th>Shoulder Width</th>
-          <th>Length</th>
-        </tr>
-      </thead>
-      <tbody>
-      <tr><td>S</td><td>96 cm</td><td>43.5 cm</td><td>66 cm</td></tr>
-        <tr><td>M</td><td>100 cm</td><td>45 cm</td><td>68 cm</td></tr>
-        <tr><td>L</td><td>104 cm</td><td>47 cm</td><td>70 cm</td></tr>
-        <tr><td>XL</td><td>108 cm</td><td>49 cm</td><td>72 cm</td></tr>
-        <tr><td>2XL</td><td>112 cm</td><td>50 cm</td><td>74 cm</td></tr>
-      </tbody>
-    </table>
-
-    <div>
-      <h4>Sleeveless Vest</h4>
-      <p>230g | 100% long-staple cotton</p>
-    </div>
-    <table className="text-gray-600 text-center">
-      <thead>
-        <tr>
-          <th>Size</th>
-          <th>Chest Width</th>
-          <th>Shoulder Width</th>
-          <th>Length</th>
-        </tr>
-      </thead>
-      <tbody>
-      <tr><td>S</td><td>96 cm</td><td>40 cm</td><td>66 cm</td></tr>
-        <tr><td>M</td><td>100 cm</td><td>41 cm</td><td>68 cm</td></tr>
-        <tr><td>L</td><td>104 cm</td><td>41.5 cm</td><td>70 cm</td></tr>
-        <tr><td>XL</td><td>108 cm</td><td>43 cm</td><td>72 cm</td></tr>
-        <tr><td>2XL</td><td>112 cm</td><td>44 cm</td><td>74 cm</td></tr>
-      </tbody>
-    </table>
-
-
-    <div>
-      <h4>Oversized T-Shirt</h4>
-      <p>300g | 100% long-staple cotton</p>
-    </div>
-      <table className="text-gray-600 text-center">
-        <thead>
-          <tr>
-            <th>Size</th>
-            <th>Chest Width</th>
-            <th>Shoulder Width</th>
-            <th>Length</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>S</td><td>110 cm</td><td>54 cm</td><td>72 cm</td></tr>
-          <tr><td>M</td><td>114 cm</td><td>56 cm</td><td>74 cm</td></tr>
-          <tr><td>L</td><td>118 cm</td><td>58 cm</td><td>76 cm</td></tr>
-          <tr><td>XL</td><td>122 cm</td><td>60 cm</td><td>77 cm</td></tr>
-          <tr><td>2XL</td><td>126 cm</td><td>62 cm</td><td>79 cm</td></tr>
-        </tbody>
-      </table>
-
-      <div>
-      <h4>Zip Hoodie</h4>
-      <p>600g | 95% cotton 5% spandex</p>
+      <div className="bg-white shadow-md rounded-lg p-4">
+      <select 
+        className="text-violet-500 focus:outline-none rounded-lg pr-2 max-w-xs" 
+        onChange={(e) => setSelectedProduct(products[e.target.value])}
+      >
+        {products.map((product, index) => (
+          <option key={index} value={index}>{product.name}</option>
+        ))}
+      </select>
+        <p className="text-gray-600 text-sm mb-2">{selectedProduct.weight}</p>
+        <table className="w-full border-collapse border border-gray-300 text-gray-700 text-center">
+          <thead>
+            <tr className="bg-gray-100 text-gray-900">
+              <th className="border border-gray-300 px-4 py-2">Size</th>
+              <th className="border border-gray-300 px-4 py-2">Chest Width</th>
+              <th className="border border-gray-300 px-4 py-2">Shoulder Width</th>
+              <th className="border border-gray-300 px-4 py-2">Length</th>
+            </tr>
+          </thead>
+          <tbody>
+            {selectedProduct.sizes.map((size, i) => (
+              <tr key={i} className="border border-gray-300 hover:bg-gray-50">
+                {size.map((value, j) => (
+                  <td key={j} className="border border-gray-300 px-4 py-2">{value}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-      <table className="text-gray-600 text-center">
-        <thead>
-          <tr>
-            <th>Size</th>
-            <th>Chest Width</th>
-            <th>Shoulder Width</th>
-            <th>Length</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>S</td><td>51 cm</td><td>48 cm</td><td>62 cm</td></tr>
-          <tr><td>M</td><td>54 cm</td><td>51 cm</td><td>65 cm</td></tr>
-          <tr><td>L</td><td>57 cm</td><td>54 cm</td><td>68 cm</td></tr>
-          <tr><td>XL</td><td>60 cm</td><td>57 cm</td><td>71 cm</td></tr>
-          <tr><td>2XL</td><td>63 cm</td><td>60 cm</td><td>74 cm</td></tr>
-        </tbody>
-      </table>
-
-      <div>
-        <h4>Hoodie</h4>
-        <p>320g | 59% cotton 41% polyvinyl acetate fibre</p>
-      </div>
-      <table className="text-gray-600 text-center">
-        <thead>
-          <tr>
-            <th>Size</th>
-            <th>Chest Width</th>
-            <th>Shoulder Width</th>
-            <th>Length</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr><td>S</td><td>51 cm</td><td>51 cm</td><td>65 cm</td></tr>
-        <tr><td>M</td><td>54 cm</td><td>54 cm</td><td>67 cm</td></tr>
-        <tr><td>L</td><td>57 cm</td><td>57 cm</td><td>69 cm</td></tr>
-        <tr><td>XL</td><td>60 cm</td><td>60 cm</td><td>71 cm</td></tr>
-        <tr><td>2XL</td><td>63 cm</td><td>63 cm</td><td>73 cm</td></tr>
-        </tbody>
-      </table>
-
-      <div>
-        <h4>Round Neck Hoodie</h4>
-        <p>320g | 59% cotton 41% polyvinyl acetate fibre</p>
-      </div>
-      <table className="text-gray-600 text-center">
-        <thead>
-          <tr>
-            <th>Size</th>
-            <th>Chest Width</th>
-            <th>Shoulder Width</th>
-            <th>Length</th>
-          </tr>
-        </thead>
-        <tbody>
-        <tr><td>S</td><td>48 cm</td><td>50 cm</td><td>65 cm</td></tr>
-        <tr><td>M</td><td>51 cm</td><td>53 cm</td><td>67 cm</td></tr>
-        <tr><td>L</td><td>54 cm</td><td>56 cm</td><td>69 cm</td></tr>
-        <tr><td>XL</td><td>57 cm</td><td>59 cm</td><td>71 cm</td></tr>
-        <tr><td>2XL</td><td>60 cm</td><td>62 cm</td><td>73 cm</td></tr>
-        </tbody>
-      </table>
     </div>
   );
 };
 
-export default SizesTable;
+export default SizeTable;

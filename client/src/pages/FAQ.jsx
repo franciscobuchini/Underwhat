@@ -62,7 +62,7 @@ const FAQ = () => {
         {faqItems.map((item, index) => (
           <div key={item.id} className={`${index === faqItems.length - 1 ? '' : 'border-b'}` }>
             <button
-              className="w-full flex items-center justify-between py-4 text-gray-600 hover:text-violet-500 focus:outline-none"
+              className="w-full flex items-center justify-between py-8 text-gray-600 hover:text-violet-500 focus:outline-none"
               onClick={() => toggleAccordion(index)}
             >
               <span className="flex items-center gap-4">

@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useCart } from "../components/CartContext";
 import nav01 from "../assets/Logo/nav01.webp";
 import { Notyf } from "notyf";
@@ -13,14 +13,7 @@ function Header() {
   const navigate = useNavigate();
 
   const notyf = new Notyf({
-    types: [
-      {
-        type: "error",
-        background: "#f44336",
-        duration: 2000,
-        dismissible: false,
-      },
-    ],
+    types: [{ type: "error", background: "#f44336", duration: 2000, dismissible: false }],
   });
 
   const languageIcons = {
@@ -41,6 +34,30 @@ function Header() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
 
+  // Referencias para detectar clics fuera
+  const menuRef = useRef(null);
+  const languageRef = useRef(null);
+  const cartRef = useRef(null);
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+      if (languageRef.current && !languageRef.current.contains(event.target)) {
+        setIsLanguageOpen(false);
+      }
+      if (cartRef.current && !cartRef.current.contains(event.target)) {
+        setIsCartOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <nav className="Navbar bg-white border border-gray-300 rounded-2xl flex justify-between w-full my-4 p-3">
       <div className="NavbarLogo">
@@ -50,7 +67,7 @@ function Header() {
       </div>
       <div className="NavbarMenu flex gap-4">
         {/* Botón de menú */}
-        <div className="MenuButton flex">
+        <div className="MenuButton flex" ref={menuRef}>
           <button
             id="dropdown-nav"
             type="button"
@@ -64,12 +81,11 @@ function Header() {
           </button>
 
           {isMenuOpen && (
-            <ul className="absolute right-18 top-15 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-1" role="menu" aria-orientation="vertical">
+            <ul className="absolute right-18 top-15 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-1" role="menu">
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/team-outfit">
                   <span className="flex items-center gap-2">
-                  <Icon icon="icon-park-twotone:basketball-clothes" className="size-5 text-violet-400" />
-                  
+                    <Icon icon="icon-park-twotone:basketball-clothes" className="size-5 text-violet-400" />
                     {t("header.menu.team")}
                   </span>
                 </Link>
@@ -77,7 +93,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/faq">
                   <span className="flex items-center gap-x-2">
-                  <Icon icon="icon-park-twotone:file-question" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:file-question" className="size-5 text-violet-400" />
                     {t("header.menu.faq")}
                   </span>
                 </Link>
@@ -85,19 +101,16 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/about">
                   <span className="flex items-center gap-x-2">
-                  <Icon icon="icon-park-twotone:diving" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:diving" className="size-5 text-violet-400" />
                     {t("header.menu.about")}
                   </span>
                 </Link>
               </li>
               {/* Botón de selección de idioma */}
-              <div>
-                <button
-                  className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl"
-                  onClick={() => setIsLanguageOpen(!isLanguageOpen)}
-                >
+              <div ref={languageRef}>
+                <button className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" onClick={() => setIsLanguageOpen(!isLanguageOpen)}>
                   <span className="flex flex-row items-center gap-x-2">
-                  <Icon icon="icon-park-twotone:text-message" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:text-message" className="size-5 text-violet-400" />
                     {t("header.menu.language")}
                   </span>
                 </button>
@@ -122,17 +135,13 @@ function Header() {
         </div>
 
         {/* Carrito de compras */}
-        <div className="CartButton flex">
-          <button
-            className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center"
-            onClick={() => setIsCartOpen(!isCartOpen)}
-          >
+        <div className="CartButton flex" ref={cartRef}>
+          <button className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center" onClick={() => setIsCartOpen(!isCartOpen)}>
             <div className="CartIndicator relative">
               <span className="absolute -top-2 -right-2 bg-red-400 size-4 rounded-full font-semibold text-white text-center text-xs">
                 {totalQuantity}
               </span>
-              <Icon icon="icon-park-twotone:shopping"
-              className="text-violet-400 size-6" />
+              <Icon icon="icon-park-twotone:shopping" className="text-violet-400 size-6" />
             </div>
           </button>
           {isCartOpen && (
