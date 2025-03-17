@@ -124,7 +124,7 @@ function ProductList() {
                 disabled={!selectedSizes[index]}
               >
                 Add to cart
-                <Icon icon="tabler:shopping-cart" className="size-5" />
+                <Icon icon="icon-park-twotone:shopping" className="size-5" />
               </button>
             </div>
           </div>

@@ -23,6 +23,12 @@ function Header() {
     ],
   });
 
+  const languageIcons = {
+    en: "twemoji:flag-united-kingdom",
+    es: "twemoji:flag-spain",
+    fr: "twemoji:flag-france",
+  };
+
   const handleRemoveFromCart = (index) => {
     removeFromCart(index);
     notyf.error(t("product.remove_from_cart"));
@@ -103,7 +109,7 @@ function Header() {
                           className="w-full flex items-center gap-2 text-left px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl"
                           onClick={() => i18n.changeLanguage(lang)}
                         >
-                          <Icon icon="tabler:point-filled" className="size-3" />
+                          <Icon icon={languageIcons[lang]} className="size-5 opacity-60" />
                           {t(`header.language_options.${lang}`)}
                         </button>
                       </li>
