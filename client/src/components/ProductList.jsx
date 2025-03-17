@@ -5,6 +5,7 @@ import { useCart } from "../components/CartContext";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 import { useTranslation } from "react-i18next";
+import { Icon } from "@iconify/react";
 
 function ProductList() {
   const { t, i18n } = useTranslation("global");
@@ -68,10 +69,11 @@ function ProductList() {
       {products.map((product, index) => (
         <div 
           key={index} 
-          className="ProductCard bg-white border rounded-2xl w-64"
+          className="ProductCard bg-white border rounded-2xl border-gray-300 w-64"
           onMouseEnter={() => setHoveredProductId(product.product_id)}
           onMouseLeave={() => setHoveredProductId(null)}
         >
+
           <div className="ProductImage hover:bg-gray-100 rounded-t-2xl overflow-hidden">
             <img
               src={
@@ -84,7 +86,9 @@ function ProductList() {
               loading="lazy"
             />
           </div>
-          <hr className="border mx-6" />
+
+          <hr className="border border-gray-300 mx-6" />
+
           <div className="ProductDetails p-4 text-gray-600">
             <p className="ProductName text-xl font-semibold">{product.product_name}</p>
             <p className="ProductCategory text-sm text-gray-400">{product.product_category}</p>
@@ -92,7 +96,7 @@ function ProductList() {
             <div className="ProductInteractions flex justify-left space-x-2 mt-4">
               <select
                 id="size"
-                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border focus:outline-0"
+                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-1 hover:outline-1 outline-gray-300"
                 aria-label="select"
                 value={selectedSizes[index] || ""}
                 onChange={(e) => handleSizeChange(index, e.target.value)}
@@ -107,10 +111,10 @@ function ProductList() {
                 <option value="XXL">XXL</option>
               </select>
               <button
-                className={`ProductAdd btn ${
+                className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center ${
                   selectedSizes[index]
-                    ? "btn-outline btn-success"
-                    : "text-gray-400 bg-white border shadow-none cursor-not-allowed hover:bg-white hover:border hover:shadow-none focus:bg-white focus:border focus:bg-gray-100 focus:shadow-none"
+                    ? "border-green-600 text-green-600 bg-green-100 hover:outline-1 focus:outline-1 outline-green-600"
+                    : "text-gray-300 bg-gray-50 border shadow-none cursor-not-allowed hover:border hover:shadow-none focus:bg-white focus:border focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -119,7 +123,8 @@ function ProductList() {
                 }}
                 disabled={!selectedSizes[index]}
               >
-                <span className="icon-[tabler--shopping-cart-plus] size-4"></span>
+                Add to cart
+                <Icon icon="tabler:shopping-cart" className="size-5" />
               </button>
             </div>
           </div>

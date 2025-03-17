@@ -36,7 +36,7 @@ function Header() {
   const [isCartOpen, setIsCartOpen] = useState(false);
 
   return (
-    <nav className="Navbar bg-white border border-gray-300 rounded-2xl flex justify-between w-full my-4 p-2.5">
+    <nav className="Navbar bg-white border border-gray-300 rounded-2xl flex justify-between w-full my-4 p-3">
       <div className="NavbarLogo">
         <Link to="/">
           <img src={nav01} className="h-8" alt={t("header.logo_alt")} />
@@ -48,21 +48,22 @@ function Header() {
           <button
             id="dropdown-nav"
             type="button"
-            className="rounded-full size-8 bg-green-300 flex items-center justify-center"
+            className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center"
             aria-haspopup="menu"
             aria-expanded={isMenuOpen}
             aria-label="Dropdown"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Icon icon="tabler:menu-4" className="text-white size-5" />
+            <Icon icon="icon-park-twotone:app-switch" className="text-violet-400 size-6" />
           </button>
 
           {isMenuOpen && (
-            <ul className="absolute right-18 top-14 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-1" role="menu" aria-orientation="vertical">
+            <ul className="absolute right-18 top-15 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-1" role="menu" aria-orientation="vertical">
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/team-outfit">
-                  <span className="flex items-center gap-x-2">
-                  <Icon icon="tabler:shirt-sport" className="size-5" />
+                  <span className="flex items-center gap-2">
+                  <Icon icon="icon-park-twotone:basketball-clothes" className="size-5 text-violet-400" />
+                  
                     {t("header.menu.team")}
                   </span>
                 </Link>
@@ -70,7 +71,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/faq">
                   <span className="flex items-center gap-x-2">
-                  <Icon icon="tabler:zoom-question" className="size-5" />
+                  <Icon icon="icon-park-twotone:file-question" className="size-5 text-violet-400" />
                     {t("header.menu.faq")}
                   </span>
                 </Link>
@@ -78,7 +79,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/about">
                   <span className="flex items-center gap-x-2">
-                  <Icon icon="tabler:scuba-mask" className="size-5" />
+                  <Icon icon="icon-park-twotone:diving" className="size-5 text-violet-400" />
                     {t("header.menu.about")}
                   </span>
                 </Link>
@@ -90,7 +91,7 @@ function Header() {
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
                 >
                   <span className="flex flex-row items-center gap-x-2">
-                  <Icon icon="tabler:language-hiragana" className="size-5" />
+                  <Icon icon="icon-park-twotone:text-message" className="size-5 text-violet-400" />
                     {t("header.menu.language")}
                   </span>
                 </button>
@@ -117,18 +118,19 @@ function Header() {
         {/* Carrito de compras */}
         <div className="CartButton flex">
           <button
-            className="rounded-full size-8 bg-green-300 flex items-center justify-center"
+            className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center"
             onClick={() => setIsCartOpen(!isCartOpen)}
           >
             <div className="CartIndicator relative">
-              <span className="absolute -top-2 -right-2 bg-red-400 size-4.5 rounded-full text-white text-center text-xs">
+              <span className="absolute -top-2 -right-2 bg-red-400 size-4 rounded-full font-semibold text-white text-center text-xs">
                 {totalQuantity}
               </span>
-              <Icon icon="tabler:shopping-cart" className="text-white size-5" />
+              <Icon icon="icon-park-twotone:shopping"
+              className="text-violet-400 size-6" />
             </div>
           </button>
           {isCartOpen && (
-            <div className="absolute right-6 top-14 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-2">
+            <div className="absolute right-6 top-15 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-2">
               {cartItems.length === 0 ? (
                 <h6 className="text-gray-600 text-center">{t("cart.empty")}</h6>
               ) : (

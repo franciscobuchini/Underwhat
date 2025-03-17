@@ -1,6 +1,7 @@
 //FAQ.jsx
 import { useTranslation } from 'react-i18next';
 import SizesTable from '../components/SizesTable';
+import { Icon } from "@iconify/react";
 
 const FAQ = () => {
   const { t } = useTranslation("global");
@@ -47,7 +48,7 @@ const FAQ = () => {
   return (
     <div className="container mx-auto px-4 py-8 mt-20">
       <h1 className="text-3xl font-bold mb-8 text-gray-600 flex items-center gap-4">
-        <span className="icon-[tabler--zoom-question]"></span>
+        <Icon icon="icon-park-twotone:file-question" className="size-10 text-violet-400" />
         {t("faq.title")}
       </h1>
       
