@@ -99,6 +99,14 @@ function Header() {
                 </Link>
               </li>
               <li>
+                <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/faq">
+                  <span className="flex items-center gap-x-2">
+                    <Icon icon="icon-park-twotone:align-text-left-one" className="size-5 text-violet-400" />
+                    {t("header.menu.conditions")}
+                  </span>
+                </Link>
+              </li>
+              <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/about">
                   <span className="flex items-center gap-x-2">
                     <Icon icon="icon-park-twotone:diving" className="size-5 text-violet-400" />
@@ -106,6 +114,7 @@ function Header() {
                   </span>
                 </Link>
               </li>
+
               {/* Botón de selección de idioma */}
               <div ref={languageRef}>
                 <button className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" onClick={() => setIsLanguageOpen(!isLanguageOpen)}>
