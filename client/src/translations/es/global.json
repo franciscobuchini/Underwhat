@@ -82,12 +82,32 @@
     "title": "Vestimenta para equipos de UWH",
     "content": "No jueguen como un equipo si no se visten como uno. En Underwhat!?, creamos indumentaria personalizada para equipos de Hockey Subacuático que quieren destacar dentro y fuera de la piscina. Nos especializamos en ofrecer outfits únicos, combinando diseño innovador con materiales de la más alta calidad. Cada prenda está pensada para brindar comodidad, resistencia y un estilo distintivo que eleve la presencia de tu equipo en cada competencia."
   },
-  "checkout": {
-    "order_details": "Detalles del pedido",
-    "shipping_details": "Detalles del envío",
-    "contact_details": "Detalles de contacto",
-    "validations": "Validaciones"
-  },
+"checkout": {
+      "order_details": "Detalles del pedido",
+      "shipping_details": "Detalles del envío",
+      "select_country": "Seleccionar país",
+      "other": "Otro...",
+      "other_country": "Otro país",
+      "state": "Estado / Provincia / Región",
+      "city": "Ciudad",
+      "street_name": "Nombre de la calle",
+      "address_number": "Número de dirección",
+      "apartment_suite": "Apartamento, Suite, etc.",
+      "zip_code": "Código postal",
+      "relevant_shipping_info": "Información relevante para el repartidor:",
+      "shipping_info_placeholder": "Puerta trasera, toque el timbre, etc.",
+      "relevant_forUs_info": "Información relevante para nosotros:",
+      "forUs_info_placeholder": "Déjanos saber si tienes alguna solicitud especial",
+      "contact_details": "Detalles de contacto",
+      "email": "Correo electrónico",
+      "area_code": "Código de área",
+      "phone_number": "Número de teléfono",
+      "validations": "Validaciones",
+      "validation_text": "El enlace de pago se enviará a la dirección de correo electrónico proporcionada. Tenga en cuenta que este correo no es automático y puede demorar en ser enviado. Una vez recibido, significa que estamos al tanto de su pedido. Su pedido comenzará la producción una vez que se reciba el pago. Al marcar esta casilla, confirma que ha leído y comprendido esta información.",
+      "final_price_text": "El precio final se calcula a partir del costo de los productos y los gastos de envío, según la información que has proporcionado. Recuerda que el 'subtotal' muestra únicamente el precio de los productos, sin incluir el envío. El precio final lo veras en el mail con el link de pago.",
+      "agree_terms": "Acepta nuestros términos y condiciones.",
+      "confirm_order": "Confirmar pedido"
+    },
   "terms": {
     "title": "Términos y Condiciones:",
       "introduction": "¡Bienvenido a Underwhat!?. Estos términos y condiciones rigen el uso de nuestro sitio web y las compras realizadas a través de él. Al realizar un pedido, aceptas estar sujeto a estos términos y condiciones en su totalidad. Si no estás de acuerdo con alguna parte de este documento, por favor, no utilices nuestros servicios.",

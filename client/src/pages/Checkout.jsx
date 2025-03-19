@@ -2,6 +2,7 @@
 import { useTranslation } from 'react-i18next';
 import CheckoutForm from '../components/CheckoutForm';
 import { useCart } from '../components/CartContext';
+import { Icon } from '@iconify/react';
 import { Notyf } from 'notyf';
 import 'notyf/notyf.min.css';
 
@@ -37,7 +38,7 @@ const Checkout = () => {
       <div className="p-4 border rounded-2xl bg-white flex flex-col gap-y-4">
         <div className="w-full mt-2">
           <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-            <span className="icon-[tabler--shopping-cart] size-6"></span>
+            <Icon icon="icon-park-twotone:shopping" className="size-6 text-violet-400"/>
             {t("checkout.order_details")}
           </h6>
           <hr className="mt-2" />
@@ -47,7 +48,7 @@ const Checkout = () => {
         ) : (
           <ul className="space-y-4">
             {cartItems.map((item, index) => (
-              <li key={index} className="flex items-center gap-4 border-b pb-4 last:border-b-0">
+              <li key={index} className="flex items-center gap-4 border-b border-gray-300 pb-4 last:border-b-0">
                 {/* Imagen del producto */}
                 <img 
                   src={item.image} 

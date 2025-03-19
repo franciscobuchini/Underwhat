@@ -81,12 +81,32 @@
     "title": "Outfits for UWH teams",
     "content": "Don't play like a team if you don't dress like one. At Underwhat!?, we create custom apparel for Underwater Hockey teams that want to stand out in and out of the pool. We specialize in offering unique outfits, combining innovative design with the highest quality materials. Each garment is designed to provide comfort, durability and a distinctive style that elevates your team's presence in every competition."
   },
-  "checkout": {
-    "order_details": "Order Details",
-    "shipping_details": "Shipping Details",
-    "contact_details": "Contact Details",
-    "validations": "Validations"
-  },
+"checkout": {
+      "order_details": "Order Details",
+      "shipping_details": "Shipping Details",
+      "select_country": "Select Country",
+      "other": "Other...",
+      "other_country": "Other Country",
+      "state": "State / Province / Region",
+      "city": "City",
+      "street_name": "Street Name",
+      "address_number": "Address Number",
+      "apartment_suite": "Apartment, Suite, etc.",
+      "zip_code": "ZIP Code",
+      "relevant_shipping_info": "Relevant information for the delivery person:",
+      "shipping_info_placeholder": "Back door, ring the bell, etc.",
+      "relevant_forUs_info": "Relevant information for us:",
+      "forUs_info_placeholder": "Let me know if you have any special requests",
+      "contact_details": "Contact Details",
+      "email": "Email",
+      "area_code": "Area Code",
+      "phone_number": "Phone Number",
+      "validations": "Validations",
+      "validation_text": "The payment link will be sent to the email address you provided. Please note that this email is not automatic and may take some time to be sent. Once you receive it, it means we are aware of your order. Your order will begin production once the payment has been received. By checking this box, you confirm that you have read and understood this information.",
+      "final_price_text": "The final price is calculated based on the cost of the products and the shipping fees, according to the information you have provided. Remember that the 'subtotal' only shows the price of the products, excluding shipping. You will see the final price in the email with the payment link.",
+      "agree_terms": "Agree to our terms and conditions.",
+      "confirm_order": "Confirm order"
+    },
   "terms": {
     "title": "Terms and Conditions:",
       "introduction": "Welcome to Underwhat!?. These terms and conditions govern the use of our website and purchases made through it. By placing an order, you agree to be bound by these terms and conditions in their entirety. If you do not agree with any part of this document, please do not use our services.",

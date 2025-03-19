@@ -1,7 +1,6 @@
-//CheckoutForm.jsx
 import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect } from 'react';
-import flatpickr from 'flatpickr';
+import { Icon } from '@iconify/react';
 
 const CheckoutForm = () => {
   const { t } = useTranslation("global");
@@ -20,19 +19,24 @@ const CheckoutForm = () => {
   };
 
   useEffect(() => {
-    const inputs = document.querySelectorAll(".needs-validation input, .needs-validation select, .needs-validation textarea");
-    inputs.forEach(input => input.addEventListener("input", checkFormValidity));
-    return () => inputs.forEach(input => input.removeEventListener("input", checkFormValidity));
+    const inputs = document.querySelectorAll(
+      ".needs-validation input, .needs-validation select, .needs-validation textarea"
+    );
+    inputs.forEach((input) => input.addEventListener("input", checkFormValidity));
+    return () =>
+      inputs.forEach((input) =>
+        input.removeEventListener("input", checkFormValidity)
+      );
   }, []);
 
   return (
     <div className="bg-white w-full rounded-2xl border">
       <div className="w-full p-4">
-        <form className="needs-validation peer grid gap-y-4" noValidate>
+        <form className="needs-validation grid gap-y-6" noValidate>
           {/* Shipping Details */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <span className="icon-[tabler--truck-delivery] size-6"></span>
+              <Icon icon="icon-park-twotone:airplane" className="size-6 text-violet-400"/>
               {t("checkout.shipping_details")}
             </h6>
             <hr className="mt-2" />
@@ -40,16 +44,15 @@ const CheckoutForm = () => {
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <label className="label label-text text-gray-600" htmlFor="userCountry">
-                Select Country *
+              <label className="block text-sm font-medium text-gray-600" htmlFor="userCountry">
+                {t("checkout.select_country")} *
               </label>
               <select
-                className="select bg-white text-gray-600"
                 id="userCountry"
-                aria-label="select"
                 required
                 onChange={handleCountryChange}
                 defaultValue="united_states"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
               >
                 <option value="angola">Angola</option>
                 <option value="argentina">Argentina</option>
@@ -102,175 +105,241 @@ const CheckoutForm = () => {
                 <option value="united_kingdom">United Kingdom</option>
                 <option value="united_states">United States</option>
                 <option value="other">Other...</option>
-              </select>
-              <span className="error-message">Please select your country</span>
-              <span className="success-message">Looks good!</span>
+                </select>
             </div>
-            {/* Conditionally render the "Other Country" field */}
             {showOtherCountry && (
               <div>
-                <label className="label label-text text-gray-600 text-gray-600" htmlFor="otherCountry">
-                  Other Country *
+                <label className="block text-sm font-medium text-gray-600" htmlFor="otherCountry">
+                  {t("checkout.other_country")} *
                 </label>
                 <input
                   id="otherCountry"
                   type="text"
                   placeholder="Andorra"
-                  className="input bg-white text-gray-600"
                   required
+                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
                 />
-                <span className="error-message">Please enter your country.</span>
-                <span className="success-message">Looks good!</span>
               </div>
             )}
           </div>
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <label className="label label-text text-gray-600" htmlFor="state">
-                State / Province / Region *
+              <label className="block text-sm font-medium text-gray-600" htmlFor="state">
+                {t("checkout.state")} *
               </label>
-              <input id="state" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='California'/>
-              <span className="error-message">Please enter the state</span>
-              <span className="success-message">Looks good!</span>
+              <input
+                id="state"
+                type="text"
+                required
+                placeholder="California"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+              />
             </div>
             <div>
-              <label className="label label-text text-gray-600" htmlFor="city">
-                City *
+              <label className="block text-sm font-medium text-gray-600" htmlFor="city">
+                {t("checkout.city")} *
               </label>
-              <input id="city" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='San Francisco'/>
-              <span className="error-message">Please enter the city</span>
-              <span className="success-message">Looks good!</span>
+              <input
+                id="city"
+                type="text"
+                required
+                placeholder="San Francisco"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+              />
             </div>
           </div>
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
             <div>
-              <label className="label label-text text-gray-600" htmlFor="street">
-                Street Name *
+              <label className="block text-sm font-medium text-gray-600" htmlFor="street">
+                {t("checkout.street_name")} *
               </label>
-              <input id="street" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='Main Street'/>
-              <span className="error-message">Please enter the street name</span>
-              <span className="success-message">Looks good!</span>
+              <input
+                id="street"
+                type="text"
+                required
+                placeholder="Main Street"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+              />
             </div>
             <div>
-              <label className="label label-text text-gray-600" htmlFor="number">
-                Address Number *
+              <label className="block text-sm font-medium text-gray-600" htmlFor="number">
+                {t("checkout.address_number")} *
               </label>
-              <input id="number" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='123'/>
-              <span className="error-message">Please enter the address number</span>
-              <span className="success-message">Looks good!</span>
+              <input
+                id="number"
+                type="text"
+                required
+                placeholder="123"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+              />
             </div>
             <div>
-              <label className="label label-text text-gray-600" htmlFor="apartment">
-                Apartment, Suite, etc.
+              <label className="block text-sm font-medium text-gray-600" htmlFor="apartment">
+                {t("checkout.apartment_suite")}
               </label>
-              <input id="apartment" type="text" className="input bg-white text-gray-600 capitalize" placeholder='6th B'/>
-              <span className="success-message">Looks good!</span>
+              <input
+                id="apartment"
+                type="text"
+                placeholder="6th B"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+              />
             </div>
             <div>
-              <label className="label label-text text-gray-600" htmlFor="zipCode">
-                ZIP Code *
+              <label className="block text-sm font-medium text-gray-600" htmlFor="zipCode">
+                {t("checkout.zip_code")} *
               </label>
-              <input id="zipCode" type="text" className="input bg-white text-gray-600 capitalize" required placeholder='1234'/>
-              <span className="success-message">Looks good!</span>
+              <input
+                id="zipCode"
+                type="text"
+                required
+                placeholder="1234"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+              />
             </div>
           </div>
 
           <div className="w-full">
-              <label className="label label-text text-gray-600" htmlFor="relevantInfo">
-                Relevant shipping information
-              </label>
-              <textarea
-                className="textarea min-h-20 resize-none text-gray-600"
-                id="relevantInfo"
-                placeholder="Back door, ring the bell, etc."
-              ></textarea>
-              <span className="success-message">Looks good!</span>
+            <label className="block text-sm font-medium text-gray-600" htmlFor="shippingInfo">
+              {t("checkout.relevant_shipping_info")}
+            </label>
+            <textarea
+              id="shippingInfo"
+              placeholder={t("checkout.shipping_info_placeholder")}
+              rows="1"
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+            ></textarea>
+          </div>
+
+          <div className="w-full">
+            <label className="block text-sm font-medium text-gray-600" htmlFor="forUsInfo">
+              {t("checkout.relevant_forUs_info")}
+            </label>
+            <textarea
+              id="forUsInfo"
+              placeholder={t("checkout.forUs_info_placeholder")}
+              rows="1"
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+            ></textarea>
           </div>
 
           {/* Contact Details */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <span className="icon-[tabler--message-user] size-6"></span>
+            <Icon icon="icon-park-twotone:message" className="size-6 text-violet-400"/>
               {t("checkout.contact_details")}
             </h6>
             <hr className="mt-2" />
           </div>
-          
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
-              <label className="label label-text text-gray-600" htmlFor="email">
-                Email *
+              <label className="block text-sm font-medium text-gray-600" htmlFor="email">
+                {t("checkout.email")} *
               </label>
-              <input id="email" type="email" className="input bg-white text-gray-600" required placeholder='underwather@hockey.com'/>
-              <span className="error-message">Please enter an email</span>
-              <span className="success-message">Looks good!</span>
+              <input
+                id="email"
+                type="email"
+                required
+                placeholder="underwather@hockey.com"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+              />
             </div>
-            <div className="grid grid-cols-1 gap-6 grid-cols-2">
-              <div className=''>
-                <label className="label label-text text-gray-600" htmlFor="areaCode">
-                  Area Code *
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-600" htmlFor="areaCode">
+                  {t("checkout.area_code")} *
                 </label>
-                <input id="areaCode" type="text" className="input bg-white text-gray-600" required placeholder='+01'/>
-                <span className="error-message">Please enter the city</span>
-                <span className="success-message">Looks good!</span>
+                <input
+                  id="areaCode"
+                  type="text"
+                  required
+                  placeholder="+01"
+                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                />
               </div>
               <div>
-                <label className="label label-text text-gray-600" htmlFor="phone">
-                  Phone Number *
+                <label className="block text-sm font-medium text-gray-600" htmlFor="phone">
+                  {t("checkout.phone_number")} *
                 </label>
-                <input id="phone" type="tel" className="input bg-white text-gray-600 " required placeholder='555 123456'/>
-                <span className="error-message">Please enter the city</span>
-                <span className="success-message">Looks good!</span>
+                <input
+                  id="phone"
+                  type="tel"
+                  required
+                  placeholder="555 123456"
+                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                />
               </div>
-
             </div>
-          </div>           
-          
+          </div>
+
           {/* Validations */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <span className="icon-[tabler--progress-check] size-6"></span>
+            <Icon icon="icon-park-twotone:check-one" className="size-6 text-violet-400"/>
               {t("checkout.validations")}
             </h6>
             <hr className="mt-2" />
           </div>
 
-          <div className="flex items-center gap-3">
-            <input type="checkbox" className="checkbox checkbox-primary bg-white" id="userAgre" required />
-            <label className="label text-gray-600" htmlFor="userAgre">
-            The payment link will be sent to the email address you provided. Please note that this email is not automatic and may take some time to be sent. Once you receive it, it means we are aware of your order. Your order will begin production once the payment has been received. By checking this box, you confirm that you have read and understood this information.
+          <div className="flex items-center gap-4">
+            <input
+              type="checkbox"
+              id="userAgree"
+              required
+              className=" h-4 cursor-pointer"
+            />
+            <label htmlFor="userAgree" className="text-gray-600 text-sm">
+              {t("checkout.validation_text")}
             </label>
-            <span className="error-message">Please confirm our T&C</span>
-            <span className="success-message">Looks good!</span>
           </div>
 
+          <div className="flex items-center gap-4">
+            <input
+              type="checkbox"
+              id="priceAgree"
+              required
+              className=" h-4 cursor-pointer"
+            />
+            <label htmlFor="priceAgree" className="text-gray-600 text-sm">
+              {t("checkout.final_price_text")}
+            </label>
+          </div>
 
-          <div className="flex items-center gap-3">
-            <input type="checkbox" className="checkbox checkbox-primary bg-white" id="userAgre" required />
-            <label className="label text-gray-600" htmlFor="userAgre">
+          <div className="flex items-center gap-4">
+            <input
+              type="checkbox"
+              id="termsAgree"
+              required
+              className=" h-4 cursor-pointer"
+            />
+            <label htmlFor="termsAgree" className="text-gray-600 text-sm">
               <a
                 href="/terms-and-conditions"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="underline">
-                Agree to our terms and conditions.
+                className="underline"
+              >
+                {t("checkout.agree_terms")}
               </a>
             </label>
-            <span className="error-message">Please confirm our T&C</span>
-            <span className="success-message">Looks good!</span>
           </div>
 
           {/* Submit Button */}
-          <div className="mt-4 flex justify-center">
-            <button type="submit" name="submitButton" className="btn btn-primary disabled:bg-primary-100 disabled:text-white border-none" disabled={!formValid}>
-              Confirm order
+          <div className="mt-6 flex justify-center">
+            <button
+              type="submit"
+              name="submitButton"
+              disabled={!formValid}
+              className="w-full max-w-xs rounded-md bg-indigo-600 py-2 px-4 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-50"
+            >
+              {t("checkout.confirm_order")}
             </button>
           </div>
-
         </form>
       </div>
     </div>
-  
   );
 };
 
