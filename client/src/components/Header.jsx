@@ -71,7 +71,7 @@ function Header() {
           <button
             id="dropdown-nav"
             type="button"
-            className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center"
+            className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center cursor-pointer"
             aria-haspopup="menu"
             aria-expanded={isMenuOpen}
             aria-label="Dropdown"
@@ -134,38 +134,75 @@ function Header() {
           )}
         </div>
 
-        {/* Carrito de compras */}
-        <div className="CartButton flex" ref={cartRef}>
-          <button className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center" onClick={() => setIsCartOpen(!isCartOpen)}>
-            <div className="CartIndicator relative">
-              <span className="absolute -top-2 -right-2 bg-red-400 size-4 rounded-full font-semibold text-white text-center text-xs">
-                {totalQuantity}
-              </span>
-              <Icon icon="icon-park-twotone:shopping" className="text-violet-400 size-6" />
-            </div>
-          </button>
-          {isCartOpen && (
-            <div className="absolute right-6 top-15 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-2">
-              {cartItems.length === 0 ? (
-                <h6 className="text-gray-600 text-center">{t("cart.empty")}</h6>
-              ) : (
-                <>
-                  <h6 className="text-gray-600 flex text-sm">
-                    <span className="mr-2">{t("cart.subtotal")}</span>
-                    {cartItems.reduce((total, item) => total + item.product_selling * item.quantity, 0).toFixed(2)} USD
-                  </h6>
-                  {totalQuantity < 2 ? (
-                    <p className="text-red-400 text-sm">{t("cart.minimum_order", { min: 2 })}</p>
-                  ) : (
-                    <button className="CartCheckout btn btn-outline rounded-2xl btn-success btn-soft" onClick={() => navigate("/checkout")}>
-                      {t("cart.checkout")}
-                    </button>
-                  )}
-                </>
-              )}
-            </div>
-          )}
-        </div>
+{/* Carrito de compras */}
+<div className="CartButton flex" ref={cartRef}>
+  <button
+    className="rounded-full w-9 h-9 hover:bg-gray-100 flex items-center justify-center cursor-pointer"
+    onClick={() => setIsCartOpen(!isCartOpen)}
+  >
+    <div className="CartIndicator relative">
+      <span className="absolute -top-2 -right-2 bg-red-400 w-4 h-4 rounded-full font-semibold text-white text-center text-xs flex items-center justify-center">
+        {totalQuantity}
+      </span>
+      <Icon icon="icon-park-twotone:shopping" className="text-violet-400 w-6 h-6" />
+    </div>
+  </button>
+  {isCartOpen && (
+    <div className="absolute right-6 top-16 bg-white border border-gray-300 rounded-2xl z-50 p-2 min-w-[250px]">
+      {cartItems.length === 0 ? (
+        <h6 className="text-gray-600 text-center">{t("cart.empty")}</h6>
+      ) : (
+        <>
+          {/* Subtotal y Checkout en la parte superior */}
+          <div className="flex items-center justify-between gap-2">
+            <h6 className="text-gray-600 text-sm">
+              <span>{t("cart.subtotal")}</span>
+              {cartItems
+                .reduce((total, item) => total + item.product_selling * item.quantity, 0)
+                .toFixed(2)}{""}
+              USD
+            </h6>
+            {totalQuantity < 2 ? (
+              <p className="text-red-400 text-sm">{t("cart.minimum_order", { min: 2 })}</p>
+            ) : (
+              <button
+                className="rounded-lg border border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-colors duration-200 px-4 py-2 text-sm cursor-pointer"
+                onClick={() => navigate("/checkout")}
+              >
+                {t("cart.checkout")}
+              </button>
+            )}
+          </div>
+          {/* Listado de productos */}
+          <ul className="divide-y divide-gray-300">
+            {cartItems.map((item, index) => (
+              <li key={index} className="flex gap-2 items-center py-2">
+                <img
+                  src={item.image}
+                  alt={item.product_name}
+                  className="w-18 h-auto object-cover rounded-lg"
+                />
+                <div className="flex flex-col flex-grow">
+                  <span className="text-gray-700 text-sm">{item.product_name}</span>
+                  <span className="text-gray-600 text-xs">
+                    ${item.product_selling.toFixed(2)} x {item.quantity}
+                  </span>
+                </div>
+                <button
+                  onClick={() => handleRemoveFromCart(index)}
+                  className="text-red-400 text-sm hover:text-red-700 ml-2 cursor-pointer"
+                >
+                  {t("cart.remove")}
+                </button>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+    </div>
+  )}
+</div>
+
       </div>
     </nav>
   );
