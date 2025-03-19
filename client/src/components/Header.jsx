@@ -176,25 +176,39 @@ function Header() {
           {/* Listado de productos */}
           <ul className="divide-y divide-gray-300">
             {cartItems.map((item, index) => (
-              <li key={index} className="flex justify-between items-center py-2">
-                <img
-                  src={item.image}
-                  alt={item.product_name}
-                  className="w-18 h-auto object-cover rounded-lg"
+              <li key={index} className="flex items-center gap-2 border-b p-2 last:border-b-0">
+                {/* Imagen del producto */}
+                <img 
+                  src={item.image} 
+                  alt={item.product_name} 
+                  className="w-14 h-full object-cover rounded-2xl"
+                  loading="lazy"
                 />
-                <div className="flex flex-col">
-                  <span className="text-gray-700 text-sm">{item.product_name}</span>
-                  <span className="text-gray-600 text-xs">Pieces: {item.quantity}</span>
-                  <span className="text-gray-600 text-xs">
-                    ${(item.product_selling * item.quantity).toFixed(2)}
-                  </span>
+                
+                <div className="flex flex-col flex-grow pr-8">
+                  <h6 className="text-gray-600 font-medium text-sm">{item.product_name}</h6>
+                  <p className="text-gray-400 text-sm">{item.product_category}</p>
+                  <p className="text-gray-400 text-sm">
+                    {t("cart.size")}: {item.selectedSize}
+                  </p>
+                  <p className="text-gray-400 text-sm">
+                    {t("cart.pieces")}: {item.quantity}
+                  </p>
                 </div>
-                <button
-                  onClick={() => handleRemoveFromCart(index)}
-                  className="text-red-400 text-sm hover:text-red-700 ml-2 cursor-pointer"
-                >
-                  {t("cart.remove")}
-                </button>
+  
+                <div className="flex flex-col items-end">
+                  <span className="text-gray-600 text-sm">
+                    ${(item.product_selling * item.quantity).toFixed(2)} USD
+                  </span>
+                  
+                  {/* Botón para eliminar producto */}
+                  <button
+                    className="text-red-500 hover:text-red-700 text-sm cursor-pointer"
+                    onClick={() => handleRemoveFromCart(index)}
+                  >
+                    {t("cart.remove")}
+                  </button>
+                </div>
               </li>
             ))}
           </ul>
@@ -203,6 +217,7 @@ function Header() {
     </div>
   )}
 </div>
+
 
 
       </div>
