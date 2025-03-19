@@ -154,12 +154,12 @@ function Header() {
       ) : (
         <>
           {/* Subtotal y Checkout en la parte superior */}
-          <div className="flex items-center justify-between gap-2">
+          <div className="flex items-center justify-between gap-2 mb-2">
             <h6 className="text-gray-600 text-sm">
               <span>{t("cart.subtotal")}</span>
               {cartItems
                 .reduce((total, item) => total + item.product_selling * item.quantity, 0)
-                .toFixed(2)}{""}
+                .toFixed(2)}
               USD
             </h6>
             {totalQuantity < 2 ? (
@@ -176,16 +176,17 @@ function Header() {
           {/* Listado de productos */}
           <ul className="divide-y divide-gray-300">
             {cartItems.map((item, index) => (
-              <li key={index} className="flex gap-2 items-center py-2">
+              <li key={index} className="flex justify-between items-center py-2">
                 <img
                   src={item.image}
                   alt={item.product_name}
                   className="w-18 h-auto object-cover rounded-lg"
                 />
-                <div className="flex flex-col flex-grow">
+                <div className="flex flex-col">
                   <span className="text-gray-700 text-sm">{item.product_name}</span>
+                  <span className="text-gray-600 text-xs">Pieces: {item.quantity}</span>
                   <span className="text-gray-600 text-xs">
-                    ${item.product_selling.toFixed(2)} x {item.quantity}
+                    ${(item.product_selling * item.quantity).toFixed(2)}
                   </span>
                 </div>
                 <button
@@ -202,6 +203,7 @@ function Header() {
     </div>
   )}
 </div>
+
 
       </div>
     </nav>
