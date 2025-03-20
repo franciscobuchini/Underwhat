@@ -54,7 +54,7 @@ function App() {
         <CartProvider>
           <div className="flex flex-col min-h-screen mx-2 md:mx-4 bg-gray-50">
             <Header />
-            <main className="flex-1">
+            <main className="flex-1 mt-20">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/team-outfit" element={<TeamOutfit />} />

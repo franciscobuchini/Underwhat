@@ -59,7 +59,7 @@ function Header() {
   }, []);
 
   return (
-    <nav className="Navbar bg-white border border-gray-300 rounded-2xl flex justify-between w-full my-4 p-3">
+    <nav className="Navbar fixed z-100 bg-white border border-gray-300 rounded-2xl flex justify-between w-[calc(100%-1.5rem)] mt-2 p-3">
       <div className="NavbarLogo">
         <Link to="/">
           <img src={nav01} className="h-8" alt={t("header.logo_alt")} />
@@ -81,7 +81,7 @@ function Header() {
           </button>
 
           {isMenuOpen && (
-            <ul className="absolute right-18 top-15 w-48 bg-white border border-gray-300 rounded-2xl z-50 p-1" role="menu">
+            <ul className="absolute right-18 top-12 w-48 bg-white border border-gray-300 rounded-2xl z-150 p-1" role="menu">
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/team-outfit">
                   <span className="flex items-center gap-2">
@@ -99,7 +99,7 @@ function Header() {
                 </Link>
               </li>
               <li>
-                <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/faq">
+                <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/terms-and-conditions">
                   <span className="flex items-center gap-x-2">
                     <Icon icon="icon-park-twotone:align-text-left-one" className="size-5 text-violet-400" />
                     {t("header.menu.conditions")}
@@ -157,7 +157,7 @@ function Header() {
     </div>
   </button>
   {isCartOpen && (
-    <div className="absolute right-6 top-16 bg-white border border-gray-300 rounded-2xl z-50 p-2 min-w-[250px]">
+    <div className="absolute right-4 top-12 bg-white border border-gray-300 rounded-2xl z-50 p-2 min-w-[250px]">
       {cartItems.length === 0 ? (
         <h6 className="text-gray-600 text-center">{t("cart.empty")}</h6>
       ) : (
