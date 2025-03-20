@@ -113,7 +113,7 @@ function ProductList() {
               <button
                 className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center ${
                   selectedSizes[index]
-                    ? "border-green-600 text-green-600 bg-green-100 hover:outline-1 focus:outline-1 outline-green-600"
+                    ? "border-green-600 text-green-600 bg-green-100 hover:outline-1 focus:outline-1 outline-green-600 cursor-pointer"
                     : "text-gray-300 bg-gray-50 border shadow-none cursor-not-allowed hover:border hover:shadow-none focus:bg-white focus:border focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {

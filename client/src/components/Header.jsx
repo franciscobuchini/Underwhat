@@ -163,19 +163,19 @@ function Header() {
       ) : (
         <>
           {/* Subtotal y Checkout en la parte superior */}
-          <div className="flex items-center justify-between gap-2 mb-2">
-            <h6 className="text-gray-600 text-sm">
-              <span>{t("cart.subtotal")}</span>
+          <div className="flex items-center justify-between gap-2 m-2">
+            <h6 className="text-gray-600">
+              <span className="pr-1">{t("cart.subtotal")}</span>
               {cartItems
                 .reduce((total, item) => total + item.product_selling * item.quantity, 0)
                 .toFixed(2)}
-              USD
+                USD
             </h6>
             {totalQuantity < 2 ? (
               <p className="text-red-400 text-sm">{t("cart.minimum_order", { min: 2 })}</p>
             ) : (
               <button
-                className="rounded-lg border border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-colors duration-200 px-4 py-2 text-sm cursor-pointer"
+                className="rounded-lg border border-green-600 text-green-600 bg-green-100 px-4 py-1 hover:outline-1 focus:outline-1 outline-green-600 cursor-pointer"
                 onClick={() => navigate("/checkout")}
               >
                 {t("cart.checkout")}

@@ -30,7 +30,7 @@ const CheckoutForm = () => {
   }, []);
 
   return (
-    <div className="bg-white w-full rounded-2xl border">
+    <div className="bg-white w-full rounded-2xl border border-gray-300">
       <div className="w-full p-4">
         <form className="needs-validation grid gap-y-6" noValidate>
           {/* Shipping Details */}

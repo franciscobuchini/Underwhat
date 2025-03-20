@@ -35,7 +35,7 @@ const Checkout = () => {
     <div className="container flex flex-col gap-10 mx-auto px-4 py-8 mt-20">
 
       {/* Resumen del carrito con opción de eliminar */}
-      <div className="p-4 border rounded-2xl bg-white flex flex-col gap-y-4">
+      <div className="p-4 border border-gray-300 rounded-2xl bg-white flex flex-col gap-y-4">
         <div className="w-full mt-2">
           <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
             <Icon icon="icon-park-twotone:shopping" className="size-6 text-violet-400"/>
