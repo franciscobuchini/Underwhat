@@ -132,6 +132,11 @@
       "intellectual_property_title": "Intellectual Property",
       "privacy_title": "Privacy",
       "modifications_title": "Modifications"
+  },
+  "successfull": {
+    "order_completed": "Order received successfully!",
+    "thank_you": "Thank you for completing your order. We have forwarded your request to our logistics team, who will handle the shipment with the manufacturer. Shortly, you will receive an email with the shipping cost and a secure link to finalize your payment. If you need assistance or have any questions, please don’t hesitate to contact us at: asd@example.com.",
+    "continue_shopping": "Continue Shopping"
   }
 
   

@@ -1,9 +1,11 @@
 import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
+import { useNavigate } from 'react-router-dom';
 
 const CheckoutForm = () => {
   const { t } = useTranslation("global");
+  const navigate = useNavigate();
   const [showOtherCountry, setShowOtherCountry] = useState(false);
   const [formValid, setFormValid] = useState(false);
 
@@ -29,14 +31,23 @@ const CheckoutForm = () => {
       );
   }, []);
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (formValid) {
+      // Aquí puedes agregar lógica adicional si lo requieres (ej. envío de datos)
+      // Una vez que el formulario es válido, redirigimos a Successfull.jsx
+      navigate('/successfull');
+    }
+  };
+
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300">
       <div className="w-full p-4">
-        <form className="needs-validation grid gap-y-6" noValidate>
+        <form className="needs-validation grid gap-y-6" noValidate onSubmit={handleSubmit}>
           {/* Shipping Details */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:airplane" className="size-6 text-violet-400"/>
+              <Icon icon="icon-park-twotone:airplane" className="size-6 text-violet-500"/>
               {t("checkout.shipping_details")}
             </h6>
             <hr className="mt-2" />
@@ -227,7 +238,7 @@ const CheckoutForm = () => {
           {/* Contact Details */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-            <Icon icon="icon-park-twotone:message" className="size-6 text-violet-400"/>
+              <Icon icon="icon-park-twotone:message" className="size-6 text-violet-500"/>
               {t("checkout.contact_details")}
             </h6>
             <hr className="mt-2" />
@@ -277,7 +288,7 @@ const CheckoutForm = () => {
           {/* Validations */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-            <Icon icon="icon-park-twotone:check-one" className="size-6 text-violet-400"/>
+              <Icon icon="icon-park-twotone:check-one" className="size-6 text-violet-500"/>
               {t("checkout.validations")}
             </h6>
             <hr className="mt-2" />
@@ -288,7 +299,7 @@ const CheckoutForm = () => {
               type="checkbox"
               id="userAgree"
               required
-              className=" h-4 cursor-pointer"
+              className="h-4 cursor-pointer"
             />
             <label htmlFor="userAgree" className="text-gray-600 text-sm">
               {t("checkout.validation_text")}
@@ -300,7 +311,7 @@ const CheckoutForm = () => {
               type="checkbox"
               id="priceAgree"
               required
-              className=" h-4 cursor-pointer"
+              className="h-4 cursor-pointer"
             />
             <label htmlFor="priceAgree" className="text-gray-600 text-sm">
               {t("checkout.final_price_text")}
@@ -312,7 +323,7 @@ const CheckoutForm = () => {
               type="checkbox"
               id="termsAgree"
               required
-              className=" h-4 cursor-pointer"
+              className="h-4 cursor-pointer"
             />
             <label htmlFor="termsAgree" className="text-gray-600 text-sm">
               <a
@@ -326,13 +337,13 @@ const CheckoutForm = () => {
             </label>
           </div>
 
-          {/* Submit Button */}
+          {/* Botón de envío */}
           <div className="mt-6 flex justify-center">
             <button
               type="submit"
               name="submitButton"
               disabled={!formValid}
-              className="w-full max-w-xs rounded-md bg-indigo-600 py-2 px-4 text-sm font-semibold text-white hover:bg-indigo-700 disabled:opacity-50"
+              className="w-full max-w-xs bg-violet-500 py-2 px-4 text-sm font-bold text-white hover:bg-violet-500 disabled:bg-violet-300 cursor-pointer rounded-full"
             >
               {t("checkout.confirm_order")}
             </button>

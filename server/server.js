@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose(); // Importar sqlite3
 const path = require('path');
 const app = express();
 const cors = require('cors');
-const corsOptions = { origin: 'http://localhost:5174', };
+const corsOptions = { origin: 'http://localhost:5173', };
 
 app.use(cors(corsOptions));
 

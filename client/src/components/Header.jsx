@@ -77,7 +77,7 @@ function Header() {
             aria-label="Dropdown"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Icon icon="icon-park-twotone:app-switch" className="text-violet-400 size-6" />
+            <Icon icon="icon-park-twotone:app-switch" className="text-violet-500 size-6" />
           </button>
 
           {isMenuOpen && (
@@ -85,7 +85,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/team-outfit">
                   <span className="flex items-center gap-2">
-                    <Icon icon="icon-park-twotone:basketball-clothes" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:basketball-clothes" className="size-5 text-violet-500" />
                     {t("header.menu.team")}
                   </span>
                 </Link>
@@ -93,7 +93,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/faq">
                   <span className="flex items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:file-question" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:file-question" className="size-5 text-violet-500" />
                     {t("header.menu.faq")}
                   </span>
                 </Link>
@@ -101,7 +101,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/terms-and-conditions">
                   <span className="flex items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:align-text-left-one" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:align-text-left-one" className="size-5 text-violet-500" />
                     {t("header.menu.conditions")}
                   </span>
                 </Link>
@@ -109,7 +109,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/about">
                   <span className="flex items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:diving" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:diving" className="size-5 text-violet-500" />
                     {t("header.menu.about")}
                   </span>
                 </Link>
@@ -119,7 +119,7 @@ function Header() {
               <div ref={languageRef}>
                 <button className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" onClick={() => setIsLanguageOpen(!isLanguageOpen)}>
                   <span className="flex flex-row items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:text-message" className="size-5 text-violet-400" />
+                    <Icon icon="icon-park-twotone:text-message" className="size-5 text-violet-500" />
                     {t("header.menu.language")}
                   </span>
                 </button>
@@ -153,7 +153,7 @@ function Header() {
       <span className="absolute -top-2 -right-2 bg-red-400 w-4 h-4 rounded-full font-semibold text-white text-center text-xs flex items-center justify-center">
         {totalQuantity}
       </span>
-      <Icon icon="icon-park-twotone:shopping" className="text-violet-400 w-6 h-6" />
+      <Icon icon="icon-park-twotone:shopping" className="text-violet-500 w-6 h-6" />
     </div>
   </button>
   {isCartOpen && (
