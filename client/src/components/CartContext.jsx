@@ -1,4 +1,4 @@
-//CartContext.jsx
+// CartContext.jsx
 import { createContext, useContext, useState, useEffect } from "react";
 
 const CartContext = createContext();
@@ -51,8 +51,14 @@ export const CartProvider = ({ children }) => {
     });
   };
 
+  // Función para limpiar el carrito
+  const clearCart = () => {
+    setCartItems([]);
+    localStorage.setItem("cart", JSON.stringify([]));
+  };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart }}>
       {children}
     </CartContext.Provider>
   );

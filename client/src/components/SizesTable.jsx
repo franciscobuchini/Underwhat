@@ -53,7 +53,7 @@ const SizeTable = () => {
 
       <div className="bg-white shadow-md rounded-lg p-4">
       <select 
-        className="text-violet-500 focus:outline-none rounded-lg pr-2 max-w-xs" 
+        className="text-pink-800 focus:outline-none rounded-lg pr-2 max-w-xs" 
         onChange={(e) => setSelectedProduct(products[e.target.value])}
       >
         {products.map((product, index) => (

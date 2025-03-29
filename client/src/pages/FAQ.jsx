@@ -54,7 +54,7 @@ const FAQ = () => {
   return (
     <div className="container mx-auto px-4 py-8 mt-20">
       <h1 className="text-3xl font-bold mb-8 text-gray-600 flex items-center gap-4">
-        <Icon icon="icon-park-twotone:file-question" className="size-10 text-violet-500" />
+        <Icon icon="icon-park-twotone:file-question" className="size-10 text-pink-800" />
         {t("faq.title")}
       </h1>
       
@@ -62,11 +62,11 @@ const FAQ = () => {
         {faqItems.map((item, index) => (
           <div key={item.id} className={`${index === faqItems.length - 1 ? '' : 'border-b'}` }>
             <button
-              className="w-full flex items-center justify-between py-8 text-gray-600 hover:text-violet-500 focus:outline-none"
+              className="w-full flex items-center justify-between py-8 text-gray-600 hover:text-pink-800 focus:outline-none"
               onClick={() => toggleAccordion(index)}
             >
               <span className="flex items-center gap-4">
-                <Icon icon={item.icon} className="text-violet-500 size-6" />
+                <Icon icon={item.icon} className="text-pink-800 size-6" />
                 {t(`faq.questions.${item.questionKey}`)}
               </span>
               <Icon

@@ -2,12 +2,14 @@ import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { useNavigate } from 'react-router-dom';
+import { useCart } from '../components/CartContext';
 
 const CheckoutForm = () => {
   const { t } = useTranslation("global");
   const navigate = useNavigate();
   const [showOtherCountry, setShowOtherCountry] = useState(false);
   const [formValid, setFormValid] = useState(false);
+  const { clearCart } = useCart();
 
   const handleCountryChange = (event) => {
     setShowOtherCountry(event.target.value === 'other');
@@ -34,12 +36,14 @@ const CheckoutForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (formValid) {
-      // Aquí puedes agregar lógica adicional si lo requieres (ej. envío de datos)
-      // Una vez que el formulario es válido, redirigimos a Successfull.jsx
+      // Reiniciamos el carrito en el contexto y localStorage
+      clearCart();
+      console.log("Formulario enviado y carrito reiniciado a cero");
+      // Redirigir a la página de éxito
       navigate('/successfull');
     }
   };
-
+  
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300">
       <div className="w-full p-4">
@@ -47,7 +51,7 @@ const CheckoutForm = () => {
           {/* Shipping Details */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:airplane" className="size-6 text-violet-500"/>
+              <Icon icon="icon-park-twotone:airplane" className="size-6 text-pink-800"/>
               {t("checkout.shipping_details")}
             </h6>
             <hr className="mt-2" />
@@ -238,7 +242,7 @@ const CheckoutForm = () => {
           {/* Contact Details */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:message" className="size-6 text-violet-500"/>
+              <Icon icon="icon-park-twotone:message" className="size-6 text-pink-800"/>
               {t("checkout.contact_details")}
             </h6>
             <hr className="mt-2" />
@@ -288,7 +292,7 @@ const CheckoutForm = () => {
           {/* Validations */}
           <div className="w-full mt-2">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:check-one" className="size-6 text-violet-500"/>
+              <Icon icon="icon-park-twotone:check-one" className="size-6 text-pink-800"/>
               {t("checkout.validations")}
             </h6>
             <hr className="mt-2" />
@@ -343,7 +347,7 @@ const CheckoutForm = () => {
               type="submit"
               name="submitButton"
               disabled={!formValid}
-              className="w-full max-w-xs bg-violet-500 py-2 px-4 text-sm font-bold text-white hover:bg-violet-500 disabled:bg-violet-300 cursor-pointer rounded-full"
+              className="w-full max-w-xs bg-pink-800 py-2 px-4 text-sm font-bold text-white hover:bg-pink-800 disabled:bg-violet-300 cursor-pointer rounded-full"
             >
               {t("checkout.confirm_order")}
             </button>
