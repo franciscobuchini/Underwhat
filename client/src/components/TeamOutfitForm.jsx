@@ -107,11 +107,11 @@ const TeamOutfitForm = () => {
       'white', 'khaki', 'light_green', 'dark_gray', 
       'dark_green', 'coffee', 'maple_leaf_red', 'black'
     ],
-    zip_hoodie: ['black', 'white', 'navy_blue', 'dark_gray', 'light_gray', 'khaki'],
+    zip_hoodie: ['white', 'black', 'navy_blue', 'dark_gray', 'light_gray', 'khaki'],
     hoodie: [
-      'black', 'wood_ash', 'khaki', 'milk_apricot', 
+      'white', 'black', 'wood_ash', 'khaki', 'milk_apricot', 
       'ink_blue', 'light_coffee', 'jungle_green', 
-      'wine_red', 'hemp_ash', 'white'
+      'wine_red', 'hemp_ash'
     ],
     round_neck_hoodie: [
       'white', 'pink', 'navy_blue', 'haze_blue', 
@@ -155,6 +155,7 @@ const TeamOutfitForm = () => {
         <form className="needs-validation grid gap-y-6" noValidate onSubmit={handleSubmit}>
           {/* Selección de prenda y color */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {/* Selector de tipo de prenda (se mantiene igual) */}
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="selectWear">
                 {t("teamoutfit.select_wear") || "Select Wear"} *
@@ -164,7 +165,7 @@ const TeamOutfitForm = () => {
                 required
                 value={selectedWear}
                 onChange={handleWearChange}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 focus:ring-pink-800"
               >
                 <option value="regular_tshirt">Regular T-Shirt</option>
                 <option value="sleeveless_vest">Sleeveless Vest</option>
@@ -174,32 +175,57 @@ const TeamOutfitForm = () => {
                 <option value="round_neck_hoodie">Round Neck Hoodie</option>
               </select>
             </div>
+  
+            {/* Selector de color (nueva versión visual) */}
             <div>
-              <label className="block text-sm font-medium text-gray-600" htmlFor="selectColor">
-                {t("teamoutfit.select_color") || "Select Color"} *
+              <label className="block text-sm font-medium text-gray-600 mb-2">
+                {t("teamoutfit.select_color")} *
               </label>
-              <div className="flex gap-2 items-center">
-                <select
-                  id="selectColor"
-                  required
-                  value={selectedColor}
-                  onChange={handleColorChange}
-                  className="mt-1 block w-50 rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
-                >
-                  {wearColorOptions[selectedWear].map(colorKey => (
-                    <option key={colorKey} value={colorKey}>
-                      {getFormattedColorName(colorKey)}
-                    </option>
-                  ))}
-                </select>
-                <div
-                  className="rounded-lg w-10 h-10 border"
-                  style={{ backgroundColor: currentColor }}
-                ></div>
+              <p className="my-2 text-sm font-medium text-gray-600">
+                {getFormattedColorName(selectedColor)}
+              </p>
+              <div className="flex items-center gap-4">
+                <div className="grid grid-cols-5 gap-2 flex-1 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-7">
+                  {wearColorOptions[selectedWear].map((colorKey) => {
+                    const isSelected = selectedColor === colorKey;
+                    return (
+                      <button
+                        key={colorKey}
+                        type="button"
+                        onClick={() => setSelectedColor(colorKey)}
+                        className={`relative w-8 h-8 rounded-full border-2 transition-all duration-200 ${
+                          isSelected 
+                            ? 'ring-2 ring-pink-800 ring-offset-2 scale-110' 
+                            : 'border-gray-200 hover:scale-105'
+                        }`}
+                        style={{ backgroundColor: colorMapping[colorKey] }}
+                        title={getFormattedColorName(colorKey)}
+                      >
+                        {isSelected && (
+                          <span className="absolute inset-0 flex items-center justify-center text-white">
+                            <svg 
+                              className="w-4 h-4" 
+                              fill="none" 
+                              stroke="currentColor" 
+                              viewBox="0 0 24 24"
+                            >
+                              <path 
+                                strokeLinecap="round" 
+                                strokeLinejoin="round" 
+                                strokeWidth={3} 
+                                d="M5 13l4 4L19 7" 
+                              />
+                            </svg>
+                          </span>
+                        )}
+                      </button>
+                    );
+                  })}
+                </div>
+                {/* Muestra del color seleccionado */}
               </div>
             </div>
           </div>
-
         {/* Sección de carga de archivos */}
           <div className="mt-4">
             <label className="block text-sm font-medium text-gray-600 mb-2">
@@ -207,9 +233,7 @@ const TeamOutfitForm = () => {
             </label>
             
             <div 
-              className={`border-2 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors ${
-                isDragging ? 'border-violet-500 bg-violet-50' : 'border-gray-300 hover:border-violet-400'
-              }`}
+              className= "border-1 border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors border-gray-400 hover:border-pink-800"
               onDragOver={(e) => {
                 e.preventDefault();
                 setIsDragging(true);
@@ -226,7 +250,7 @@ const TeamOutfitForm = () => {
                   <Icon icon="tabler:upload" className="w-6 h-6 text-gray-500" />
                 </span>
                 <div className="text-gray-600">
-                  <span className="text-violet-600 hover:text-violet-500 font-medium">
+                  <span className="text-pink-800 hover:text-pink-900 font-medium">
                     {t("teamoutfit.browse") || "Browse files"}
                   </span>
                   <span className="mx-2">{t("teamoutfit.drop_or_browse") || "or drag and drop"}</span>
@@ -263,7 +287,7 @@ const TeamOutfitForm = () => {
                   </button>
                   <div className="w-full bg-gray-200 rounded-full h-1 mt-1">
                     <div 
-                      className="bg-violet-500 h-1 rounded-full transition-all duration-300" 
+                      className="bg-pink-500 h-1 rounded-full transition-all duration-300" 
                       style={{ width: `${progress}%` }}
                     ></div>
                   </div>
@@ -276,7 +300,7 @@ const TeamOutfitForm = () => {
           <div className="mt-6 flex justify-center">
             <button
               type="submit"
-              className="w-full max-w-xs bg-pink-800 py-2 px-4 text-sm font-bold text-white hover:bg-pink-900 rounded-full transition-colors"
+              className="w-full max-w-xs bg-pink-800 py-2 px-4 text-sm font-bold text-white hover:bg-pink-900 rounded-full"
             >
               {t("teamoutfit.confirm_order") || "Confirm Order"}
             </button>

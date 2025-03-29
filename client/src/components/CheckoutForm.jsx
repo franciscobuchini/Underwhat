@@ -67,7 +67,7 @@ const CheckoutForm = () => {
                 required
                 onChange={handleCountryChange}
                 defaultValue="united_states"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
               >
                 <option value="angola">Angola</option>
                 <option value="argentina">Argentina</option>
@@ -132,7 +132,7 @@ const CheckoutForm = () => {
                   type="text"
                   placeholder="Andorra"
                   required
-                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
                 />
               </div>
             )}
@@ -148,7 +148,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="California"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
               />
             </div>
             <div>
@@ -160,7 +160,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="San Francisco"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
               />
             </div>
           </div>
@@ -175,7 +175,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="Main Street"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
               />
             </div>
             <div>
@@ -187,7 +187,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="123"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
               />
             </div>
             <div>
@@ -198,7 +198,7 @@ const CheckoutForm = () => {
                 id="apartment"
                 type="text"
                 placeholder="6th B"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
               />
             </div>
             <div>
@@ -210,7 +210,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="1234"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
               />
             </div>
           </div>
@@ -223,7 +223,7 @@ const CheckoutForm = () => {
               id="shippingInfo"
               placeholder={t("checkout.shipping_info_placeholder")}
               rows="1"
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800  resize-none"
             ></textarea>
           </div>
 
@@ -235,7 +235,7 @@ const CheckoutForm = () => {
               id="forUsInfo"
               placeholder={t("checkout.forUs_info_placeholder")}
               rows="1"
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500 resize-none"
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800  resize-none"
             ></textarea>
           </div>
 
@@ -258,7 +258,7 @@ const CheckoutForm = () => {
                 type="email"
                 required
                 placeholder="underwather@hockey.com"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -271,7 +271,7 @@ const CheckoutForm = () => {
                   type="text"
                   required
                   placeholder="+01"
-                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
                 />
               </div>
               <div>
@@ -283,7 +283,7 @@ const CheckoutForm = () => {
                   type="tel"
                   required
                   placeholder="555 123456"
-                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-indigo-500 focus:ring-indigo-500"
+                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
                 />
               </div>
             </div>
@@ -347,7 +347,7 @@ const CheckoutForm = () => {
               type="submit"
               name="submitButton"
               disabled={!formValid}
-              className="w-full max-w-xs bg-pink-800 py-2 px-4 text-sm font-bold text-white hover:bg-pink-800 disabled:bg-violet-300 cursor-pointer rounded-full"
+              className="w-full max-w-xs bg-pink-800 py-2 px-4 text-sm font-bold text-white hover:bg-pink-800 disabled:bg-gray-400 enabled:cursor-pointer rounded-full"
             >
               {t("checkout.confirm_order")}
             </button>
