@@ -13,11 +13,11 @@ const TeamOutfitForm = () => {
   const handleFileChange = (newFiles) => {
     const validFiles = Array.from(newFiles).filter(file => {
       if (!file.type.startsWith('image/')) {
-        alert(t("teamoutfit.file_type_error") || 'Only image files are allowed');
+        alert(t("team.file_type_error") || 'Only image files are allowed');
         return false;
       }
       if (file.size > 2 * 1024 * 1024) {
-        alert(t("teamoutfit.file_size_error") || 'File size exceeds 2MB limit');
+        alert(t("team.file_size_error") || 'File size exceeds 2MB limit');
         return false;
       }
       return true;
@@ -157,8 +157,8 @@ const TeamOutfitForm = () => {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {/* Selector de tipo de prenda (se mantiene igual) */}
             <div>
-              <label className="block text-sm font-medium text-gray-600" htmlFor="selectWear">
-                {t("teamoutfit.select_wear") || "Select Wear"} *
+              <label className="block text-sm font-medium text-gray-600 m-2 ml-0" htmlFor="selectWear">
+                {t("team.select_wear")}
               </label>
               <select
                 id="selectWear"
@@ -178,12 +178,13 @@ const TeamOutfitForm = () => {
   
             {/* Selector de color (nueva versión visual) */}
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2">
-                {t("teamoutfit.select_color")} *
-              </label>
-              <p className="my-2 text-sm font-medium text-gray-600">
+              <label className="block text-sm font-medium text-gray-600 m-2 ml-0">
+                {t("team.select_color")}
+                <span className="m-2 text-sm font-medium text-gray-600">
                 {getFormattedColorName(selectedColor)}
-              </p>
+              </span>
+              </label>
+             
               <div className="flex items-center gap-4">
                 <div className="grid grid-cols-5 gap-2 flex-1 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-7">
                   {wearColorOptions[selectedWear].map((colorKey) => {
@@ -229,7 +230,7 @@ const TeamOutfitForm = () => {
         {/* Sección de carga de archivos */}
           <div className="mt-4">
             <label className="block text-sm font-medium text-gray-600 mb-2">
-              {t("teamoutfit.upload_files") || "Upload Files"}
+              {t("team.upload_files")}
             </label>
             
             <div 
@@ -247,16 +248,13 @@ const TeamOutfitForm = () => {
             >
               <div className="flex flex-col items-center">
                 <span className="bg-gray-100 rounded-full p-3 mb-4">
-                  <Icon icon="tabler:upload" className="w-6 h-6 text-gray-500" />
+                  <Icon icon="icon-park-twotone:folder-upload" className="w-6 h-6 text-gray-500" />
                 </span>
                 <div className="text-gray-600">
-                  <span className="text-pink-800 hover:text-pink-900 font-medium">
-                    {t("teamoutfit.browse") || "Browse files"}
-                  </span>
-                  <span className="mx-2">{t("teamoutfit.drop_or_browse") || "or drag and drop"}</span>
+                  <span className="mx-2">{t("team.drop_or_browse")}</span>
                 </div>
                 <p className="text-gray-400 text-sm mt-1">
-                  {t("teamoutfit.file_info") || "PNG, JPG up to 2MB"}
+                  {t("team.file_info")}
                 </p>
               </div>
               
@@ -296,13 +294,25 @@ const TeamOutfitForm = () => {
             </div>
           </div>
 
+          <div className="w-full">
+            <label className="block text-sm font-medium text-gray-600" htmlFor="forUsInfo">
+              {t("team.relevant_forUs_info")}
+            </label>
+            <textarea
+              id="forUsInfo"
+              placeholder={t("team.forUs_info_placeholder")}
+              rows="5"
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800  resize-none"
+            ></textarea>
+          </div>
+
           {/* Botón de envío */}
           <div className="mt-6 flex justify-center">
             <button
               type="submit"
               className="w-full max-w-xs bg-pink-800 py-2 px-4 text-sm font-bold text-white hover:bg-pink-900 rounded-full"
             >
-              {t("teamoutfit.confirm_order") || "Confirm Order"}
+              {t("team.add")}
             </button>
           </div>
         </form>
