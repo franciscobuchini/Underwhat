@@ -9,7 +9,7 @@ const SizeTable = () => {
       ["XL", "108 cm", "49 cm", "72 cm"],
       ["2XL", "112 cm", "50 cm", "74 cm"]
     ] },
-    { name: "Sleeveless Vest", weight: "230g | 100% long-staple cotton", sizes: [
+    { name: "Sleeveless Shirt", weight: "230g | 100% long-staple cotton", sizes: [
       ["S", "96 cm", "40 cm", "66 cm"],
       ["M", "100 cm", "41 cm", "68 cm"],
       ["L", "104 cm", "41.5 cm", "70 cm"],
