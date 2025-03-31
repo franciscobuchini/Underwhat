@@ -7,7 +7,7 @@ const Home = () => {
   const { t } = useTranslation("global");
   return (
     <div className="container mx-auto px-4 mt-20">
-      <Title title="Our catalog" />
+      <Title title="Featured Products" />
       <ProductList />
       <Title title="The brand for your team" />
     </div>

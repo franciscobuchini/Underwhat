@@ -22,32 +22,32 @@ const TeamOutfitForm = () => {
   // Objeto que mapea la combinación "wear-color" a una URL de imagen
 const customProductImages = {
   // Regular T-Shirt
-  // "regular_tshirt-white": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+White",
-  // "regular_tshirt-seagull_gray": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Seagull+Gray",
-  // "regular_tshirt-khaki": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Khaki",
-  // "regular_tshirt-glacier_blue": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Glacier+Blue",
-  // "regular_tshirt-breeze_green": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Breeze+Green",
-  // "regular_tshirt-apricot": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Apricot",
-  // "regular_tshirt-ice_blue": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Ice+Blue",
-  // "regular_tshirt-haze_blue": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Haze+Blue",
-  // "regular_tshirt-lotus_purple": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Lotus+Purple",
-  // "regular_tshirt-sakura_pink": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Sakura+Pink",
-  // "regular_tshirt-light_green": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Light+Green",
-  // "regular_tshirt-fog_gray": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Fog+Gray",
-  // "regular_tshirt-pale_green": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Pale+Green",
-  // "regular_tshirt-dark_green": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Dark+Green",
-  // "regular_tshirt-bird_green": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Bird+Green",
-  // "regular_tshirt-navy_blue": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Navy+Blue",
-  // "regular_tshirt-dark_gray": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Dark+Gray",
-  // "regular_tshirt-light_gray": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Light+Gray",
-  // "regular_tshirt-coffee": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Coffee",
-  // "regular_tshirt-maple_leaf_red": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Maple+Leaf+Red",
-  // "regular_tshirt-black": "https://via.placeholder.com/400x400?text=Regular+T-Shirt+-+Black",
+  "regular_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/j69win8wv6toomncmful.png",
+  "regular_tshirt-seagull_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/iambm0gw861vynpdque2.png",
+  "regular_tshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/twkhetsy1xtbyvlrsb8t.png",
+  "regular_tshirt-glacier_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/m07689fvj2j6dlc8bjni.png",
+  "regular_tshirt-breeze_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/eoiloiznw64simdupn0v.png",
+  "regular_tshirt-apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/pjqeh1kdl5xgprewkchi.png",
+  "regular_tshirt-ice_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/nrto3tvwotwtkgpcula6.png",
+  "regular_tshirt-haze_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/mwl1bpkctllcjkhtmapz.png",
+  "regular_tshirt-lotus_purple": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/x5ufhjudy2eguwsvqquf.png",
+  "regular_tshirt-sakura_pink": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/wo1z9bwac2wqkblaqbsi.png",
+  "regular_tshirt-light_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743460520/lightgreen_fh37gq.png",
+  "regular_tshirt-fog_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/jkiwo0fauvhnpifwe2sz.png",
+  "regular_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/flefvfcmvklsmzalybmh.png",
+  "regular_tshirt-dark_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/b2ho08fcaalq9cw0re2a.png",
+  "regular_tshirt-bird_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/tdue9o4zz7nsrhvvq03d.png",
+  "regular_tshirt-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/gblrxkedwszefh1zaaax.png",
+  "regular_tshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/dgnvmni08t8xan4ulz1c.png",
+  "regular_tshirt-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459291/impzue0msy5npx8jfxjz.png",
+  "regular_tshirt-coffee": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/azuiligffpc8is96tgc5.png",
+  "regular_tshirt-maple_leaf_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/zsxiwqjjgi2jijcsd96g.png",
+  "regular_tshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/rymdu4ckino6qya8gw5h.png",
 
   // Sleeveless Vest
-  // "sleeveless_shirt-white": "https://via.placeholder.com/400x400?text=Sleeveless+Vest+-+White",
-  // "sleeveless_shirt-black": "https://via.placeholder.com/400x400?text=Sleeveless+Vest+-+Black",
-  // "sleeveless_shirt-dark_gray": "https://via.placeholder.com/400x400?text=Sleeveless+Vest+-+Dark+Gray",
+  "sleeveless_shirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/whitetank_att3k8.png",
+  "sleeveless_shirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/blacktank_gyzv49.png",
+  "sleeveless_shirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/darkgraytank_kfhu16.png",
 
   // Oversized T-Shirt (casos especiales para white y black)
   "oversized_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357592/Plain-Tshirt_jvzfmx.png",
@@ -110,9 +110,9 @@ const customProductImages = {
     haze_blue: "#A7B9DD",
     lotus_purple: "#CDCDEF",
     sakura_pink: "#FFB9DB",
-    light_green: "#C9CAC4",
+    light_green: "#b5beb0",
     fog_gray: "#8B8788",
-    pale_green: "#63625E",
+    pale_green: "#5c6556",
     dark_green: "#2C403D",
     bird_green: "#255E72",
     navy_blue: "#34365C",
@@ -324,20 +324,27 @@ const customProductImages = {
     return customProductImages[key] || productImages[outfit.wear];
   };
   
+  const wearNames = {
+    regular_tshirt: "Regular T-Shirt",
+    sleeveless_shirt: "Sleeveless Shirt",
+    oversized_tshirt: "Oversized T-Shirt",
+    zip_hoodie: "Zip Hoodie",
+    hoodie: "Hoodie",
+    round_neck_hoodie: "Round Neck Hoodie",
+  };
   
 
   return (
-    <div className="bg-white w-full rounded-2xl border border-gray-300 p-4">
-
+    <div className="bg-white w-full rounded-2xl border border-gray-300 p-6">
       {/* Contenedor en dos columnas */}
-      <div className="flex flex-col md:flex-row gap-6">
+      <div className="flex flex-col md:flex-row gap-8">
         {/* Columna Izquierda: Formulario */}
         <div className="flex-1">
           <form className="grid gap-y-6" noValidate onSubmit={handleAddOutfit}>
             {/* Selector de prenda */}
             <div>
               <label
-                className="block text-sm font-medium text-gray-600 mb-1"
+                className="block text-sm font-medium text-gray-600 mb-2"
                 htmlFor="selectWear"
               >
                 {t("team.select_wear")}
@@ -347,7 +354,7 @@ const customProductImages = {
                 required
                 value={selectedWear}
                 onChange={handleWearChange}
-                className="block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 focus:ring-pink-800"
+                className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 focus:ring-pink-800"
               >
                 <option value="regular_tshirt">Regular T-Shirt</option>
                 <option value="sleeveless_shirt">Sleeveless Shirt</option>
@@ -357,17 +364,17 @@ const customProductImages = {
                 <option value="round_neck_hoodie">Round Neck Hoodie</option>
               </select>
             </div>
-
+  
             {/* Selector de color */}
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">
+              <label className="block text-sm font-medium text-gray-600 mb-2">
                 {t("team.select_color")}{" "}
                 <span className="ml-2 text-sm font-medium text-gray-600">
                   {getFormattedColorName(selectedColor)}
                 </span>
               </label>
               <div className="flex items-center gap-4">
-                <div className="grid grid-cols-5 gap-2 flex-1 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-7">
+                <div className="flex flex-wrap gap-2">
                   {wearColorOptions[selectedWear].map((colorKey) => {
                     const isSelected = selectedColor === colorKey;
                     return (
@@ -375,7 +382,7 @@ const customProductImages = {
                         key={colorKey}
                         type="button"
                         onClick={() => setSelectedColor(colorKey)}
-                        className={`relative w-8 h-8 rounded-full border-2 transition-all duration-200 ${
+                        className={`relative w-8 h-8 rounded-full border-2 transition-transform duration-200 ${
                           isSelected
                             ? "ring-2 ring-pink-800 ring-offset-2 scale-110"
                             : "border-gray-200 hover:scale-105"
@@ -406,7 +413,7 @@ const customProductImages = {
                 </div>
               </div>
             </div>
-
+  
             {/* Sección de carga de imágenes */}
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
@@ -446,9 +453,9 @@ const customProductImages = {
                   onChange={(e) => handleFileChange(e.target.files)}
                 />
               </div>
-
+  
               {/* Previsualización de imágenes */}
-              <div className="grid grid-cols-4 gap-4 mt-4">
+              <div className="grid grid-cols-4 gap-4 mt-6">
                 {files.map((file, index) => (
                   <div key={file.name + index} className="relative group">
                     <img
@@ -473,10 +480,10 @@ const customProductImages = {
                 ))}
               </div>
             </div>
-
+  
             {/* Input para cantidad */}
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-1">
+              <label className="block text-sm font-medium text-gray-600 mb-2">
                 Cantidad:
               </label>
               <input
@@ -484,15 +491,15 @@ const customProductImages = {
                 min="1"
                 value={quantity}
                 onChange={(e) => setQuantity(Number(e.target.value))}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800"
                 required
               />
             </div>
-
+  
             {/* Descripción */}
             <div>
               <label
-                className="block text-sm font-medium text-gray-600 mb-1"
+                className="block text-sm font-medium text-gray-600 mb-2"
                 htmlFor="forUsInfo"
               >
                 {t("team.relevant_forUs_info")}
@@ -503,25 +510,26 @@ const customProductImages = {
                 rows="5"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 resize-none"
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 resize-none"
               ></textarea>
             </div>
-
+  
             {/* Botón para agregar la prenda */}
-            <div className="flex justify-center mt-4">             
+            <div className="flex justify-center">
               <button
                 type="submit"
-                className="border rounded-full w-auto px-4 py-1 flex justify-center gap-2 items-center border-pink-600 text-pink-600 bg-pink-100 hover:outline-1 focus:outline-1 outline-pink-600 cursor-pointer"
+                className="border rounded-lg px-6 py-2 flex justify-center gap-2 items-center border-pink-800 text-pink-800 bg-pink-100 hover:outline hover:outline-1 focus:outline focus:outline-1 outline-pink-600 cursor-pointer"
               >
                 {t("team.add")}
+                <Icon icon="icon-park-twotone:add-one" className="w-5 h-5" />
               </button>
             </div>
           </form>
-
+  
           {/* Campo de email para el pedido (único para todo el outfit) */}
           {outfits.length > 0 && (
-            <div className="mt-4">
-              <label className="block text-sm font-medium text-gray-600 mb-1">
+            <div className="mt-6">
+              <label className="block text-sm font-medium text-gray-600 mb-2">
                 {t("team.contact_details")}
               </label>
               <input
@@ -529,26 +537,27 @@ const customProductImages = {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder={t("team.email")}
-                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-600 focus:border-pink-800"
+                className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-600 focus:border-pink-800"
                 required
               />
             </div>
           )}
-
+  
           {/* Botón de confirmación (solo se muestra si hay outfits agregados) */}
           {outfits.length > 0 && (
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-6">
               <button
                 type="button"
                 onClick={handleConfirmOrder}
-                className="border rounded-full w-auto px-4 py-1 flex justify-center gap-2 items-center border-green-600 text-green-600 bg-green-100 hover:outline-1 focus:outline-1 outline-green-600 cursor-pointer"
+                className="border rounded-lg px-6 py-2 flex justify-center gap-2 items-center border-green-600 text-green-600 bg-green-100 hover:outline hover:outline-1 focus:outline focus:outline-1 outline-green-600 cursor-pointer"
               >
                 Confirm Order
+                <Icon icon="icon-park-twotone:check-one" className="w-5 h-5" />
               </button>
             </div>
           )}
         </div>
-
+  
         {/* Columna Derecha: Imagen del producto actualmente seleccionado */}
         <div className="flex-1 flex items-center justify-center">
           <div className="relative">
@@ -558,48 +567,59 @@ const customProductImages = {
               className="w-auto h-full object-cover"
               loading="lazy"
             />
-                  </div>
+          </div>
+        </div>
+      </div>
+  
+      {/* Listado de outfits agregados */}
+      {outfits.length > 0 && (
+        <div className="mt-8">
+          <h2 className="text-sm font-medium text-gray-600 mb-4">
+            Outfits Added:
+          </h2>
+          <ul className="space-y-4">
+            {outfits.map((outfit, index) => (
+              <li
+                key={index}
+                className="flex items-center p-4 border border-gray-300 rounded-md"
+              >
+                {/* Miniatura de la imagen del producto */}
+                <img
+                  src={getOutfitImage(outfit)}
+                  alt={outfit.wear}
+                  className="w-24 h-full object-cover rounded-md"
+                  loading="lazy"
+                />
+                <div className="flex-1 ml-4">
+                <p className="text-gray-600">
+                  <span className="font-semibold">Wear:</span> {" "}
+                  {wearNames[outfit.wear]}
+                </p>
+                <p className="text-gray-600">
+                  <span className="font-semibold">Color:</span> {" "}
+                  {getFormattedColorName(outfit.color)}
+                </p>
+                  <p className="text-gray-600">
+                    <span className="font-semibold">Quantity:</span> {outfit.quantity}
+                  </p>
+                  <p className="text-gray-600">
+                    <span className="font-semibold">Description:</span> {outfit.description}
+                  </p>
                 </div>
-              </div>
-
-              {/* Listado de outfits agregados */}
-              {outfits.length > 0 && (
-                <div className="mt-8">
-                  <h2 className="text-xl text-gray-600 font-semibold mb-4">Outfits Added:</h2>
-                  <ul className="space-y-4">
-                  {outfits.map((outfit, index) => (
-          <li key={index} className="flex items-center p-4 border border-gray-300 rounded-md">
-            {/* Miniatura de la imagen del producto */}
-            <img
-              src={getOutfitImage(outfit)}
-              alt={outfit.wear}
-              className="w-24 h-full object-cover"
-              loading="lazy"
-            />
-            <div className="flex-1">
-              <p className="text-gray-600 font-semibol">
-                <span className="font-semibold">Wear:</span> {outfit.wear} | <span className="font-semibold">Color:</span> {getFormattedColorName(outfit.color)}
-              </p>
-              <p className="text-gray-600">
-                <span className="font-semibold">Quantity:</span> {outfit.quantity}
-              </p>
-              <p className="text-gray-600">
-                <span className="font-semibold">Description:</span> {outfit.description}
-              </p>
-            </div>
-            <button
-              onClick={() => handleRemoveOutfit(index)}
-              className="text-red-400 hover:text-red-600 cursor-pointer"
-            >
-              Remove
-            </button>
-          </li>
-        ))}
+                <button
+                  onClick={() => handleRemoveOutfit(index)}
+                  className="text-red-400 hover:text-red-600 ml-4"
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       )}
     </div>
   );
-};
-
-export default TeamOutfitForm;
+  };
+  
+  export default TeamOutfitForm;
+  

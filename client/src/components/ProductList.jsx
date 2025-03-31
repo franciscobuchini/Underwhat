@@ -96,7 +96,7 @@ function ProductList() {
             <div className="ProductInteractions flex justify-left space-x-2 mt-4">
               <select
                 id="size"
-                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-1 hover:outline-1 outline-gray-300"
+                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-1 hover:outline-1 outline-gray-300 cursor-pointer"
                 aria-label="select"
                 value={selectedSizes[index] || ""}
                 onChange={(e) => handleSizeChange(index, e.target.value)}
@@ -113,8 +113,8 @@ function ProductList() {
               <button
                 className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center ${
                   selectedSizes[index]
-                    ? "border-green-600 text-green-600 bg-green-100 hover:outline-1 focus:outline-1 outline-green-600 cursor-pointer"
-                    : "text-gray-300 bg-gray-50 border shadow-none cursor-not-allowed hover:border hover:shadow-none focus:bg-white focus:border focus:bg-gray-100 focus:shadow-none"
+                    ? "text-green-600 bg-green-100 hover:outline-1 focus:outline-1 outline-green-600 cursor-pointer"
+                    : "text-gray-300 bg-white shadow-none cursor-not-allowed hover:border hover:shadow-none focus:bg-white focus:border focus:bg-gray-100 focus:shadow-none"
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();

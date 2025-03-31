@@ -81,7 +81,17 @@
   },
   "team": {
     "title": "Vestimenta para equipos de UWH",
-    "content": "No jueguen como un equipo si no se visten como uno. En Underwhat!?, creamos indumentaria personalizada para equipos de Hockey Subacuático que quieren destacar dentro y fuera de la piscina. Nos especializamos en ofrecer outfits únicos, combinando diseño innovador con materiales de la más alta calidad. Cada prenda está pensada para brindar comodidad, resistencia y un estilo distintivo que eleve la presencia de tu equipo en cada competencia."
+    "content": "No jueguen como un equipo si no se visten como uno. En Underwhat!?, creamos indumentaria personalizada para equipos de Hockey Subacuático que quieren destacar dentro y fuera de la piscina. Nos especializamos en ofrecer outfits únicos, combinando diseño innovador con materiales de la más alta calidad. Cada prenda está pensada para brindar comodidad, resistencia y un estilo distintivo que eleve la presencia de tu equipo en cada competencia.",
+    "select_wear": "Type of wear:",
+    "select_color": "Select color:",
+    "upload_files": "Upload pictures:",
+    "drop_or_browse": "Browse or drop files here",
+    "file_info": "You can upload images, logos, or any other files you want us to consider for your design. Can be PNG, JPG, or PDF format. The maximum size is 2MB.",
+    "relevant_forUs_info": "Explain us what you want in your outfit:",
+    "forUs_info_placeholder": "Tell us what you have in mind. We will contact you to discuss the details.",
+    "contact_details": "Contact Details",
+    "email": "Email",
+    "add": "Add"
   },
 "checkout": {
       "order_details": "Detalles del pedido",
