@@ -166,7 +166,7 @@ const customProductImages = {
       "maple_leaf_red",
       "black",
     ],
-    sleeveless_shirt: ["white", "black", "dark_gray"],
+    sleeveless_shirt: ["white", "dark_gray", "black"],
     oversized_tshirt: [
       "white",
       "khaki",
