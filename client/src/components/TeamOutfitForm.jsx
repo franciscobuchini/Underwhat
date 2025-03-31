@@ -484,7 +484,7 @@ const customProductImages = {
             {/* Input para cantidad */}
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
-                Cantidad:
+              {t("team.amount")}
               </label>
               <input
                 type="number"
