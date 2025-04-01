@@ -9,6 +9,7 @@
       "team": "Team Outfit",
       "faq": "FAQ",
       "about": "About Us",
+      "shipping-calculator": "Shipping Cost",
       "conditions": "Conditions",
       "language": "Language"
     },
@@ -101,6 +102,8 @@
       "other_country": "Other Country",
       "state": "State / Province / Region",
       "city": "City",
+      "teamName": "Team Name",
+      "teamName_placeholder": "Enter your team name",
       "street_name": "Street Name",
       "address_number": "Address Number",
       "apartment_suite": "Apartment, Suite, etc.",
@@ -148,7 +151,9 @@
     "order_completed": "Order received successfully!",
     "thank_you": "Thank you for completing your order. We have forwarded your request to our logistics team, who will handle the shipment with the manufacturer. Shortly, you will receive an email with the shipping cost and a secure link to finalize your payment. If you need assistance or have any questions, please don’t hesitate to contact us at: asd@example.com.",
     "continue_shopping": "Continue Shopping"
-  }
-
-  
+  },
+  "shippingCalculator": {
+    "title": "Shipping Rate Calculator",
+    "content": "We are working on this section. We want to give you the best possible experience, but we need a little more time to make it perfect."
+  }  
 }

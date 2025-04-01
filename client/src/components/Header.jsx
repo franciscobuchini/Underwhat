@@ -114,12 +114,20 @@ function Header() {
                   </span>
                 </Link>
               </li>
+              <li>
+                <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/shipping-calculator">
+                  <span className="flex items-center gap-x-2">
+                    <Icon icon="icon-park-twotone:ship" className="size-5 text-pink-800" />
+                    {t("header.menu.shipping-calculator")}
+                  </span>
+                </Link>
+              </li>
 
               {/* Botón de selección de idioma */}
               <div ref={languageRef}>
                 <button className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" onClick={() => setIsLanguageOpen(!isLanguageOpen)}>
                   <span className="flex flex-row items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:text-message" className="size-5 text-pink-800" />
+                    <Icon icon="icon-park-twotone:text" className="size-5 text-pink-800" />
                     {t("header.menu.language")}
                   </span>
                 </button>

@@ -138,7 +138,7 @@ const CheckoutForm = () => {
             )}
           </div>
 
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="state">
                 {t("checkout.state")} *
@@ -148,7 +148,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="California"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800"
               />
             </div>
             <div>
@@ -160,10 +160,23 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="San Francisco"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-600" htmlFor="teamName">
+                {t("checkout.teamName")}
+              </label>
+              <input
+                id="teamName"
+                type="text"
+                required
+                placeholder={t("checkout.teamName_placeholder")}
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800"
               />
             </div>
           </div>
+
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
             <div>

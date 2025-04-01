@@ -12,6 +12,7 @@ import AboutUs from './pages/AboutUs';
 import Checkout from './pages/Checkout';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Successfull from './pages/Successfull';
+import ShippingCalculator from './pages/ShippingCalculator';
 
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
@@ -64,6 +65,8 @@ function App() {
                 <Route path="/checkout" element={<Checkout />} />
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                 <Route path="/successfull" element={<Successfull />} />
+                <Route path="/shipping-calculator" element={<ShippingCalculator />} />
+                <Route path="*" element={<h1>{t("notFound")}</h1>} />
               </Routes>
             </main>
             <Footer />

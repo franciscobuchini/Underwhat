@@ -17,6 +17,7 @@ const TeamOutfitForm = () => {
   const [orderDescription, setOrderDescription] = useState("");
   const [email, setEmail] = useState("");
   const [country, setCountry] = useState("");
+  const [teamName, setTeamName] = useState("");
 
   // Objeto que mapea la combinación "wear-color" a una URL de imagen
 const customProductImages = {
@@ -470,7 +471,7 @@ const customProductImages = {
                     </div>
                     <button
                       onClick={() => handleRemoveOutfit(index)}
-                      className="text-red-400 hover:text-red-600 ml-4"
+                      className="text-red-400 cursor-pointer hover:text-red-600 ml-4"
                     >
                       Remove
                     </button>
@@ -577,7 +578,7 @@ const customProductImages = {
                 required
               />
             </div>
-            {/* País (nuevo) */}
+            {/* País */}
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 Country
@@ -589,6 +590,20 @@ const customProductImages = {
                 placeholder="Enter your country"
                 className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-600 focus:border-pink-800"
                 required
+              />
+            </div>
+
+            {/* Team Name */}
+            <div>
+              <label className="block text-sm font-medium text-gray-600" htmlFor="teamName">
+                {t("checkout.teamName")}
+              </label>
+              <input
+                id="teamName"
+                type="text"
+                required
+                placeholder={t("checkout.teamName_placeholder")}
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800"
               />
             </div>
           </div>
@@ -609,8 +624,8 @@ const customProductImages = {
         </div>
 
         {/* Columna Derecha: Imagen del producto actualmente seleccionado */}
-        <div className="flex-1 flex items-center justify-center">
-          <div className="relative">
+        <div className="flex-1 items-center">
+          <div className="">
             <img
               src={getProductImage()}
               alt={selectedWear}

@@ -9,6 +9,7 @@
       "team": "Equipamiento",
       "faq": "FAQ",
       "about": "Nosotros",
+      "shipping-calculator": "Costo de envío",
       "conditions": "Condiciones",
       "language": "Idioma"
     },
@@ -102,6 +103,8 @@
       "other_country": "Otro país",
       "state": "Estado / Provincia / Región",
       "city": "Ciudad",
+      "teamName": "Nombre del equipo",
+      "teamName_placeholder": "Ingresa el nombre de tu equipo",
       "street_name": "Nombre de la calle",
       "address_number": "Número de dirección",
       "apartment_suite": "Apartamento, Suite, etc.",
@@ -150,5 +153,9 @@
     "order_completed": "Orden recibida con éxito",
     "thank_you": "Gracias por completar su orden. Hemos enviado tu pedido a nuestro equipo de logística, quien se encargará de gestionar el envío con el fabricante. Pronto recibirás un correo con el costo de envío y un enlace seguro para finalizar el pago. Si necesitas ayuda o tienes alguna pregunta, no dudes en contactarnos a: asd@example.com.",
     "continue_shopping": "Continuar comprando"
-  }
+  },
+  "shippingCalculator": {
+    "title": "Shipping Rate Calculator",
+    "content": "We are working on this section. We want to give you the best possible experience, but we need a little more time to make it perfect."
+  }  
 }

@@ -9,6 +9,7 @@
       "team": "Équipement",
       "faq": "FAQ",
       "about": "À propos",
+      "shipping-calculator": "Frais De Port",
       "conditions": "Conditions",
       "language": "Langue"
     },
@@ -102,6 +103,8 @@
       "other_country": "Autre pays",
       "state": "État / Province / Région",
       "city": "Ville",
+      "teamName": "Nom de l'équipe",
+      "teamName_placeholder": "Entrez le nom de votre équipe",
       "street_name": "Nom de la rue",
       "address_number": "Numéro d'adresse",
       "apartment_suite": "Appartement, Suite, etc.",
@@ -149,5 +152,9 @@
     "order_completed": "Commande reçue avec succès!",
     "thank_you": "Merci d'avoir finalisé votre commande. Nous avons transmis votre demande à notre équipe logistique, qui se chargera de l'expédition avec le fabricant. Vous recevrez bientôt un e-mail avec les frais de livraison et un lien sécurisé pour finaliser votre paiement. Si vous avez besoin d'aide ou des questions, n'hésitez pas à nous contacter à l'adresse : asd@example.com.",
     "continue_shopping": "Continuer vos achats"
-  }
+  },
+  "shippingCalculator": {
+    "title": "Shipping Rate Calculator",
+    "content": "We are working on this section. We want to give you the best possible experience, but we need a little more time to make it perfect."
+  }  
 }
