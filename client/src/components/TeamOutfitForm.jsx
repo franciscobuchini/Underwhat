@@ -68,16 +68,16 @@ const customProductImages = {
   // "zip_hoodie-khaki": "https://via.placeholder.com/400x400?text=Zip+Hoodie+-+Khaki",
 
   // Hoodie
-  // "hoodie-white": "https://via.placeholder.com/400x400?text=Hoodie+-+White",
-  // "hoodie-black": "https://via.placeholder.com/400x400?text=Hoodie+-+Black",
-  // "hoodie-wood_ash": "https://via.placeholder.com/400x400?text=Hoodie+-+Wood+Ash",
-  // "hoodie-khaki": "https://via.placeholder.com/400x400?text=Hoodie+-+Khaki",
-  // "hoodie-milk_apricot": "https://via.placeholder.com/400x400?text=Hoodie+-+Milk+Apricot",
-  // "hoodie-ink_blue": "https://via.placeholder.com/400x400?text=Hoodie+-+Ink+Blue",
-  // "hoodie-light_coffee": "https://via.placeholder.com/400x400?text=Hoodie+-+Light+Coffee",
-  // "hoodie-jungle_green": "https://via.placeholder.com/400x400?text=Hoodie+-+Jungle+Green",
-  // "hoodie-wine_red": "https://via.placeholder.com/400x400?text=Hoodie+-+Wine+Red",
-  // "hoodie-hemp_ash": "https://via.placeholder.com/400x400?text=Hoodie+-+Hemp+Ash",
+  "hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/prucwi6bvhbsronvqjbt.png",
+  "hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/dexsq0exclbpnhryr7xv.png",
+  "hoodie-wood_ash": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/qctllg1cawszfrxz5aae.png",
+  "hoodie-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qtjkavhwr59edromrc0n.png",
+  "hoodie-milk_apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/riba6t4dnzwjxhzkdm1r.png",
+  "hoodie-ink_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/vnn5dlerpw49dc7fmrsg.png",
+  "hoodie-light_coffee": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/tbv8wnzadpz6egoknern.png",
+  "hoodie-jungle_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545533/wx7f46sioayuhcy3cewn.png",
+  "hoodie-wine_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/jxcolhlz4or8ahkgpqpq.png",
+  "hoodie-hemp_ash": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qvhotitt5rcdybjsi943.png",
 
   // Round Neck Hoodie
   // "round_neck_hoodie-white": "https://via.placeholder.com/400x400?text=Round+Neck+Hoodie+-+White",
