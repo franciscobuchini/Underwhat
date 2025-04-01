@@ -5,19 +5,18 @@ import { Icon } from "@iconify/react";
 const TeamOutfitForm = () => {
   const { t } = useTranslation("global");
 
-  // Estados para el outfit actual
-  const [selectedColor, setSelectedColor] = useState("white");
+  // Estados para agregar cada prenda (outfit)
   const [selectedWear, setSelectedWear] = useState("regular_tshirt");
-  const [files, setFiles] = useState([]);
+  const [selectedColor, setSelectedColor] = useState("white");
   const [quantity, setQuantity] = useState(1);
-  const [description, setDescription] = useState("");
-  // Email único para todo el pedido
-  const [email, setEmail] = useState("");
-  const [progress, setProgress] = useState(0);
-  const [isDragging, setIsDragging] = useState(false);
-
-  // Array de outfits agregados
   const [outfits, setOutfits] = useState([]);
+
+  // Estados para el pedido global
+  const [orderFiles, setOrderFiles] = useState([]);
+  const [uploadProgress, setUploadProgress] = useState(0);
+  const [orderDescription, setOrderDescription] = useState("");
+  const [email, setEmail] = useState("");
+  const [country, setCountry] = useState("");
 
   // Objeto que mapea la combinación "wear-color" a una URL de imagen
 const customProductImages = {
@@ -210,16 +209,6 @@ const customProductImages = {
     ],
   };
 
-  // Mapeo de imágenes para cada tipo de prenda (reemplaza las URLs según tus recursos)
-  const productImages = {
-    regular_tshirt: "https://via.placeholder.com/400x400?text=Regular+T-Shirt",
-    sleeveless_shirt: "https://via.placeholder.com/400x400?text=Sleeveless+Vest",
-    oversized_tshirt: "https://via.placeholder.com/400x400?text=Oversized+T-Shirt",
-    zip_hoodie: "https://via.placeholder.com/400x400?text=Zip+Hoodie",
-    hoodie: "https://via.placeholder.com/400x400?text=Hoodie",
-    round_neck_hoodie: "https://via.placeholder.com/400x400?text=Round+Neck+Hoodie",
-  };
-
   const getFormattedColorName = (colorKey) => {
     return colorKey
       .split("_")
@@ -227,7 +216,7 @@ const customProductImages = {
       .join(" ");
   };
 
-  // Manejo de archivos
+  // Funciones para el pedido global (archivos)
   const handleFileChange = (newFiles) => {
     const validFiles = Array.from(newFiles).filter((file) => {
       if (!file.type.startsWith("image/")) {
@@ -242,18 +231,17 @@ const customProductImages = {
     });
 
     if (validFiles.length > 0) {
-      setFiles((prev) => [...prev, ...validFiles]);
+      setOrderFiles((prev) => [...prev, ...validFiles]);
       simulateUpload();
     }
   };
 
   const handleRemoveFile = (index) => {
-    setFiles((prev) => prev.filter((_, i) => i !== index));
+    setOrderFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
   const handleDrop = (e) => {
     e.preventDefault();
-    setIsDragging(false);
     if (e.dataTransfer.files?.length > 0) {
       handleFileChange(e.dataTransfer.files);
     }
@@ -263,7 +251,7 @@ const customProductImages = {
     let currentProgress = 0;
     const interval = setInterval(() => {
       currentProgress += 10;
-      setProgress(currentProgress);
+      setUploadProgress(currentProgress);
       if (currentProgress >= 100) clearInterval(interval);
     }, 200);
   };
@@ -278,25 +266,20 @@ const customProductImages = {
     }
   };
 
-  // Manejo de envío del outfit actual (para agregar al listado)
+  // Agregar una prenda (outfit) a la lista
   const handleAddOutfit = (e) => {
     e.preventDefault();
     const newOutfit = {
       wear: selectedWear,
       color: selectedColor,
-      files,
       quantity,
-      description,
     };
     setOutfits((prev) => [...prev, newOutfit]);
 
-    // Reiniciar el formulario para un nuevo outfit
+    // Reiniciar los campos de la prenda
     setSelectedWear("regular_tshirt");
     setSelectedColor("white");
-    setFiles([]);
-    setProgress(0);
     setQuantity(1);
-    setDescription("");
   };
 
   // Remover un outfit del listado
@@ -304,26 +287,38 @@ const customProductImages = {
     setOutfits((prev) => prev.filter((_, i) => i !== index));
   };
 
-  // Simulación de confirmación de pedido (puedes ajustar la lógica)
+  // Confirmar el pedido global
   const handleConfirmOrder = () => {
-    // Aquí se podría enviar la información de outfits junto con el email
-    console.log("Outfits confirmados:", outfits, "Email:", email);
+    // Aquí se podría enviar la información del pedido:
+    // outfits, orderFiles, orderDescription, email y country
+    console.log("Pedido confirmado:", {
+      outfits,
+      orderFiles,
+      orderDescription,
+      email,
+      country,
+    });
     alert("Pedido confirmado");
+    // Reiniciar el estado del pedido
     setOutfits([]);
+    setOrderFiles([]);
+    setUploadProgress(0);
+    setOrderDescription("");
+    setEmail("");
+    setCountry("");
   };
 
-  // Función para obtener la imagen a mostrar
+  // Funciones para obtener imágenes según la prenda y color
   const getProductImage = () => {
     const key = `${selectedWear}-${selectedColor}`;
     return customProductImages[key] || productImages[selectedWear];
   };
 
-  // Función para obtener la imagen del outfit en la miniatura
   const getOutfitImage = (outfit) => {
     const key = `${outfit.wear}-${outfit.color}`;
     return customProductImages[key] || productImages[outfit.wear];
   };
-  
+
   const wearNames = {
     regular_tshirt: "Regular T-Shirt",
     sleeveless_shirt: "Sleeveless Shirt",
@@ -332,16 +327,16 @@ const customProductImages = {
     hoodie: "Hoodie",
     round_neck_hoodie: "Round Neck Hoodie",
   };
-  
 
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300 p-6">
       {/* Contenedor en dos columnas */}
       <div className="flex flex-col md:flex-row gap-8">
-        {/* Columna Izquierda: Formulario */}
-        <div className="flex-1">
+        {/* Columna Izquierda: Formularios y secciones */}
+        <div className="flex-1 space-y-8">
+          {/* Formulario para agregar la prenda */}
           <form className="grid gap-y-6" noValidate onSubmit={handleAddOutfit}>
-            {/* Selector de prenda */}
+            {/* 1. Tipo de prenda */}
             <div>
               <label
                 className="block text-sm font-medium text-gray-600 mb-2"
@@ -364,8 +359,8 @@ const customProductImages = {
                 <option value="round_neck_hoodie">Round Neck Hoodie</option>
               </select>
             </div>
-  
-            {/* Selector de color */}
+
+            {/* 2. Selector de color */}
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 {t("team.select_color")}{" "}
@@ -413,50 +408,116 @@ const customProductImages = {
                 </div>
               </div>
             </div>
-  
-            {/* Sección de carga de imágenes */}
+
+            {/* 3. Cantidad */}
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
-                {t("team.upload_files")}
+                {t("team.amount")}
               </label>
-              <div
-                className="border border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors border-gray-400 hover:border-pink-800"
-                onDragOver={(e) => {
-                  e.preventDefault();
-                  setIsDragging(true);
-                }}
-                onDragLeave={(e) => {
-                  e.preventDefault();
-                  setIsDragging(false);
-                }}
-                onDrop={handleDrop}
-                onClick={() => document.getElementById("file-upload").click()}
+              <input
+                type="number"
+                min="1"
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800"
+                required
+              />
+            </div>
+
+            {/* 4. Botón para agregar la prenda */}
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="border rounded-lg px-6 py-2 flex justify-center gap-2 items-center border-pink-800 text-pink-800 bg-pink-100 hover:outline hover:outline-1 focus:outline focus:outline-1 outline-pink-600 cursor-pointer"
               >
-                <div className="flex flex-col items-center">
-                  <span className="bg-gray-100 rounded-full p-3 mb-4">
-                    <Icon
-                      icon="icon-park-twotone:folder-upload"
-                      className="w-6 h-6 text-gray-500"
+                {t("team.add")}
+                <Icon icon="icon-park-twotone:add-one" className="w-5 h-5" />
+              </button>
+            </div>
+          </form>
+
+          {/* 5. Listado de outfits agregados */}
+          {outfits.length > 0 && (
+            <div>
+              <h2 className="text-sm font-medium text-gray-600 mb-4">
+                Outfits Added:
+              </h2>
+              <ul className="space-y-4">
+                {outfits.map((outfit, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center p-4 border border-gray-300 rounded-md"
+                  >
+                    <img
+                      src={getOutfitImage(outfit)}
+                      alt={outfit.wear}
+                      className="w-24 h-full object-cover rounded-md"
+                      loading="lazy"
                     />
-                  </span>
-                  <div className="text-gray-600">{t("team.drop_or_browse")}</div>
-                  <p className="text-gray-400 text-sm mt-1">
-                    {t("team.file_info")}
-                  </p>
-                </div>
-                <input
-                  type="file"
-                  className="hidden"
-                  id="file-upload"
-                  accept="image/*"
-                  multiple
-                  onChange={(e) => handleFileChange(e.target.files)}
-                />
+                    <div className="flex-1 ml-4">
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Wear:</span>{" "}
+                        {wearNames[outfit.wear]}
+                      </p>
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Color:</span>{" "}
+                        {getFormattedColorName(outfit.color)}
+                      </p>
+                      <p className="text-gray-600">
+                        <span className="font-semibold">Quantity:</span>{" "}
+                        {outfit.quantity}
+                      </p>
+                    </div>
+                    <button
+                      onClick={() => handleRemoveOutfit(index)}
+                      className="text-red-400 hover:text-red-600 ml-4"
+                    >
+                      Remove
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* 6. Sección para cargar imágenes/archivos */}
+          <div>
+            <label className="block text-sm font-medium text-gray-600 mb-2">
+              {t("team.upload_files")}
+            </label>
+            <div
+              className="border border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors border-gray-400 hover:border-pink-800"
+              onDragOver={(e) => {
+                e.preventDefault();
+              }}
+              onDrop={handleDrop}
+              onClick={() => document.getElementById("order-file-upload").click()}
+            >
+              <div className="flex flex-col items-center">
+                <span className="bg-gray-100 rounded-full p-3 mb-4">
+                  <Icon
+                    icon="icon-park-twotone:folder-upload"
+                    className="w-6 h-6 text-gray-500"
+                  />
+                </span>
+                <div className="text-gray-600">{t("team.drop_or_browse")}</div>
+                <p className="text-gray-400 text-sm mt-1">
+                  {t("team.file_info")}
+                </p>
               </div>
-  
-              {/* Previsualización de imágenes */}
+              <input
+                type="file"
+                className="hidden"
+                id="order-file-upload"
+                accept="image/*"
+                multiple
+                onChange={(e) => handleFileChange(e.target.files)}
+              />
+            </div>
+            {/* Previsualización de archivos */}
+            {orderFiles.length > 0 && (
               <div className="grid grid-cols-4 gap-4 mt-6">
-                {files.map((file, index) => (
+                {orderFiles.map((file, index) => (
                   <div key={file.name + index} className="relative group">
                     <img
                       src={URL.createObjectURL(file)}
@@ -473,62 +534,37 @@ const customProductImages = {
                     <div className="w-full bg-gray-200 rounded-full h-1 mt-1">
                       <div
                         className="bg-pink-500 h-1 rounded-full transition-all duration-300"
-                        style={{ width: `${progress}%` }}
+                        style={{ width: `${uploadProgress}%` }}
                       ></div>
                     </div>
                   </div>
                 ))}
               </div>
-            </div>
-  
-            {/* Input para cantidad */}
+            )}
+          </div>
+
+          {/* 7. “Explícanos” (textarea para información adicional) */}
+          <div>
+            <label
+              className="block text-sm font-medium text-gray-600 mb-2"
+              htmlFor="orderDescription"
+            >
+              {t("team.relevant_forUs_info")}
+            </label>
+            <textarea
+              id="orderDescription"
+              placeholder={t("team.forUs_info_placeholder")}
+              rows="5"
+              value={orderDescription}
+              onChange={(e) => setOrderDescription(e.target.value)}
+              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 resize-none"
+            ></textarea>
+          </div>
+
+          {/* 8. Detalles de contacto */}
+          <div className="space-y-6">
+            {/* Email */}
             <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2">
-              {t("team.amount")}
-              </label>
-              <input
-                type="number"
-                min="1"
-                value={quantity}
-                onChange={(e) => setQuantity(Number(e.target.value))}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800"
-                required
-              />
-            </div>
-  
-            {/* Descripción */}
-            <div>
-              <label
-                className="block text-sm font-medium text-gray-600 mb-2"
-                htmlFor="forUsInfo"
-              >
-                {t("team.relevant_forUs_info")}
-              </label>
-              <textarea
-                id="forUsInfo"
-                placeholder={t("team.forUs_info_placeholder")}
-                rows="5"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 resize-none"
-              ></textarea>
-            </div>
-  
-            {/* Botón para agregar la prenda */}
-            <div className="flex justify-center">
-              <button
-                type="submit"
-                className="border rounded-lg px-6 py-2 flex justify-center gap-2 items-center border-pink-800 text-pink-800 bg-pink-100 hover:outline hover:outline-1 focus:outline focus:outline-1 outline-pink-600 cursor-pointer"
-              >
-                {t("team.add")}
-                <Icon icon="icon-park-twotone:add-one" className="w-5 h-5" />
-              </button>
-            </div>
-          </form>
-  
-          {/* Campo de email para el pedido (único para todo el outfit) */}
-          {outfits.length > 0 && (
-            <div className="mt-6">
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 {t("team.contact_details")}
               </label>
@@ -541,9 +577,23 @@ const customProductImages = {
                 required
               />
             </div>
-          )}
-  
-          {/* Botón de confirmación (solo se muestra si hay outfits agregados) */}
+            {/* País (nuevo) */}
+            <div>
+              <label className="block text-sm font-medium text-gray-600 mb-2">
+                Country
+              </label>
+              <input
+                type="text"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                placeholder="Enter your country"
+                className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-600 focus:border-pink-800"
+                required
+              />
+            </div>
+          </div>
+
+          {/* 9. Botón para confirmar el pedido */}
           {outfits.length > 0 && (
             <div className="flex justify-center mt-6">
               <button
@@ -557,7 +607,7 @@ const customProductImages = {
             </div>
           )}
         </div>
-  
+
         {/* Columna Derecha: Imagen del producto actualmente seleccionado */}
         <div className="flex-1 flex items-center justify-center">
           <div className="relative">
@@ -570,56 +620,8 @@ const customProductImages = {
           </div>
         </div>
       </div>
-  
-      {/* Listado de outfits agregados */}
-      {outfits.length > 0 && (
-        <div className="mt-8">
-          <h2 className="text-sm font-medium text-gray-600 mb-4">
-            Outfits Added:
-          </h2>
-          <ul className="space-y-4">
-            {outfits.map((outfit, index) => (
-              <li
-                key={index}
-                className="flex items-center p-4 border border-gray-300 rounded-md"
-              >
-                {/* Miniatura de la imagen del producto */}
-                <img
-                  src={getOutfitImage(outfit)}
-                  alt={outfit.wear}
-                  className="w-24 h-full object-cover rounded-md"
-                  loading="lazy"
-                />
-                <div className="flex-1 ml-4">
-                <p className="text-gray-600">
-                  <span className="font-semibold">Wear:</span> {" "}
-                  {wearNames[outfit.wear]}
-                </p>
-                <p className="text-gray-600">
-                  <span className="font-semibold">Color:</span> {" "}
-                  {getFormattedColorName(outfit.color)}
-                </p>
-                  <p className="text-gray-600">
-                    <span className="font-semibold">Quantity:</span> {outfit.quantity}
-                  </p>
-                  <p className="text-gray-600">
-                    <span className="font-semibold">Description:</span> {outfit.description}
-                  </p>
-                </div>
-                <button
-                  onClick={() => handleRemoveOutfit(index)}
-                  className="text-red-400 hover:text-red-600 ml-4"
-                >
-                  Remove
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
-  };
-  
-  export default TeamOutfitForm;
-  
+};
+
+export default TeamOutfitForm;

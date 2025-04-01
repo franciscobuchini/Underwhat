@@ -9,7 +9,7 @@ const Home = () => {
     <div className="container mx-auto px-4 mt-20">
       <Title title="Featured Products" />
       <ProductList />
-      <Title title="The brand for your team" />
+      {/* <Title title="The brand for your team" /> */}
     </div>
   );
 };
