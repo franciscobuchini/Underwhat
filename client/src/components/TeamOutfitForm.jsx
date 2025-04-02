@@ -26,22 +26,22 @@ const customProductImages = {
   "regular_tshirt-seagull_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/iambm0gw861vynpdque2.png",
   "regular_tshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/twkhetsy1xtbyvlrsb8t.png",
   "regular_tshirt-glacier_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/m07689fvj2j6dlc8bjni.png",
-  "regular_tshirt-breeze_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/eoiloiznw64simdupn0v.png",
+  "regular_tshirt-aquamarine": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/eoiloiznw64simdupn0v.png",
   "regular_tshirt-apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/pjqeh1kdl5xgprewkchi.png",
-  "regular_tshirt-ice_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/nrto3tvwotwtkgpcula6.png",
-  "regular_tshirt-haze_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/mwl1bpkctllcjkhtmapz.png",
+  "regular_tshirt-light_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/nrto3tvwotwtkgpcula6.png",
+  "regular_tshirt-pastel_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/mwl1bpkctllcjkhtmapz.png",
   "regular_tshirt-lotus_purple": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/x5ufhjudy2eguwsvqquf.png",
   "regular_tshirt-sakura_pink": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/wo1z9bwac2wqkblaqbsi.png",
-  "regular_tshirt-light_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743460520/lightgreen_fh37gq.png",
-  "regular_tshirt-fog_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/jkiwo0fauvhnpifwe2sz.png",
-  "regular_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/flefvfcmvklsmzalybmh.png",
-  "regular_tshirt-dark_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/b2ho08fcaalq9cw0re2a.png",
-  "regular_tshirt-bird_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/tdue9o4zz7nsrhvvq03d.png",
+  "regular_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743460520/lightgreen_fh37gq.png",
+  "regular_tshirt-mist_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/jkiwo0fauvhnpifwe2sz.png",
+  "regular_tshirt-gray_moss": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/flefvfcmvklsmzalybmh.png",
+  "regular_tshirt-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/b2ho08fcaalq9cw0re2a.png",
+  "regular_tshirt-sparrow_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/tdue9o4zz7nsrhvvq03d.png",
   "regular_tshirt-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/gblrxkedwszefh1zaaax.png",
   "regular_tshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/dgnvmni08t8xan4ulz1c.png",
   "regular_tshirt-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459291/impzue0msy5npx8jfxjz.png",
-  "regular_tshirt-coffee": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/azuiligffpc8is96tgc5.png",
-  "regular_tshirt-maple_leaf_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/zsxiwqjjgi2jijcsd96g.png",
+  "regular_tshirt-coffee_dark": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/azuiligffpc8is96tgc5.png",
+  "regular_tshirt-maple_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/zsxiwqjjgi2jijcsd96g.png",
   "regular_tshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/rymdu4ckino6qya8gw5h.png",
 
   // Sleeveless Vest
@@ -49,15 +49,27 @@ const customProductImages = {
   "sleeveless_shirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/blacktank_gyzv49.png",
   "sleeveless_shirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/darkgraytank_kfhu16.png",
 
-  // Oversized T-Shirt (casos especiales para white y black)
+  // Oversized T-Shirt
   "oversized_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357592/Plain-Tshirt_jvzfmx.png",
   "oversized_tshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357592/Plain-Tshirt2_yv1aor.png",
-  "oversized_tshirt-light_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357594/Plain-Tshirt3_v2mgdp.png",
+  "oversized_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357594/Plain-Tshirt3_v2mgdp.png",
   "oversized_tshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357592/Plain-Tshirt4_rvipgg.png",
-  "oversized_tshirt-dark_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt5_w72cuc.png",
-  "oversized_tshirt-coffee": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357594/Plain-Tshirt6_fari7l.png",
-  "oversized_tshirt-maple_leaf_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt7_rs4qhd.png",
+  "oversized_tshirt-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt5_w72cuc.png",
+  "oversized_tshirt-coffee_dark": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357594/Plain-Tshirt6_fari7l.png",
+  "oversized_tshirt-maple_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt7_rs4qhd.png",
   "oversized_tshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt8_x9o009.png",
+
+  // Hoodie
+  "hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/prucwi6bvhbsronvqjbt.png",
+  "hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/dexsq0exclbpnhryr7xv.png",
+  "hoodie-wood_ash": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/qctllg1cawszfrxz5aae.png",
+  "hoodie-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qtjkavhwr59edromrc0n.png",
+  "hoodie-pastel_yellow": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/riba6t4dnzwjxhzkdm1r.png", 
+  "hoodie-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/vnn5dlerpw49dc7fmrsg.png",
+  "hoodie-coffee_light": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/tbv8wnzadpz6egoknern.png", 
+  "hoodie-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545533/wx7f46sioayuhcy3cewn.png",
+  "hoodie-wine_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/jxcolhlz4or8ahkgpqpq.png",
+  "hoodie-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qvhotitt5rcdybjsi943.png" 
 
   // Zip Hoodie
   // "zip_hoodie-white": "https://via.placeholder.com/400x400?text=Zip+Hoodie+-+White",
@@ -66,18 +78,6 @@ const customProductImages = {
   // "zip_hoodie-dark_gray": "https://via.placeholder.com/400x400?text=Zip+Hoodie+-+Dark+Gray",
   // "zip_hoodie-light_gray": "https://via.placeholder.com/400x400?text=Zip+Hoodie+-+Light+Gray",
   // "zip_hoodie-khaki": "https://via.placeholder.com/400x400?text=Zip+Hoodie+-+Khaki",
-
-  // Hoodie
-  "hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/prucwi6bvhbsronvqjbt.png",
-  "hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/dexsq0exclbpnhryr7xv.png",
-  "hoodie-wood_ash": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/qctllg1cawszfrxz5aae.png",
-  "hoodie-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qtjkavhwr59edromrc0n.png",
-  "hoodie-milk_apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/riba6t4dnzwjxhzkdm1r.png",
-  "hoodie-ink_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/vnn5dlerpw49dc7fmrsg.png",
-  "hoodie-light_coffee": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/tbv8wnzadpz6egoknern.png",
-  "hoodie-jungle_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545533/wx7f46sioayuhcy3cewn.png",
-  "hoodie-wine_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/jxcolhlz4or8ahkgpqpq.png",
-  "hoodie-hemp_ash": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qvhotitt5rcdybjsi943.png",
 
   // Round Neck Hoodie
   // "round_neck_hoodie-white": "https://via.placeholder.com/400x400?text=Round+Neck+Hoodie+-+White",
@@ -101,81 +101,73 @@ const customProductImages = {
   // Mapeo de colores
   const colorMapping = {
     white: "#EEEEEE",
+    black: "#1E1D23",
     seagull_gray: "#D6D0D0",
     khaki: "#E0D3CB",
-    glacier_blue: "#DFE8E5",
-    breeze_green: "#CFE3E2",
-    apricot: "#F4DFCC",
-    ice_blue: "#CBD7E5",
-    haze_blue: "#A7B9DD",
-    lotus_purple: "#CDCDEF",
+    glacier_blue: "#DBE4E1",
+    aquamarine: "#C5DFDB", // Same as breeze_green
+    apricot: "#F1D7B4",
+    light_blue: "#BBCDE0", // Same as ice_blue
+    pastel_blue: "#93ABD2", // Same as haze_blue
+    lotus_purple: "#B7B6E2",
     sakura_pink: "#FFB9DB",
-    light_green: "#b5beb0",
-    fog_gray: "#8B8788",
-    pale_green: "#5c6556",
-    dark_green: "#2C403D",
-    bird_green: "#255E72",
+    pale_green: "#B5BEB0", // Same as soft_green
+    mist_gray: "#8B8788",
+    gray_moss: "#60635E",
+    deep_green: "#2C403D",
+    sparrow_green: "#255E72",
     navy_blue: "#34365C",
     dark_gray: "#323232",
-    light_gray: "#92909B",
-    coffee: "#45342C",
-    maple_leaf_red: "#412428",
-    black: "#1E1D23",
+    coffee_dark: "#45342C",
+    coffee_light: "#905340",
+    maple_red: "#412428",
     wood_ash: "#D8C8B9",
-    light_coffee: "#905340",
-    ink_blue: "#32344B",
-    milk_apricot: "#EDD9BA",
-    jungle_green: "#37564E",
+    pastel_yellow: "#EDD9BA", // Same as milk_apricot
     wine_red: "#983541",
-    hemp_ash: "#AFAFB1",
+    light_gray: "#92909B", // Same as linen_gray
     pink: "#EBB2B9",
-    asami: "#F4E7D7",
-    light_blue: "#A9B6C6",
-    deep_khaki: "#AE8E75",
-    burgundy: "#851C25",
-    big_red: "#DE012C",
-    ash: "#DADADA",
-    milk_tea: "#E3D7CB",
-    yone_anzu: "#ECD3BD",
-    iron_gray: "#59575A",
-    sapphire: "#4976D3",
+    dark_haze_blue: "#4C5574",
+    dark_khaki: "#A6866D",
+    cream: "#E8DBCB",
+    bright_red: "#E10133",
+    steam: "#CFCFCF", // Same as floral_gray
+    royal_blue: "#4272D5"
   };
 
-  // Opciones de colores por tipo de prenda
   const wearColorOptions = {
     regular_tshirt: [
       "white",
       "seagull_gray",
       "khaki",
       "glacier_blue",
-      "breeze_green",
+      "aquamarine", // formerly breeze_green
       "apricot",
-      "ice_blue",
-      "haze_blue",
+      "light_blue", // formerly ice_blue
+      "pastel_blue", // formerly haze_blue
       "lotus_purple",
       "sakura_pink",
-      "light_green",
-      "fog_gray",
-      "pale_green",
-      "dark_green",
-      "bird_green",
+      "pale_green", // formerly light_green
+      "mist_gray", // formerly fog_gray
+      "gray_moss", // formerly pale_green
+      "deep_green", // formerly dark_green
+      "sparrow_green", // formerly bird_green
       "navy_blue",
       "dark_gray",
       "light_gray",
-      "coffee",
-      "maple_leaf_red",
-      "black",
+      "coffee_dark", // formerly coffee
+      "maple_red", // formerly maple_leaf_red
+      "black"
     ],
     sleeveless_shirt: ["white", "dark_gray", "black"],
     oversized_tshirt: [
       "white",
       "khaki",
-      "light_green",
+      "pale_green", // formerly light_green
       "dark_gray",
-      "dark_green",
-      "coffee",
-      "maple_leaf_red",
-      "black",
+      "deep_green", // formerly dark_green
+      "coffee_dark", // formerly coffee
+      "maple_red", // formerly maple_leaf_red
+      "black"
     ],
     zip_hoodie: ["white", "black", "navy_blue", "dark_gray", "light_gray", "khaki"],
     hoodie: [
@@ -183,33 +175,33 @@ const customProductImages = {
       "black",
       "wood_ash",
       "khaki",
-      "milk_apricot",
-      "ink_blue",
-      "light_coffee",
-      "jungle_green",
+      "pastel_yellow", // formerly milk_apricot
+      "navy_blue", // formerly ink_blue
+      "coffee_light", // formerly light_coffee
+      "deep_green", // formerly jungle_green
       "wine_red",
-      "hemp_ash",
+      "light_gray" // formerly hemp_ash
     ],
     round_neck_hoodie: [
       "white",
       "pink",
       "navy_blue",
-      "haze_blue",
-      "deep_khaki",
-      "burgundy",
-      "asami",
+      "pastel_blue", // formerly haze_blue
+      "dark_khaki", // formerly deep_khaki
+      "wine_red", // formerly burgundy
+      "cream", // formerly asami
       "light_blue",
-      "big_red",
-      "ash",
-      "milk_tea",
-      "yone_anzu",
-      "iron_gray",
-      "hemp_ash",
+      "bright_red", // formerly big_red
+      "steam", // formerly ash
+      "khaki", // formerly milk_tea (since khaki and milk_tea share same hex)
+      "apricot", // formerly yone_anzu (using apricot which matches beige_apricot)
+      "dark_gray", // formerly iron_gray
+      "light_gray", // formerly hemp_ash
       "black",
-      "sapphire",
-    ],
+      "royal_blue" // formerly sapphire
+    ]
   };
-
+  
   const getFormattedColorName = (colorKey) => {
     return colorKey
       .split("_")
