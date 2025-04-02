@@ -59,7 +59,8 @@ function Header() {
   }, []);
 
   return (
-    <nav className="Navbar fixed z-100 bg-white/80 border border-gray-300 rounded-2xl flex justify-between w-[calc(100%-1.5rem)] mt-2 p-3 backdrop-blur-xs">
+<nav className="Navbar fixed z-100 bg-white/80 border border-gray-300 rounded-2xl flex justify-between left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-2 p-3 backdrop-blur-xs">
+
       <div className="NavbarLogo">
         <Link to="/">
           <img src={nav01} className="h-8" alt={t("header.logo_alt")} />
