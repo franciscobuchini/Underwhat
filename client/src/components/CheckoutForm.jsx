@@ -3,13 +3,15 @@ import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
+import emailjs from '@emailjs/browser';
 
 const CheckoutForm = () => {
   const { t } = useTranslation("global");
   const navigate = useNavigate();
   const [showOtherCountry, setShowOtherCountry] = useState(false);
   const [formValid, setFormValid] = useState(false);
-  const { clearCart } = useCart();
+  const { cartItems, clearCart } = useCart();
+
 
   const handleCountryChange = (event) => {
     setShowOtherCountry(event.target.value === 'other');
@@ -35,15 +37,55 @@ const CheckoutForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
     if (formValid) {
-      // Reiniciamos el carrito en el contexto y localStorage
-      clearCart();
-      console.log("Formulario enviado y carrito reiniciado a cero");
-      // Redirigir a la página de éxito
-      navigate('/successfull');
+      console.log("Cart Items:", cartItems); // Check in the console if objects contain product_selling
+  
+      let overallTotal = 0;
+      const orderDetails = cartItems.map((item, index) => {
+        // Use product_selling instead of price
+        const price = Number(item.product_selling) || 0;
+        const quantity = Number(item.quantity) || 0;
+        const totalForItem = price * quantity;
+        overallTotal += totalForItem;
+        return `Item ${index + 1}:
+      - Name: ${item.product_name}
+      - Quantity: ${quantity}
+      - Unit Price: $${price.toFixed(2)}
+      - Size: ${item.selectedSize || "N/A"}
+      - Total: $${totalForItem.toFixed(2)}`;
+      }).join('\n\n') + `\n\nOrder Total: $${overallTotal.toFixed(2)}`;
+  
+      // Create a hidden input to send the cart information
+      const orderInput = document.createElement('input');
+      orderInput.type = 'hidden';
+      orderInput.name = 'order_details';
+      orderInput.value = orderDetails;
+      e.target.appendChild(orderInput);
+  
+      // Send the form using EmailJS
+      emailjs.sendForm(
+        "service_mxgszmr",     // Service ID
+        "template_wiufec1",    // Template ID
+        e.target,              // The form being sent
+        "DDTayKSsIeSLZhvSH"    // Public Key
+      )
+      .then((result) => {
+        console.log("Email sent:", result.text);
+        clearCart();
+        navigate('/successfull');
+      })
+      .catch((error) => {
+        console.error("Error sending email:", error.text);
+      });
     }
   };
   
+  
+  
+  
+  
+
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300">
       <div className="w-full p-4">
@@ -64,6 +106,7 @@ const CheckoutForm = () => {
               </label>
               <select
                 id="userCountry"
+                name="userCountry"
                 required
                 onChange={handleCountryChange}
                 defaultValue="united_states"
@@ -120,7 +163,7 @@ const CheckoutForm = () => {
                 <option value="united_kingdom">United Kingdom</option>
                 <option value="united_states">United States</option>
                 <option value="other">Other...</option>
-                </select>
+              </select>
             </div>
             {showOtherCountry && (
               <div>
@@ -129,6 +172,7 @@ const CheckoutForm = () => {
                 </label>
                 <input
                   id="otherCountry"
+                  name="otherCountry"
                   type="text"
                   placeholder="Andorra"
                   required
@@ -145,6 +189,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="state"
+                name="state"
                 type="text"
                 required
                 placeholder="California"
@@ -157,6 +202,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="city"
+                name="city"
                 type="text"
                 required
                 placeholder="San Francisco"
@@ -169,6 +215,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="teamName"
+                name="teamName"
                 type="text"
                 required
                 placeholder={t("checkout.teamName_placeholder")}
@@ -177,7 +224,6 @@ const CheckoutForm = () => {
             </div>
           </div>
 
-
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="street">
@@ -185,6 +231,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="street"
+                name="street"
                 type="text"
                 required
                 placeholder="Main Street"
@@ -197,6 +244,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="number"
+                name="number"
                 type="text"
                 required
                 placeholder="123"
@@ -209,6 +257,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="apartment"
+                name="apartment"
                 type="text"
                 placeholder="6th B"
                 className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
@@ -220,6 +269,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="zipCode"
+                name="zipCode"
                 type="text"
                 required
                 placeholder="1234"
@@ -234,6 +284,7 @@ const CheckoutForm = () => {
             </label>
             <textarea
               id="shippingInfo"
+              name="shippingInfo"
               placeholder={t("checkout.shipping_info_placeholder")}
               rows="1"
               className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800  resize-none"
@@ -246,6 +297,7 @@ const CheckoutForm = () => {
             </label>
             <textarea
               id="forUsInfo"
+              name="forUsInfo"
               placeholder={t("checkout.forUs_info_placeholder")}
               rows="1"
               className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800  resize-none"
@@ -268,6 +320,7 @@ const CheckoutForm = () => {
               </label>
               <input
                 id="email"
+                name="email"
                 type="email"
                 required
                 placeholder="underwather@hockey.com"
@@ -281,6 +334,7 @@ const CheckoutForm = () => {
                 </label>
                 <input
                   id="areaCode"
+                  name="areaCode"
                   type="text"
                   required
                   placeholder="+01"
@@ -293,6 +347,7 @@ const CheckoutForm = () => {
                 </label>
                 <input
                   id="phone"
+                  name="phone"
                   type="tel"
                   required
                   placeholder="555 123456"
