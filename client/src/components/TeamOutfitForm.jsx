@@ -618,7 +618,7 @@ const customProductImages = {
             <img
               src={getProductImage()}
               alt={selectedWear}
-              className="w-100 h-full object-cover"
+              className="w-auto h-full object-cover"
               loading="lazy"
             />
           </div>
