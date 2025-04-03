@@ -37,7 +37,7 @@ const SizeTable = () => {
       ["XL", "60 cm", "60 cm", "71 cm"],
       ["2XL", "63 cm", "63 cm", "73 cm"]
     ] },
-    { name: "Round Neck Hoodie", weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
+    { name: "Sweatshirt", weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
       ["S", "48 cm", "50 cm", "65 cm"],
       ["M", "51 cm", "53 cm", "67 cm"],
       ["L", "54 cm", "56 cm", "69 cm"],
