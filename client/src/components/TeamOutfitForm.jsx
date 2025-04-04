@@ -5,22 +5,12 @@ import { Icon } from "@iconify/react";
 const TeamOutfitForm = () => {
   const { t } = useTranslation("global");
 
-  // Estados para agregar cada prenda (outfit)
+  // Estados para seleccionar la prenda
   const [selectedWear, setSelectedWear] = useState("regular_tshirt");
   const [selectedColor, setSelectedColor] = useState("white");
-  const [quantity, setQuantity] = useState(1);
-  const [outfits, setOutfits] = useState([]);
-
-  // Estados para el pedido global
-  const [orderFiles, setOrderFiles] = useState([]);
-  const [uploadProgress, setUploadProgress] = useState(0);
-  const [orderDescription, setOrderDescription] = useState("");
-  const [email, setEmail] = useState("");
-  const [country, setCountry] = useState("");
-  const [teamName, setTeamName] = useState("");
 
   // Objeto que mapea la combinación "wear-color" a una URL de imagen
-const customProductImages = {
+  const customProductImages = {
   // Regular T-Shirt
   "regular_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/j69win8wv6toomncmful.png",
   "regular_tshirt-seagull_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/iambm0gw861vynpdque2.png",
@@ -95,7 +85,7 @@ const customProductImages = {
   "sweatshirt-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698062/aghp0l37mtxddonj435z.png",
   "sweatshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698062/p6vdf1zhax3v5rsv85pj.png",
   "sweatshirt-royal_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698063/md0ytlqga032wb9psiap.png"
-};
+  };
 
   // Mapeo de colores
   const colorMapping = {
@@ -206,107 +196,17 @@ const customProductImages = {
       .join(" ");
   };
 
-  // Funciones para el pedido global (archivos)
-  const handleFileChange = (newFiles) => {
-    const validFiles = Array.from(newFiles).filter((file) => {
-      if (!file.type.startsWith("image/")) {
-        alert(t("team.file_type_error") || "Only image files are allowed");
-        return false;
-      }
-      if (file.size > 10 * 1024 * 1024) {
-        alert(t("team.file_size_error") || "File size exceeds 10MB limit");
-        return false;
-      }
-      return true;
-    });
-
-    if (validFiles.length > 0) {
-      setOrderFiles((prev) => [...prev, ...validFiles]);
-      simulateUpload();
-    }
-  };
-
-  const handleRemoveFile = (index) => {
-    setOrderFiles((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  const handleDrop = (e) => {
-    e.preventDefault();
-    if (e.dataTransfer.files?.length > 0) {
-      handleFileChange(e.dataTransfer.files);
-    }
-  };
-
-  const simulateUpload = () => {
-    let currentProgress = 0;
-    const interval = setInterval(() => {
-      currentProgress += 10;
-      setUploadProgress(currentProgress);
-      if (currentProgress >= 100) clearInterval(interval);
-    }, 200);
-  };
-
-  // Manejo de cambio de tipo de prenda
   const handleWearChange = (e) => {
     const newWear = e.target.value;
     setSelectedWear(newWear);
-    // Resetea el color si no está en las opciones de la nueva prenda
     if (!wearColorOptions[newWear].includes(selectedColor)) {
       setSelectedColor("white");
     }
   };
 
-  // Agregar una prenda (outfit) a la lista
-  const handleAddOutfit = (e) => {
-    e.preventDefault();
-    const newOutfit = {
-      wear: selectedWear,
-      color: selectedColor,
-      quantity,
-    };
-    setOutfits((prev) => [...prev, newOutfit]);
-
-    // Reiniciar los campos de la prenda
-    setSelectedWear("regular_tshirt");
-    setSelectedColor("white");
-    setQuantity(1);
-  };
-
-  // Remover un outfit del listado
-  const handleRemoveOutfit = (index) => {
-    setOutfits((prev) => prev.filter((_, i) => i !== index));
-  };
-
-  // Confirmar el pedido global
-  const handleConfirmOrder = () => {
-    // Aquí se podría enviar la información del pedido:
-    // outfits, orderFiles, orderDescription, email y country
-    console.log("Pedido confirmado:", {
-      outfits,
-      orderFiles,
-      orderDescription,
-      email,
-      country,
-    });
-    alert("Pedido confirmado");
-    // Reiniciar el estado del pedido
-    setOutfits([]);
-    setOrderFiles([]);
-    setUploadProgress(0);
-    setOrderDescription("");
-    setEmail("");
-    setCountry("");
-  };
-
-  // Funciones para obtener imágenes según la prenda y color
   const getProductImage = () => {
     const key = `${selectedWear}-${selectedColor}`;
-    return customProductImages[key] || productImages[selectedWear];
-  };
-
-  const getOutfitImage = (outfit) => {
-    const key = `${outfit.wear}-${outfit.color}`;
-    return customProductImages[key] || productImages[outfit.wear];
+    return customProductImages[key];
   };
 
   const wearNames = {
@@ -317,7 +217,6 @@ const customProductImages = {
     hoodie: t("hoodie"),
     sweatshirt: t("sweatshirt"),
   };
-  
 
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300 p-6">
@@ -325,21 +224,15 @@ const customProductImages = {
       <div className="flex flex-col md:flex-row gap-8">
         {/* Columna Izquierda: Formularios y secciones */}
         <div className="flex-1 space-y-8">
-          {/* Formulario para agregar la prenda */}
-          <form className="grid gap-y-6" noValidate onSubmit={handleAddOutfit}>
-            {/* 1. Tipo de prenda */}
-            <div>
-              <label
-                className="block text-sm font-medium text-gray-600 mb-2"
-                htmlFor="selectWear"
-              >
+        <div>
+              <label className="block text-sm font-medium text-gray-600 mb-2" htmlFor="selectWear">
                 {t("team.select_wear")}
               </label>
               <select
                 id="selectWear"
                 required
                 value={selectedWear}
-                onChange={handleWearChange}
+                onChange={handleWearChange} 
                 className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 focus:ring-pink-800"
               >
                 <option value="regular_tshirt">{t("regular_tshirt")}</option>
@@ -349,6 +242,7 @@ const customProductImages = {
                 <option value="hoodie">{t("hoodie")}</option>
                 <option value="sweatshirt">{t("sweatshirt")}</option>
               </select>
+
             </div>
 
             {/* 2. Selector de color */}
@@ -369,27 +263,15 @@ const customProductImages = {
                         type="button"
                         onClick={() => setSelectedColor(colorKey)}
                         className={`relative w-8 h-8 rounded-full border-2 transition-transform duration-200 ${
-                          isSelected
-                            ? "ring-2 ring-pink-800 ring-offset-2 scale-110"
-                            : "border-gray-200 hover:scale-105"
+                          isSelected ? "ring-2 ring-pink-800 ring-offset-2 scale-110" : "border-gray-200 hover:scale-105"
                         }`}
                         style={{ backgroundColor: colorMapping[colorKey] }}
                         title={getFormattedColorName(colorKey)}
                       >
                         {isSelected && (
                           <span className="absolute inset-0 flex items-center justify-center text-white">
-                            <svg
-                              className="w-4 h-4"
-                              fill="none"
-                              stroke="currentColor"
-                              viewBox="0 0 24 24"
-                            >
-                              <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={3}
-                                d="M5 13l4 4L19 7"
-                              />
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                             </svg>
                           </span>
                         )}
@@ -399,223 +281,11 @@ const customProductImages = {
                 </div>
               </div>
             </div>
-
-            {/* 3. Cantidad */}
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2">
-                {t("team.amount")}
-              </label>
-              <input
-                type="number"
-                min="1"
-                value={quantity}
-                onChange={(e) => setQuantity(Number(e.target.value))}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800"
-                required
-              />
-            </div>
-
-            {/* 4. Botón para agregar la prenda */}
-            <div className="flex justify-center">
-              <button
-                type="submit"
-                className="border rounded-lg px-6 py-2 flex justify-center gap-2 items-center border-pink-800 text-pink-800 bg-pink-100 hover:outline hover:outline-1 focus:outline focus:outline-1 outline-pink-600 cursor-pointer"
-              >
-                {t("team.add")}
-                <Icon icon="icon-park-twotone:add-one" className="w-5 h-5" />
-              </button>
-            </div>
-          </form>
-
-          {/* 5. Listado de outfits agregados */}
-          {outfits.length > 0 && (
-            <div>
-              <h2 className="text-sm font-medium text-gray-600 mb-4">
-              {t("checkout.outfitsAdded")}
-              </h2>
-              <ul className="space-y-4">
-                {outfits.map((outfit, index) => (
-                  <li
-                    key={index}
-                    className="flex items-center p-4 border border-gray-300 rounded-md"
-                  >
-                    <img
-                      src={getOutfitImage(outfit)}
-                      alt={outfit.wear}
-                      className="w-24 h-full object-cover rounded-md"
-                      loading="lazy"
-                    />
-                    <div className="flex-1 ml-4">
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Wear:</span>{" "}
-                        {wearNames[outfit.wear]}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Color:</span>{" "}
-                        {getFormattedColorName(outfit.color)}
-                      </p>
-                      <p className="text-gray-600">
-                        <span className="font-semibold">Quantity:</span>{" "}
-                        {outfit.quantity}
-                      </p>
-                    </div>
-                    <button
-                      onClick={() => handleRemoveOutfit(index)}
-                      className="text-red-400 cursor-pointer hover:text-red-600 ml-4"
-                    >
-                      {t("cart.remove")}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* 6. Sección para cargar imágenes/archivos */}
-          <div>
-            <label className="block text-sm font-medium text-gray-600 mb-2">
-              {t("team.upload_files")}
-            </label>
-            <div
-              className="border border-dashed rounded-lg p-8 text-center cursor-pointer transition-colors border-gray-400 hover:border-pink-800"
-              onDragOver={(e) => {
-                e.preventDefault();
-              }}
-              onDrop={handleDrop}
-              onClick={() => document.getElementById("order-file-upload").click()}
-            >
-              <div className="flex flex-col items-center">
-                <span className="bg-gray-100 rounded-full p-3 mb-4">
-                  <Icon
-                    icon="icon-park-twotone:folder-upload"
-                    className="w-6 h-6 text-gray-500"
-                  />
-                </span>
-                <div className="text-gray-600">{t("team.drop_or_browse")}</div>
-                <p className="text-gray-400 text-sm mt-1">
-                  {t("team.file_info")}
-                </p>
-              </div>
-              <input
-                type="file"
-                className="hidden"
-                id="order-file-upload"
-                accept="image/*"
-                multiple
-                onChange={(e) => handleFileChange(e.target.files)}
-              />
-            </div>
-            {/* Previsualización de archivos */}
-            {orderFiles.length > 0 && (
-              <div className="grid grid-cols-4 gap-4 mt-6">
-                {orderFiles.map((file, index) => (
-                  <div key={file.name + index} className="relative group">
-                    <img
-                      src={URL.createObjectURL(file)}
-                      alt="Preview"
-                      className="w-full h-32 object-cover rounded-lg"
-                      loading="lazy"
-                    />
-                    <button
-                      className="absolute top-1 right-1 bg-red-500 text-white rounded-full p-1 opacity-0 group-hover:opacity-100 transition-opacity"
-                      onClick={() => handleRemoveFile(index)}
-                    >
-                      <Icon icon="tabler:trash" className="w-4 h-4" />
-                    </button>
-                    <div className="w-full bg-gray-200 rounded-full h-1 mt-1">
-                      <div
-                        className="bg-pink-500 h-1 rounded-full transition-all duration-300"
-                        style={{ width: `${uploadProgress}%` }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-
-          {/* 7. “Explícanos” (textarea para información adicional) */}
-          <div>
-            <label
-              className="block text-sm font-medium text-gray-600 mb-2"
-              htmlFor="orderDescription"
-            >
-              {t("team.relevant_forUs_info")}
-            </label>
-            <textarea
-              id="orderDescription"
-              placeholder={t("team.forUs_info_placeholder")}
-              rows="5"
-              value={orderDescription}
-              onChange={(e) => setOrderDescription(e.target.value)}
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 resize-none"
-            ></textarea>
-          </div>
-
-          {/* 8. Detalles de contacto */}
-          <div className="space-y-6">
-            {/* Email */}
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2">
-                {t("team.contact_details")}
-              </label>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder={t("team.email")}
-                className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-600 focus:border-pink-800"
-                required
-              />
-            </div>
-            {/* País */}
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2">
-                {t("checkout.country")}
-              </label>
-              <input
-                type="text"
-                value={country}
-                onChange={(e) => setCountry(e.target.value)}
-                placeholder="Enter your country"
-                className="mt-1 block w-full rounded-md border border-gray-300 px-4 py-2 text-gray-600 focus:border-pink-800"
-                required
-              />
-            </div>
-
-            {/* Team Name */}
-            <div>
-              <label className="block text-sm font-medium text-gray-600" htmlFor="teamName">
-                {t("checkout.teamName")}
-              </label>
-              <input
-                id="teamName"
-                type="text"
-                required
-                placeholder={t("checkout.teamName_placeholder")}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800"
-              />
-            </div>
-          </div>
-
-          {/* 9. Botón para confirmar el pedido */}
-          {outfits.length > 0 && (
-            <div className="flex justify-center mt-6">
-              <button
-                type="button"
-                onClick={handleConfirmOrder}
-                className="border rounded-lg px-6 py-2 flex justify-center gap-2 items-center border-green-600 text-green-600 bg-green-100 hover:outline hover:outline-1 focus:outline focus:outline-1 outline-green-600 cursor-pointer"
-              >
-                {t("checkout.confirm_order")}
-                <Icon icon="icon-park-twotone:check-one" className="w-5 h-5" />
-              </button>
-            </div>
-          )}
         </div>
 
         {/* Columna Derecha: Imagen del producto actualmente seleccionado */}
         <div className="flex-1 items-center">
-          <div className="">
+          <div>
             <img
               src={getProductImage()}
               alt={selectedWear}
@@ -625,6 +295,7 @@ const customProductImages = {
           </div>
         </div>
       </div>
+      {/* Envolver todo el contenido en un form para enviar todos los datos (incluyendo inputs ocultos) */}
     </div>
   );
 };
