@@ -310,13 +310,14 @@ const customProductImages = {
   };
 
   const wearNames = {
-    regular_tshirt: "Regular T-Shirt",
-    sleeveless_shirt: "Sleeveless Shirt",
-    oversized_tshirt: "Oversized T-Shirt",
-    zip_hoodie: "Zip Hoodie",
-    hoodie: "Hoodie",
-    sweatshirt: "Sweatshirt",
+    regular_tshirt: t("regular_tshirt"),
+    sleeveless_shirt: t("sleeveless_shirt"),
+    oversized_tshirt: t("oversized_tshirt"),
+    zip_hoodie: t("zip_hoodie"),
+    hoodie: t("hoodie"),
+    sweatshirt: t("sweatshirt"),
   };
+  
 
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300 p-6">
@@ -341,12 +342,12 @@ const customProductImages = {
                 onChange={handleWearChange}
                 className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 focus:ring-pink-800"
               >
-                <option value="regular_tshirt">Regular T-Shirt</option>
-                <option value="sleeveless_shirt">Sleeveless Shirt</option>
-                <option value="oversized_tshirt">Oversized T-Shirt</option>
-                <option value="zip_hoodie">Zip Hoodie</option>
-                <option value="hoodie">Hoodie</option>
-                <option value="sweatshirt">Sweatshirt</option>
+                <option value="regular_tshirt">{t("regular_tshirt")}</option>
+                <option value="sleeveless_shirt">{t("sleeveless_shirt")}</option>
+                <option value="oversized_tshirt">{t("oversized_tshirt")}</option>
+                <option value="zip_hoodie">{t("zip_hoodie")}</option>
+                <option value="hoodie">{t("hoodie")}</option>
+                <option value="sweatshirt">{t("sweatshirt")}</option>
               </select>
             </div>
 
@@ -430,7 +431,7 @@ const customProductImages = {
           {outfits.length > 0 && (
             <div>
               <h2 className="text-sm font-medium text-gray-600 mb-4">
-                Outfits Added:
+              {t("checkout.outfitsAdded")}
               </h2>
               <ul className="space-y-4">
                 {outfits.map((outfit, index) => (
@@ -462,7 +463,7 @@ const customProductImages = {
                       onClick={() => handleRemoveOutfit(index)}
                       className="text-red-400 cursor-pointer hover:text-red-600 ml-4"
                     >
-                      Remove
+                      {t("cart.remove")}
                     </button>
                   </li>
                 ))}
@@ -570,7 +571,7 @@ const customProductImages = {
             {/* País */}
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
-                Country
+                {t("checkout.country")}
               </label>
               <input
                 type="text"
@@ -605,7 +606,7 @@ const customProductImages = {
                 onClick={handleConfirmOrder}
                 className="border rounded-lg px-6 py-2 flex justify-center gap-2 items-center border-green-600 text-green-600 bg-green-100 hover:outline hover:outline-1 focus:outline focus:outline-1 outline-green-600 cursor-pointer"
               >
-                Confirm Order
+                {t("checkout.confirm_order")}
                 <Icon icon="icon-park-twotone:check-one" className="w-5 h-5" />
               </button>
             </div>

@@ -1,4 +1,10 @@
 {
+  "regular_tshirt": "Remera Regular",
+  "sleeveless_shirt": "Camiseta sin mangas",
+  "oversized_tshirt": "Remera Oversize",
+  "zip_hoodie": "Campera con cremallera",
+  "hoodie": "Campera",
+  "sweatshirt": "Sudadera",
   "footer": {
     "tagline": "La vestimenta más icónica para jugadores de UWH.",
     "brand": "Underwhat!?"

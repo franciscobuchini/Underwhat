@@ -1,4 +1,10 @@
 {
+  "regular_tshirt": "T-Shirt Classique",
+  "sleeveless_shirt": "Débardeur",
+  "oversized_tshirt": "T-Shirt Oversize",
+  "zip_hoodie": "Pull à Capuche Zippé",
+  "hoodie": "Pull à Capuche",
+  "sweatshirt": "Pull Col Rond",
   "footer": {
     "tagline": "Les tenues les plus iconiques pour les joueurs de UWH.",
     "brand": "Underwhat!?"

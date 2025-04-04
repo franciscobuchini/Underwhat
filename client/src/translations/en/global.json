@@ -1,4 +1,10 @@
 {
+  "regular_tshirt": "Regular T-Shirt",
+  "sleeveless_shirt": "Sleeveless Shirt",
+  "oversized_tshirt": "Oversized T-Shirt",
+  "zip_hoodie": "Zip Hoodie",
+  "hoodie": "Hoodie",
+  "sweatshirt": "Sweatshirt",
   "footer": {
     "tagline": "The most iconic wear for UWH players.",
     "brand": "Underwhat!?"

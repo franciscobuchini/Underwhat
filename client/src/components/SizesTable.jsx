@@ -2,42 +2,42 @@ import { useState } from "react";
 
 const SizeTable = () => {
   const products = [
-    { name: "Regular T-Shirt", weight: "230g | 100% long-staple cotton", sizes: [
+    { name: t("regular_tshirt"), weight: "230g | 100% long-staple cotton", sizes: [
       ["S", "96 cm", "43.5 cm", "66 cm"],
       ["M", "100 cm", "45 cm", "68 cm"],
       ["L", "104 cm", "47 cm", "70 cm"],
       ["XL", "108 cm", "49 cm", "72 cm"],
       ["2XL", "112 cm", "50 cm", "74 cm"]
     ] },
-    { name: "Sleeveless Shirt", weight: "230g | 100% long-staple cotton", sizes: [
+    { name: t("sleeveless_shirt"), weight: "230g | 100% long-staple cotton", sizes: [
       ["S", "96 cm", "40 cm", "66 cm"],
       ["M", "100 cm", "41 cm", "68 cm"],
       ["L", "104 cm", "41.5 cm", "70 cm"],
       ["XL", "108 cm", "43 cm", "72 cm"],
       ["2XL", "112 cm", "44 cm", "74 cm"]
     ] },
-    { name: "Oversized T-Shirt", weight: "300g | 100% long-staple cotton", sizes: [
+    { name: t("oversized_tshirt"), weight: "300g | 100% long-staple cotton", sizes: [
       ["S", "110 cm", "54 cm", "72 cm"],
       ["M", "114 cm", "56 cm", "74 cm"],
       ["L", "118 cm", "58 cm", "76 cm"],
       ["XL", "122 cm", "60 cm", "77 cm"],
       ["2XL", "126 cm", "62 cm", "79 cm"]
     ] },
-    { name: "Zip Hoodie", weight: "600g | 95% cotton 5% spandex", sizes: [
+    { name: t("zip_hoodie"), weight: "600g | 95% cotton 5% spandex", sizes: [
       ["S", "51 cm", "48 cm", "62 cm"],
       ["M", "54 cm", "51 cm", "65 cm"],
       ["L", "57 cm", "54 cm", "68 cm"],
       ["XL", "60 cm", "57 cm", "71 cm"],
       ["2XL", "63 cm", "60 cm", "74 cm"]
     ] },
-    { name: "Hoodie", weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
+    { name: t("hoodie"), weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
       ["S", "51 cm", "51 cm", "65 cm"],
       ["M", "54 cm", "54 cm", "67 cm"],
       ["L", "57 cm", "57 cm", "69 cm"],
       ["XL", "60 cm", "60 cm", "71 cm"],
       ["2XL", "63 cm", "63 cm", "73 cm"]
     ] },
-    { name: "Sweatshirt", weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
+    { name: t("sweatshirt"), weight: "320g | 59% cotton 41% polyvinyl acetate fibre", sizes: [
       ["S", "48 cm", "50 cm", "65 cm"],
       ["M", "51 cm", "53 cm", "67 cm"],
       ["L", "54 cm", "56 cm", "69 cm"],
