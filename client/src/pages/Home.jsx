@@ -7,7 +7,7 @@ const Home = () => {
   const { t } = useTranslation("global");
   return (
     <div className="container mx-auto px-6 mt-20">
-      <Title title="Featured Products" />
+      <Title title={t("home.featured_products")} />
       <div className="mt-12">
         <ProductList />
       </div>

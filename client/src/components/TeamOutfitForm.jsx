@@ -277,27 +277,18 @@ const TeamOutfitForm = () => {
 
           {/* Información adicional */}
           <div className="mt-8 bg-gray-50 border border-gray-200 p-6 rounded-xl text-gray-700 text-sm leading-relaxed">
-            <h2 className="text-lg font-semibold text-gray-800 mb-3">{t("team.how_to_order")}</h2>
-            <p className="mb-3">
-              Esta sección está diseñada para que puedas explorar todas las combinaciones posibles de prendas y colores disponibles para tu equipo.
-              Usala como guía visual para decidir qué estilo y combinación te gustaría.
-            </p>
-            <p className="mb-3">
-              Una vez que tengas una idea de las prendas y colores que querés, escribinos a{" "}
-              <a href="mailto:underwhat.uwh@gmail.com" className="text-pink-800 font-medium underline">
-                underwhat.uwh@gmail.com
-              </a>{" "}
-              detallando:
-            </p>
-            <ul className="list-disc list-inside mb-3">
-              <li>Tipos de prenda seleccionados</li>
-              <li>Colores deseados</li>
-              <li>Cantidad aproximada de piezas por prenda</li>
-              <li>Cualquier especificación o imagen de referencia que pueda ayudar al diseño</li>
-            </ul>
-            <p>
-              Con esta información, te vamos a enviar una propuesta de diseño y una cotización personalizada para tu equipo.
-            </p>
+          <h2 className="text-lg font-semibold text-gray-800 mb-3">{t("team.how_to_order")}</h2>
+          <p className="mb-3">{t("team.order_description")}</p>
+          <p className="mb-3">
+            {t("team.order_instructions")}{" "}
+          </p>
+          <ul className="list-disc list-inside mb-3">
+            <li>{t("team.order_bullet_1")}</li>
+            <li>{t("team.order_bullet_2")}</li>
+            <li>{t("team.order_bullet_3")}</li>
+            <li>{t("team.order_bullet_4")}</li>
+          </ul>
+          <p>{t("team.order_summary")}</p>
           </div>
         </div>
 

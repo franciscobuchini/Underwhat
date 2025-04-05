@@ -5,10 +5,12 @@
   "zip_hoodie": "Zip Hoodie",
   "hoodie": "Hoodie",
   "sweatshirt": "Sweatshirt",
+
   "footer": {
     "tagline": "The most iconic wear for UWH players.",
     "brand": "Underwhat!?"
   },
+
   "header": {
     "logo_alt": "Underwhat Logo",
     "menu": {
@@ -25,6 +27,7 @@
       "fr": "French"
     }
   },
+
   "cart": {
     "empty": "Cart is empty",
     "subtotal": "Subtotal:",
@@ -82,23 +85,21 @@
     }
   },
   "home": {
-    "products_title": "Our products",
-    "brand_title": "The brand for your team"
+    "featured_products": "Featured Products"
   },
   "team": {
     "title": "Outfits for UWH teams",
     "content": "Don't play like a team if you don't dress like one. At Underwhat!?, we create custom apparel for Underwater Hockey teams that want to stand out in and out of the pool. We specialize in offering unique outfits, combining innovative design with the highest quality materials. Each garment is designed to provide comfort, durability and a distinctive style that elevates your team's presence in every competition.",
     "select_wear": "Type of wear:",
     "select_color": "Select color:",
-    "upload_files": "Upload pictures:",
-    "drop_or_browse": "Browse or drop files here",
-    "file_info": "You can upload images, logos, or any other files you want us to consider for your design. Can be PNG, JPG, or PDF format. The maximum size is 2MB.",
-    "amount": "Pieces:",
-    "relevant_forUs_info": "Explain us what you want in your outfit:",
-    "forUs_info_placeholder": "Tell us what you have in mind. We will contact you to discuss the details.",
-    "contact_details": "Contact Details",
-    "email": "Email",
-    "add": "Add"
+    "how_to_order": "How to Order",
+    "order_description": "This section is designed for you to explore all possible combinations of garments and colors available for your team. Use it as a visual guide to decide on the style and combination you would like.",
+    "order_instructions": "Once you have an idea of the garments and colors you want, write to us at underwhat.uwh@gmail.com detailing:",
+    "order_bullet_1": "Selected types of garments",
+    "order_bullet_2": "Desired colors",
+    "order_bullet_3": "Approximate quantity of pieces per garment",
+    "order_bullet_4": "Any specifications or reference images that could help with the design",
+    "order_summary": "With this information, we will send you a design proposal and a personalized quote for your team."
   },
 "checkout": {
       "order_details": "Order Details",
@@ -126,7 +127,8 @@
       "validation_text": "The payment link will be sent to the email address you provided. Please note that this email is not automatic and may take some time to be sent. Once you receive it, it means we are aware of your order. Your order will begin production once the payment has been received. By checking this box, you confirm that you have read and understood this information.",
       "final_price_text": "The final price is calculated based on the cost of the products and the shipping fees, according to the information you have provided. Remember that the 'subtotal' only shows the price of the products, excluding shipping. You will see the final price in the email with the payment link.",
       "agree_terms": "Agree to our terms and conditions.",
-      "confirm_order": "Confirm order"
+      "confirm_order": "Confirm order",
+      "confirming": "Confirming order..."
     },
   "terms": {
     "title": "Terms and Conditions:",

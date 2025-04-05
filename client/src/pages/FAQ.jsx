@@ -74,8 +74,8 @@ const FAQ = () => {
                 className={`size-5 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
               />
             </button>
-            <div className={`transition-all overflow-hidden ${openIndex === index ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0'}`}>
-              <div className="px-6 pb-4 text-gray-400">
+            <div className={`transition-all overflow-hidden ${openIndex === index ? ' opacity-100 py-2' : 'max-h-0 opacity-0'}`}>
+              <div className="px-0 sm:px-6 pb-4 text-gray-400">
                 {item.answerComponent || <p>{t(`faq.answers.${item.answerKey}`)}</p>}
               </div>
             </div>

@@ -83,23 +83,21 @@
     }
   },
   "home": {
-    "products_title": "Nos produits",
-    "brand_title": "La marque pour votre équipe"
+    "featured_products": "Produits en vedette"
   },
   "team": {
     "title": "Vêtements de l'équipe UWH",
     "content": "Ne jouez pas comme une équipe si vous ne vous habillez pas comme telle. Chez Underwhat!?, nous créons des vêtements personnalisés pour les équipes de hockey sous-marin qui souhaitent se démarquer dans et hors de la piscine. Nous nous spécialisons dans l'offre de tenues uniques, alliant un design innovant à des matériaux de la plus haute qualité. Chaque vêtement est conçu pour offrir confort, durabilité et un style distinctif qui rehausse la présence de votre équipe dans chaque compétition.",
     "select_wear": "Type of wear:",
     "select_color": "Select color:",
-    "upload_files": "Upload pictures:",
-    "drop_or_browse": "Browse or drop files here",
-    "file_info": "You can upload images, logos, or any other files you want us to consider for your design. Can be PNG, JPG, or PDF format. The maximum size is 2MB.",
-    "amount": "Pieces:",
-    "relevant_forUs_info": "Explain us what you want in your outfit:",
-    "forUs_info_placeholder": "Tell us what you have in mind. We will contact you to discuss the details.",
-    "contact_details": "Contact Details",
-    "email": "Email",
-    "add": "Add"
+    "how_to_order": "Comment Commander",
+    "order_description": "Cette section est conçue pour vous permettre d'explorer toutes les combinaisons possibles de vêtements et de couleurs disponibles pour votre équipe. Utilisez-la comme guide visuel pour décider du style et de la combinaison que vous souhaitez.",
+    "order_instructions": "Une fois que vous avez une idée des vêtements et des couleurs que vous désirez, écrivez-nous à underwhat.uwh@gmail.com en détaillant :",
+    "order_bullet_1": "Types de vêtements sélectionnés",
+    "order_bullet_2": "Couleurs désirées",
+    "order_bullet_3": "Quantité approximative de pièces par vêtement",
+    "order_bullet_4": "Toute spécification ou image de référence pouvant aider au design",
+    "order_summary": "Avec ces informations, nous vous enverrons une proposition de design et un devis personnalisé pour votre équipe."
   },
   "checkout": {
       "order_details": "Détails de la commande",

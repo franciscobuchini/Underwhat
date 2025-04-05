@@ -10,8 +10,8 @@ const CheckoutForm = () => {
   const navigate = useNavigate();
   const [showOtherCountry, setShowOtherCountry] = useState(false);
   const [formValid, setFormValid] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false); // Nuevo estado para el envío
   const { cartItems, clearCart } = useCart();
-
 
   const handleCountryChange = (event) => {
     setShowOtherCountry(event.target.value === 'other');
@@ -37,6 +37,11 @@ const CheckoutForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Evitar envío si ya se está procesando
+    if (!formValid || isSubmitting) return;
+
+    setIsSubmitting(true); // Activa el estado de carg
   
     if (formValid) {
       console.log("Cart Items:", cartItems); // Check in the console if objects contain product_selling
@@ -394,10 +399,20 @@ const CheckoutForm = () => {
             <button
               type="submit"
               name="submitButton"
-              disabled={!formValid}
-              className="w-full max-w-xs bg-pink-800 py-3 px-6 text-sm font-bold text-white hover:bg-pink-800 disabled:bg-gray-400 enabled:cursor-pointer rounded-full"
+              disabled={!formValid || isSubmitting}
+              className="w-full max-w-xs bg-pink-800 py-3 px-6 text-sm font-bold text-white hover:bg-pink-800 disabled:bg-gray-400 enabled:cursor-pointer rounded-full flex items-center justify-center gap-2"
             >
-              {t("checkout.confirm_order")}
+              {isSubmitting ? (
+                <>
+                  <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+                  </svg>
+                  {t("checkout.confirming")}
+                </>
+              ) : (
+                t("checkout.confirm_order")
+              )}
             </button>
           </div>
         </form>
