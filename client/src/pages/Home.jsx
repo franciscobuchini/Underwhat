@@ -1,4 +1,4 @@
-//Home.jsx
+// Home.jsx
 import ProductList from '../components/ProductList';
 import Title from '../components/Title';
 import { useTranslation } from 'react-i18next';
@@ -6,9 +6,11 @@ import { useTranslation } from 'react-i18next';
 const Home = () => {
   const { t } = useTranslation("global");
   return (
-    <div className="container mx-auto px-4 mt-20">
+    <div className="container mx-auto px-6 mt-20">
       <Title title="Featured Products" />
-      <ProductList />
+      <div className="mt-12">
+        <ProductList />
+      </div>
       {/* <Title title="The brand for your team" /> */}
     </div>
   );

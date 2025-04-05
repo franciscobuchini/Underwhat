@@ -61,7 +61,7 @@ const TeamOutfitForm = () => {
   "hoodie-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qvhotitt5rcdybjsi943.png", 
 
   // Zip Hoodie
-  "zip_hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702331/hdx1iyev2uylz5dvppka.png",
+  "zip_hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743816457/y36iudxhbufxvww5piun.png",
   "zip_hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702331/eedw3lj2dbmvdmyh9tgt.png",
   "zip_hoodie-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702331/diidkdexdkeltazjl0ew.png",
   "zip_hoodie-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702330/oiofxgpuzhq7secyur2k.png",
@@ -219,83 +219,101 @@ const TeamOutfitForm = () => {
   };
 
   return (
-    <div className="bg-white w-full rounded-2xl border border-gray-300 p-6">
+    <div className="bg-white w-full rounded-2xl border border-gray-300 p-4 md:p-8">
       {/* Contenedor en dos columnas */}
-      <div className="flex flex-col md:flex-row gap-8">
+      <div className="flex flex-col md:flex-row gap-10">
         {/* Columna Izquierda: Formularios y secciones */}
         <div className="flex-1 space-y-8">
-        <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2" htmlFor="selectWear">
-                {t("team.select_wear")}
-              </label>
-              <select
-                id="selectWear"
-                required
-                value={selectedWear}
-                onChange={handleWearChange} 
-                className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 focus:ring-pink-800"
-              >
-                <option value="regular_tshirt">{t("regular_tshirt")}</option>
-                <option value="sleeveless_shirt">{t("sleeveless_shirt")}</option>
-                <option value="oversized_tshirt">{t("oversized_tshirt")}</option>
-                <option value="zip_hoodie">{t("zip_hoodie")}</option>
-                <option value="hoodie">{t("hoodie")}</option>
-                <option value="sweatshirt">{t("sweatshirt")}</option>
-              </select>
+          {/* Selector de Prenda */}
+          <div>
+            <label className="block text-sm font-medium text-gray-600 mb-3" htmlFor="selectWear">
+              {t("team.select_wear")}
+            </label>
+            <select
+              id="selectWear"
+              required
+              value={selectedWear}
+              onChange={handleWearChange} 
+              className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 focus:ring focus:ring-pink-200"
+            >
+              <option value="regular_tshirt">{t("regular_tshirt")}</option>
+              <option value="sleeveless_shirt">{t("sleeveless_shirt")}</option>
+              <option value="oversized_tshirt">{t("oversized_tshirt")}</option>
+              <option value="zip_hoodie">{t("zip_hoodie")}</option>
+              <option value="hoodie">{t("hoodie")}</option>
+              <option value="sweatshirt">{t("sweatshirt")}</option>
+            </select>
+          </div>
 
-            </div>
-
-            {/* 2. Selector de color */}
-            <div>
-              <label className="block text-sm font-medium text-gray-600 mb-2">
-                {t("team.select_color")}{" "}
-                <span className="ml-2 text-sm font-medium text-gray-600">
-                  {getFormattedColorName(selectedColor)}
-                </span>
-              </label>
-              <div className="flex items-center gap-4">
-                <div className="flex flex-wrap gap-2">
-                  {wearColorOptions[selectedWear].map((colorKey) => {
-                    const isSelected = selectedColor === colorKey;
-                    return (
-                      <button
-                        key={colorKey}
-                        type="button"
-                        onClick={() => setSelectedColor(colorKey)}
-                        className={`relative w-8 h-8 rounded-full border-2 transition-transform duration-200 ${
-                          isSelected ? "ring-2 ring-pink-800 ring-offset-2 scale-110" : "border-gray-200 hover:scale-105"
-                        }`}
-                        style={{ backgroundColor: colorMapping[colorKey] }}
-                        title={getFormattedColorName(colorKey)}
-                      >
-                        {isSelected && (
-                          <span className="absolute inset-0 flex items-center justify-center text-white">
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                            </svg>
-                          </span>
-                        )}
-                      </button>
-                    );
-                  })}
-                </div>
+          {/* Selector de color */}
+          <div>
+            <label className="block text-sm font-medium text-gray-600 mb-3">
+              {t("team.select_color")}{" "}
+              <span className="ml-2 text-sm font-medium text-gray-600">
+                {getFormattedColorName(selectedColor)}
+              </span>
+            </label>
+            <div className="flex items-center gap-4">
+              <div className="flex flex-wrap gap-2">
+                {wearColorOptions[selectedWear].map((colorKey) => {
+                  const isSelected = selectedColor === colorKey;
+                  return (
+                    <button
+                      key={colorKey}
+                      type="button"
+                      onClick={() => setSelectedColor(colorKey)}
+                      className={`relative w-10 h-10 rounded-full border-2 transition-transform duration-200 ${
+                        isSelected ? "ring-2 ring-pink-800 ring-offset-2 scale-110" : "border-gray-200 hover:scale-105"
+                      }`}
+                      style={{ backgroundColor: colorMapping[colorKey] }}
+                      title={getFormattedColorName(colorKey)}
+                    >
+                    </button>
+                  );
+                })}
               </div>
             </div>
+          </div>
+
+          {/* Información adicional */}
+          <div className="mt-8 bg-gray-50 border border-gray-200 p-6 rounded-xl text-gray-700 text-sm leading-relaxed">
+            <h2 className="text-lg font-semibold text-gray-800 mb-3">{t("team.how_to_order")}</h2>
+            <p className="mb-3">
+              Esta sección está diseñada para que puedas explorar todas las combinaciones posibles de prendas y colores disponibles para tu equipo.
+              Usala como guía visual para decidir qué estilo y combinación te gustaría.
+            </p>
+            <p className="mb-3">
+              Una vez que tengas una idea de las prendas y colores que querés, escribinos a{" "}
+              <a href="mailto:underwhat.uwh@gmail.com" className="text-pink-800 font-medium underline">
+                underwhat.uwh@gmail.com
+              </a>{" "}
+              detallando:
+            </p>
+            <ul className="list-disc list-inside mb-3">
+              <li>Tipos de prenda seleccionados</li>
+              <li>Colores deseados</li>
+              <li>Cantidad aproximada de piezas por prenda</li>
+              <li>Cualquier especificación o imagen de referencia que pueda ayudar al diseño</li>
+            </ul>
+            <p>
+              Con esta información, te vamos a enviar una propuesta de diseño y una cotización personalizada para tu equipo.
+            </p>
+          </div>
         </div>
 
-        {/* Columna Derecha: Imagen del producto actualmente seleccionado */}
-        <div className="flex-1 items-center">
-          <div>
+        {/* Columna Derecha: Imagen del producto seleccionado */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-full">
             <img
               src={getProductImage()}
               alt={selectedWear}
-              className="w-auto h-full object-cover"
+              className="w-full h-auto object-cover"
               loading="lazy"
             />
           </div>
         </div>
       </div>
-      {/* Envolver todo el contenido en un form para enviar todos los datos (incluyendo inputs ocultos) */}
+      {/* Aquí se podría envolver todo el contenido en un form si es necesario */}
     </div>
   );
 };

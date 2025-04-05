@@ -1,6 +1,12 @@
-import { useState } from "react";
+// SizesTable.jsx
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Icon } from "@iconify/react";
 
-const SizeTable = () => {
+const SizesTable = () => {
+  const { t } = useTranslation("global"); // Se agrega la traducción
+  const [selectedProduct, setSelectedProduct] = useState(null);
+
   const products = [
     { name: t("regular_tshirt"), weight: "230g | 100% long-staple cotton", sizes: [
       ["S", "96 cm", "43.5 cm", "66 cm"],
@@ -46,21 +52,18 @@ const SizeTable = () => {
     ] }
   ];
 
-  const [selectedProduct, setSelectedProduct] = useState(products[0]);
-
   return (
     <div className="w-full flex flex-col gap-6 px-6 py-4">
-
-      <div className="bg-white shadow-md rounded-lg p-4">
-      <select 
-        className="text-pink-800 focus:outline-none rounded-lg pr-2 max-w-xs" 
-        onChange={(e) => setSelectedProduct(products[e.target.value])}
-      >
-        {products.map((product, index) => (
-          <option key={index} value={index}>{product.name}</option>
-        ))}
-      </select>
-        <p className="text-gray-600 text-sm mb-2">{selectedProduct.weight}</p>
+      <div className="bg-white shadow-md rounded-lg p-6">
+        <select 
+          className="text-pink-800 focus:outline-none rounded-lg pr-2 max-w-xs mb-4" 
+          onChange={(e) => setSelectedProduct(products[e.target.value])}
+        >
+          {products.map((product, index) => (
+            <option key={index} value={index}>{product.name}</option>
+          ))}
+        </select>
+        <p className="text-gray-600 text-sm mb-4">{selectedProduct && selectedProduct.weight}</p>
         <table className="w-full border-collapse border border-gray-300 text-gray-700 text-center">
           <thead>
             <tr className="bg-gray-100 text-gray-900">
@@ -71,7 +74,7 @@ const SizeTable = () => {
             </tr>
           </thead>
           <tbody>
-            {selectedProduct.sizes.map((size, i) => (
+            {selectedProduct && selectedProduct.sizes.map((size, i) => (
               <tr key={i} className="border border-gray-300 hover:bg-gray-50">
                 {size.map((value, j) => (
                   <td key={j} className="border border-gray-300 px-4 py-2">{value}</td>
@@ -85,4 +88,4 @@ const SizeTable = () => {
   );
 };
 
-export default SizeTable;
+export default SizesTable;

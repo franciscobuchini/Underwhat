@@ -1,4 +1,4 @@
-//FAQ.jsx
+// FAQ.jsx
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import SizesTable from '../components/SizesTable';
@@ -52,20 +52,20 @@ const FAQ = () => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 mt-20">
-      <h1 className="text-3xl font-bold mb-8 text-gray-600 flex items-center gap-4">
+    <div className="container mx-auto px-6 py-10 mt-20">
+      <h1 className="text-3xl font-bold mb-10 text-gray-600 flex items-center gap-4">
         <Icon icon="icon-park-twotone:file-question" className="size-10 text-pink-800" />
         {t("faq.title")}
       </h1>
       
       <div className="divide-y divide-gray-300">
         {faqItems.map((item, index) => (
-          <div key={item.id} className={`${index === faqItems.length - 1 ? '' : 'border-b'}` }>
+          <div key={item.id} className={`${index === faqItems.length - 1 ? '' : 'border-b'}`}>
             <button
-              className="w-full flex items-center justify-between py-8 text-gray-600 hover:text-pink-800 focus:outline-none"
+              className="w-full flex items-center justify-between py-6 text-gray-600 hover:text-pink-800 focus:outline-none"
               onClick={() => toggleAccordion(index)}
             >
-              <span className="flex items-center gap-4">
+              <span className="flex items-center text-left gap-4">
                 <Icon icon={item.icon} className="text-pink-800 size-6" />
                 {t(`faq.questions.${item.questionKey}`)}
               </span>
@@ -75,7 +75,7 @@ const FAQ = () => {
               />
             </button>
             <div className={`transition-all overflow-hidden ${openIndex === index ? 'max-h-96 opacity-100 py-2' : 'max-h-0 opacity-0'}`}>
-              <div className="px-5 pb-4 text-gray-400">
+              <div className="px-6 pb-4 text-gray-400">
                 {item.answerComponent || <p>{t(`faq.answers.${item.answerKey}`)}</p>}
               </div>
             </div>

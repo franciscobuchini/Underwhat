@@ -88,17 +88,17 @@ const CheckoutForm = () => {
 
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300">
-      <div className="w-full p-4">
-        <form className="needs-validation grid gap-y-6" noValidate onSubmit={handleSubmit}>
+      <div className="w-full p-6"> {/* Aumentamos el padding */}
+        <form className="needs-validation grid gap-y-8" noValidate onSubmit={handleSubmit}> {/* gap-y aumentado */}
           {/* Shipping Details */}
-          <div className="w-full mt-2">
+          <div className="w-full mt-4">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:airplane" className="size-6 text-pink-800"/>
+              <Icon icon="icon-park-twotone:airplane" className="size-6 text-pink-800" />
               {t("checkout.shipping_details")}
             </h6>
             <hr className="mt-2" />
           </div>
-
+  
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="userCountry">
@@ -110,7 +110,7 @@ const CheckoutForm = () => {
                 required
                 onChange={handleCountryChange}
                 defaultValue="united_states"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
               >
                 <option value="angola">Angola</option>
                 <option value="argentina">Argentina</option>
@@ -176,12 +176,12 @@ const CheckoutForm = () => {
                   type="text"
                   placeholder="Andorra"
                   required
-                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
+                  className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
                 />
               </div>
             )}
           </div>
-
+  
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="state">
@@ -193,7 +193,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="California"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800"
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 capitalize focus:border-pink-800"
               />
             </div>
             <div>
@@ -206,7 +206,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="San Francisco"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800"
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 capitalize focus:border-pink-800"
               />
             </div>
             <div>
@@ -219,11 +219,11 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder={t("checkout.teamName_placeholder")}
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800"
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
               />
             </div>
           </div>
-
+  
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="street">
@@ -235,7 +235,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="Main Street"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 capitalize focus:border-pink-800"
               />
             </div>
             <div>
@@ -248,7 +248,7 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="123"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 capitalize focus:border-pink-800"
               />
             </div>
             <div>
@@ -260,7 +260,7 @@ const CheckoutForm = () => {
                 name="apartment"
                 type="text"
                 placeholder="6th B"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 capitalize focus:border-pink-800"
               />
             </div>
             <div>
@@ -273,11 +273,11 @@ const CheckoutForm = () => {
                 type="text"
                 required
                 placeholder="1234"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 capitalize focus:border-pink-800 "
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 capitalize focus:border-pink-800"
               />
             </div>
           </div>
-
+  
           <div className="w-full">
             <label className="block text-sm font-medium text-gray-600" htmlFor="shippingInfo">
               {t("checkout.relevant_shipping_info")}
@@ -286,11 +286,11 @@ const CheckoutForm = () => {
               id="shippingInfo"
               name="shippingInfo"
               placeholder={t("checkout.shipping_info_placeholder")}
-              rows="1"
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800  resize-none"
+              rows="2"
+              className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800 resize-none"
             ></textarea>
           </div>
-
+  
           <div className="w-full">
             <label className="block text-sm font-medium text-gray-600" htmlFor="forUsInfo">
               {t("checkout.relevant_forUs_info")}
@@ -299,20 +299,20 @@ const CheckoutForm = () => {
               id="forUsInfo"
               name="forUsInfo"
               placeholder={t("checkout.forUs_info_placeholder")}
-              rows="1"
-              className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800  resize-none"
+              rows="2"
+              className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800 resize-none"
             ></textarea>
           </div>
-
+  
           {/* Contact Details */}
-          <div className="w-full mt-2">
+          <div className="w-full mt-6">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:message" className="size-6 text-pink-800"/>
+              <Icon icon="icon-park-twotone:message" className="size-6 text-pink-800" />
               {t("checkout.contact_details")}
             </h6>
             <hr className="mt-2" />
           </div>
-
+  
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="email">
@@ -324,7 +324,7 @@ const CheckoutForm = () => {
                 type="email"
                 required
                 placeholder="underwather@hockey.com"
-                className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
               />
             </div>
             <div className="grid grid-cols-2 gap-4">
@@ -338,7 +338,7 @@ const CheckoutForm = () => {
                   type="text"
                   required
                   placeholder="+01"
-                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
+                  className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
                 />
               </div>
               <div>
@@ -351,71 +351,51 @@ const CheckoutForm = () => {
                   type="tel"
                   required
                   placeholder="555 123456"
-                  className="mt-1 block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-gray-600 focus:border-pink-800 "
+                  className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
                 />
               </div>
             </div>
           </div>
-
+  
           {/* Validations */}
-          <div className="w-full mt-2">
+          <div className="w-full mt-6">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:check-one" className="size-6 text-pink-800"/>
+              <Icon icon="icon-park-twotone:check-one" className="size-6 text-pink-800" />
               {t("checkout.validations")}
             </h6>
             <hr className="mt-2" />
           </div>
-
-          <div className="flex items-center gap-4">
-            <input
-              type="checkbox"
-              id="userAgree"
-              required
-              className="h-4 cursor-pointer"
-            />
+  
+          <div className="flex items-center gap-4 mt-4">
+            <input type="checkbox" id="userAgree" required className="h-4 cursor-pointer" />
             <label htmlFor="userAgree" className="text-gray-600 text-sm">
               {t("checkout.validation_text")}
             </label>
           </div>
-
+  
           <div className="flex items-center gap-4">
-            <input
-              type="checkbox"
-              id="priceAgree"
-              required
-              className="h-4 cursor-pointer"
-            />
+            <input type="checkbox" id="priceAgree" required className="h-4 cursor-pointer" />
             <label htmlFor="priceAgree" className="text-gray-600 text-sm">
               {t("checkout.final_price_text")}
             </label>
           </div>
-
+  
           <div className="flex items-center gap-4">
-            <input
-              type="checkbox"
-              id="termsAgree"
-              required
-              className="h-4 cursor-pointer"
-            />
+            <input type="checkbox" id="termsAgree" required className="h-4 cursor-pointer" />
             <label htmlFor="termsAgree" className="text-gray-600 text-sm">
-              <a
-                href="/terms-and-conditions"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline"
-              >
+              <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="underline">
                 {t("checkout.agree_terms")}
               </a>
             </label>
           </div>
-
+  
           {/* Botón de envío */}
           <div className="mt-6 flex justify-center">
             <button
               type="submit"
               name="submitButton"
               disabled={!formValid}
-              className="w-full max-w-xs bg-pink-800 py-2 px-4 text-sm font-bold text-white hover:bg-pink-800 disabled:bg-gray-400 enabled:cursor-pointer rounded-full"
+              className="w-full max-w-xs bg-pink-800 py-3 px-6 text-sm font-bold text-white hover:bg-pink-800 disabled:bg-gray-400 enabled:cursor-pointer rounded-full"
             >
               {t("checkout.confirm_order")}
             </button>
@@ -424,6 +404,7 @@ const CheckoutForm = () => {
       </div>
     </div>
   );
-};
-
-export default CheckoutForm;
+  };
+  
+  export default CheckoutForm;
+  

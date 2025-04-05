@@ -65,15 +65,14 @@ function ProductList() {
   const [hoveredProductId, setHoveredProductId] = useState(null);
 
   return (
-    <div className="ProductList flex flex-wrap justify-center gap-4">
+    <div className="ProductList flex flex-wrap justify-center gap-6">
       {products.map((product, index) => (
         <div 
           key={index} 
-          className="ProductCard bg-white border rounded-2xl border-gray-300 w-64"
+          className="ProductCard bg-white border rounded-2xl border-gray-300 w-64 hover:shadow-lg transition-shadow duration-300"
           onMouseEnter={() => setHoveredProductId(product.product_id)}
           onMouseLeave={() => setHoveredProductId(null)}
         >
-
           <div className="ProductImage hover:bg-gray-100 rounded-t-2xl overflow-hidden">
             <img
               src={
@@ -82,21 +81,28 @@ function ProductList() {
                   : product.product_image
               }
               alt={product.product_name}
-              className="Image01 object-cover w-full h-auto transition-all duration-1000 hover:scale-105"
+              className="object-cover w-full h-auto transition-all duration-1000 hover:scale-105"
               loading="lazy"
             />
           </div>
-
-          <hr className="border border-gray-300 mx-6" />
-
-          <div className="ProductDetails p-4 text-gray-600">
-            <p className="ProductName text-xl font-semibold">{product.product_name}</p>
-            <p className="ProductCategory text-sm text-gray-400">{product.product_category}</p>
-            <p className="ProductPrice">{product.product_selling.toFixed(2)} USD</p>
-            <div className="ProductInteractions flex justify-left space-x-2 mt-4">
+  
+          <hr className="border border-gray-300 mx-6 my-2" />
+  
+          <div className="ProductDetails p-6 text-gray-600">
+            <p className="ProductName text-xl font-semibold mb-1">
+              {product.product_name}
+            </p>
+            <p className="ProductCategory text-sm text-gray-400 mb-2">
+              {product.product_category}
+            </p>
+            <p className="ProductPrice mb-4">
+              {product.product_selling.toFixed(2)} USD
+            </p>
+  
+            <div className="ProductInteractions flex justify-start space-x-2 mt-4">
               <select
                 id="size"
-                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-1 hover:outline-1 outline-gray-300 cursor-pointer"
+                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-none focus:border-pink-800 cursor-pointer"
                 aria-label="select"
                 value={selectedSizes[index] || ""}
                 onChange={(e) => handleSizeChange(index, e.target.value)}
@@ -111,10 +117,10 @@ function ProductList() {
                 <option value="XXL">XXL</option>
               </select>
               <button
-                className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center ${
+                className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center px-3 py-2 ${
                   selectedSizes[index]
-                    ? "text-green-600 bg-green-100 hover:outline-1 focus:outline-1 outline-green-600 cursor-pointer"
-                    : "text-gray-300 bg-white shadow-none cursor-not-allowed hover:border hover:shadow-none focus:bg-white focus:border focus:bg-gray-100 focus:shadow-none"
+                    ? "text-green-600 bg-green-100 hover:outline hover:outline-green-600 cursor-pointer"
+                    : "text-gray-300 bg-white cursor-not-allowed"
                 }`}
                 onClick={(e) => {
                   e.stopPropagation();
@@ -130,8 +136,9 @@ function ProductList() {
           </div>
         </div>
       ))}
-  </div>
+    </div>
   );
-}
-
-export default ProductList;
+  }
+  
+  export default ProductList;
+  

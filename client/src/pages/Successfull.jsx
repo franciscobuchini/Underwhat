@@ -6,14 +6,14 @@ const Successfull = () => {
   const { t } = useTranslation("global");
 
   return (
-    <div className="flex flex-col gap-10 px-4 py-8 mt-20 justify-center  w-full">
+    <div className="flex flex-col gap-12 px-6 py-12 mt-20 justify-center w-full">
       {/* Confirmation Card */}
-      <div className="p-8 border border-gray-300 rounded-2xl bg-white flex flex-col items-center">
+      <div className="p-10 border border-gray-300 rounded-2xl bg-white flex flex-col items-center">
         <Icon icon="icon-park-twotone:check-one" className="w-16 h-16 text-pink-800" />
-        <h2 className="mt-4 text-2xl font-bold text-gray-700">
+        <h2 className="mt-6 text-2xl font-bold text-gray-700">
           {t("successfull.order_completed")}
         </h2>
-        <p className="mt-2 text-gray-500 text-center">
+        <p className="mt-3 text-gray-500 text-center">
           {t("successfull.thank_you")}
         </p>
       </div>
@@ -22,7 +22,7 @@ const Successfull = () => {
       <div className="flex justify-center">
         <a 
           href="/"
-          className="bg-pink-800 hover:bg-pink-800 text-white font-bold py-2 px-6 rounded-full text-sm"
+          className="bg-pink-800 hover:bg-pink-700 text-white font-bold py-3 px-8 rounded-full text-sm"
         >
           {t("successfull.continue_shopping")}
         </a>

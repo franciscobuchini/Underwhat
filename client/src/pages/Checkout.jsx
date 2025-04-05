@@ -32,13 +32,12 @@ const Checkout = () => {
   const subtotal = cartItems.reduce((total, item) => total + item.product_selling * item.quantity, 0).toFixed(2);
 
   return (
-    <div className="container flex flex-col gap-10 mx-auto px-4 py-8 mt-20">
-
+    <div className="container flex flex-col gap-12 mx-auto px-6 py-12 mt-20">
       {/* Resumen del carrito con opción de eliminar */}
-      <div className="p-4 border border-gray-300 rounded-2xl bg-white flex flex-col gap-y-4">
+      <div className="p-6 border border-gray-300 rounded-2xl bg-white flex flex-col gap-y-6">
         <div className="w-full mt-2">
           <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-            <Icon icon="icon-park-twotone:shopping" className="size-6 text-pink-800"/>
+            <Icon icon="icon-park-twotone:shopping" className="size-6 text-pink-800" />
             {t("checkout.order_details")}
           </h6>
           <hr className="mt-2" />
@@ -46,9 +45,9 @@ const Checkout = () => {
         {cartItems.length === 0 ? (
           <p className="text-gray-600">{t("cart.empty")}</p>
         ) : (
-          <ul className="space-y-4">
+          <ul className="space-y-6">
             {cartItems.map((item, index) => (
-              <li key={index} className="flex items-center gap-4 border-b border-gray-300 pb-4 last:border-b-0">
+              <li key={index} className="flex items-center gap-6 border-b border-gray-300 pb-6 last:border-b-0">
                 {/* Imagen del producto */}
                 <img 
                   src={item.image} 
@@ -63,12 +62,11 @@ const Checkout = () => {
                   <p className="text-gray-400 text-sm">{t("cart.size")}: {item.selectedSize}</p>
                   <p className="text-gray-400 text-sm">{t("cart.pieces")}: {item.quantity}</p>
                 </div>
-
+  
                 <div className="flex flex-col items-end">
                   <span className="text-gray-600">
                     ${(item.product_selling * item.quantity).toFixed(2)} USD
                   </span>
-                  
                   {/* Botón para eliminar producto */}
                   <button
                     className="text-red-500 hover:text-red-700 text-sm mt-2"
@@ -81,17 +79,18 @@ const Checkout = () => {
             ))}
           </ul>
         )}
-        <hr className="mt-2" />
+        <hr className="mt-4" />
         <div className="flex justify-between font-semibold text-gray-600">
           <span>{t("cart.subtotal_without_shipping")}</span>
           <span>{subtotal} USD</span>
         </div>
       </div>
-
+  
       {/* Formulario de pago */}
       <CheckoutForm />
     </div>
   );
-};
-
-export default Checkout;
+  };
+  
+  export default Checkout;
+  

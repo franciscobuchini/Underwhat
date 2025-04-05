@@ -59,20 +59,19 @@ function Header() {
   }, []);
 
   return (
-<nav className="Navbar fixed z-100 bg-white/80 border border-gray-300 rounded-2xl flex justify-between left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-2 p-3 backdrop-blur-xs">
-
+    <nav className="Navbar fixed z-100 bg-white/80 border border-gray-300 rounded-2xl flex justify-between left-0 right-0 mx-auto w-[calc(100%-1rem)] max-w-[calc(100%-1.5rem)] mt-4 p-4 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
       <div className="NavbarLogo">
         <Link to="/">
-          <img src={nav01} className="h-8" alt={t("header.logo_alt")} />
+          <img src={nav01} className="h-10" alt={t("header.logo_alt")} />
         </Link>
       </div>
-      <div className="NavbarMenu flex gap-4">
+      <div className="NavbarMenu flex gap-6">
         {/* Botón de menú */}
         <div className="MenuButton flex" ref={menuRef}>
           <button
             id="dropdown-nav"
             type="button"
-            className="rounded-full size-9 hover:bg-gray-100 flex items-center justify-center cursor-pointer"
+            className="rounded-full w-10 h-10 hover:bg-gray-100 flex items-center justify-center cursor-pointer"
             aria-haspopup="menu"
             aria-expanded={isMenuOpen}
             aria-label="Dropdown"
@@ -80,9 +79,9 @@ function Header() {
           >
             <Icon icon="icon-park-twotone:app-switch" className="text-pink-800 size-6" />
           </button>
-
+  
           {isMenuOpen && (
-            <ul className="absolute right-18 top-12 w-48 bg-white border border-gray-300 rounded-2xl z-150 p-1" role="menu">
+            <ul className="absolute right-20 top-12 w-48 bg-white border border-gray-300 rounded-2xl z-150 p-2" role="menu">
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/team-outfit">
                   <span className="flex items-center gap-2">
@@ -123,10 +122,13 @@ function Header() {
                   </span>
                 </Link>
               </li>
-
+  
               {/* Botón de selección de idioma */}
               <div ref={languageRef}>
-                <button className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" onClick={() => setIsLanguageOpen(!isLanguageOpen)}>
+                <button
+                  className="w-full px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl"
+                  onClick={() => setIsLanguageOpen(!isLanguageOpen)}
+                >
                   <span className="flex flex-row items-center gap-x-2">
                     <Icon icon="icon-park-twotone:text" className="size-5 text-pink-800" />
                     {t("header.menu.language")}
@@ -151,11 +153,11 @@ function Header() {
             </ul>
           )}
         </div>
-
+  
         {/* Carrito de compras */}
         <div className="CartButton flex" ref={cartRef}>
           <button
-            className="rounded-full w-9 h-9 hover:bg-gray-100 flex items-center justify-center cursor-pointer"
+            className="rounded-full w-10 h-10 hover:bg-gray-100 flex items-center justify-center cursor-pointer"
             onClick={() => setIsCartOpen(!isCartOpen)}
           >
             <div className="CartIndicator relative">
@@ -166,19 +168,19 @@ function Header() {
             </div>
           </button>
           {isCartOpen && (
-            <div className="absolute right-4 top-12 bg-white border border-gray-300 rounded-2xl z-50 p-2 min-w-[250px]">
+            <div className="absolute right-4 top-12 bg-white border border-gray-300 rounded-2xl z-50 p-3 min-w-[250px]">
               {cartItems.length === 0 ? (
                 <h6 className="text-gray-600 text-center">{t("cart.empty")}</h6>
               ) : (
                 <>
                   {/* Subtotal y Checkout en la parte superior */}
-                  <div className="flex items-center justify-between gap-2 m-2">
+                  <div className="flex items-center justify-between gap-2 m-3">
                     <h6 className="text-gray-600">
                       <span className="pr-1">{t("cart.subtotal")}</span>
                       {cartItems
                         .reduce((total, item) => total + item.product_selling * item.quantity, 0)
                         .toFixed(2)}
-                        USD
+                      USD
                     </h6>
                     {totalQuantity < 2 ? (
                       <p className="text-red-400 text-sm">{t("cart.minimum_order", { min: 2 })}</p>
@@ -194,12 +196,12 @@ function Header() {
                   {/* Listado de productos */}
                   <ul className="divide-y divide-gray-300">
                     {cartItems.map((item, index) => (
-                      <li key={index} className="flex items-center gap-2 border-b p-2 last:border-b-0">
+                      <li key={index} className="flex items-center gap-3 border-b p-3 last:border-b-0">
                         {/* Imagen del producto */}
                         <img 
                           src={item.image} 
                           alt={item.product_name} 
-                          className="w-14 h-full object-cover rounded-2xl"
+                          className="w-16 h-full object-cover rounded-2xl"
                           loading="lazy"
                         />
                         
@@ -238,6 +240,7 @@ function Header() {
       </div>
     </nav>
   );
-}
-
-export default Header;
+  }
+  
+  export default Header;
+  
