@@ -9,7 +9,7 @@ const SizesTable = () => {
   const products = [
     {
       name: t("regular_tshirt"),
-      weight: "230g | 100% long-staple cotton",
+      weight: t("faq.table.regular_tshirt_weight"),
       sizes: [
         ["S", "96 cm", "43.5 cm", "66 cm"],
         ["M", "100 cm", "45 cm", "68 cm"],
@@ -20,7 +20,7 @@ const SizesTable = () => {
     },
     {
       name: t("sleeveless_shirt"),
-      weight: "230g | 100% long-staple cotton",
+      weight: t("faq.table.sleeveless_shirt_weight"),
       sizes: [
         ["S", "96 cm", "40 cm", "66 cm"],
         ["M", "100 cm", "41 cm", "68 cm"],
@@ -31,7 +31,7 @@ const SizesTable = () => {
     },
     {
       name: t("oversized_tshirt"),
-      weight: "300g | 100% long-staple cotton",
+      weight: t("faq.table.oversized_tshirt_weight"),
       sizes: [
         ["S", "110 cm", "54 cm", "72 cm"],
         ["M", "114 cm", "56 cm", "74 cm"],
@@ -42,7 +42,7 @@ const SizesTable = () => {
     },
     {
       name: t("zip_hoodie"),
-      weight: "600g | 95% cotton 5% spandex",
+      weight: t("faq.table.zip_hoodie_weight"),
       sizes: [
         ["S", "51 cm", "48 cm", "62 cm"],
         ["M", "54 cm", "51 cm", "65 cm"],
@@ -53,7 +53,7 @@ const SizesTable = () => {
     },
     {
       name: t("hoodie"),
-      weight: "320g | 59% cotton 41% polyvinyl acetate fibre",
+      weight: t("faq.table.hoodie_weight"),
       sizes: [
         ["S", "51 cm", "51 cm", "65 cm"],
         ["M", "54 cm", "54 cm", "67 cm"],
@@ -64,7 +64,7 @@ const SizesTable = () => {
     },
     {
       name: t("sweatshirt"),
-      weight: "320g | 59% cotton 41% polyvinyl acetate fibre",
+      weight: t("faq.table.sweatshirt_weight"),
       sizes: [
         ["S", "48 cm", "50 cm", "65 cm"],
         ["M", "51 cm", "53 cm", "67 cm"],
@@ -102,16 +102,16 @@ const SizesTable = () => {
                 <thead>
                   <tr className="bg-gray-100">
                     <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
-                      Size
+                    {t("faq.table.size")}
                     </th>
                     <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
-                      Chest Width
+                    {t("faq.table.chest")}
                     </th>
                     <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
-                      Shoulder Width
+                    {t("faq.table.shoulder")}
                     </th>
                     <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
-                      Length
+                    {t("faq.table.length")}
                     </th>
                   </tr>
                 </thead>

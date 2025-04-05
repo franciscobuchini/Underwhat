@@ -129,7 +129,7 @@ function ProductList() {
                 }}
                 disabled={!selectedSizes[index]}
               >
-                Add to cart
+                {t("product.add")}
                 <Icon icon="icon-park-twotone:shopping" className="size-5" />
               </button>
             </div>

@@ -38,6 +38,7 @@
   
   "product": {
     "size_placeholder": "Taille",
+    "add": "Ajouter",
     "add_to_cart": "Produit ajouté au panier !",
     "remove_from_cart": "Produit retiré du panier !"
   },
@@ -79,7 +80,14 @@
       "size": "Taille",
       "chest": "Largeur Poitrine",
       "shoulder": "Largeur Épaules",
-      "length": "Longueur"
+      "length": "Longueur",
+      "regular_tshirt_weight": "230g | 100% coton à fibres longues",
+"sleeveless_shirt_weight": "230g | 100% coton à fibres longues",
+"oversized_weight": "300g | 100% coton à fibres longues",
+"zip_hoodie_weight": "600g | 95% coton 5% élasthanne",
+"hoodie_weight": "320g | 59% coton 41% fibre d'acétate de vinyle",
+"sweatshirt_weight": "320g | 59% coton 41% fibre d'acétate de vinyle"
+
     }
   },
   "home": {
@@ -88,8 +96,8 @@
   "team": {
     "title": "Vêtements de l'équipe UWH",
     "content": "Ne jouez pas comme une équipe si vous ne vous habillez pas comme telle. Chez Underwhat!?, nous créons des vêtements personnalisés pour les équipes de hockey sous-marin qui souhaitent se démarquer dans et hors de la piscine. Nous nous spécialisons dans l'offre de tenues uniques, alliant un design innovant à des matériaux de la plus haute qualité. Chaque vêtement est conçu pour offrir confort, durabilité et un style distinctif qui rehausse la présence de votre équipe dans chaque compétition.",
-    "select_wear": "Type of wear:",
-    "select_color": "Select color:",
+    "select_wear": "Sélectionner un vêtement:",
+    "select_color": "Sélectionner une couleur:",
     "how_to_order": "Comment Commander",
     "order_description": "Cette section est conçue pour vous permettre d'explorer toutes les combinaisons possibles de vêtements et de couleurs disponibles pour votre équipe. Utilisez-la comme guide visuel pour décider du style et de la combinaison que vous souhaitez.",
     "order_instructions": "Une fois que vous avez une idée des vêtements et des couleurs que vous désirez, écrivez-nous à underwhat.uwh@gmail.com en détaillant :",
@@ -125,7 +133,8 @@
       "validation_text": "Le lien de paiement sera envoyé à l'adresse e-mail fournie. Veuillez noter que cet e-mail n'est pas automatique et peut prendre un certain temps avant d'être envoyé. Une fois reçu, cela signifie que nous sommes informés de votre commande. Votre commande commencera à être traitée une fois le paiement reçu. En cochant cette case, vous confirmez avoir lu et compris ces informations.",
       "final_price_text": "Le prix final est calculé en fonction du coût des produits et des frais d'expédition, selon les informations que vous avez fournies. N'oubliez pas que le 'sous-total' affiche uniquement le prix des produits, sans inclure les frais d'expédition. Vous verrez le prix final dans l'e-mail contenant le lien de paiement.",
       "agree_terms": "Acceptez nos conditions générales.",
-      "confirm_order": "Confirmer la commande"
+      "confirm_order": "Confirmer la commande",
+      "confirming": "Confirmant la commande..."
     },
   "terms": {
     "title": "Termes et Conditions:",
@@ -157,8 +166,9 @@
     "thank_you": "Merci d'avoir finalisé votre commande. Nous avons transmis votre demande à notre équipe logistique, qui se chargera de l'expédition avec le fabricant. Vous recevrez bientôt un e-mail avec les frais de livraison et un lien sécurisé pour finaliser votre paiement. Si vous avez besoin d'aide ou des questions, n'hésitez pas à nous contacter à l'adresse : underwhat.uwh@gmail.com.",
     "continue_shopping": "Continuer vos achats"
   },
-  "shippingCalculator": {
-    "title": "Shipping Rate Calculator",
-    "content": "We are working on this section. We want to give you the best possible experience, but we need a little more time to make it perfect."
-  }  
+"shippingCalculator": {
+  "title": "Calculateur de frais de livraison",
+  "content": "Nous travaillons sur cette section. Nous voulons vous offrir la meilleure expérience possible, mais nous avons besoin d’un peu plus de temps pour la rendre parfaite."
+}
+
 }

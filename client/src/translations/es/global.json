@@ -13,7 +13,7 @@
     "logo_alt": "Logo de Underwhat",
     "menu": {
       "team": "Equipamiento",
-      "faq": "FAQ",
+      "faq": "Preguntas",
       "about": "Nosotros",
       "shipping-calculator": "Costo de envío",
       "conditions": "Condiciones",
@@ -33,14 +33,15 @@
       "size": "Talla",
       "pieces": "Piezas",
       "remove": "Eliminar",
-      "minimum_order": "Min: 2 products",
+      "minimum_order": "Min: 2 productos",
       "subtotal_without_shipping": "Subtotal (sin envío):"
   },
 
   "product": {
     "size_placeholder": "Talla",
+    "add": "Agregar",
     "add_to_cart": "¡Producto añadido al carrito!",
-    "remove_from_cart": "¡Producto eliminado del carrito!"
+    "remove_from_cart": "¡Producto eliminado!"
   },
   "about": {
     "title": "Quiénes somos!?",
@@ -80,7 +81,14 @@
       "size": "Talla",
       "chest": "Ancho de Pecho",
       "shoulder": "Ancho de Hombros",
-      "length": "Largo"
+      "length": "Largo",
+      "regular_tshirt_weight": "230g | 100% algodón de fibra larga",
+      "sleeveless_shirt_weight": "230g | 100% algodón de fibra larga",
+      "oversized_weight": "300g | 100% algodón de fibra larga",
+      "zip_hoodie_weight": "600g | 95% algodón 5% spandex",
+      "hoodie_weight": "320g | 59% algodón 41% fibra de acetato de polivinilo",
+      "sweatshirt_weight": "320g | 59% algodón 41% fibra de acetato de polivinilo"
+
     }
   },
   "home": {
@@ -127,7 +135,8 @@
       "validation_text": "El enlace de pago se enviará a la dirección de correo electrónico proporcionada. Tenga en cuenta que este correo no es automático y puede demorar en ser enviado. Una vez recibido, significa que estamos al tanto de su pedido. Su pedido comenzará la producción una vez que se reciba el pago. Al marcar esta casilla, confirma que ha leído y comprendido esta información.",
       "final_price_text": "El precio final se calcula a partir del costo de los productos y los gastos de envío, según la información que has proporcionado. Recuerda que el 'subtotal' muestra únicamente el precio de los productos, sin incluir el envío. El precio final lo veras en el mail con el link de pago.",
       "agree_terms": "Acepta nuestros términos y condiciones.",
-      "confirm_order": "Confirmar pedido"
+      "confirm_order": "Confirmar pedido",
+      "confirming": "Confirmando pedido..."
     },
   "terms": {
     "title": "Términos y Condiciones:",
@@ -160,8 +169,9 @@
     "thank_you": "Gracias por completar su orden. Hemos enviado tu pedido a nuestro equipo de logística, quien se encargará de gestionar el envío con el fabricante. Pronto recibirás un correo con el costo de envío y un enlace seguro para finalizar el pago. Si necesitas ayuda o tienes alguna pregunta, no dudes en contactarnos a: underwhat.uwh@gmail.com.",
     "continue_shopping": "Continuar comprando"
   },
-  "shippingCalculator": {
-    "title": "Shipping Rate Calculator",
-    "content": "We are working on this section. We want to give you the best possible experience, but we need a little more time to make it perfect."
-  }  
+"shippingCalculator": {
+  "title": "Calculadora de Envío",
+  "content": "Estamos trabajando en esta sección. Queremos darte la mejor experiencia posible, pero necesitamos un poco más de tiempo para que quede perfecta."
+}
+
 }

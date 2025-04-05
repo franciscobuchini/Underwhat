@@ -10,7 +10,7 @@ const TeamOutfit = () => {
         <Icon icon="icon-park-twotone:basketball-clothes" className="size-10 text-pink-800" />  
         {t("team.title")}
       </h1>
-      <p className="text-gray-600 leading-relaxed text-center max-w-4xl">
+      <p className="text-gray-600 leading-relaxed text-center">
         {t("team.content")}
       </p>
       <TeamOutfitForm />
