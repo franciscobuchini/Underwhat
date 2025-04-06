@@ -1,0 +1,174 @@
+{
+  "regular_tshirt": "T-Shirt Classique",
+  "sleeveless_shirt": "Débardeur",
+  "oversized_tshirt": "T-Shirt Oversize",
+  "zip_hoodie": "Pull à Capuche Zippé",
+  "hoodie": "Pull à Capuche",
+  "sweatshirt": "Pull Col Rond",
+  "footer": {
+    "tagline": "Les tenues les plus iconiques pour les joueurs de UWH.",
+    "brand": "Underwhat!?"
+  },
+  "header": {
+    "logo_alt": "Logo Underwhat",
+    "menu": {
+      "team": "Équipement",
+      "faq": "FAQ",
+      "about": "À propos",
+      "shipping-calculator": "Frais De Port",
+      "conditions": "Conditions",
+      "language": "Langue"
+    },
+    "language_options": {
+      "en": "Anglais",
+      "es": "Espagnol",
+      "fr": "Français"
+    }
+  },
+  "cart": {
+    "empty": "Panier vide",
+    "subtotal": "Sous-total: $",
+    "checkout": "Commander",
+    "size": "Taille",
+    "pieces": "Pièces",
+    "remove": "Supprimer",
+    "minimum_order": "Min: 2 products",
+    "subtotal_without_shipping": "Sous-total (sans frais de port):"
+  },
+  
+  "product": {
+    "size_placeholder": "Taille",
+    "add": "Ajouter",
+    "add_to_cart": "Produit ajouté au panier !",
+    "remove_from_cart": "Produit retiré du panier !"
+  },
+  "about": {
+    "title": "Qui sommes-nous !?",
+    "content": "Underwhat!? a été créé par des joueurs de l'UWH pour les joueurs de l'UWH. Nous savons combien il est important de représenter le sport avec fierté et style, à l'intérieur comme à l'extérieur de la piscine. C'est pourquoi nous avons décidé de créer une marque de vêtements décontractés conçus non seulement pour un usage quotidien, mais aussi pour emporter l'esprit de l'UWH partout, en gardant toujours une touche de style. Chaque article que nous proposons est conçu avec une attention méticuleuse aux détails. Dès le début, nous avons clairement indiqué que la qualité serait une priorité. Nous ne recherchons pas seulement le confort et la durabilité, mais aussi la meilleure esthétique pour que nous, en tant que joueurs, puissions afficher fièrement notre engagement envers le sport de manière élégante et moderne. Notre plus grand objectif est d'atteindre chaque pays avec UWH, en apportant notre marque et la passion pour ce sport aux quatre coins du monde. Nous croyons en l'importance de construire une communauté mondiale de joueurs qui peuvent se sentir représentés et connectés à travers nos vêtements. Nous nous engageons à proposer des produits qui non seulement offrent une haute qualité, mais vous permettent également d'exprimer votre identité en tant que joueur de l'UWH, où que vous soyez. Cette marque est là pour mettre en valeur notre mode de vie et partager la passion d'un sport qui est bien plus qu'un simple jeu."
+  },
+  "faq": {
+    "title": "Questions Fréquentes",
+    "questions": {
+      "sizes": "Tableau des tailles : Comment choisir la bonne taille ?",
+      "taxes": "Serai-je taxé lors de la réception de ma commande ?",
+      "shipping": "Combien de temps faut-il pour recevoir ma commande ?",
+      "custom": "Proposez-vous des équipements personnalisés pour les équipes ?",
+      "returns": "Quelle est votre politique de retour ?",
+      "origin": "D'où viennent les produits ?"
+    },
+    "answers": {
+      "taxes": "Les autorités douanières de la plupart des pays durcissent l'application des droits d'importation, de la TVA/des taxes locales et des frais supplémentaires pour les produits achetés à l'étranger. Ces réglementations concernent tous les types d'articles, quelle que soit leur catégorie ou leur secteur. Il est donc conseillé d'être prêt à couvrir ces frais supplémentaires lorsque votre colis entre dans votre pays. Vérifiez toujours les réglementations locales et tenez compte de ces dépenses potentielles lorsque vous effectuez des achats internationaux.",
+      "shipping": "Les délais de livraison peuvent varier considérablement en fonction de plusieurs facteurs. Si votre commande comprend des articles personnalisés ou fabriqués sur commande, leur fabrication peut prendre plus de temps, ce qui ajoute des jours, voire des semaines, au processus. De plus, les délais d'expédition sont souvent élevés et dépendent grandement du lieu d'achat. Par exemple, si le produit provient d'un autre pays ou continent, l'expédition peut prendre plus de temps en raison des procédures douanières et des distances. Pour vous tenir au courant de l'avancement de votre commande, nous vous fournirons un numéro de suivi une fois votre achat expédié. Cela vous permettra de surveiller l'état de l'envoi et de recevoir des mises à jour en temps réel.",
+      "custom": "Oui ! Nous concevons et produisons des équipements personnalisés pour les clubs et équipes de hockey sous-marin. Si vous n'avez pas encore de design, nous pouvons vous aider à en créer un à partir de zéro ou à en adapter un existant pour qu'il corresponde parfaitement à l'identité de votre équipe. Nous utilisons des matériaux de haute qualité et prêtons attention à chaque détail de la production. Visitez la section Tenue d'équipe pour commencer!",
+      "returns": "Nous travaillons actuellement sur cette section, car les frais d'expédition peuvent parfois être plus élevés que le produit lui-même, ce qui rend les retours gênants pour les deux parties. Cependant, nous comprenons que chaque cas est unique et nous sommes ouverts à traiter les demandes au cas par cas pour trouver une solution qui convienne aux deux parties. Si vous rencontrez des problèmes avec votre commande, n'hésitez pas à nous contacter.",
+      "origin": "Nous travaillons avec des fournisseurs dans le monde entier pour garantir la meilleure qualité et les meilleurs prix. Cependant, la plupart de nos expéditions sont traitées et expédiées depuis la Chine, où nous avons notre principal centre de production et de logistique pour traiter les commandes mondiales de manière efficace."
+    },
+    "products": {
+      "regular_tshirt": "T-Shirt Classique",
+      "sleeveless": "Débardeur",
+      "oversized": "T-Shirt Oversize",
+      "zip_hoodie": "Pull à Capuche Zippé",
+      "hoodie": "Pull à Capuche",
+      "round_hoodie": "Pull Col Rond"
+    },
+    "materials": {
+      "cotton": "100% coton peigné",
+      "blend": "95% coton 5% élasthanne",
+      "poly": "59% coton 41% fibre d'acétate de polyvinyle"
+    },
+    "table": {
+      "size": "Taille",
+      "chest": "Largeur Poitrine",
+      "shoulder": "Largeur Épaules",
+      "length": "Longueur",
+      "regular_tshirt_weight": "230g | 100% coton à fibres longues",
+"sleeveless_shirt_weight": "230g | 100% coton à fibres longues",
+"oversized_weight": "300g | 100% coton à fibres longues",
+"zip_hoodie_weight": "600g | 95% coton 5% élasthanne",
+"hoodie_weight": "320g | 59% coton 41% fibre d'acétate de vinyle",
+"sweatshirt_weight": "320g | 59% coton 41% fibre d'acétate de vinyle"
+
+    }
+  },
+  "home": {
+    "featured_products": "Produits en vedette"
+  },
+  "team": {
+    "title": "Vêtements de l'équipe UWH",
+    "content": "Ne jouez pas comme une équipe si vous ne vous habillez pas comme telle. Chez Underwhat!?, nous créons des vêtements personnalisés pour les équipes de hockey sous-marin qui souhaitent se démarquer dans et hors de la piscine. Nous nous spécialisons dans l'offre de tenues uniques, alliant un design innovant à des matériaux de la plus haute qualité. Chaque vêtement est conçu pour offrir confort, durabilité et un style distinctif qui rehausse la présence de votre équipe dans chaque compétition.",
+    "select_wear": "Sélectionner un vêtement:",
+    "select_color": "Sélectionner une couleur:",
+    "how_to_order": "Comment Commander",
+    "order_description": "Cette section est conçue pour vous permettre d'explorer toutes les combinaisons possibles de vêtements et de couleurs disponibles pour votre équipe. Utilisez-la comme guide visuel pour décider du style et de la combinaison que vous souhaitez.",
+    "order_instructions": "Une fois que vous avez une idée des vêtements et des couleurs que vous désirez, écrivez-nous à underwhat.uwh@gmail.com en détaillant :",
+    "order_bullet_1": "Types de vêtements sélectionnés",
+    "order_bullet_2": "Couleurs désirées",
+    "order_bullet_3": "Quantité approximative de pièces par vêtement",
+    "order_bullet_4": "Toute spécification ou image de référence pouvant aider au design",
+    "order_summary": "Avec ces informations, nous vous enverrons une proposition de design et un devis personnalisé pour votre équipe."
+  },
+  "checkout": {
+      "order_details": "Détails de la commande",
+      "shipping_details": "Détails de l'expédition",
+      "select_country": "Sélectionner un pays",
+      "other": "Autre...",
+      "other_country": "Autre pays",
+      "state": "État / Province / Région",
+      "city": "Ville",
+      "teamName": "Nom de l'équipe",
+      "teamName_placeholder": "Entrez le nom de votre équipe",
+      "street_name": "Nom de la rue",
+      "address_number": "Numéro d'adresse",
+      "apartment_suite": "Appartement, Suite, etc.",
+      "zip_code": "Code postal",
+      "relevant_shipping_info": "Informations pertinentes pour le livreur:",
+      "shipping_info_placeholder": "Porte arrière, sonnez, etc.",
+      "relevant_forUs_info": "Informations pertinentes pour nous:",
+      "forUs_info_placeholder": "Faites-nous savoir si vous avez des demandes particulières",
+      "contact_details": "Coordonnées",
+      "email": "E-mail",
+      "area_code": "Indicatif régional",
+      "phone_number": "Numéro de téléphone",
+      "validations": "Validations",
+      "validation_text": "Le lien de paiement sera envoyé à l'adresse e-mail fournie. Veuillez noter que cet e-mail n'est pas automatique et peut prendre un certain temps avant d'être envoyé. Une fois reçu, cela signifie que nous sommes informés de votre commande. Votre commande commencera à être traitée une fois le paiement reçu. En cochant cette case, vous confirmez avoir lu et compris ces informations.",
+      "final_price_text": "Le prix final est calculé en fonction du coût des produits et des frais d'expédition, selon les informations que vous avez fournies. N'oubliez pas que le 'sous-total' affiche uniquement le prix des produits, sans inclure les frais d'expédition. Vous verrez le prix final dans l'e-mail contenant le lien de paiement.",
+      "agree_terms": "Acceptez nos conditions générales.",
+      "confirm_order": "Confirmer la commande",
+      "confirming": "Confirmant la commande..."
+    },
+  "terms": {
+    "title": "Termes et Conditions:",
+      "introduction": "Bienvenue chez Underwhat!?. Les présentes conditions générales, exhaustives et juridiquement contraignantes, régissent l'utilisation de notre site web, y compris, mais sans s'y limiter, la navigation, l'accès et l'achat de produits ou services proposés sur celui-ci. En passant une commande ou en interagissant avec notre site web de quelque manière que ce soit, vous, l'utilisateur, reconnaissez et acceptez d'être lié par ces conditions générales dans leur intégralité. Si vous trouvez une disposition, clause ou section de ce document désagréable ou inacceptable, il vous est expressément conseillé de cesser toute utilisation de nos services immédiatement. L'utilisation continue du site web ou des services fournis par Underwhat!? constitue votre acceptation sans équivoque de ces conditions générales, que vous les ayez lues en entier ou non. Nous vous encourageons à examiner ce document attentivement et à nous contacter pour toute question ou préoccupation que vous pourriez avoir.",
+  "product_description": "Underwhat!? propose une sélection diversifiée et soigneusement choisie d'articles vestimentaires, allant des vêtements de tous les jours à des articles plus spécialisés. Bien que nous fassions tout notre possible pour garantir que les descriptions de produits, les images et les informations de prix affichées sur notre site web soient exactes, complètes et à jour, nous ne pouvons pas garantir que ces informations soient entièrement exemptes d'erreurs, d'omissions ou d'inexactitudes. Il est important de noter que nos produits sont expédiés directement par nos fournisseurs en utilisant un modèle de dropshipping. Cela signifie que Underwhat!? ne manipule, n'inspecte ni ne stocke physiquement les produits avant leur expédition. Ainsi, toute divergence ou problème lié à la qualité, à l'apparence ou à la fonctionnalité du produit peut survenir en raison de facteurs hors de notre contrôle direct. Nous encourageons les clients à consulter les spécifications des produits, les guides des tailles et autres informations pertinentes fournies sur le site web avant de faire un achat.",
+  "purchase_process": "Pour initier un achat sur notre site web, vous devez d'abord sélectionner le(s) produit(s) souhaité(s) et les ajouter à votre panier virtuel. Ensuite, vous devrez suivre le processus de finalisation de la commande, qui inclut la fourniture des informations personnelles et de livraison nécessaires. Une fois votre commande soumise avec succès, vous recevrez un e-mail automatisé contenant un lien de paiement sécurisé. Il est impératif que vous complétiez le processus de paiement via ce lien pour confirmer et finaliser votre commande. Si vous ne le faites pas dans le délai spécifié, votre commande pourrait être annulée automatiquement. Une fois le paiement reçu et traité, vous recevrez un e-mail de confirmation reconnaissant la réussite de votre commande. Veuillez noter que cet e-mail de confirmation ne garantit pas la disponibilité immédiate ou l'expédition du(des) produit(s) commandé(s). Underwhat!? se réserve le droit d'annuler ou de modifier toute commande à sa discrétion, y compris, mais sans s'y limiter, en cas de suspicion de fraude, de litige de paiement ou de rupture de stock.",
+  "prices_and_payments": "Tous les prix affichés sur le site web d'Underwhat!? sont indiqués en dollars américains (USD) et incluent les taxes applicables, sauf indication contraire. Le montant total à payer par le client comprend le prix de base du(des) produit(s) ainsi que les frais d'expédition associés, qui seront clairement détaillés lors du processus de paiement. Veuillez noter que nous n'acceptons actuellement que les paiements par virement bancaire. Nous nous réservons le droit de modifier, d'ajuster ou de mettre à jour notre structure de prix à tout moment et sans préavis. Cependant, nous vous assurons que le prix affiché au moment de votre commande sera respecté, à condition que la commande soit finalisée avec succès et que le paiement soit reçu en intégralité. Veuillez noter que le prix final de votre commande peut être soumis à des frais supplémentaires, tels que des droits de douane, des taxes d'importation ou d'autres frais imposés par les autorités locales de votre pays. Ces frais sont hors de notre contrôle et sont à la charge exclusive du client. Nous vous recommandons de vous familiariser avec les réglementations pertinentes et les coûts potentiels associés aux achats internationaux pour éviter des dépenses imprévues.",
+  "shipping_and_delivery": "Underwhat!? s'associe à des transporteurs de confiance pour faciliter l'expédition et la livraison de vos commandes. Bien que nous nous efforcions de fournir des estimations précises concernant les délais de livraison, ces estimations sont sujettes à des variations en fonction de facteurs tels que la localisation géographique, la disponibilité du transporteur et des circonstances externes imprévues. Une fois votre commande remise au transporteur désigné, Underwhat!? décline toute responsabilité en cas de perte, dommage ou retard pouvant survenir pendant le transit. Nous vous recommandons vivement d'inspecter l'état du colis à réception et de nous contacter immédiatement en cas de problème. Si vous ne le faites pas, cela pourrait limiter notre capacité à traiter vos préoccupations de manière rapide et efficace. Veuillez noter que les livraisons internationales peuvent être soumises à des procédures de dédouanement, ce qui peut entraîner des retards supplémentaires hors de notre contrôle. Bien que nous fassions tout notre possible pour garantir que votre commande soit traitée et expédiée rapidement, nous ne pouvons pas garantir la date ou l'heure exacte de livraison. Nous apprécions votre compréhension et votre patience à cet égard.",
+  "returns_and_refunds": "Si un produit arrive en état défectueux ou ne correspond pas à la description fournie sur notre site web, le client doit en informer Underwhat!? dans les sept (7) jours calendaires suivant la réception du produit. En raison de la nature de notre modèle de dropshipping, qui implique des coûts d'expédition élevés et des complexités logistiques, nous n'offrons pas de politique de retour standard. Cependant, nous nous engageons à évaluer chaque cas individuellement pour déterminer une solution appropriée et équitable pour les deux parties. Veuillez noter que nous ne pouvons pas être tenus responsables des défauts résultant d'une mauvaise utilisation, d'une négligence, d'une usure normale ou d'une manipulation inappropriée du produit par le client. Les retours motivés uniquement par un changement d'avis ou une préférence personnelle ne sont généralement pas acceptés, sauf indication contraire dans une politique ou un accord séparé. Si vous rencontrez un problème avec votre commande, nous vous encourageons à contacter notre équipe de service client pour obtenir de l'aide et des conseils supplémentaires. Nous apprécions votre coopération et votre compréhension dans cette affaire.",
+  "limitation_of_liability": "Dans la mesure maximale permise par la loi applicable, Underwhat!? décline toute responsabilité pour tout dommage indirect, accessoire, consécutif ou punitif, y compris, mais sans s'y limiter, la perte de profits, la perte de données ou la perte d'utilisation, qu'il résulte d'une théorie de responsabilité contractuelle, extracontractuelle ou autre, même si Underwhat!? a été informé de la possibilité de tels dommages. Notre responsabilité totale envers vous, le client, pour toute réclamation découlant de votre achat ou de votre utilisation de nos produits ou services, sera strictement limitée au montant effectivement payé par vous pour le(s) produit(s) en question. Cette limitation de responsabilité est une partie fondamentale de l'accord entre vous et Underwhat!? et s'appliquera nonobstant toute défaillance du but essentiel de tout recours limité. En utilisant notre site web ou en achetant nos produits, vous reconnaissez et acceptez cette limitation de responsabilité.",
+  "force_majeure": "Underwhat!? ne sera pas tenu responsable de tout manquement, retard ou interruption dans l'exécution de ses obligations en vertu des présentes conditions générales résultant de circonstances indépendantes de sa volonté. Ces circonstances peuvent inclure, sans s'y limiter, des actes de Dieu, des catastrophes naturelles, des pandémies, des grèves, des conflits de travail, des perturbations des transports, des actes des autorités gouvernementales, des guerres, du terrorisme, des incendies ou tout autre événement qualifié de force majeure en vertu de la loi applicable. En cas de force majeure, Underwhat!? se réserve le droit de suspendre ou de modifier ses obligations en vertu des présentes sans encourir de responsabilité envers le client.",
+  "intellectual_property": "Tout le contenu, les matériaux et les éléments affichés sur le site web d'Underwhat!?, y compris, mais sans s'y limiter, les logos, les marques déposées, les images, les graphiques, les textes et les logiciels, sont la propriété exclusive d'Underwhat!? ou de ses concédants de licence et sont protégés par les lois sur la propriété intellectuelle applicables. Toute utilisation, reproduction, distribution ou modification non autorisée de tout contenu sur ce site web est strictement interdite et peut entraîner des poursuites judiciaires. En utilisant notre site web, vous acceptez de respecter et de défendre les droits de propriété intellectuelle d'Underwhat!? et de ses concédants de licence en tout temps.",
+  "privacy": "Underwhat!? s'engage à protéger la confidentialité et la sécurité de vos informations personnelles. Nous ne collectons que les informations nécessaires pour traiter vos commandes et fournir nos services, telles que votre nom, votre adresse de livraison, votre adresse e-mail et vos informations de paiement. Ces informations sont utilisées uniquement pour les finalités de traitement des commandes, de service client et de tenue de registres internes. Nous ne partageons pas vos informations personnelles avec des tiers non autorisés, sauf si cela est nécessaire pour exécuter votre commande (par exemple, partager votre adresse de livraison avec le transporteur). Veuillez noter que nous sommes actuellement en train de développer une politique de confidentialité complète, qui sera publiée sur notre site web en temps voulu. Nous vous encourageons à consulter cette politique une fois disponible pour mieux comprendre nos pratiques en matière de données et vos droits en tant que client. En utilisant notre site web, vous reconnaissez et acceptez nos pratiques de confidentialité telles que décrites ici.",
+  "modifications": "Underwhat!? se réserve le droit unilatéral de modifier, amender ou mettre à jour ces conditions générales à tout moment et sans préavis. Toute modification de ce document entrera en vigueur immédiatement après sa publication sur notre site web. Il est de la seule responsabilité du client de consulter périodiquement ces conditions générales pour se tenir informé de toute mise à jour ou révision. Votre utilisation continue de notre site web ou de nos services après la publication de toute modification constitue votre acceptation des conditions générales modifiées. Si vous n'acceptez pas les conditions révisées, vous devez cesser immédiatement toute utilisation de nos services. Underwhat!? vous encourage à nous contacter pour toute question ou préoccupation concernant ces conditions générales.",
+      "introduction_title": "Introduction",
+      "product_description_title": "Description du Produit",
+      "purchase_process_title": "Processus d'Achat",
+      "prices_and_payments_title": "Prix et Paiements",
+      "shipping_and_delivery_title": "Expédition et Livraison",
+      "returns_and_refunds_title": "Retours et Remboursements",
+      "limitation_of_liability_title": "Limitation de Responsabilité",
+      "force_majeure_title": "Force Majeure",
+      "intellectual_property_title": "Propriété Intellectuelle",
+      "privacy_title": "Confidentialité",
+      "modifications_title": "Modifications"
+  },
+  "successfull": {
+    "order_completed": "Commande reçue avec succès!",
+    "thank_you": "Merci d'avoir finalisé votre commande. Nous avons transmis votre demande à notre équipe logistique, qui se chargera de l'expédition avec le fabricant. Vous recevrez bientôt un e-mail avec les frais de livraison et un lien sécurisé pour finaliser votre paiement. Si vous avez besoin d'aide ou des questions, n'hésitez pas à nous contacter à l'adresse : underwhat.uwh@gmail.com.",
+    "continue_shopping": "Continuer vos achats"
+  },
+"shippingCalculator": {
+  "title": "Calculateur de frais de livraison",
+  "content": "Nous travaillons sur cette section. Nous voulons vous offrir la meilleure expérience possible, mais nous avons besoin d’un peu plus de temps pour la rendre parfaite."
+}
+
+}
