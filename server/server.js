@@ -9,7 +9,7 @@ const corsOptions = { origin: 'http://localhost:5174', };
 app.use(cors(corsOptions));
 
 // Conectar a la base de datos
-const dbPath = path.resolve(__dirname, '../database/underwhat.db');
+const dbPath = path.resolve(__dirname, './database/underwhat.db');
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Error al conectar con la base de datos:', err.message);
