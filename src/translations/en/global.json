@@ -40,7 +40,7 @@
   },
   "product": {
     "size_placeholder": "Size",
-    "add": "Add to cart",
+    "add": "Add",
     "add_to_cart": "Product added to cart!",
     "remove_from_cart": "Product removed from cart!"
   },

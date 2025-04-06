@@ -9,8 +9,8 @@ const Successfull = () => {
     <div className="flex flex-col gap-12 px-6 py-12 mt-20 justify-center w-full">
       {/* Confirmation Card */}
       <div className="p-10 border border-gray-300 rounded-2xl bg-white flex flex-col items-center">
-        <Icon icon="icon-park-twotone:check-one" className="w-16 h-16 text-pink-800" />
-        <h2 className="mt-6 text-2xl font-bold text-gray-700">
+        <Icon icon="icon-park-twotone:check-one" className="w-16 h-16 text-green-600" />
+        <h2 className="mt-6 text-2xl text-center font-bold text-gray-700">
           {t("successfull.order_completed")}
         </h2>
         <p className="mt-3 text-gray-500 text-center">

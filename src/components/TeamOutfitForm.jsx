@@ -226,14 +226,17 @@ const TeamOutfitForm = () => {
         <div className="flex-1 space-y-8">
           {/* Selector de Prenda */}
           <div>
-            <label className="block text-sm font-medium text-gray-600 mb-3" htmlFor="selectWear">
+            <label
+              className="block text-sm font-medium text-gray-600 mb-3"
+              htmlFor="selectWear"
+            >
               {t("team.select_wear")}
             </label>
             <select
               id="selectWear"
               required
               value={selectedWear}
-              onChange={handleWearChange} 
+              onChange={handleWearChange}
               className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-600 focus:border-pink-800 focus:ring focus:ring-pink-200"
             >
               <option value="regular_tshirt">{t("regular_tshirt")}</option>
@@ -244,7 +247,7 @@ const TeamOutfitForm = () => {
               <option value="sweatshirt">{t("sweatshirt")}</option>
             </select>
           </div>
-
+  
           {/* Selector de color */}
           <div>
             <label className="block text-sm font-medium text-gray-600 mb-3">
@@ -263,37 +266,50 @@ const TeamOutfitForm = () => {
                       type="button"
                       onClick={() => setSelectedColor(colorKey)}
                       className={`relative w-10 h-10 rounded-full border-2 transition-transform duration-200 ${
-                        isSelected ? "ring-2 ring-pink-800 ring-offset-2 scale-110" : "border-gray-200 hover:scale-105"
+                        isSelected
+                          ? "ring-2 ring-pink-800 ring-offset-2 scale-110"
+                          : "border-gray-200 hover:scale-105"
                       }`}
                       style={{ backgroundColor: colorMapping[colorKey] }}
                       title={getFormattedColorName(colorKey)}
-                    >
-                    </button>
+                    ></button>
                   );
                 })}
               </div>
             </div>
           </div>
-
+  
+          {/* Imagen del producto en mobile: se muestra solo en pantallas pequeñas */}
+          <div className="block md:hidden">
+            <img
+              src={getProductImage()}
+              alt={selectedWear}
+              className="w-full h-auto object-cover"
+              loading="lazy"
+            />
+          </div>
+  
           {/* Información adicional */}
           <div className="mt-8 bg-gray-50 border border-gray-200 p-6 rounded-xl text-gray-700 text-sm leading-relaxed">
-          <h2 className="text-lg font-semibold text-gray-800 mb-3">{t("team.how_to_order")}</h2>
-          <p className="mb-3">{t("team.order_description")}</p>
-          <p className="mb-3">
-            {t("team.order_instructions")}{" "}
-          </p>
-          <ul className="list-disc list-inside mb-3">
-            <li>{t("team.order_bullet_1")}</li>
-            <li>{t("team.order_bullet_2")}</li>
-            <li>{t("team.order_bullet_3")}</li>
-            <li>{t("team.order_bullet_4")}</li>
-          </ul>
-          <p>{t("team.order_summary")}</p>
+            <h2 className="text-lg font-semibold text-gray-800 mb-3">
+              {t("team.how_to_order")}
+            </h2>
+            <p className="mb-3">{t("team.order_description")}</p>
+            <p className="mb-3">
+              {t("team.order_instructions")}{" "}
+            </p>
+            <ul className="list-disc list-inside mb-3">
+              <li>{t("team.order_bullet_1")}</li>
+              <li>{t("team.order_bullet_2")}</li>
+              <li>{t("team.order_bullet_3")}</li>
+              <li>{t("team.order_bullet_4")}</li>
+            </ul>
+            <p>{t("team.order_summary")}</p>
           </div>
         </div>
-
-        {/* Columna Derecha: Imagen del producto seleccionado */}
-        <div className="flex-1 flex items-center justify-center">
+  
+        {/* Imagen del producto en desktop: se muestra solo en pantallas medianas en adelante */}
+        <div className="flex-1 hidden md:flex items-center justify-center">
           <div className="w-full">
             <img
               src={getProductImage()}

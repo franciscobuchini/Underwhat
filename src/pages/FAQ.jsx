@@ -54,7 +54,7 @@ const FAQ = () => {
   return (
     <div className="container mx-auto px-6 py-10 mt-20">
       <h1 className="text-3xl font-bold mb-10 text-gray-600 flex items-center gap-4">
-        <Icon icon="icon-park-twotone:file-question" className="size-10 text-pink-800" />
+        <Icon icon="icon-park-twotone:file-question" className="w-10 h-10 flex-shrink-0 text-pink-800" />
         {t("faq.title")}
       </h1>
       
@@ -66,12 +66,12 @@ const FAQ = () => {
               onClick={() => toggleAccordion(index)}
             >
               <span className="flex items-center text-left gap-4">
-                <Icon icon={item.icon} className="text-pink-800 size-6" />
+                <Icon icon={item.icon} className="text-pink-800 w-6 h-6 flex-shrink-0" />
                 {t(`faq.questions.${item.questionKey}`)}
               </span>
               <Icon
                 icon="mingcute:down-line" 
-                className={`size-5 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
+                className={`w-6 h-6 flex-shrink-0 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
               />
             </button>
             <div className={`transition-all overflow-hidden ${openIndex === index ? ' opacity-100 py-2' : 'max-h-0 opacity-0'}`}>

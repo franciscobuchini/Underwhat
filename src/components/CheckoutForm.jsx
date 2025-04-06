@@ -98,7 +98,7 @@ const CheckoutForm = () => {
           {/* Shipping Details */}
           <div className="w-full mt-4">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:airplane" className="size-6 text-pink-800" />
+              <Icon icon="icon-park-twotone:airplane" className="w-6 h-6 flex-shrink-0 text-pink-800" />
               {t("checkout.shipping_details")}
             </h6>
             <hr className="mt-2" />
@@ -312,7 +312,7 @@ const CheckoutForm = () => {
           {/* Contact Details */}
           <div className="w-full mt-6">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:message" className="size-6 text-pink-800" />
+              <Icon icon="icon-park-twotone:message" className="w-6 h-6 flex-shrink-0 text-pink-800" />
               {t("checkout.contact_details")}
             </h6>
             <hr className="mt-2" />
@@ -365,7 +365,7 @@ const CheckoutForm = () => {
           {/* Validations */}
           <div className="w-full mt-6">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
-              <Icon icon="icon-park-twotone:check-one" className="size-6 text-pink-800" />
+              <Icon icon="icon-park-twotone:check-one" className="w-6 h-6 flex-shrink-0 text-pink-800" />
               {t("checkout.validations")}
             </h6>
             <hr className="mt-2" />

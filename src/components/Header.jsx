@@ -77,7 +77,7 @@ function Header() {
             aria-label="Dropdown"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <Icon icon="icon-park-twotone:app-switch" className="text-pink-800 size-6" />
+            <Icon icon="icon-park-twotone:app-switch" className="text-pink-800 w-6 h-6 flex-shrink-0" />
           </button>
   
           {isMenuOpen && (
@@ -85,7 +85,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/team-outfit">
                   <span className="flex items-center gap-2">
-                    <Icon icon="icon-park-twotone:basketball-clothes" className="size-5 text-pink-800" />
+                    <Icon icon="icon-park-twotone:basketball-clothes" className="w-6 h-6 flex-shrink-0 text-pink-800" />
                     {t("header.menu.team")}
                   </span>
                 </Link>
@@ -93,7 +93,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/faq">
                   <span className="flex items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:file-question" className="size-5 text-pink-800" />
+                    <Icon icon="icon-park-twotone:file-question" className="w-6 h-6 flex-shrink-0 text-pink-800" />
                     {t("header.menu.faq")}
                   </span>
                 </Link>
@@ -101,7 +101,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/terms-and-conditions">
                   <span className="flex items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:align-text-left-one" className="size-5 text-pink-800" />
+                    <Icon icon="icon-park-twotone:align-text-left-one" className="w-6 h-6 flex-shrink-0 text-pink-800" />
                     {t("header.menu.conditions")}
                   </span>
                 </Link>
@@ -109,7 +109,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/about">
                   <span className="flex items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:diving" className="size-5 text-pink-800" />
+                    <Icon icon="icon-park-twotone:diving" className="w-6 h-6 flex-shrink-0 text-pink-800" />
                     {t("header.menu.about")}
                   </span>
                 </Link>
@@ -117,7 +117,7 @@ function Header() {
               <li>
                 <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/shipping-calculator">
                   <span className="flex items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:ship" className="size-5 text-pink-800" />
+                    <Icon icon="icon-park-twotone:ship" className="w-6 h-6 flex-shrink-0 text-pink-800" />
                     {t("header.menu.shipping-calculator")}
                   </span>
                 </Link>
@@ -130,7 +130,7 @@ function Header() {
                   onClick={() => setIsLanguageOpen(!isLanguageOpen)}
                 >
                   <span className="flex flex-row items-center gap-x-2">
-                    <Icon icon="icon-park-twotone:text" className="size-5 text-pink-800" />
+                    <Icon icon="icon-park-twotone:text" className="w-6 h-6 flex-shrink-0 text-pink-800" />
                     {t("header.menu.language")}
                   </span>
                 </button>
@@ -142,7 +142,7 @@ function Header() {
                           className="w-full flex items-center gap-2 text-left px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl"
                           onClick={() => i18n.changeLanguage(lang)}
                         >
-                          <Icon icon={languageIcons[lang]} className="size-5 opacity-60" />
+                          <Icon icon={languageIcons[lang]} className="w-6 h-6 flex-shrink-0 opacity-60" />
                           {t(`header.language_options.${lang}`)}
                         </button>
                       </li>
@@ -164,7 +164,7 @@ function Header() {
       <span className="absolute -top-2 -right-2 bg-red-400 w-4 h-4 rounded-full font-semibold text-white text-center text-xs flex items-center justify-center">
         {totalQuantity}
       </span>
-      <Icon icon="icon-park-twotone:shopping" className="text-pink-800 w-6 h-6" />
+      <Icon icon="icon-park-twotone:shopping" className="text-pink-800 w-6 h-6 flex-shrink-0" />
     </div>
   </button>
   {isCartOpen && (

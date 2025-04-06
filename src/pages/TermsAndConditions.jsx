@@ -8,7 +8,7 @@ const TermsAndConditions = () => {
   return (
     <div className="container mx-auto px-6 py-16 mt-20 flex flex-col items-center gap-10">
       <h1 className="text-4xl font-bold text-gray-700 flex items-center gap-4">
-        <Icon icon="icon-park-twotone:align-text-left-one" className="size-10 text-pink-800" />
+        <Icon icon="icon-park-twotone:align-text-left-one" className="w-10 h-10 flex-shrink-0 text-pink-800" />
         {t("terms.title")}
       </h1>
 

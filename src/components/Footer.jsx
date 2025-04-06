@@ -11,10 +11,10 @@ function Footer() {
         {/* Redes sociales */}
         <div className="flex gap-6">
           <a href="#" className="link" aria-label="Instagram Link">
-            <Icon icon="icon-park-twotone:instagram" className="w-6 h-6 text-pink-800" />
+            <Icon icon="icon-park-twotone:instagram" className="w-6 h-6 flex-shrink-0 text-pink-800" />
           </a>
           <a href="#" className="link" aria-label="Gmail Link">
-            <Icon icon="icon-park-twotone:mail" className="w-6 h-6 text-pink-800" />
+            <Icon icon="icon-park-twotone:mail" className="w-6 h-6 flex-shrink-0 text-pink-800" />
           </a>
         </div>
         {/* Tagline */}

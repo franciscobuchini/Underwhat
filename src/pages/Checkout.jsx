@@ -37,7 +37,7 @@ const Checkout = () => {
   <div className="p-4 sm:p-6 border border-gray-300 rounded-2xl bg-white flex flex-col gap-y-4 sm:gap-y-6">
     <div className="w-full mt-2">
       <h6 className="text-base sm:text-lg font-bold text-gray-600 flex items-center gap-2 sm:gap-4">
-        <Icon icon="icon-park-twotone:shopping" className="w-5 h-5 sm:w-6 sm:h-6 text-pink-800" />
+        <Icon icon="icon-park-twotone:shopping" className="w-6 h-6 flex-shrink-0 sm:w-6 sm:h-6 text-pink-800" />
         {t("checkout.order_details")}
       </h6>
       <hr className="mt-2" />
