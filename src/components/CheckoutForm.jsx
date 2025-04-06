@@ -216,7 +216,7 @@ const CheckoutForm = () => {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="teamName">
-                {t("checkout.teamName")}
+                {t("checkout.teamName")} *
               </label>
               <input
                 id="teamName"
