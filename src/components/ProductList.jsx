@@ -1,6 +1,5 @@
 //ProductList.jsx
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { useCart } from "../components/CartContext";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
@@ -8,12 +7,50 @@ import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 
 function ProductList() {
-  const { t, i18n } = useTranslation("global");
-  const [products, setProducts] = useState([]);
+  const { t } = useTranslation("global");
+  
+  // Define la lista de productos de forma local
+  const [products, setProducts] = useState([
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/wjy0gaakpenpbuvpivvh.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740002744/01-01_ljj1pg.webp",
+      product_name: "Bugs Bunny",
+      product_category: t("oversized_tshirt"),
+      product_selling: 34.99,
+    },
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/tpdafgvntneijvjwsiey.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006112/02-01_jzgwta.webp",
+      product_name: "Lakers",
+      product_category: t("oversized_tshirt"),
+      product_selling: 34.99,
+    },
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/ab8yum9ib7r9opcosbbe.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006123/03-01_fwv2kr.webp",
+      product_name: "Vikings",
+      product_category: t("oversized_tshirt"),
+      product_selling: 34.99,
+    },
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995153/z6sya9dorbllsupmqeag.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739999981/05-01_vhfybi.webp",
+      product_name: "Gummy",
+      product_category: t("oversized_tshirt"),
+      product_selling: 34.99,
+    },
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995153/mf0o0u7oymwrllt5rviv.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006133/uerijezrtvlxbubbfbv1.webp",
+      product_name: "Hologram",
+      product_category: t("oversized_tshirt"),
+      product_selling: 34.99,
+    },
+  ]);
+  
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart } = useCart();
 
-  // Configuración de Notyf con estilos personalizados
   const notyf = new Notyf({
     types: [
       {
@@ -24,20 +61,6 @@ function ProductList() {
       },
     ],
   });
-
-  const fetchAPI = async () => {
-    try {
-      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api`);
-      setProducts(response.data.products);
-      // console.log(response.data.products);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
-  useEffect(() => {
-    fetchAPI();
-  }, []);
 
   const handleSizeChange = (index, size) => {
     setSelectedSizes((prevSizes) => ({
@@ -56,28 +79,29 @@ function ProductList() {
   };
 
   useEffect(() => {
-    products.forEach(product => {
+    products.forEach((product) => {
       const img = new Image();
-      img.src = product.product_image02; // Precarga imagen hover
+      img.src = product.product_image02;
     });
   }, [products]);
 
-  const [hoveredProductId, setHoveredProductId] = useState(null);
+  // Utilizamos el índice del producto para identificar el hover
+  const [hoveredProductIndex, setHoveredProductIndex] = useState(null);
 
   return (
     <div className="ProductList flex flex-wrap justify-center gap-6">
       {products.map((product, index) => (
-        <div 
-          key={index} 
+        <div
+          key={index}
           className="ProductCard bg-white border rounded-2xl border-gray-300 w-64 hover:shadow-lg transition-shadow duration-300"
-          onMouseEnter={() => setHoveredProductId(product.product_id)}
-          onMouseLeave={() => setHoveredProductId(null)}
+          onMouseEnter={() => setHoveredProductIndex(index)}
+          onMouseLeave={() => setHoveredProductIndex(null)}
         >
           <div className="ProductImage hover:bg-gray-100 rounded-t-2xl overflow-hidden">
             <img
               src={
-                hoveredProductId === product.product_id
-                  ? product.product_image02 
+                hoveredProductIndex === index
+                  ? product.product_image02
                   : product.product_image
               }
               alt={product.product_name}
@@ -85,9 +109,9 @@ function ProductList() {
               loading="lazy"
             />
           </div>
-  
+
           <hr className="border border-gray-300 mx-6 my-2" />
-  
+
           <div className="ProductDetails p-6 text-gray-600">
             <p className="ProductName text-xl font-semibold mb-1">
               {product.product_name}
@@ -98,7 +122,7 @@ function ProductList() {
             <p className="ProductPrice mb-4">
               {product.product_selling.toFixed(2)} USD
             </p>
-  
+
             <div className="ProductInteractions flex justify-start space-x-2 mt-4">
               <select
                 id="size"
@@ -130,7 +154,10 @@ function ProductList() {
                 disabled={!selectedSizes[index]}
               >
                 {t("product.add")}
-                <Icon icon="icon-park-twotone:shopping" className="w-6 h-6 flex-shrink-0" />
+                <Icon
+                  icon="icon-park-twotone:shopping"
+                  className="w-6 h-6 flex-shrink-0"
+                />
               </button>
             </div>
           </div>
@@ -138,7 +165,6 @@ function ProductList() {
       ))}
     </div>
   );
-  }
-  
-  export default ProductList;
-  
+}
+
+export default ProductList;
