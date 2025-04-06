@@ -44,7 +44,7 @@ const CheckoutForm = () => {
     setIsSubmitting(true); // Activa el estado de carg
   
     if (formValid) {
-      console.log("Cart Items:", cartItems); // Check in the console if objects contain product_selling
+      // console.log("Cart Items:", cartItems); // Check in the console if objects contain product_selling
   
       let overallTotal = 0;
       const orderDetails = cartItems.map((item, index) => {
@@ -76,7 +76,7 @@ const CheckoutForm = () => {
         "DDTayKSsIeSLZhvSH"    // Public Key
       )
       .then((result) => {
-        console.log("Email sent:", result.text);
+        // console.log("Email sent:", result.text);
         clearCart();
         navigate('/successfull');
       })

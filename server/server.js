@@ -4,7 +4,7 @@ const sqlite3 = require('sqlite3').verbose(); // Importar sqlite3
 const path = require('path');
 const app = express();
 const cors = require('cors');
-const corsOptions = { origin: 'http://localhost:5173', };
+const corsOptions = { origin: 'http://localhost:5174', };
 
 app.use(cors(corsOptions));
 
@@ -14,7 +14,7 @@ const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
     console.error('Error al conectar con la base de datos:', err.message);
   } else {
-    console.log('Conexión exitosa a la base de datos SQLite');
+    // console.log('Conexión exitosa a la base de datos SQLite');
   }
 });
 
@@ -34,5 +34,5 @@ app.get('/api', (req, res) => {
 
 // Iniciar el servidor
 app.listen(3002, () => {
-  console.log('Server is running on http://localhost:3002');
+  // console.log('Server is running on http://localhost:3002');
 });
