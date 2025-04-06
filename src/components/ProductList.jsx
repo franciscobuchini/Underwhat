@@ -27,7 +27,7 @@ function ProductList() {
 
   const fetchAPI = async () => {
     try {
-      const response = await axios.get('https://underwhat-backend.onrender.com/api');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api`);
       setProducts(response.data.products);
       // console.log(response.data.products);
     } catch (error) {
