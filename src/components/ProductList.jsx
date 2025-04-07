@@ -35,7 +35,7 @@ function ProductList() {
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995153/z6sya9dorbllsupmqeag.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739999981/05-01_vhfybi.webp",
-      product_name: "Gummy",
+      product_name: "Marshmallow",
       product_category_key: "oversized_tshirt",
       product_selling: 34.99,
     },
