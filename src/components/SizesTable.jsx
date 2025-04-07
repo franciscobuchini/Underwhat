@@ -11,33 +11,33 @@ const SizesTable = () => {
       name: t("regular_tshirt"),
       weight: t("faq.table.regular_tshirt_weight"),
       sizes: [
-        ["S", "96 cm", "43.5 cm", "66 cm"],
-        ["M", "100 cm", "45 cm", "68 cm"],
-        ["L", "104 cm", "47 cm", "70 cm"],
-        ["XL", "108 cm", "49 cm", "72 cm"],
-        ["2XL", "112 cm", "50 cm", "74 cm"]
+        ["S", "48 cm", "43.5 cm", "66 cm"],
+        ["M", "50 cm", "45 cm", "68 cm"],
+        ["L", "52 cm", "47 cm", "70 cm"],
+        ["XL", "54 cm", "49 cm", "72 cm"],
+        ["2XL", "56 cm", "50 cm", "74 cm"]
       ]
     },
     {
       name: t("sleeveless_shirt"),
       weight: t("faq.table.sleeveless_shirt_weight"),
       sizes: [
-        ["S", "96 cm", "40 cm", "66 cm"],
-        ["M", "100 cm", "41 cm", "68 cm"],
-        ["L", "104 cm", "41.5 cm", "70 cm"],
-        ["XL", "108 cm", "43 cm", "72 cm"],
-        ["2XL", "112 cm", "44 cm", "74 cm"]
+        ["S", "48 cm", "40 cm", "66 cm"],
+        ["M", "50 cm", "41 cm", "68 cm"],
+        ["L", "52 cm", "41.5 cm", "70 cm"],
+        ["XL", "54 cm", "43 cm", "72 cm"],
+        ["2XL", "56 cm", "44 cm", "74 cm"]
       ]
     },
     {
       name: t("oversized_tshirt"),
       weight: t("faq.table.oversized_tshirt_weight"),
       sizes: [
-        ["S", "110 cm", "54 cm", "72 cm"],
-        ["M", "114 cm", "56 cm", "74 cm"],
-        ["L", "118 cm", "58 cm", "76 cm"],
-        ["XL", "122 cm", "60 cm", "77 cm"],
-        ["2XL", "126 cm", "62 cm", "79 cm"]
+        ["S", "54 cm", "54 cm", "72 cm"],
+        ["M", "56 cm", "56 cm", "74 cm"],
+        ["L", "58 cm", "58 cm", "76 cm"],
+        ["XL", "60 cm", "60 cm", "77 cm"],
+        ["2XL", "62 cm", "62 cm", "79 cm"]
       ]
     },
     {
