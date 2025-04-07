@@ -15,35 +15,35 @@ function ProductList() {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/wjy0gaakpenpbuvpivvh.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740002744/01-01_ljj1pg.webp",
       product_name: "Bugs Bunny",
-      product_category: t("oversized_tshirt"),
+      product_category_key: "oversized_tshirt",
       product_selling: 34.99,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/tpdafgvntneijvjwsiey.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006112/02-01_jzgwta.webp",
       product_name: "Lakers",
-      product_category: t("oversized_tshirt"),
+      product_category_key: "oversized_tshirt",
       product_selling: 34.99,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/ab8yum9ib7r9opcosbbe.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006123/03-01_fwv2kr.webp",
       product_name: "Vikings",
-      product_category: t("oversized_tshirt"),
+      product_category_key: "oversized_tshirt",
       product_selling: 34.99,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995153/z6sya9dorbllsupmqeag.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739999981/05-01_vhfybi.webp",
       product_name: "Gummy",
-      product_category: t("oversized_tshirt"),
+      product_category_key: "oversized_tshirt",
       product_selling: 34.99,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995153/mf0o0u7oymwrllt5rviv.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006133/uerijezrtvlxbubbfbv1.webp",
       product_name: "Hologram",
-      product_category: t("oversized_tshirt"),
+      product_category_key: "oversized_tshirt",
       product_selling: 34.99,
     },
   ]);
@@ -117,7 +117,7 @@ function ProductList() {
               {product.product_name}
             </p>
             <p className="ProductCategory text-sm text-gray-400 mb-2">
-              {product.product_category}
+              {t(product.product_category_key)}
             </p>
             <p className="ProductPrice mb-4">
               {product.product_selling.toFixed(2)} USD
