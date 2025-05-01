@@ -328,7 +328,7 @@ const CheckoutForm = () => {
                 name="email"
                 type="email"
                 required
-                placeholder="underwather@hockey.com"
+                placeholder="underwater@hockey.com"
                 className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
               />
             </div>
