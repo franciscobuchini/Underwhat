@@ -12,39 +12,39 @@ function ProductList() {
   // Define la lista de productos de forma local
   const [products, setProducts] = useState([
     {
-      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/wjy0gaakpenpbuvpivvh.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740002744/01-01_ljj1pg.webp",
-      product_name: "Bugs Bunny",
-      product_category_key: "oversized_tshirt",
-      product_selling: 34.99,
-    },
-    {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/tpdafgvntneijvjwsiey.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006112/02-01_jzgwta.webp",
       product_name: "Lakers",
       product_category_key: "oversized_tshirt",
-      product_selling: 34.99,
+      product_selling: 34.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/ab8yum9ib7r9opcosbbe.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006123/03-01_fwv2kr.webp",
       product_name: "Vikings",
       product_category_key: "oversized_tshirt",
-      product_selling: 34.99,
+      product_selling: 34.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995153/z6sya9dorbllsupmqeag.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739999981/05-01_vhfybi.webp",
       product_name: "Marshmallow",
       product_category_key: "oversized_tshirt",
-      product_selling: 34.99,
+      product_selling: 34.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995153/mf0o0u7oymwrllt5rviv.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006133/uerijezrtvlxbubbfbv1.webp",
       product_name: "Hologram",
       product_category_key: "oversized_tshirt",
-      product_selling: 34.99,
+      product_selling: 34.98,
+    },
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746121808/Frame_511306_hxnsjk.png",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746121813/Frame_511308_yondwx.png",
+      product_name: "Cloudy",
+      product_category_key: "regular_tshirt",
+      product_selling: 29.98,
     },
   ]);
   
