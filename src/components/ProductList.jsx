@@ -40,8 +40,8 @@ function ProductList() {
       product_selling: 34.98,
     },
     {
-      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746121808/Frame_511306_hxnsjk.png",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746121813/Frame_511308_yondwx.png",
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746218436/Frame_511306_hxnsjk.png",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746218425/Frame_511308_yondwx.png",
       product_name: "Cloudy",
       product_category_key: "regular_tshirt",
       product_selling: 29.98,
