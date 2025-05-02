@@ -13,14 +13,14 @@ function ProductList() {
   const [products, setProducts] = useState([
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/tpdafgvntneijvjwsiey.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006112/02-01_jzgwta.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/tpdafgvntneijvjwsiey.webp",
       product_name: "Lakers",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/ab8yum9ib7r9opcosbbe.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1740006123/03-01_fwv2kr.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/ab8yum9ib7r9opcosbbe.webp",
       product_name: "Vikings",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
@@ -97,7 +97,7 @@ function ProductList() {
           onMouseEnter={() => setHoveredProductIndex(index)}
           onMouseLeave={() => setHoveredProductIndex(null)}
         >
-          <div className="ProductImage hover:bg-gray-100 rounded-t-2xl overflow-hidden">
+          <div className="ProductImage  rounded-t-2xl overflow-hidden">
             <img
               src={
                 hoveredProductIndex === index
@@ -105,7 +105,7 @@ function ProductList() {
                   : product.product_image
               }
               alt={product.product_name}
-              className="object-cover w-full h-auto transition-all duration-1000 hover:scale-105"
+              className="object-cover w-full h-auto transition-all duration-2000 hover:scale-105"
               loading="lazy"
             />
           </div>
