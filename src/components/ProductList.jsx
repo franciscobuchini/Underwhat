@@ -19,7 +19,7 @@ function ProductList() {
       product_selling: 34.98,
     },
     {
-      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/ab8yum9ib7r9opcosbbe.webp",
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746895739/ab8yum9ib7r9opcosbbe.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746217795/03-01_fwv2kr.png",
       product_name: "Vikings",
       product_category_key: "oversized_tshirt",
@@ -40,9 +40,16 @@ function ProductList() {
       product_selling: 34.98,
     },
     {
-      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746218436/Frame_511306_hxnsjk.png",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746218425/Frame_511308_yondwx.png",
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746896255/Frame_511306_hxnsjk.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746896148/frame_511311_uybdqe.webp",
       product_name: "Cloudy",
+      product_category_key: "regular_tshirt",
+      product_selling: 29.98,
+    },
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746896270/frame_511312_ubfagt.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746896148/frame_511313_lvkwb0.webp",
+      product_name: "Mossy",
       product_category_key: "regular_tshirt",
       product_selling: 29.98,
     },
