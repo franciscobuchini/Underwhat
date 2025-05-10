@@ -1,16 +1,17 @@
-//ProductList.jsx
-import { useState, useEffect } from "react";
+// Updated ProductList.jsx
+import { useState, useEffect, useMemo } from "react";
 import { useCart } from "../components/CartContext";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
+import SortOrder from "./SortOrder";
 
 function ProductList() {
   const { t } = useTranslation("global");
   
   // Define la lista de productos de forma local
-  const [products, setProducts] = useState([
+  const [products] = useState([
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1739995152/tpdafgvntneijvjwsiey.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746217350/02-01_jzgwta.png",
@@ -47,13 +48,48 @@ function ProductList() {
       product_selling: 29.98,
     },
     {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746901739/frame_511316_oaafiu.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746901738/frame_511317_bndbte.webp",
+      product_name: "Pinky",
+      product_category_key: "regular_tshirt",
+      product_selling: 29.98,
+    },
+    {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746896270/frame_511312_ubfagt.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746896148/frame_511313_lvkwb0.webp",
       product_name: "Mossy",
       product_category_key: "regular_tshirt",
       product_selling: 29.98,
     },
+    {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746900289/frame_511314_ouyphz.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746900289/frame_511315_fyrifz.webp",
+      product_name: "Crabby",
+      product_category_key: "regular_tshirt",
+      product_selling: 29.98,
+    },
   ]);
+
+    // Sorting state
+    const [sortField, setSortField] = useState("");
+    const [sortDirection, setSortDirection] = useState("asc");
+  
+    const sortedProducts = useMemo(() => {
+      if (!sortField) return products;
+      return [...products].sort((a, b) => {
+        let valA, valB;
+        if (sortField === "price") {
+          valA = a.product_selling;
+          valB = b.product_selling;
+        } else if (sortField === "category") {
+          valA = a.product_category_key;
+          valB = b.product_category_key;
+        }
+        if (valA < valB) return sortDirection === "asc" ? -1 : 1;
+        if (valA > valB) return sortDirection === "asc" ? 1 : -1;
+        return 0;
+      });
+    }, [products, sortField, sortDirection]);
   
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart } = useCart();
@@ -96,7 +132,16 @@ function ProductList() {
   const [hoveredProductIndex, setHoveredProductIndex] = useState(null);
 
   return (
-    <div className="ProductList flex flex-wrap justify-center gap-6">
+    <div>
+      {/* <SortOrder
+        sortField={sortField}
+        sortDirection={sortDirection}
+        onChange={(type, value) => {
+          if (type === "field") setSortField(value);
+          else setSortDirection(value);
+        }}
+      /> */}
+      <div className="ProductList flex flex-wrap justify-center gap-6">
       {products.map((product, index) => (
         <div
           key={index}
@@ -171,6 +216,8 @@ function ProductList() {
         </div>
       ))}
     </div>
+    </div>
+    
   );
 }
 
