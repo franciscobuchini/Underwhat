@@ -15,7 +15,9 @@ const SizesTable = () => {
         ["M", "50 cm", "45 cm", "68 cm"],
         ["L", "52 cm", "47 cm", "70 cm"],
         ["XL", "54 cm", "49 cm", "72 cm"],
-        ["2XL", "56 cm", "50 cm", "74 cm"]
+        ["2XL", "56 cm", "50 cm", "74 cm"],
+        ["3XL", "58 cm", "51 cm", "76 cm"],
+        ["4XL", "60 cm", "54.5 cm", "78 cm"],
       ]
     },
     {
@@ -26,7 +28,9 @@ const SizesTable = () => {
         ["M", "50 cm", "41 cm", "68 cm"],
         ["L", "52 cm", "41.5 cm", "70 cm"],
         ["XL", "54 cm", "43 cm", "72 cm"],
-        ["2XL", "56 cm", "44 cm", "74 cm"]
+        ["2XL", "56 cm", "44 cm", "74 cm"],
+        ["3XL", "58 cm", "51 cm", "76 cm"],
+        ["4XL", "60 cm", "54.5 cm", "78 cm"],
       ]
     },
     {
@@ -48,7 +52,9 @@ const SizesTable = () => {
         ["M", "54 cm", "51 cm", "65 cm"],
         ["L", "57 cm", "54 cm", "68 cm"],
         ["XL", "60 cm", "57 cm", "71 cm"],
-        ["2XL", "63 cm", "60 cm", "74 cm"]
+        ["2XL", "63 cm", "60 cm", "74 cm"],
+        ["3XL", "66 cm", "63 cm", "77 cm"],
+        ["4XL", "69 cm", "66 cm", "79 cm"],
       ]
     },
     {
@@ -59,7 +65,8 @@ const SizesTable = () => {
         ["M", "54 cm", "54 cm", "67 cm"],
         ["L", "57 cm", "57 cm", "69 cm"],
         ["XL", "60 cm", "60 cm", "71 cm"],
-        ["2XL", "63 cm", "63 cm", "73 cm"]
+        ["2XL", "63 cm", "63 cm", "73 cm"],
+        ["3XL", "66 cm", "66 cm", "75 cm"],
       ]
     },
     {
@@ -70,7 +77,8 @@ const SizesTable = () => {
         ["M", "51 cm", "53 cm", "67 cm"],
         ["L", "54 cm", "56 cm", "69 cm"],
         ["XL", "57 cm", "59 cm", "71 cm"],
-        ["2XL", "60 cm", "62 cm", "73 cm"]
+        ["2XL", "60 cm", "62 cm", "73 cm"],
+        ["3XL", "63 cm", "65 cm", "75 cm"],
       ]
     }
   ];
@@ -84,7 +92,7 @@ const SizesTable = () => {
 
   return (
     <div className="w-full flex flex-col gap-6 py-4">
-      <div className="bg-white shadow-md rounded-lg p-2 sm:p-6">
+      <div className="bg-white border border-gray-300 rounded-lg p-2 sm:p-6">
         <select 
           className="text-pink-800 focus:outline-none rounded-lg pr-2 max-w-xs mb-4" 
           onChange={handleSelectChange}
