@@ -110,6 +110,7 @@
     "order_summary": "With this information, we will send you a design proposal and a personalized quote for your team."
   },
 "checkout": {
+      "discount_code": "Discount Code",
       "order_details": "Order Details",
       "shipping_details": "Shipping Details",
       "select_country": "Select Country",
@@ -118,7 +119,7 @@
       "state": "State / Province / Region",
       "city": "City",
       "teamName": "Team Name",
-      "teamName_placeholder": "Enter your team name",
+      "teamName_placeholder": "We would like to know the name of the team where you play",
       "street_name": "Street Name",
       "address_number": "Address Number",
       "apartment_suite": "Apartment, Suite, etc.",

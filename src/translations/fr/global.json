@@ -109,6 +109,7 @@
     "order_summary": "Avec ces informations, nous vous enverrons une proposition de design et un devis personnalisé pour votre équipe."
   },
   "checkout": {
+      "discount_code": "Code de Réduction",
       "order_details": "Détails de la commande",
       "shipping_details": "Détails de l'expédition",
       "select_country": "Sélectionner un pays",
@@ -117,7 +118,7 @@
       "state": "État / Province / Région",
       "city": "Ville",
       "teamName": "Nom de l'équipe",
-      "teamName_placeholder": "Entrez le nom de votre équipe",
+      "teamName_placeholder": "Nous aimerions connaître le nom de l'équipe dans laquelle vous jouez",
       "street_name": "Nom de la rue",
       "address_number": "Numéro d'adresse",
       "apartment_suite": "Appartement, Suite, etc.",

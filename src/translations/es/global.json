@@ -26,7 +26,6 @@
       "fr": "Francés"
     }
   },
-
   "cart": {
       "empty": "Carrito vacío",
       "subtotal": "Subtotal: $",
@@ -111,6 +110,7 @@
     "order_summary": "Con esta información, te vamos a enviar una propuesta de diseño y una cotización personalizada para tu equipo."
   },
 "checkout": {
+      "discount_code": "Código de descuento",
       "order_details": "Detalles del pedido",
       "shipping_details": "Detalles del envío",
       "select_country": "Seleccionar país",
@@ -119,7 +119,7 @@
       "state": "Estado / Provincia / Región",
       "city": "Ciudad",
       "teamName": "Nombre del equipo",
-      "teamName_placeholder": "Ingresa el nombre de tu equipo",
+      "teamName_placeholder": "Nos gustaría saber el nombre del equipo para el que juegas",
       "street_name": "Nombre de la calle",
       "address_number": "Número de dirección",
       "apartment_suite": "Apartamento, Suite, etc.",

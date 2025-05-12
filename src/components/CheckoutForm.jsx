@@ -85,11 +85,6 @@ const CheckoutForm = () => {
       });
     }
   };
-  
-  
-  
-  
-  
 
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300">
@@ -212,19 +207,6 @@ const CheckoutForm = () => {
                 required
                 placeholder="San Francisco"
                 className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 capitalize focus:border-pink-800"
-              />
-            </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-600" htmlFor="teamName">
-                {t("checkout.teamName")} *
-              </label>
-              <input
-                id="teamName"
-                name="teamName"
-                type="text"
-                required
-                placeholder={t("checkout.teamName_placeholder")}
-                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
               />
             </div>
           </div>
@@ -370,7 +352,20 @@ const CheckoutForm = () => {
             </h6>
             <hr className="mt-2" />
           </div>
-  
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label className="block text-sm font-medium text-gray-600" htmlFor="teamName">
+                {t("checkout.teamName")}
+              </label>
+              <input
+                id="teamName"
+                name="teamName"
+                type="text"
+                placeholder={t("checkout.teamName_placeholder")}
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+              />
+            </div>
+           </div>
           <div className="flex items-center gap-4 mt-4">
             <input type="checkbox" id="userAgree" required className="h-4 cursor-pointer" />
             <label htmlFor="userAgree" className="text-gray-600 text-sm">
