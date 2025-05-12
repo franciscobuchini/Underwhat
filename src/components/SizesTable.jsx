@@ -35,7 +35,7 @@ const SizesTable = () => {
     },
     {
       name: t("oversized_tshirt"),
-      weight: t("faq.table.oversized_tshirt_weight"),
+      weight: t("faq.table.oversized_weight"),
       sizes: [
         ["S", "54 cm", "54 cm", "72 cm"],
         ["M", "56 cm", "56 cm", "74 cm"],
