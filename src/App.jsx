@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import { CartProvider } from './components/CartContext';
 import Home from './pages/Home';
 import TeamOutfit from './pages/TeamOutfit';
@@ -13,7 +14,8 @@ import Checkout from './pages/Checkout';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Successfull from './pages/Successfull';
 import ShippingCalculator from './pages/ShippingCalculator';
-import ScrollToTop from './components/ScrollToTop';
+import ErrorPage from './pages/ErrorPage';
+
 
 import { I18nextProvider } from 'react-i18next';
 import i18next from 'i18next';
@@ -72,7 +74,15 @@ function App() {
                 <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
                 <Route path="/successfull" element={<Successfull />} />
                 <Route path="/shipping-calculator" element={<ShippingCalculator />} />
-                <Route path="*" element={<h1>{t("notFound")}</h1>} />
+                <Route
+                  path="*"
+                  element={
+                    <ErrorPage
+                      statusCode={404}
+                      message={t("error.notFound", "Página no encontrada")}
+                    />
+                  }
+                />
               </Routes>
             </main>
 
