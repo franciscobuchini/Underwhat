@@ -10,6 +10,16 @@ import SortOrder from "./SortOrder";
 function ProductList() {
   const { t } = useTranslation("global");
   
+  // Opciones de tallas según categoría
+  const sizeOptionsByCategory = {
+    regular_tshirt: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    sleeveless_shirt: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    oversized_tshirt: ["S", "M", "L", "XL", "2XL"],
+    zip_hoodie: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
+    hoodie: ["S", "M", "L", "XL", "2XL", "3XL"],
+    sweatshirt: ["S", "M", "L", "XL", "XXL", "3XL"],
+  };
+
   // Define la lista de productos de forma local
   const [products] = useState([
     {
@@ -197,22 +207,22 @@ function ProductList() {
             </p>
 
             <div className="ProductInteractions flex justify-start space-x-2 mt-4">
-              <select
-                id="size"
-                className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-none focus:border-pink-800 cursor-pointer"
-                aria-label="select"
-                value={selectedSizes[index] || ""}
-                onChange={(e) => handleSizeChange(index, e.target.value)}
-              >
-                <option value="" disabled>
-                  {t("product.size_placeholder")}
-                </option>
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-                <option value="XXL">XXL</option>
-              </select>
+                <select
+                  id="size"
+                  className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-none focus:border-pink-800 cursor-pointer"
+                  aria-label="select"
+                  value={selectedSizes[index] || ""}
+                  onChange={(e) => handleSizeChange(index, e.target.value)}
+                >
+                  <option value="" disabled>
+                    {t("product.size_placeholder")}
+                  </option>
+                  {sizeOptionsByCategory[product.product_category_key]?.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </select>
               <button
                 className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center px-3 py-2 ${
                   selectedSizes[index]
