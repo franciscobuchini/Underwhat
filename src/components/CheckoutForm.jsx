@@ -5,12 +5,16 @@ import { useNavigate } from 'react-router-dom';
 import { useCart } from '../components/CartContext';
 import emailjs from '@emailjs/browser';
 
-const CheckoutForm = () => {
+const CheckoutForm = ({
+  couponCode = "",
+  discountPercent = 0,
+  discountedTotal = 0
+}) => {
   const { t } = useTranslation("global");
   const navigate = useNavigate();
   const [showOtherCountry, setShowOtherCountry] = useState(false);
   const [formValid, setFormValid] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false); // Nuevo estado para el envío
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { cartItems, clearCart } = useCart();
 
   const handleCountryChange = (event) => {
@@ -19,9 +23,7 @@ const CheckoutForm = () => {
 
   const checkFormValidity = () => {
     const form = document.querySelector(".needs-validation");
-    if (form) {
-      setFormValid(form.checkValidity());
-    }
+    setFormValid(form?.checkValidity() || false);
   };
 
   useEffect(() => {
@@ -37,53 +39,60 @@ const CheckoutForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Evitar envío si ya se está procesando
     if (!formValid || isSubmitting) return;
+    setIsSubmitting(true);
 
-    setIsSubmitting(true); // Activa el estado de carg
-  
-    if (formValid) {
-      // console.log("Cart Items:", cartItems); // Check in the console if objects contain product_selling
-  
-      let overallTotal = 0;
-      const orderDetails = cartItems.map((item, index) => {
-        // Use product_selling instead of price
-        const price = Number(item.product_selling) || 0;
-        const quantity = Number(item.quantity) || 0;
-        const totalForItem = price * quantity;
-        overallTotal += totalForItem;
-        return `Item ${index + 1}:
-      - Name: ${item.product_name}
-      - Quantity: ${quantity}
-      - Unit Price: $${price.toFixed(2)}
-      - Size: ${item.selectedSize || "N/A"}
-      - Total: $${totalForItem.toFixed(2)}`;
-      }).join('\n\n') + `\n\nOrder Total: $${overallTotal.toFixed(2)}`;
-  
-      // Create a hidden input to send the cart information
-      const orderInput = document.createElement('input');
-      orderInput.type = 'hidden';
-      orderInput.name = 'order_details';
-      orderInput.value = orderDetails;
-      e.target.appendChild(orderInput);
-  
-      // Send the form using EmailJS
-      emailjs.sendForm(
-        "service_mxgszmr",     // Service ID
-        "template_wiufec1",    // Template ID
-        e.target,              // The form being sent
-        "DDTayKSsIeSLZhvSH"    // Public Key
-      )
-      .then((result) => {
-        // console.log("Email sent:", result.text);
-        clearCart();
-        navigate('/successfull');
-      })
-      .catch((error) => {
-        console.error("Error sending email:", error.text);
-      });
-    }
+    // Calcula subtotal
+    let overallTotal = 0;
+    const orderDetails = cartItems.map((item, index) => {
+      const price = Number(item.product_selling) || 0;
+      const quantity = Number(item.quantity) || 0;
+      const totalForItem = price * quantity;
+      overallTotal += totalForItem;
+      return `Item ${index + 1}:
+- Name: ${item.product_name}
+- Quantity: ${quantity}
+- Unit Price: $${price.toFixed(2)}
+- Size: ${item.selectedSize || "N/A"}
+- Total: $${totalForItem.toFixed(2)}`;
+    }).join("\n\n")
+      + `\n\nSubtotal: $${overallTotal.toFixed(2)}`
+      + (discountPercent
+          ? `\nCoupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
+          : `\nTotal: $${overallTotal.toFixed(2)}`);
+
+    // Inputs ocultos
+    const appendHidden = (name, value) => {
+      const inp = document.createElement("input");
+      inp.type = "hidden";
+      inp.name = name;
+      inp.value = value;
+      e.target.appendChild(inp);
+    };
+
+    appendHidden("order_details", orderDetails);
+    appendHidden("coupon_code", couponCode);
+    // Usa overallTotal si no hay descuento
+    const finalTotal = discountPercent
+      ? discountedTotal.toFixed(2)
+      : overallTotal.toFixed(2);
+    appendHidden("order_total", finalTotal);
+
+    // Envío con EmailJS
+    emailjs.sendForm(
+      "service_mxgszmr",
+      "template_wiufec1",
+      e.target,
+      "DDTayKSsIeSLZhvSH"
+    )
+    .then(() => {
+      clearCart();
+      navigate("/successfull");
+    })
+    .catch((err) => {
+      console.error("Error sending email:", err.text);
+      setIsSubmitting(false);
+    });
   };
 
   return (
@@ -417,4 +426,3 @@ const CheckoutForm = () => {
   };
   
   export default CheckoutForm;
-  

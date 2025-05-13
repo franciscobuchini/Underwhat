@@ -56,6 +56,7 @@ const Checkout = () => {
   const percent = typeof couponValid === 'number' ? couponValid : 0;
   const discountedSubtotal = originalSubtotal * (1 - percent / 100);
 
+
   return (
     <div className="container flex flex-col gap-12 mx-auto px-4 sm:px-6 py-8 sm:py-12 mt-12 sm:mt-20">
       {/* Resumen del carrito */}
@@ -134,7 +135,11 @@ const Checkout = () => {
       </div>
 
       {/* Formulario de pago */}
-      <CheckoutForm />
+      <CheckoutForm 
+        couponCode={couponValue.trim().toUpperCase()}
+        discountPercent={percent}
+        discountedTotal={discountedSubtotal}
+      />
     </div>
   );
 };
