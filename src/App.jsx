@@ -79,7 +79,7 @@ function App() {
                   element={
                     <ErrorPage
                       statusCode={404}
-                      message={t("error.notFound", "Página no encontrada")}
+                      message={t("error.notFound")}
                     />
                   }
                 />

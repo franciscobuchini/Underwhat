@@ -173,6 +173,10 @@
 "shippingCalculator": {
   "title": "Calculadora de Envío",
   "content": "Estamos trabajando en esta sección. Queremos darte la mejor experiencia posible, pero necesitamos un poco más de tiempo para que quede perfecta."
-}
+},
+  "error": {
+    "notFound": "Página no encontrada",
+    "return": "Volver"
+  }  
 
 }

@@ -172,5 +172,9 @@
   "shippingCalculator": {
     "title": "Shipping Rate Calculator",
     "content": "We are working on this section. We want to give you the best possible experience, but we need a little more time to make it perfect."
+  },
+  "error": {
+    "notFound": "Page not found",
+    "return": "Return"
   }  
 }

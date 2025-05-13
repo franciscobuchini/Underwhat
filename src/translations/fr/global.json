@@ -171,6 +171,10 @@
 "shippingCalculator": {
   "title": "Calculateur de frais de livraison",
   "content": "Nous travaillons sur cette section. Nous voulons vous offrir la meilleure expérience possible, mais nous avons besoin d’un peu plus de temps pour la rendre parfaite."
-}
+},
+  "error": {
+    "notFound": "Page non trouvée",
+    "return": "Retour"
+  }  
 
 }
