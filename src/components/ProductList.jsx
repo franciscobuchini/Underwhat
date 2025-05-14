@@ -5,7 +5,6 @@ import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
-import SortOrder from "./SortOrder";
 
 function ProductList() {
   const { t } = useTranslation("global");
@@ -100,27 +99,6 @@ function ProductList() {
       product_selling: 49.98,
     },
   ]);
-
-    // Sorting state
-    const [sortField, setSortField] = useState("");
-    const [sortDirection, setSortDirection] = useState("asc");
-  
-    const sortedProducts = useMemo(() => {
-      if (!sortField) return products;
-      return [...products].sort((a, b) => {
-        let valA, valB;
-        if (sortField === "price") {
-          valA = a.product_selling;
-          valB = b.product_selling;
-        } else if (sortField === "category") {
-          valA = a.product_category_key;
-          valB = b.product_category_key;
-        }
-        if (valA < valB) return sortDirection === "asc" ? -1 : 1;
-        if (valA > valB) return sortDirection === "asc" ? 1 : -1;
-        return 0;
-      });
-    }, [products, sortField, sortDirection]);
   
   const [selectedSizes, setSelectedSizes] = useState({});
   const { addToCart } = useCart();
@@ -164,14 +142,6 @@ function ProductList() {
 
   return (
     <div>
-      {/* <SortOrder
-        sortField={sortField}
-        sortDirection={sortDirection}
-        onChange={(type, value) => {
-          if (type === "field") setSortField(value);
-          else setSortDirection(value);
-        }}
-      /> */}
       <div className="ProductList flex flex-wrap justify-center gap-6">
       {products.map((product, index) => (
         <div
