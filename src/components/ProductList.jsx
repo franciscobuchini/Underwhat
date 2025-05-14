@@ -5,6 +5,7 @@ import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
+import SortOrder from "./SortOrder";
 
 function ProductList() {
   const { t } = useTranslation("global");
@@ -152,90 +153,102 @@ function ProductList() {
   };
 
   useEffect(() => {
-    products.forEach(product => {
-      const img = new Image(); img.src = product.product_image02;
+    products.forEach((product) => {
+      const img = new Image();
+      img.src = product.product_image02;
     });
   }, [products]);
 
-  // Hover state (desktop)
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-  // Toggle state (touch devices)
-  const [toggledIndex, setToggledIndex] = useState(null);
-
-  const handleImageToggle = (index) => {
-    setToggledIndex(prev => (prev === index ? null : index));
-  };
+  // Utilizamos el índice del producto para identificar el hover
+  const [hoveredProductIndex, setHoveredProductIndex] = useState(null);
 
   return (
     <div>
+      {/* <SortOrder
+        sortField={sortField}
+        sortDirection={sortDirection}
+        onChange={(type, value) => {
+          if (type === "field") setSortField(value);
+          else setSortDirection(value);
+        }}
+      /> */}
       <div className="ProductList flex flex-wrap justify-center gap-6">
-        {sortedProducts.map((product, index) => {
-          const isHovered = hoveredIndex === index;
-          const isToggled = toggledIndex === index;
-          const showAlt = isHovered || isToggled;
+      {products.map((product, index) => (
+        <div
+          key={index}
+          className="ProductCard bg-white border rounded-2xl border-gray-300 w-64 hover:shadow-lg transition-shadow duration-300"
+          onMouseEnter={() => setHoveredProductIndex(index)}
+          onMouseLeave={() => setHoveredProductIndex(null)}
+        >
+          <div className="ProductImage  rounded-t-2xl overflow-hidden">
+            <img
+              src={
+                hoveredProductIndex === index
+                  ? product.product_image02
+                  : product.product_image
+              }
+              alt={product.product_name}
+              className="object-cover w-full h-auto transition-all duration-2000 hover:scale-105"
+              loading="lazy"
+            />
+          </div>
 
-          return (
-            <div
-              key={index}
-              className="ProductCard bg-white border rounded-2xl border-gray-300 w-64 hover:shadow-lg transition-shadow duration-300"
-              onMouseEnter={() => setHoveredIndex(index)}
-              onMouseLeave={() => setHoveredIndex(null)}
-            >
-              <div
-                className="ProductImage rounded-t-2xl overflow-hidden cursor-pointer"
-                onClick={() => handleImageToggle(index)}
+          <hr className="border border-gray-300 mx-6 my-2" />
+
+          <div className="ProductDetails p-6 text-gray-600">
+            <p className="ProductName text-xl font-semibold mb-1">
+              {product.product_name}
+            </p>
+            <p className="ProductCategory text-sm text-gray-400 mb-2">
+              {t(product.product_category_key)}
+            </p>
+            <p className="ProductPrice mb-4">
+              {product.product_selling.toFixed(2)} USD
+            </p>
+
+            <div className="ProductInteractions flex justify-start space-x-2 mt-4">
+                <select
+                  id="size"
+                  className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-none focus:border-pink-800 cursor-pointer"
+                  aria-label="select"
+                  value={selectedSizes[index] || ""}
+                  onChange={(e) => handleSizeChange(index, e.target.value)}
+                >
+                  <option value="" disabled>
+                    {t("product.size_placeholder")}
+                  </option>
+                  {sizeOptionsByCategory[product.product_category_key]?.map((size) => (
+                    <option key={size} value={size}>
+                      {size}
+                    </option>
+                  ))}
+                </select>
+              <button
+                className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center px-3 py-2 ${
+                  selectedSizes[index]
+                    ? "text-green-600 bg-green-100 hover:outline hover:outline-green-600 cursor-pointer"
+                    : "text-gray-300 bg-white cursor-not-allowed"
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (!selectedSizes[index]) return;
+                  handleAddToCart(product, selectedSizes[index]);
+                }}
+                disabled={!selectedSizes[index]}
               >
-                <img
-                  src={showAlt ? product.product_image02 : product.product_image}
-                  alt={product.product_name}
-                  className="object-cover w-full h-auto transition-all duration-2000 hover:scale-105"
-                  loading="lazy"
+                {t("product.add")}
+                <Icon
+                  icon="icon-park-twotone:shopping"
+                  className="w-6 h-6 flex-shrink-0"
                 />
-              </div>
-
-              <hr className="border border-gray-300 mx-6 my-2" />
-
-              <div className="ProductDetails p-6 text-gray-600">
-                <p className="ProductName text-xl font-semibold mb-1">
-                  {product.product_name}
-                </p>
-                <p className="ProductCategory text-sm text-gray-400 mb-2">
-                  {t(product.product_category_key)}
-                </p>
-                <p className="ProductPrice mb-4">
-                  {product.product_selling.toFixed(2)} USD
-                </p>
-
-                <div className="ProductInteractions flex justify-start space-x-2 mt-4">
-                  <select
-                    id="size"
-                    className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-none focus:border-pink-800 cursor-pointer"
-                    value={selectedSizes[index] || ""}
-                    onChange={e => handleSizeChange(index, e.target.value)}
-                  >
-                    <option value="" disabled>{t("product.size_placeholder")}</option>
-                    {sizeOptionsByCategory[product.product_category_key]?.map(size => (
-                      <option key={size} value={size}>{size}</option>
-                    ))}
-                  </select>
-                  <button
-                    className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center px-3 py-2 ${
-                      selectedSizes[index]
-                        ? "text-green-600 bg-green-100 hover:outline hover:outline-green-600 cursor-pointer"
-                        : "text-gray-300 bg-white cursor-not-allowed"
-                    }`}
-                    onClick={e => { e.stopPropagation(); if (selectedSizes[index]) handleAddToCart(product, selectedSizes[index]); }}
-                    disabled={!selectedSizes[index]}
-                  >
-                    {t("product.add")}<Icon icon="icon-park-twotone:shopping" className="w-6 h-6 flex-shrink-0" />
-                  </button>
-                </div>
-              </div>
+              </button>
             </div>
-          );
-        })}
-      </div>
+          </div>
+        </div>
+      ))}
     </div>
+    </div>
+    
   );
 }
 
