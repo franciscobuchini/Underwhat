@@ -92,9 +92,9 @@ const SizesTable = () => {
 
   return (
     <div className="w-full flex flex-col gap-6 py-4">
-      <div className="bg-white border border-gray-300 rounded-lg p-2 sm:p-6">
+      <div className="bg-white border border-gray-300 rounded-2xl p-2 sm:p-6">
         <select 
-          className="text-pink-800 outline outline-gray-300 bg-gray-50 hover:cursor-pointer rounded-lg p-2 max-w-xs mb-4" 
+          className="text-pink-800 outline outline-gray-300 bg-gray-50 hover:cursor-pointer rounded-xl p-2 max-w-xs mb-4" 
           onChange={handleSelectChange}
           value={products.findIndex(prod => prod.name === selectedProduct.name)}
         >
