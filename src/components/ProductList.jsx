@@ -79,7 +79,7 @@ function ProductList() {
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746907474/frame_511318_u4g1g7.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746907293/frame_511319_en7vps.webp",
+      product_image02: "https://rn7vps.webp",
       product_name: "💘 Assault",
       product_category_key: "hoodie",
       product_selling: 49.98,

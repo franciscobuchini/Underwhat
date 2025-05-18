@@ -92,7 +92,8 @@
     }
   },
   "home": {
-    "featured_products": "Produits en vedette"
+    "featured_products": "Produits en vedette",
+    "table_sizes": "Tableau des tailles"
   },
   "team": {
     "title": "Vêtements de l'équipe UWH",

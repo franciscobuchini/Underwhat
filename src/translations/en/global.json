@@ -93,7 +93,8 @@
     }
   },
   "home": {
-    "featured_products": "Featured Products"
+    "featured_products": "Featured Products",
+    "table_sizes": "Sizes Table"
   },
   "team": {
     "title": "Outfits for UWH teams",

@@ -92,7 +92,8 @@
     }
   },
   "home": {
-    "featured_products": "Productos destacados"
+    "featured_products": "Productos destacados",
+    "table_sizes": "Tabla de tallas"
   },
 
   "team": {

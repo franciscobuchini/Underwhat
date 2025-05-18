@@ -8,9 +8,10 @@ const Home = () => {
   const { t } = useTranslation("global");
   return (
     <div className="container mx-auto px-6 mt-20">
-      <Title title={t("home.featured_products")} />
       <div className="flex flex-col gap-20 my-12">
+        <Title title={t("home.featured_products")} />
         <ProductList />
+        <Title title={t("home.table_sizes")} />
         <SizesTable />
       </div>
       {/* <Title title="The brand for your team" /> */}
