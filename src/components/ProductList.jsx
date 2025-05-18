@@ -85,14 +85,14 @@ function ProductList() {
       product_selling: 44.98,
     },
         {
-      product_image: "https://res.cloudic1d/image/upload/v1747595256/frame_511330_rr8yud.webp",
-      product_image02: "https://res..com/dpleitc1d/image/upload/v1747595253/frame_511329_vlonn2.webp",
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747603071/frame_511330_p3vqce.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747603072/frame_511329_rq13bn.webp",
       product_name: "🛞 Piranesi",
       product_category_key: "hoodie",
       product_selling: 44.98,
     },
     {
-      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081704/frame_511320_vomibz.webp",
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747603070/frame_511320_swbc2w.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081290/frame_511321_jonwrr.webp",
       product_name: "☢️ Nuke",
       product_category_key: "hoodie",
