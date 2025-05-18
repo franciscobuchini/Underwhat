@@ -92,7 +92,7 @@ function ProductList() {
       product_selling: 44.98,
     },
     {
-      product_image: "https://rdpleitc1d/image/upload/v1747081704/frame_511320_vomibz.webp",
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081704/frame_511320_vomibz.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081290/frame_511321_jonwrr.webp",
       product_name: "☢️ Nuke",
       product_category_key: "hoodie",
