@@ -79,10 +79,17 @@ function ProductList() {
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746907474/frame_511318_u4g1g7.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1746907293/frame_511319_en7vps.webp",
-      product_name: "💘 Assault",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747592407/frame_511319_en7vps.webp",
+      product_name: "🗡️ Assault",
       product_category_key: "hoodie",
-      product_selling: 49.98,
+      product_selling: 44.98,
+    },
+        {
+      product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747595256/frame_511330_rr8yud.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747595253/frame_511329_vlonn2.webp",
+      product_name: "🛞 Piranesi",
+      product_category_key: "hoodie",
+      product_selling: 44.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081704/frame_511320_vomibz.webp",
