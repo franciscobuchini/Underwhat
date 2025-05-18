@@ -89,21 +89,21 @@ function ProductList() {
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747603072/frame_511329_rq13bn.webp",
       product_name: "🛞 Piranesi",
       product_category_key: "hoodie",
-      product_selling: 44.98,
+      product_selling: 47.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747603070/frame_511320_swbc2w.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081290/frame_511321_jonwrr.webp",
       product_name: "☢️ Nuke",
       product_category_key: "hoodie",
-      product_selling: 49.98,
+      product_selling: 47.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081743/frame_511322_ukzb4d.webp",
       product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747081742/frame_511323_ix441i.webp",
       product_name: "🏊 Pool Day",
       product_category_key: "hoodie",
-      product_selling: 49.98,
+      product_selling: 47.98,
     },
   ]);
   
