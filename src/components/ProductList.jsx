@@ -86,7 +86,7 @@ function ProductList() {
     },
         {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747603071/frame_511330_p3vqce.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1747603072/frame_511329_rq13bn.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748022338/frame_511338_ai3o4y.webp",
       product_name: "🛞 Piranesi",
       product_category_key: "hoodie",
       product_selling: 47.98,
