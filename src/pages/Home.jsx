@@ -1,4 +1,5 @@
 // Home.jsx
+import ProductGallery from '../components/ProductGallery';
 import ProductList from '../components/ProductList';
 import SizesTable from '../components/SizesTable';
 import Title from '../components/Title';
@@ -13,6 +14,8 @@ const Home = () => {
         <ProductList />
         <Title title={t("home.table_sizes")} />
         <SizesTable />
+        <Title title={"Gallery Pics"} />
+        <ProductGallery />
       </div>
       {/* <Title title="The brand for your team" /> */}
       

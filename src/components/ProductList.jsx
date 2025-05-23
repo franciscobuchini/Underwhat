@@ -225,7 +225,6 @@ function ProductList() {
       ))}
     </div>
     </div>
-    
   );
 }
 
