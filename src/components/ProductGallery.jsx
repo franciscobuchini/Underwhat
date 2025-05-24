@@ -4,10 +4,6 @@ export default function ProductGallery({ images }) {
   // Imágenes por defecto dentro del componente
   const defaultImages = [
     'https://res.cloudinary.com/dpleitc1d/image/upload/v1748029140/fx3nqdaibi62v0qxj2ln.webp',
-    'https://res.cloudinary.com/dpleitc1d/image/upload/v1748029140/fx3nqdaibi62v0qxj2ln.webp',
-    'https://res.cloudinary.com/dpleitc1d/image/upload/v1748029140/fx3nqdaibi62v0qxj2ln.webp',
-    'https://res.cloudinary.com/dpleitc1d/image/upload/v1748029140/fx3nqdaibi62v0qxj2ln.webp',
-    'https://res.cloudinary.com/dpleitc1d/image/upload/v1748029140/fx3nqdaibi62v0qxj2ln.webp',
   ];
   
   const displayImages = images && images.length > 0 ? images : defaultImages;
