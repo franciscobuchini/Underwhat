@@ -12,79 +12,79 @@ const TeamOutfitForm = () => {
   // Objeto que mapea la combinación "wear-color" a una URL de imagen
   const customProductImages = {
   // Regular T-Shirt
-  "regular_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/j69win8wv6toomncmful.png",
-  "regular_tshirt-seagull_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/iambm0gw861vynpdque2.png",
-  "regular_tshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/twkhetsy1xtbyvlrsb8t.png",
-  "regular_tshirt-glacier_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/m07689fvj2j6dlc8bjni.png",
-  "regular_tshirt-aquamarine": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/eoiloiznw64simdupn0v.png",
-  "regular_tshirt-apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/pjqeh1kdl5xgprewkchi.png",
-  "regular_tshirt-light_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/nrto3tvwotwtkgpcula6.png",
-  "regular_tshirt-pastel_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/mwl1bpkctllcjkhtmapz.png",
-  "regular_tshirt-lotus_purple": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/x5ufhjudy2eguwsvqquf.png",
-  "regular_tshirt-sakura_pink": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/wo1z9bwac2wqkblaqbsi.png",
-  "regular_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743460520/lightgreen_fh37gq.png",
-  "regular_tshirt-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459294/jkiwo0fauvhnpifwe2sz.png",
-  "regular_tshirt-gray_moss": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/flefvfcmvklsmzalybmh.png",
-  "regular_tshirt-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/b2ho08fcaalq9cw0re2a.png",
-  "regular_tshirt-sparrow_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/tdue9o4zz7nsrhvvq03d.png",
-  "regular_tshirt-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/gblrxkedwszefh1zaaax.png",
-  "regular_tshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/dgnvmni08t8xan4ulz1c.png",
-  "regular_tshirt-coffee_dark": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/azuiligffpc8is96tgc5.png",
-  "regular_tshirt-maple_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459292/zsxiwqjjgi2jijcsd96g.png",
-  "regular_tshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743459293/rymdu4ckino6qya8gw5h.png",
+  "regular_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803298/rt_f_white_zi1an9.webp",
+  "regular_tshirt-seagull_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803299/rt_f_seagull_qgzthz.webp",
+  "regular_tshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802039/rt_f_khaki_qihdml.webp",
+  "regular_tshirt-glacier_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802039/rt_f_glacier_pklmtd.webp",
+  "regular_tshirt-aquamarine": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802037/rt_f_aquamarine_a4kkjf.webp",
+  "regular_tshirt-apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802038/rt_f_apricot_n0wyoo.webp",
+  "regular_tshirt-ice_soul": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802038/rt_f_icesoul_izeonq.webp",
+  "regular_tshirt-light_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802039/rt_f_lightblue_qa2nka.webp",
+  "regular_tshirt-pastel_purple": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803298/rt_f_pastelpurple_kemczp.webp",
+  "regular_tshirt-sakura_pink": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803298/rt_f_sakura_yxveon.webp",
+  "regular_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803298/rt_f_palegreen_mcyemw.webp",
+  "regular_tshirt-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802079/rt_f_lightgray_kmsogx.webp",
+  "regular_tshirt-gray_moss": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802038/rt_f_graymoss_vm5vm9.webp",
+  "regular_tshirt-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802038/rt_f_deepgreen_k04uyx.webp",
+  "regular_tshirt-sparrow": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803299/rt_f_sparrow_ccvatn.webp",
+  "regular_tshirt-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803298/rt_f_navyblue_lfjsr4.webp",
+  "regular_tshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802037/rt_f_darkgray_aqy5e5.webp",
+  "regular_tshirt-coffee_dark": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802037/rt_f_darkcoffee_jms4f7.webp",
+  "regular_tshirt-maple_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802094/rt_f_maplered_bt3pgs.webp",
+  "regular_tshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802036/rt_f_black_bm4ieb.webp",
 
   // Sleeveless Vest
-  "sleeveless_shirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/whitetank_att3k8.png",
-  "sleeveless_shirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/blacktank_gyzv49.png",
-  "sleeveless_shirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743462488/darkgraytank_kfhu16.png",
+  "sleeveless_shirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803299/sl_f_white_qeermj.webp",
+  "sleeveless_shirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803298/sl_f_black_qoeas9.webp",
+  "sleeveless_shirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803299/sl_f_gray_jgz7aq.webp",
 
   // Oversized T-Shirt
-  "oversized_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357592/Plain-Tshirt_jvzfmx.png",
-  "oversized_tshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357592/Plain-Tshirt2_yv1aor.png",
-  "oversized_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357594/Plain-Tshirt3_v2mgdp.png",
-  "oversized_tshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357592/Plain-Tshirt4_rvipgg.png",
-  "oversized_tshirt-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt5_w72cuc.png",
-  "oversized_tshirt-coffee_dark": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357594/Plain-Tshirt6_fari7l.png",
-  "oversized_tshirt-maple_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt7_rs4qhd.png",
-  "oversized_tshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743357593/Plain-Tshirt8_x9o009.png",
+  "oversized_tshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802032/ov_f_white_o0s5sd.webp",
+  "oversized_tshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802032/ov_f_khaki_ie7joj.webp",
+  "oversized_tshirt-pale_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802034/ov_f_palegreen_j7yojf.webp",
+  "oversized_tshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802031/ov_f_darkgray_orll02.webp",
+  "oversized_tshirt-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802032/ov_f_deepgreen_jxwzaw.webp",
+  "oversized_tshirt-coffee_dark": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802031/ov_f_darkcoffee_o3zscu.webp",
+  "oversized_tshirt-maple_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802038/ov_f_maplered_zlby62.webp",
+  "oversized_tshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802031/ov_f_black_j77a2h.webp",
 
   // Hoodie
-  "hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/prucwi6bvhbsronvqjbt.png",
-  "hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/dexsq0exclbpnhryr7xv.png",
-  "hoodie-wood_ash": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/qctllg1cawszfrxz5aae.png",
-  "hoodie-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qtjkavhwr59edromrc0n.png",
-  "hoodie-pastel_yellow": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/riba6t4dnzwjxhzkdm1r.png", 
-  "hoodie-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/vnn5dlerpw49dc7fmrsg.png",
-  "hoodie-coffee_light": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/tbv8wnzadpz6egoknern.png", 
-  "hoodie-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545533/wx7f46sioayuhcy3cewn.png",
-  "hoodie-wine_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545532/jxcolhlz4or8ahkgpqpq.png",
-  "hoodie-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743545531/qvhotitt5rcdybjsi943.png", 
+  "hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802029/ho_f_white_t0gpgh.webp",
+  "hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802029/ho_f_black_bafir6.webp",
+  "hoodie-wood_ash": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802032/ho_f_woodash_xverun.webp",
+  "hoodie-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802030/ho_f_khaki_y9hyc8.webp",
+  "hoodie-pastel_yellow": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802032/ho_f_pastelyellow_oinqqr.webp", 
+  "hoodie-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802030/ho_f_navyblue_ljwakt.webp",
+  "hoodie-coffee_light": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802033/ho_f_coffeelight_tjyex8.webp", 
+  "hoodie-deep_green": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802030/ho_f_deepgreen_uvg7wp.webp",
+  "hoodie-wine_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802030/ho_f_winered_dtgn0l.webp",
+  "hoodie-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748802030/ho_f_lightgray_kj6ouv.webp", 
 
   // Zip Hoodie
-  "zip_hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743816457/y36iudxhbufxvww5piun.png",
-  "zip_hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702331/eedw3lj2dbmvdmyh9tgt.png",
-  "zip_hoodie-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702331/diidkdexdkeltazjl0ew.png",
-  "zip_hoodie-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702330/oiofxgpuzhq7secyur2k.png",
-  "zip_hoodie-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702331/iuuxtpytxcwc7hdgjffy.png",
-  "zip_hoodie-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702331/fhqz5lvm0qbjaatcvceo.png",
+  "zip_hoodie-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803298/zh_f_white_maucod.webp",
+  "zip_hoodie-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803304/zh_f_black_ghcaa5.webp",
+  "zip_hoodie-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803301/zh_f_navyblue_yyjoln.webp",
+  "zip_hoodie-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803334/zh_f_darkgray_fyw4iy.webp",
+  "zip_hoodie-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803358/zh_f_lightgray_ryxrwb.webp",
+  "zip_hoodie-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803352/zh_f_khaki_ajokwh.webp",
 
   // Sweatshirt
-  "sweatshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698062/ooeweg9ngb5yhbs0zlmj.png",
-  "sweatshirt-pink": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698061/gruayzzz5vv3axx9a3zt.png",
-  "sweatshirt-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698062/ozqa30zwa7juvftaiugj.png",
-  "sweatshirt-haze_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698061/lliilcyx3rj1jvm7d7bu.png",
-  "sweatshirt-dark_khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698061/nq9hiuukrk5t0vycg3zt.png",
-  "sweatshirt-wine_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698061/jnn0sxgidl2sspwy5nxf.png",
-  "sweatshirt-cream": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698061/e03g4vb0a95ooslpoqbk.png",
-  "sweatshirt-light_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743702895/n65vuiabjs2irx2h19mn.png",
-  "sweatshirt-bright_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698063/xzzkzwckz14qynanekp0.png",
-  "sweatshirt-steam": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698062/i1hhlqqcvte5r8y8vigo.png",
-  "sweatshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698063/vpnrahjp1sbet7rkokbj.png",
-  "sweatshirt-apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698061/xyilkga0omrnaw57kx97.png",
-  "sweatshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698063/t0pi2fxjk5djwx4cul8b.png",
-  "sweatshirt-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698062/aghp0l37mtxddonj435z.png",
-  "sweatshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698062/p6vdf1zhax3v5rsv85pj.png",
-  "sweatshirt-royal_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1743698063/md0ytlqga032wb9psiap.png"
+  "sweatshirt-white": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803301/sw_f_white_gmio7n.webp",
+  "sweatshirt-pink": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803301/sw_f_pink_gbdw07.webp",
+  "sweatshirt-navy_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803301/sw_f_navyblue_ohjslz.webp",
+  "sweatshirt-haze_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803300/sw_f_hazeblue_msyynq.webp",
+  "sweatshirt-dark_khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803300/sw_f_darkkhaki_ou0fa7.webp",
+  "sweatshirt-wine_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803358/sw_f_winered_hllhgz.webp",
+  "sweatshirt-cream": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803300/sw_f_cream_awzrym.webp",
+  "sweatshirt-ice_soul": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803300/sw_f_icesoul_c3bweo.webp",
+  "sweatshirt-bright_red": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803357/sw_f_brightred_zydumg.webp",
+  "sweatshirt-steam": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803301/sw_f_steam_tgeds2.webp",
+  "sweatshirt-khaki": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803300/sw_f_khaki_tfnurg.webp",
+  "sweatshirt-apricot": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803299/sw_f_apricot_b26t7c.webp",
+  "sweatshirt-dark_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803300/sw_f_darkgray_ekltsx.webp",
+  "sweatshirt-light_gray": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803301/sw_f_lightgray_uysx4x.webp",
+  "sweatshirt-black": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803299/sw_f_black_m4v4qy.webp",
+  "sweatshirt-royal_blue": "https://res.cloudinary.com/dpleitc1d/image/upload/v1748803358/sw_f_royalblue_umugz0.webp"
   };
 
   // Mapeo de colores
@@ -96,14 +96,14 @@ const TeamOutfitForm = () => {
     glacier_blue: "#DBE4E1",
     aquamarine: "#C5DFDB", // Same as breeze_green
     apricot: "#F1D7B4",
-    light_blue: "#BBCDE0", // Same as ice_blue
-    pastel_blue: "#93ABD2", // Same as haze_blue
-    lotus_purple: "#B7B6E2",
+    ice_soul: "#BBCDE0", // Same as ice_blue
+    light_blue: "#93ABD2", // Same as haze_blue
+    pastel_purple: "#B7B6E2",
     sakura_pink: "#FFB9DB",
     pale_green: "#B5BEB0", // Same as soft_green
     gray_moss: "#60635E",
     deep_green: "#2C403D",
-    sparrow_green: "#255E72",
+    sparrow: "#255E72",
     navy_blue: "#34365C",
     dark_gray: "#323232",
     coffee_dark: "#45342C",
@@ -130,15 +130,15 @@ const TeamOutfitForm = () => {
       "glacier_blue",
       "aquamarine", // formerly breeze_green
       "apricot",
-      "light_blue", // formerly ice_blue
-      "pastel_blue", // formerly haze_blue
-      "lotus_purple",
+      "ice_soul", // formerly ice_blue
+      "light_blue", // formerly haze_blue
+      "pastel_purple",
       "sakura_pink",
       "pale_green", // formerly light_green
       "light_gray", // formerly fog_gray
       "gray_moss", // formerly pale_green
       "deep_green", // formerly dark_green
-      "sparrow_green", // formerly bird_green
+      "sparrow", // formerly bird_green
       "navy_blue",
       "dark_gray",
       "coffee_dark", // formerly coffee
@@ -177,7 +177,7 @@ const TeamOutfitForm = () => {
       "dark_khaki", // formerly deep_khaki
       "wine_red", // formerly burgundy
       "cream", // formerly asami
-      "light_blue",
+      "ice_soul", // formerly ice_blue
       "bright_red", // formerly big_red
       "steam", // formerly ash
       "khaki", // formerly milk_tea (since khaki and milk_tea share same hex)
