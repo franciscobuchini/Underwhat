@@ -72,7 +72,7 @@ function ProductList() {
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748983587/ginew01_vknm96.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748984259/ginew02_tlh6m2.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749218591/ginew02_vblsqm.webp",
       product_name: "Ginew",
       product_category_key: "regular_tshirt",
       product_selling: 28.98,
