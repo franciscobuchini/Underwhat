@@ -23,14 +23,14 @@ function ProductList() {
   const [products] = useState([
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806188/celt01_us6fi2.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806188/celt02_nqj7km.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749206500/celt02_xtmbz1.webp",
       product_name: "Celt",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806521/viking01_edjnxi.webp",
-      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806529/viking02_tawx9a.webp",
+      product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749206500/viking02_fblf34.webp",
       product_name: "Viking",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
