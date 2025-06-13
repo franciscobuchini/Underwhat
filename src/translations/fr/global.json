@@ -83,12 +83,12 @@
       "shoulder": "Largeur Épaules",
       "length": "Longueur",
       "regular_tshirt_weight": "230g | 100% coton à fibres longues",
-"sleeveless_shirt_weight": "230g | 100% coton à fibres longues",
-"oversized_weight": "300g | 100% coton à fibres longues",
-"zip_hoodie_weight": "600g | 95% coton 5% élasthanne",
-"hoodie_weight": "320g | 59% coton 41% fibre d'acétate de vinyle",
-"sweatshirt_weight": "320g | 59% coton 41% fibre d'acétate de vinyle"
-
+      "sleeveless_shirt_weight": "230g | 100% coton à fibres longues",
+      "oversized_weight": "300g | 100% coton à fibres longues",
+      "zip_hoodie_weight": "600g | 95% coton 5% élasthanne",
+      "hoodie_weight": "320g | 59% coton 41% fibre d'acétate de vinyle",
+      "sweatshirt_weight": "320g | 59% coton 41% fibre d'acétate de vinyle",
+      "advice": "*Les tailles indiquées sur le site peuvent différer de celles figurant sur l'étiquette du vêtement. Cet ajustement est intentionnel afin d'aligner nos produits sur les standards internationaux de tailles. Par exemple, si vous commandez une taille L, l'étiquette peut indiquer XL. Cela permet de garantir que nos produits correspondent correctement à la taille choisie sur le site. Nous vous recommandons de consulter le guide des tailles pour trouver la coupe qui vous convient le mieux."
     }
   },
   "home": {

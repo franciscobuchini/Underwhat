@@ -11,12 +11,12 @@ function ProductList() {
   
   // Opciones de tallas según categoría
   const sizeOptionsByCategory = {
-    regular_tshirt: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
-    sleeveless_shirt: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
-    oversized_tshirt: ["S", "M", "L", "XL", "2XL"],
-    zip_hoodie: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
-    hoodie: ["S", "M", "L", "XL", "2XL", "3XL"],
-    sweatshirt: ["S", "M", "L", "XL", "XXL", "3XL"],
+    regular_tshirt: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    sleeveless_shirt: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    oversized_tshirt: ["XS", "S", "M", "L", "XL"],
+    zip_hoodie: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
+    hoodie: ["XS", "S", "M", "L", "XL", "2XL"],
+    sweatshirt: ["XS", "S", "M", "L", "XL", "2XL"],
   };
 
   // Define la lista de productos de forma local
