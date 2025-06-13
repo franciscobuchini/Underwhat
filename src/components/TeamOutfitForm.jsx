@@ -305,10 +305,10 @@ const TeamOutfitForm = () => {
               <li>{t("team.order_bullet_4")}</li>
             </ul>
             <p>{t("team.order_summary")}</p>
+            <p>{t("team.design_note")}</p>
           </div>
         </div>
   
-        {/* Imagen del producto en desktop: se muestra solo en pantallas medianas en adelante */}
         <div className="flex-1 hidden md:flex items-center justify-center">
           <div className="w-full">
             <img
@@ -320,7 +320,6 @@ const TeamOutfitForm = () => {
           </div>
         </div>
       </div>
-      {/* Aquí se podría envolver todo el contenido en un form si es necesario */}
     </div>
   );
 };

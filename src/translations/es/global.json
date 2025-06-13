@@ -108,7 +108,9 @@
     "order_bullet_2": "Colores deseados",
     "order_bullet_3": "Cantidad aproximada de piezas por prenda",
     "order_bullet_4": "Cualquier especificación o imagen de referencia que pueda ayudar al diseño",
-    "order_summary": "Con esta información, te vamos a enviar una propuesta de diseño y una cotización personalizada para tu equipo."
+    "order_summary": "Con esta información, te vamos a enviar una propuesta de diseño y una cotización personalizada para tu equipo.",
+    "design_note": "No te preocupes por diseñar las prendas: solo enviá tus logos, ideas o imágenes de referencia y nuestro equipo se encargará de crear un diseño profesional y único para tu equipo."
+
   },
 "checkout": {
       "discount_code": "Código de descuento",

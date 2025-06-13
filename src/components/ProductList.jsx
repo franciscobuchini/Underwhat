@@ -27,6 +27,7 @@ function ProductList() {
       product_name: "Celt",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806521/viking01_edjnxi.webp",
@@ -34,6 +35,7 @@ function ProductList() {
       product_name: "Viking",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748808521/burgundian01_hqekos.webp",
@@ -41,6 +43,7 @@ function ProductList() {
       product_name: "Burgundian",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748809778/persian01_a1rqcr.webp",
@@ -48,6 +51,7 @@ function ProductList() {
       product_name: "Persian",
       product_category_key: "oversized_tshirt",
       product_selling: 34.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748983583/butta01_nbgdzi.webp",
@@ -55,6 +59,7 @@ function ProductList() {
       product_name: "Butta",
       product_category_key: "regular_tshirt",
       product_selling: 27.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748983584/dodoria01_vwv1z3.webp",
@@ -62,6 +67,7 @@ function ProductList() {
       product_name: "Dodoria",
       product_category_key: "regular_tshirt",
       product_selling: 27.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748983584/zarbon01_z3wesu.webp",
@@ -69,6 +75,7 @@ function ProductList() {
       product_name: "Zarbon",
       product_category_key: "regular_tshirt",
       product_selling: 28.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748983587/ginew01_vknm96.webp",
@@ -76,6 +83,7 @@ function ProductList() {
       product_name: "Ginew",
       product_category_key: "regular_tshirt",
       product_selling: 28.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749225251/assault01_u4nfdg.webp",
@@ -83,6 +91,7 @@ function ProductList() {
       product_name: "Assault",
       product_category_key: "hoodie",
       product_selling: 44.98,
+      product_year: 2025,
     },
         {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749225852/piranesi01_gpkhii.webp",
@@ -90,6 +99,7 @@ function ProductList() {
       product_name: "Piranesi",
       product_category_key: "hoodie",
       product_selling: 45.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749226868/nuke01_stcuh3.webp",
@@ -97,6 +107,7 @@ function ProductList() {
       product_name: "Nuke",
       product_category_key: "hoodie",
       product_selling: 45.98,
+      product_year: 2025,
     },
     {
       product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749226877/poolday01_dd2ceb.webp",
@@ -104,6 +115,7 @@ function ProductList() {
       product_name: "Pool Day",
       product_category_key: "hoodie",
       product_selling: 45.98,
+      product_year: 2025,
     },
   ]);
   
@@ -176,8 +188,11 @@ function ProductList() {
             <p className="ProductName text-xl font-semibold mb-1">
               {product.product_name}
             </p>
-            <p className="ProductCategory text-sm text-gray-400 mb-2">
+            <p className="ProductCategory text-sm text-gray-400">
               {t(product.product_category_key)}
+            </p>
+            <p className="text-sm text-gray-400 mb-2">
+              {product.product_year}
             </p>
             <p className="ProductPrice mb-4">
               {product.product_selling.toFixed(2)} USD

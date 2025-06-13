@@ -107,7 +107,9 @@
     "order_bullet_2": "Couleurs désirées",
     "order_bullet_3": "Quantité approximative de pièces par vêtement",
     "order_bullet_4": "Toute spécification ou image de référence pouvant aider au design",
-    "order_summary": "Avec ces informations, nous vous enverrons une proposition de design et un devis personnalisé pour votre équipe."
+    "order_summary": "Avec ces informations, nous vous enverrons une proposition de design et un devis personnalisé pour votre équipe.",
+    "design_note": "Pas besoin de concevoir les tenues vous-même : envoyez-nous simplement vos logos, idées ou images de référence, et notre équipe se chargera de créer un design professionnel et unique pour votre équipe."
+
   },
   "checkout": {
       "discount_code": "Code de Réduction",

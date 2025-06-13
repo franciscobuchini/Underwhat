@@ -109,7 +109,9 @@
     "order_bullet_2": "Desired colors",
     "order_bullet_3": "Approximate quantity of pieces per garment",
     "order_bullet_4": "Any specifications or reference images that could help with the design",
-    "order_summary": "With this information, we will send you a design proposal and a personalized quote for your team."
+    "order_summary": "With this information, we will send you a design proposal and a personalized quote for your team.",
+    "design_note": "Don't worry about designing the garments yourself — just send us your logos, ideas, or reference images, and our team will take care of creating a professional and unique design for your team."
+
   },
 "checkout": {
       "discount_code": "Discount Code",
