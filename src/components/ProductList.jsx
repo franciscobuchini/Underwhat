@@ -1,14 +1,18 @@
-// src/components/ProductList.jsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { useCart } from "./CartContext";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
 import products from "../data/Products";
+import FilterSort from "./FilterSort";
 
-function ProductList() {
+export default function ProductList() {
   const { t } = useTranslation("global");
+  const { addToCart } = useCart();
+  const notyf = new Notyf({
+    types: [{ type: "success", background: "#4caf50", duration: 2000 }],
+  });
 
   const sizeOptionsByCategory = {
     regular_tshirt: ["XS", "S", "M", "L", "XL", "2XL", "3XL"],
@@ -20,130 +24,116 @@ function ProductList() {
   };
 
   const [selectedSizes, setSelectedSizes] = useState({});
-  const { addToCart } = useCart();
-  const [hoveredProductIndex, setHoveredProductIndex] = useState(null);
+  const [hoveredIdx, setHoveredIdx] = useState(null);
+  const [filter, setFilter] = useState({ category: "", year: "", team: "" });
+  const [sortOrder, setSortOrder] = useState("");
 
-  const notyf = new Notyf({
-    types: [
-      {
-        type: "success",
-        background: "#4caf50",
-        duration: 2000,
-        dismissible: false,
-      },
-    ],
-  });
+  // precarga de imágenes secundarias
+  useEffect(() => {
+    products.forEach((p) => new Image().src = p.product_image02);
+  }, []);
 
-  const handleSizeChange = (index, size) => {
-    setSelectedSizes((prevSizes) => ({
-      ...prevSizes,
-      [index]: size,
-    }));
+  // listados únicos para filtros
+  const categories = useMemo(
+    () => [...new Set(products.map((p) => p.product_category_key))],
+    []
+  );
+  const years = useMemo(
+    () => [...new Set(products.map((p) => p.product_year))],
+    []
+  );
+  const teams = useMemo(
+    () => [...new Set(products.map((p) => p.product_team))],
+    []
+  );
+
+  // filtrado y orden
+  const visible = useMemo(() => {
+    let arr = products;
+    if (filter.category) arr = arr.filter(p => p.product_category_key === filter.category);
+    if (filter.year)      arr = arr.filter(p => String(p.product_year) === filter.year);
+    if (filter.team)      arr = arr.filter(p => p.product_team === filter.team);
+    if (sortOrder === "cheapfirst")  arr = [...arr].sort((a,b) => a.product_selling - b.product_selling);
+    if (sortOrder === "cheaplast") arr = [...arr].sort((a,b) => b.product_selling - a.product_selling);
+    return arr;
+  }, [filter, sortOrder]);
+
+  const handleSizeChange = (i, size) => {
+    setSelectedSizes(s => ({ ...s, [i]: size }));
   };
 
-  const handleAddToCart = (product, size) => {
-    addToCart({
-      ...product,
-      selectedSize: size,
-      image: product.product_image,
-    });
+  const handleAdd = (product, size) => {
+    addToCart({ ...product, selectedSize: size, image: product.product_image });
     notyf.success(t("product.add_to_cart"));
   };
 
-  useEffect(() => {
-    products.forEach((product) => {
-      const img = new Image();
-      img.src = product.product_image02;
-    });
-  }, []);
-
   return (
-    <div>
-      <div className="ProductList flex flex-wrap justify-center gap-6">
-        {products.map((product, index) => (
+    <>
+      <FilterSort
+        categories={categories}
+        years={years}
+        teams={teams}
+        onFilterChange={setFilter}
+        onSortChange={setSortOrder}
+      />
+
+      <div className="flex flex-wrap justify-center gap-6">
+        {visible.map((product, idx) => (
           <div
-            key={index}
-            className="ProductCard bg-white border rounded-2xl border-gray-300 w-64 hover:shadow-lg transition-shadow duration-300"
-            onMouseEnter={() => setHoveredProductIndex(index)}
-            onMouseLeave={() => setHoveredProductIndex(null)}
+            key={idx}
+            className="bg-white border border-gray-300 rounded-2xl w-64 hover:shadow-lg transition-shadow"
+            onMouseEnter={() => setHoveredIdx(idx)}
+            onMouseLeave={() => setHoveredIdx(null)}
           >
-            <div className="ProductImage rounded-t-2xl overflow-hidden">
+            <div className="overflow-hidden rounded-t-2xl">
               <img
-                src={
-                  hoveredProductIndex === index
-                    ? product.product_image02
-                    : product.product_image
-                }
+                src={hoveredIdx === idx ? product.product_image02 : product.product_image}
                 alt={product.product_name}
-                className="object-cover w-full h-auto transition-all duration-2000 hover:scale-105"
+                className="object-cover w-full h-auto transition-transform duration-2000 hover:scale-105"
                 loading="lazy"
               />
             </div>
+            <hr className="border-gray-300 mx-6 my-2" />
 
-            <hr className="border border-gray-300 mx-6 my-2" />
-
-            <div className="ProductDetails p-6 text-gray-600">
-              <p className="ProductName text-xl font-semibold mb-1 flex items-center gap-2">
+            <div className="p-6 text-gray-600">
+              <p className="flex items-center gap-2 text-xl font-semibold mb-1">
                 {product.product_icon && (
                   <Icon icon={product.product_icon} className="w-5 h-5 text-yellow-500" />
                 )}
                 {product.product_name}
               </p>
-              <p className="ProductCategory text-sm text-gray-400">
-                {t(product.product_category_key)}
-              </p>
-              <p className="text-sm text-gray-400 mb-2">
-                {product.product_year}
-              </p>
-              <p className="ProductPrice mb-4">
-                {product.product_selling.toFixed(2)} USD
-              </p>
+              <p className="text-sm text-gray-400">{t(product.product_category_key)}</p>
+              <p className="text-sm text-gray-400 mb-2">{product.product_year}</p>
+              <p className="mb-4">{product.product_selling.toFixed(2)} USD</p>
 
-              <div className="ProductInteractions flex justify-start space-x-2 mt-4">
+              <div className="flex space-x-2 mt-4">
                 <select
-                  id="size"
-                  className="ProductSize rounded-lg p-1 w-24 bg-white text-gray-600 border border-gray-300 focus:outline-none focus:border-pink-800 cursor-pointer"
-                  aria-label="select"
-                  value={selectedSizes[index] || ""}
-                  onChange={(e) => handleSizeChange(index, e.target.value)}
+                  value={selectedSizes[idx] || ""}
+                  onChange={e => handleSizeChange(idx, e.target.value)}
+                  className="w-24 p-1 border rounded cursor-pointer"
                 >
-                  <option value="" disabled>
-                    {t("product.size_placeholder")}
-                  </option>
-                  {sizeOptionsByCategory[product.product_category_key]?.map(
-                    (size) => (
-                      <option key={size} value={size}>
-                        {size}
-                      </option>
-                    )
-                  )}
+                  <option value="" disabled>{t("product.size_placeholder")}</option>
+                  {sizeOptionsByCategory[product.product_category_key].map((sz) => (
+                    <option key={sz} value={sz}>{sz}</option>
+                  ))}
                 </select>
                 <button
-                  className={`ProductAdd border rounded-lg w-full flex justify-center gap-2 items-center px-3 py-2 ${
-                    selectedSizes[index]
-                      ? "text-green-600 bg-green-100 hover:outline hover:outline-green-600 cursor-pointer"
+                  disabled={!selectedSizes[idx]}
+                  onClick={e => { e.stopPropagation(); handleAdd(product, selectedSizes[idx]); }}
+                  className={`flex gap-2 items-center justify-center px-3 py-2 border rounded w-full ${
+                    selectedSizes[idx]
+                      ? "text-green-600 bg-green-100 hover:outline-green-600"
                       : "text-gray-300 bg-white cursor-not-allowed"
                   }`}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    if (!selectedSizes[index]) return;
-                    handleAddToCart(product, selectedSizes[index]);
-                  }}
-                  disabled={!selectedSizes[index]}
                 >
                   {t("product.add")}
-                  <Icon
-                    icon="icon-park-twotone:shopping"
-                    className="w-6 h-6 flex-shrink-0"
-                  />
+                  <Icon icon="icon-park-twotone:shopping" className="w-6 h-6" />
                 </button>
               </div>
             </div>
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 }
-
-export default ProductList;

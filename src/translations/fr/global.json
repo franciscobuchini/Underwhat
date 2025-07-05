@@ -43,6 +43,16 @@
     "add_to_cart": "Produit ajouté au panier !",
     "remove_from_cart": "Produit retiré du panier !"
   },
+  "filtersort": {
+    "default": "Par défaut",
+    "cheap_first": "Moins cher en premier",
+    "cheap_last": "Moins cher en dernier",
+    "onlyteams": "Uniquement équipes",
+    "label_category": "Catégorie:",
+    "label_year": "Année:",
+    "label_team": "Équipe:",
+    "label_sort": "Trier par:"
+  },
   "about": {
     "title": "Qui sommes-nous !?",
     "content": "Underwhat!? a été créé par des joueurs de l'UWH pour les joueurs de l'UWH. Nous savons combien il est important de représenter le sport avec fierté et style, à l'intérieur comme à l'extérieur de la piscine. C'est pourquoi nous avons décidé de créer une marque de vêtements décontractés conçus non seulement pour un usage quotidien, mais aussi pour emporter l'esprit de l'UWH partout, en gardant toujours une touche de style. Chaque article que nous proposons est conçu avec une attention méticuleuse aux détails. Dès le début, nous avons clairement indiqué que la qualité serait une priorité. Nous ne recherchons pas seulement le confort et la durabilité, mais aussi la meilleure esthétique pour que nous, en tant que joueurs, puissions afficher fièrement notre engagement envers le sport de manière élégante et moderne. Notre plus grand objectif est d'atteindre chaque pays avec UWH, en apportant notre marque et la passion pour ce sport aux quatre coins du monde. Nous croyons en l'importance de construire une communauté mondiale de joueurs qui peuvent se sentir représentés et connectés à travers nos vêtements. Nous nous engageons à proposer des produits qui non seulement offrent une haute qualité, mais vous permettent également d'exprimer votre identité en tant que joueur de l'UWH, où que vous soyez. Cette marque est là pour mettre en valeur notre mode de vie et partager la passion d'un sport qui est bien plus qu'un simple jeu."

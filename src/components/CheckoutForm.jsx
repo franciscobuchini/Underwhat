@@ -129,6 +129,7 @@ const CheckoutForm = ({
                 <option value="brazil">Brazil</option>
                 <option value="bulgaria">Bulgaria</option>
                 <option value="canada">Canada</option>
+                <option value="chile">Chile</option>
                 <option value="china">China</option>
                 <option value="colombia">Colombia</option>
                 <option value="croatia">Croatia</option>
