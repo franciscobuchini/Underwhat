@@ -106,41 +106,46 @@ const CheckoutForm = ({
           </div>
   
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label className="block text-sm font-medium text-gray-600" htmlFor="userCountry">
-                {t("checkout.select_country")} *
-              </label>
-            <select
-              id="userCountry"
-              name="userCountry"
-              required
-              defaultValue="US"
-              className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
-            >
-              {countries.map(({ code, label }) => (
-                <option key={code} value={code}>
-                  {label}
-                </option>
-              ))}
-              <option value="OTHER">{t("checkout.other_country_option")}</option>
-            </select>
-            </div>
-            {showOtherCountry && (
-              <div>
-                <label className="block text-sm font-medium text-gray-600" htmlFor="otherCountry">
-                  {t("checkout.other_country")} *
-                </label>
-                <input
-                  id="otherCountry"
-                  name="otherCountry"
-                  type="text"
-                  placeholder="Andorra"
-                  required
-                  className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
-                />
-              </div>
-            )}
-          </div>
+  <div>
+    <label className="block text-sm font-medium text-gray-600" htmlFor="userCountry">
+      {t("checkout.select_country")} *
+    </label>
+    <select
+      id="userCountry"
+      name="userCountry"
+      required
+      defaultValue="US"
+      onChange={(e) => {
+        const selected = e.target.value;
+        setShowOtherCountry(selected === 'OTHER');
+      }}
+      className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+    >
+      {countries.map(({ code, label }) => (
+        <option key={code} value={code}>
+          {label}
+        </option>
+      ))}
+      <option value="OTHER">{t("checkout.other")}</option>
+    </select>
+  </div>
+
+  {showOtherCountry && (
+    <div>
+      <label className="block text-sm font-medium text-gray-600" htmlFor="otherCountry">
+        {t("checkout.other_country")} *
+      </label>
+      <input
+        id="otherCountry"
+        name="otherCountry"
+        type="text"
+        placeholder="Andorra"
+        required
+        className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+      />
+    </div>
+  )}
+</div>
   
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div>

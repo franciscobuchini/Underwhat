@@ -122,7 +122,7 @@ export default function ProductList() {
                   onClick={e => { e.stopPropagation(); handleAdd(product, selectedSizes[idx]); }}
                   className={`flex gap-2 items-center justify-center px-3 py-2 border rounded w-full ${
                     selectedSizes[idx]
-                      ? "text-green-600 bg-green-100 hover:outline-green-600"
+                      ? "text-green-600 bg-green-100 hover:outline-green-600 cursor-pointer"
                       : "text-gray-300 bg-white cursor-not-allowed"
                   }`}
                 >
