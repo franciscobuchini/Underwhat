@@ -106,30 +106,47 @@ export default function ProductList() {
               <p className="text-sm text-gray-400 mb-2">{product.product_year}</p>
               <p className="mb-4">{product.product_selling.toFixed(2)} USD</p>
 
-              <div className="flex space-x-2 mt-4">
-                <select
-                  value={selectedSizes[idx] || ""}
-                  onChange={e => handleSizeChange(idx, e.target.value)}
-                  className="w-24 p-1 border rounded cursor-pointer"
-                >
-                  <option value="" disabled>{t("product.size_placeholder")}</option>
-                  {sizeOptionsByCategory[product.product_category_key].map((sz) => (
-                    <option key={sz} value={sz}>{sz}</option>
-                  ))}
-                </select>
+              <div className="flex gap-2 mt-4 h-10 items-center">
+                {/* Contenedor select */}
+                <div className="relative w-28 h-full">
+                  <select
+                    value={selectedSizes[idx] || ""}
+                    onChange={(e) => handleSizeChange(idx, e.target.value)}
+                    className="appearance-none w-full h-full border rounded pr-6 bg-white text-gray-700 text-sm text-center cursor-pointer"
+                  >
+                    <option value="" disabled>
+                      {t("product.size_placeholder")}
+                    </option>
+                    {sizeOptionsByCategory[product.product_category_key].map((sz) => (
+                      <option key={sz} value={sz}>
+                        {sz}
+                      </option>
+                    ))}
+                  </select>
+                  <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Botón */}
                 <button
                   disabled={!selectedSizes[idx]}
-                  onClick={e => { e.stopPropagation(); handleAdd(product, selectedSizes[idx]); }}
-                  className={`flex gap-2 items-center justify-center px-3 py-2 border rounded w-full ${
-                    selectedSizes[idx]
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    handleAdd(product, selectedSizes[idx]);
+                  }}
+                  className={`h-full flex gap-2 items-center justify-center px-4 border rounded w-full text-sm
+                    ${selectedSizes[idx]
                       ? "text-green-600 bg-green-100 hover:outline-green-600 cursor-pointer"
-                      : "text-gray-300 bg-white cursor-not-allowed"
-                  }`}
+                      : "text-gray-300 bg-white cursor-not-allowed"}`}
                 >
                   {t("product.add")}
-                  <Icon icon="icon-park-twotone:shopping" className="w-6 h-6" />
+                  <Icon icon="icon-park-twotone:shopping" className="w-5 h-5" />
                 </button>
               </div>
+
             </div>
           </div>
         ))}

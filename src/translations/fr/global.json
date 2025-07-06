@@ -45,6 +45,8 @@
   },
   "filtersort": {
     "default": "Par défaut",
+    "all": "Tout",
+    "relevance": "Pertinence",
     "cheap_first": "Moins cher en premier",
     "cheap_last": "Moins cher en dernier",
     "onlyteams": "Uniquement équipes",

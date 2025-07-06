@@ -93,15 +93,25 @@ const SizesTable = () => {
   return (
     <div className="w-full flex flex-col gap-6 py-4">
       <div className="bg-white border border-gray-300 rounded-2xl p-2 sm:p-6">
-        <select 
-          className="text-pink-800 outline outline-gray-300 bg-gray-50 hover:cursor-pointer rounded-xl p-2 max-w-xs mb-4" 
-          onChange={handleSelectChange}
-          value={products.findIndex(prod => prod.name === selectedProduct.name)}
-        >
-          {products.map((product, index) => (
-            <option key={index} value={index}>{product.name}</option>
-          ))}
-        </select>
+        <div className="relative max-w-xs mb-4">
+  <select 
+    className="appearance-none text-pink-800 outline outline-gray-300 bg-gray-50 hover:cursor-pointer rounded-xl p-2 w-full pr-8"
+    onChange={handleSelectChange}
+    value={products.findIndex(prod => prod.name === selectedProduct.name)}
+  >
+    {products.map((product, index) => (
+      <option key={index} value={index}>
+        {product.name}
+      </option>
+    ))}
+  </select>
+  <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">
+    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+    </svg>
+  </div>
+</div>
+
         {selectedProduct && (
           <>
             <p className="text-gray-600 text-sm mb-4">{selectedProduct.weight}</p>

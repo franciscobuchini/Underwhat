@@ -47,8 +47,10 @@
   },
   "filtersort": {
     "default": "Default",
-    "cheap_first": "Cheapest First",
-    "cheap_last": "Cheapest Last",
+    "all": "All",
+    "relevance": "Relevance",
+    "cheap_first": "Lower Price First",
+    "cheap_last": "Higher Price First",
     "onlyteams": "Only Teams",
     "label_category": "Category:",
     "label_year": "Year:",
