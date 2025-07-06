@@ -6,13 +6,22 @@
   "hoodie": "Sudadera con capucha",
   "sweatshirt": "Sudadera clásica",
   "footer": {
-    "tagline": "La vestimenta más icónica para jugadores de UWH.",
-    "brand": "Underwhat!?",
-    "copied": "¡email copiado!"
+    "section_links": "Enlaces",
+    "section_legal": "Legal",
+    "section_contact": "Contacto",
+    "copied": "Copiado",
+    "tagline": "El equipo más icónico para jugadores de UWH.",
+    "brand": "UnderWhat®",
+    "terms": "Términos y condiciones",
+    "privacy": "Política de privacidad",
+    "shipping": "Política de envíos",
+    "returns": "Devoluciones",
+    "rights_reserved": "Todos los derechos reservados"
   },
   "header": {
     "logo_alt": "Logo de Underwhat",
     "menu": {
+      "home": "Inicio",
       "team": "Equipamiento",
       "faq": "Preguntas",
       "about": "Nosotros",

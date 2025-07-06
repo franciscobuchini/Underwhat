@@ -7,14 +7,20 @@
   "sweatshirt": "Sweatshirt",
 
   "footer": {
-    "tagline": "The most iconic wear for UWH players.",
+    "tagline": "The most iconic gear for UWH players.",
     "brand": "Underwhat!?",
-    "copied": "email copied!"
+    "copied": "email copied!",
+    "section_links": "Links",
+    "section_info": "Information",
+    "section_legal": "Legal",
+    "section_contact": "Contact Us",
+    "conditions": "Terms and Conditions"
   },
 
   "header": {
     "logo_alt": "Underwhat Logo",
     "menu": {
+      "home": "Home",
       "team": "Team Outfit",
       "faq": "FAQ",
       "about": "About Us",

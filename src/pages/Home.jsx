@@ -14,7 +14,7 @@ const Home = () => {
         <ProductList />
         <Title title={t("home.table_sizes")} />
         <SizesTable />
-        <Title title={"Gallery Pics"} />
+        {/* <Title title={"Gallery Pics"} /> */}
         {/* <PicGallery /> */}
       </div>
       {/* <Title title="The brand for your team" /> */}
