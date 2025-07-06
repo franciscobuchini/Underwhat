@@ -98,62 +98,61 @@ export default function ProductList() {
               <p className="mb-2 sm:mb-4 text-sm">{product.product_selling.toFixed(2)} USD</p>
 
 {/* Select + botón */}
-<div className="flex gap-2 mt-2 sm:mt-4 h-10 w-full">
-  {/* Custom Listbox para talles */}
+<div className="flex gap-1 mt-1 sm:gap-2 sm:mt-2 h-8 sm:h-10 w-full">
+  {/* Listbox personalizado (talles) */}
   <div className="relative flex-[2]">
-    <Listbox value={selectedSizes[idx] || ""} onChange={(sz) => handleSizeChange(idx, sz)}>
-      <div className="relative">
-        {/* Trigger: ocupa todo el contenedor */}
-        <Listbox.Button className="flex items-center justify-between w-full h-10 px-2 border border-gray-300 bg-white rounded cursor-pointer text-xs sm:text-sm">
-          <span className={selectedSizes[idx] ? "" : "text-gray-400"}>
-            {selectedSizes[idx] || t("product.size_placeholder")}
-          </span>
-          <svg
-            className="w-4 h-4 text-gray-400 pointer-events-none"
-            fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-          </svg>
-        </Listbox.Button>
-        <Listbox.Options className="absolute z-10 mt-1 w-full bg-white border border-gray-300 outline-none rounded shadow-lg max-h-40 overflow-auto text-xs sm:text-sm list-none">
-          {sizeOptionsByCategory[product.product_category_key].map((sz) => (
-            <Listbox.Option
-              key={sz}
-              value={sz}
-              as={Fragment}
-            >
-              {({ active, selected }) => (
-                <li
-                  className={`px-2 py-1 cursor-pointer ${
-                    active ? "bg-pink-100" : ""
-                  } ${selected ? "font-semibold" : ""}`}
-                >
-                  {sz}
-                </li>
-              )}
-            </Listbox.Option>
-          ))}
-        </Listbox.Options>
-      </div>
+    <Listbox
+      value={selectedSizes[idx] || ""}
+      onChange={(sz) => handleSizeChange(idx, sz)}
+    >
+      <Listbox.Button className="flex items-center justify-between w-full h-full px-2 border border-gray-200 bg-white rounded text-xs sm:text-sm">
+        <span className={selectedSizes[idx] ? "" : "text-gray-400"}>
+          {selectedSizes[idx] || t("product.size_placeholder")}
+        </span>
+        <svg
+          className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 pointer-events-none"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+      </Listbox.Button>
+      <Listbox.Options className="absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded shadow-sm max-h-36 overflow-auto text-xs sm:text-sm list-none">
+        {sizeOptionsByCategory[product.product_category_key].map((sz) => (
+          <Listbox.Option key={sz} value={sz} as={Fragment}>
+            {({ active, selected }) => (
+              <li
+                className={`px-2 py-1 cursor-pointer ${
+                  active ? "bg-pink-50" : ""
+                } ${selected ? "font-semibold" : ""}`}
+              >
+                {sz}
+              </li>
+            )}
+          </Listbox.Option>
+        ))}
+      </Listbox.Options>
     </Listbox>
   </div>
 
-  {/* Botón de agregar */}
+  {/* Botón Agregar */}
   <button
     disabled={!selectedSizes[idx]}
     onClick={(e) => {
       e.stopPropagation();
       handleAdd(product, selectedSizes[idx]);
     }}
-    className={`flex items-center justify-center h-10 px-3 sm:px-4 border rounded text-xs sm:text-sm flex-[3] gap-2
+    className={`flex items-center justify-center h-full px-2 sm:px-3 border border-gray-200 rounded text-xs sm:text-sm flex-[3] gap-1 sm:gap-2
       ${
         selectedSizes[idx]
-          ? "text-green-600 bg-green-100 hover:outline-green-600 cursor-pointer"
+          ? "text-green-600 bg-green-50 hover:bg-green-100"
           : "text-gray-300 bg-white cursor-not-allowed"
       }`}
   >
     {t("product.add")}
-    <Icon icon="icon-park-twotone:shopping" className="w-4 h-4 sm:w-5 sm:h-5" />
+    <Icon icon="icon-park-twotone:shopping" className="w-4 h-4" />
   </button>
 </div>
             </div>
