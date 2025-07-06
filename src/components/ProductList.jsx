@@ -68,7 +68,7 @@ export default function ProductList() {
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 sm:gap-12">
       <FilterSort
         categories={categories}
         years={years}
@@ -77,11 +77,11 @@ export default function ProductList() {
         onSortChange={setSortOrder}
       />
 
-<div className="flex flex-wrap justify-center gap-2 px-0 sm:gap-6 sm:px-4">
+<div className="flex flex-wrap justify-center gap-1 px-0 sm:gap-6 sm:px-4">
   {visible.map((product, idx) => (
     <div
       key={idx}
-      className="bg-white border border-gray-300 rounded-2xl w-[48%] sm:w-64 hover:shadow-lg transition-shadow"
+      className="bg-white border border-gray-300 rounded-lg sm:rounded-2xl w-[48%] sm:w-64 hover:shadow-lg transition-shadow"
       onMouseEnter={() => setHoveredIdx(idx)}
       onMouseLeave={() => setHoveredIdx(null)}
     >
