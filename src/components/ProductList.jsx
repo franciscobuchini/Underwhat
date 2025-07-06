@@ -68,7 +68,7 @@ export default function ProductList() {
   };
 
   return (
-    <>
+    <div className="flex flex-col gap-6">
       <FilterSort
         categories={categories}
         years={years}
@@ -77,7 +77,7 @@ export default function ProductList() {
         onSortChange={setSortOrder}
       />
 
-<div className="flex flex-wrap justify-center gap-2 px-1 sm:gap-6 sm:px-4">
+<div className="flex flex-wrap justify-center gap-2 px-0 sm:gap-6 sm:px-4">
   {visible.map((product, idx) => (
     <div
       key={idx}
@@ -145,6 +145,6 @@ export default function ProductList() {
     </div>
   ))}
 </div>
-    </>
+    </div>
   );
 }

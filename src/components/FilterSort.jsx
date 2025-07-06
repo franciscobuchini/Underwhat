@@ -32,7 +32,7 @@ export default function FilterSort({
   };
 
 return (
-  <div className="w-full mb-6 border bg-white border-gray-300 rounded-2xl p-4 hover:shadow-lg transition-shadow duration-300">
+  <div className="w-full border bg-white border-gray-300 rounded-2xl p-4 hover:shadow-lg transition-shadow duration-300">
     <div className="flex flex-wrap justify-between gap-4">
       {/* Categoría */}
       <div className="flex items-center gap-2 w-full sm:w-auto min-w-[220px] relative">
@@ -71,7 +71,7 @@ return (
             onChange={handleFilter("year")}
             className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-900 bg-white rounded-md"
           >
-            <option value="">{t("filtersort.default")}</option>
+            <option value="">{t("filtersort.all")}</option>
             {years.map((y) => (
               <option key={y} value={y}>
                 {y}

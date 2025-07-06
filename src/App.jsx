@@ -57,7 +57,7 @@ function App() {
     <Router>
       <I18nextProvider i18n={i18next}>
         <CartProvider>
-          <div className="flex flex-col min-h-screen mx-1 md:mx-4 bg-gray-50">
+          <div className="flex flex-col min-h-screen mx-2 md:mx-4 bg-gray-50">
             <Header />
 
             {/* Este componente no renderiza nada visual, 
