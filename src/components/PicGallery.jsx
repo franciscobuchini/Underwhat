@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function ProductGallery({ images }) {
+export default function PicGallery({ images }) {
   // Imágenes por defecto dentro del componente
   const defaultImages = [
     'https://res.cloudinary.com/dpleitc1d/image/upload/v1748029140/fx3nqdaibi62v0qxj2ln.webp',
