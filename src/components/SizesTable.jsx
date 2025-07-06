@@ -116,19 +116,19 @@ const SizesTable = () => {
           <>
             <p className="text-gray-600 text-sm mb-4">{selectedProduct.weight}</p>
             <div className="w-full">
-              <table className="w-full table-fixed border-collapse border border-gray-300 text-center">
+              <table className="w-full table-fixed border-collapse border border-gray-200 text-center">
                 <thead>
                   <tr className="bg-gray-100">
-                    <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
+                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
                     {t("faq.table.size")}
                     </th>
-                    <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
+                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
                     {t("faq.table.chest")}
                     </th>
-                    <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
+                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
                     {t("faq.table.shoulder")}
                     </th>
-                    <th className="border border-gray-300 px-2 py-1  text-xs sm:text-sm">
+                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
                     {t("faq.table.length")}
                     </th>
                   </tr>
@@ -139,7 +139,7 @@ const SizesTable = () => {
                       {size.map((value, j) => (
                         <td
                           key={j}
-                          className="border border-gray-300 px-2 py-1 whitespace-nowrap text-xs sm:text-sm"
+                          className="border border-gray-200 px-2 py-1 whitespace-nowrap text-xs sm:text-sm"
                         >
                           {value}
                         </td>
