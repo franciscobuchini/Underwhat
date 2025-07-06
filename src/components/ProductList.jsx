@@ -111,7 +111,7 @@ export default function ProductList() {
             <select
               value={selectedSizes[idx] || ""}
               onChange={(e) => handleSizeChange(idx, e.target.value)}
-              className="appearance-none w-full h-full border rounded pr-6 bg-white text-gray-700 text-xs sm:text-sm text-center cursor-pointer"
+              className="appearance-none w-full h-full border rounded pr-3 sm:pr-6 bg-white text-gray-700 text-xs sm:text-sm text-center cursor-pointer"
             >
               <option value="" disabled>{t("product.size_placeholder")}</option>
               {sizeOptionsByCategory[product.product_category_key].map((sz) => (
