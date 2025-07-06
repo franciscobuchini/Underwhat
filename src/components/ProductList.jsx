@@ -66,7 +66,7 @@ export default function ProductList() {
         onSortChange={setSortOrder}
       />
 
-      <div className="flex flex-wrap justify-around gap-2 sm:gap-6 sm:px-4">
+      <div className="flex flex-wrap justify-around gap-4 sm:gap-6 sm:px-4">
         {visible.map((product, idx) => (
           <div
             key={idx}
