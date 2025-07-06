@@ -111,14 +111,14 @@ export default function ProductList() {
             <select
               value={selectedSizes[idx] || ""}
               onChange={(e) => handleSizeChange(idx, e.target.value)}
-              className="appearance-none w-full h-full border rounded pr-4 sm:pr-6 bg-white text-gray-700 text-xs sm:text-sm text-center cursor-pointer"
+              className="appearance-none w-full h-full border rounded pr-0 sm:pr-6 bg-white text-gray-700 text-xs sm:text-sm text-center cursor-pointer"
             >
               <option value="" disabled>{t("product.size_placeholder")}</option>
               {sizeOptionsByCategory[product.product_category_key].map((sz) => (
                 <option key={sz} value={sz}>{sz}</option>
               ))}
             </select>
-            <div className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 text-gray-400">
+            <div className="pointer-events-none absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 text-gray-400">
               <svg className="w-3 h-3 sm:w-4 sm:h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
