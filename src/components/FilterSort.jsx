@@ -32,8 +32,7 @@ export default function FilterSort({
   };
 
 return (
-  <div className="w-full border bg-white border-gray-300 rounded-2xl p-4 hover:shadow-lg transition-shadow duration-300">
-    <div className="flex flex-wrap justify-between gap-4">
+    <div className="w-full border bg-white border-gray-300 rounded-2xl p-4 hover:shadow-lg transition-shadow duration-300 flex flex-wrap justify-between gap-4">
       {/* Categoría */}
       <div className="flex items-center gap-2 w-full sm:w-auto min-w-[220px] relative">
         <label className="text-sm text-gray-700 w-20 text-right shrink-0">
@@ -136,7 +135,6 @@ return (
         </div>
       </div>
     </div>
-  </div>
 );
 
 }

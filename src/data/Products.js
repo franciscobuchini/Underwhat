@@ -4,7 +4,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806188/celt01_us6fi2.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749206500/celt02_xtmbz1.webp",
-    product_icon: "",
+    product_icon: "arcticons:aoe2companion",
     product_name: "Celt",
     product_category_key: "oversized_tshirt",
     product_selling: 34.98,
@@ -14,7 +14,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806521/viking01_edjnxi.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749206500/viking02_fblf34.webp",
-    product_icon: "",
+    product_icon: "arcticons:aoe2companion",
     product_name: "Viking",
     product_category_key: "oversized_tshirt",
     product_selling: 34.98,
@@ -24,7 +24,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748808521/burgundian01_hqekos.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748809567/burgundian02_idzuqt.webp",
-    product_icon: "",
+    product_icon: "arcticons:aoe2companion",
     product_name: "Burgundian",
     product_category_key: "oversized_tshirt",
     product_selling: 34.98,
@@ -34,7 +34,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748809778/persian01_a1rqcr.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748809779/persian02_gt04ma.webp",
-    product_icon: "",
+    product_icon: "arcticons:aoe2companion",
     product_name: "Persian",
     product_category_key: "oversized_tshirt",
     product_selling: 34.98,
@@ -44,7 +44,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725697/rt_f_lightblue_rqpkvu.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725593/rt_f_lightblue_2_ivdeyh.webp",
-    product_icon: "",
+    product_icon: "arcticons:dbz",
     product_name: "Butta",
     product_category_key: "regular_tshirt",
     product_selling: 27.98,
@@ -54,7 +54,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725698/rt_f_sakura_xstwev.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725593/rt_f_sakura_2_ndkl7h.webp",
-    product_icon: "",
+    product_icon: "arcticons:dbz",
     product_name: "Dodoria",
     product_category_key: "regular_tshirt",
     product_selling: 27.98,
@@ -64,7 +64,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725700/rt_f_aquamarine_e5agat.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725592/rt_f_aquamarine_2_h1c1jt.webp",
-    product_icon: "",
+    product_icon: "arcticons:dbz",
     product_name: "Zarbon",
     product_category_key: "regular_tshirt",
     product_selling: 27.98,
@@ -74,7 +74,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725697/rt_f_pastelpurple_hq2gir.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725593/rt_f_pastelpurple_2_y3pli9.webp",
-    product_icon: "",
+    product_icon: "arcticons:dbz",
     product_name: "Ginew",
     product_category_key: "regular_tshirt",
     product_selling: 27.98,
@@ -84,7 +84,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749225251/assault01_u4nfdg.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749225252/assault02_t6vpbg.webp",
-    product_icon: "",
+    product_icon: "arcticons:gun",
     product_name: "Assault",
     product_category_key: "hoodie",
     product_selling: 44.98,
@@ -94,7 +94,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749225852/piranesi01_gpkhii.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749225855/piranesi02_ny9ivx.webp",
-    product_icon: "",
+    product_icon: "arcticons:gun",
     product_name: "Piranesi",
     product_category_key: "hoodie",
     product_selling: 45.98,
@@ -104,7 +104,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749226868/nuke01_stcuh3.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749226870/nuke02_zbm8d5.webp",
-    product_icon: "",
+    product_icon: "arcticons:gun",
     product_name: "Nuke",
     product_category_key: "hoodie",
     product_selling: 45.98,
@@ -114,7 +114,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749226877/poolday01_dd2ceb.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1749226874/poolday02_cf7ka3.webp",
-    product_icon: "",
+    product_icon: "arcticons:gun",
     product_name: "Pool Day",
     product_category_key: "hoodie",
     product_selling: 45.98,
