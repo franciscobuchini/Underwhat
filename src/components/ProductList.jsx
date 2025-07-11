@@ -66,7 +66,7 @@ export default function ProductList() {
         onSortChange={setSortOrder}
       />
 
-      <div className="flex flex-wrap justify-around gap-3 sm:gap-6 sm:px-4">
+      <div className="flex flex-wrap justify-around gap-y-2 sm:gap-6 sm:px-4">
         {visible.map((product, idx) => (
           <div
             key={idx}
@@ -84,7 +84,7 @@ export default function ProductList() {
             </div>
             <hr className="border-gray-300 mx-4 my-1 sm:mx-6 sm:my-2" />
 
-            <div className="p-2 sm:p-6 text-gray-600">
+            <div className="p-4 sm:p-6 text-gray-600">
               <p className="flex items-center gap-2 text-base sm:text-xl font-semibold mb-1">
                 {product.product_icon && (
                   <Icon icon={product.product_icon} className="w-4 h-4 sm:w-5 sm:h-5 text-pink-800" />
