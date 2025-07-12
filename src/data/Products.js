@@ -84,7 +84,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351363/ho_f_black_ufiehu.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351367/ho_f_black2_byisd5.webp",
-    product_icon: "arcticons:gun",
+    product_icon: "arcticons:mini-militia",
     product_name: "Assault",
     product_category_key: "hoodie",
     product_selling: 44.98,
@@ -94,7 +94,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351363/ho_f_deepgreen_wxks5o.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351363/ho_b_deepgreen_jln4jd.webp",
-    product_icon: "arcticons:gun",
+    product_icon: "arcticons:mini-militia",
     product_name: "Piranesi",
     product_category_key: "hoodie",
     product_selling: 45.98,
@@ -104,7 +104,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351364/ho_f_white_nzndta.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351364/rt_b__qsljiq.webp",
-    product_icon: "arcticons:gun",
+    product_icon: "arcticons:mini-militia",
     product_name: "Nuke",
     product_category_key: "hoodie",
     product_selling: 45.98,
@@ -114,7 +114,7 @@ const products = [
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351364/ho_f_navyblue_wwo56j.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351363/2_viqsgx.webp",
-    product_icon: "arcticons:gun",
+    product_icon: "arcticons:mini-militia",
     product_name: "Pool Day",
     product_category_key: "hoodie",
     product_selling: 45.98,
