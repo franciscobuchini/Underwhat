@@ -80,6 +80,19 @@ const SizesTable = () => {
         ["XL", "60 cm", "62 cm", "73 cm"],
         ["2XL", "63 cm", "65 cm", "75 cm"],
       ]
+    },
+    {
+      name: t("shorts"),
+      weight: t("faq.table.shorts_weight"),
+      sizes: [
+        ["US 28", "68 cm", "100 cm", "50 cm"],
+        ["US 29-30", "72 cm", "104 cm", "51 cm"],
+        ["US 30-31", "75 cm", "108 cm", "52 cm"],
+        ["US 32", "78 cm", "112 cm", "53 cm"],
+        ["US 33-34", "80 cm", "116 cm", "54 cm"],
+        ["US 34-35", "82 cm", "120 cm", "55 cm"],
+        ["US 36", "84 cm", "124 cm", "56 cm"],
+      ]
     }
   ];
 
@@ -119,17 +132,21 @@ const SizesTable = () => {
               <table className="w-full table-fixed border-collapse border border-gray-200 text-center">
                 <thead>
                   <tr className="bg-gray-100">
-                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
-                    {t("faq.table.size")}
+                    <th className="border border-gray-200 px-2 py-1 text-xs sm:text-sm">
+                      {t("faq.table.size")}
                     </th>
-                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
-                    {t("faq.table.chest")}
+                    <th className="border border-gray-200 px-2 py-1 text-xs sm:text-sm">
+                      {selectedProduct.name === t("shorts")
+                        ? t("faq.table.waist")
+                        : t("faq.table.chest")}
                     </th>
-                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
-                    {t("faq.table.shoulder")}
+                    <th className="border border-gray-200 px-2 py-1 text-xs sm:text-sm">
+                      {selectedProduct.name === t("shorts")
+                        ? t("faq.table.hip")
+                        : t("faq.table.shoulder")}
                     </th>
-                    <th className="border border-gray-200 px-2 py-1  text-xs sm:text-sm">
-                    {t("faq.table.length")}
+                    <th className="border border-gray-200 px-2 py-1 text-xs sm:text-sm">
+                      {t("faq.table.length")}
                     </th>
                   </tr>
                 </thead>

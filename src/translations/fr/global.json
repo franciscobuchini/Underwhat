@@ -5,6 +5,8 @@
   "zip_hoodie": "Pull à Capuche Zippé",
   "hoodie": "Pull à Capuche",
   "sweatshirt": "Pull Col Rond",
+  "shorts": "Shorts",
+
   "footer": {
     "tagline": "Les tenues les plus iconiques pour les joueurs de UWH.",
     "brand": "Underwhat!?",
@@ -94,6 +96,8 @@
       "size": "Taille",
       "chest": "Largeur Poitrine",
       "shoulder": "Largeur Épaules",
+      "waist": "Largeur Taille",
+      "hip": "Largeur Hanches",
       "length": "Longueur",
       "regular_tshirt_weight": "230g | 100% coton à fibres longues",
       "sleeveless_shirt_weight": "230g | 100% coton à fibres longues",
@@ -101,6 +105,7 @@
       "zip_hoodie_weight": "600g | 95% coton 5% élasthanne",
       "hoodie_weight": "320g | 59% coton 41% fibre d'acétate de vinyle",
       "sweatshirt_weight": "320g | 59% coton 41% fibre d'acétate de vinyle",
+      "shorts_weight": "300g | 100% coton à fibres longues",
       "advice": "*Les tailles indiquées sur le site peuvent différer de celles figurant sur l'étiquette du vêtement. Cet ajustement est intentionnel afin d'aligner nos produits sur les standards internationaux de tailles. Par exemple, si vous commandez une taille L, l'étiquette peut indiquer XL. Cela permet de garantir que nos produits correspondent correctement à la taille choisie sur le site. Nous vous recommandons de consulter le guide des tailles pour trouver la coupe qui vous convient le mieux."
     }
   },
