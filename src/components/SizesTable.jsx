@@ -11,12 +11,13 @@ const SizesTable = () => {
       name: t("regular_tshirt"),
       weight: t("faq.table.regular_tshirt_weight"),
       sizes: [
-        ["XS", "50 cm", "45 cm", "68 cm"],
-        ["S", "52 cm", "47 cm", "70 cm"],
-        ["M", "54 cm", "49 cm", "72 cm"],
-        ["L", "56 cm", "50 cm", "74 cm"],
-        ["XL", "58 cm", "51 cm", "76 cm"],
-        ["2XL", "60 cm", "54.5 cm", "78 cm"],
+        ["XS", "48 cm", "43 cm", "66 cm"],
+        ["S", "50 cm", "45 cm", "68 cm"],
+        ["M", "52 cm", "47 cm", "70 cm"],
+        ["L", "54 cm", "49 cm", "72 cm"],
+        ["XL", "56 cm", "50 cm", "74 cm"],
+        ["2XL", "58 cm", "51 cm", "76 cm"],
+        ["3XL", "60 cm", "54.5 cm", "78 cm"],
       ]
     },
     {
