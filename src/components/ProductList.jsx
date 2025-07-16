@@ -129,7 +129,7 @@ export default function ProductList() {
   <input
     type="number"
     min="0" max="99"
-    placeholder={t("product.number")}
+    placeholder={product.product_number}
     className={`
       w-1/3 h-8 px-2 rounded 
       border-gray-200 border 
