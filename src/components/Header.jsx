@@ -168,7 +168,7 @@ function Header() {
     </div>
   </button>
   {isCartOpen && (
-    <div className="absolute right-4 top-12 bg-white border border-gray-300 rounded-2xl z-50 p-2 sm:p-3 min-w-[200px] sm:min-w-[250px]">
+    <div className="absolute right-4 top-12 bg-white border border-gray-300 rounded-2xl z-50 p-2 sm:p-3 min-w-[200px] sm:min-w-[250px] max-h-[80vh] overflow-y-auto">
       {cartItems.length === 0 ? (
         <h6 className="text-gray-600 text-center text-xs sm:text-sm">{t("cart.empty")}</h6>
       ) : (
