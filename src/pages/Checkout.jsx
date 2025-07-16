@@ -82,6 +82,9 @@ const Checkout = () => {
                   <h6 className="text-gray-600 font-medium text-sm sm:text-base">{item.product_name}</h6>
                   <p className="text-gray-400 text-xs sm:text-sm">{item.product_category}</p>
                   <p className="text-gray-400 text-xs sm:text-sm">{t('cart.size')}: {item.selectedSize}</p>
+                  {item.backNumber && (
+                    <p className="text-gray-400 text-xs sm:text-sm">{t('product.number')} {item.backNumber}</p>
+                  )}
                   <p className="text-gray-400 text-xs sm:text-sm">{t('cart.pieces')}: {item.quantity}</p>
                 </div>
                 <div className="flex flex-col items-end">

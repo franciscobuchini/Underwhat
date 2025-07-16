@@ -157,7 +157,7 @@ export default function ProductList() {
               {product.product_number && (
                 <button
                   disabled={!selectedSizes[idx]}
-                  onClick={e => { e.stopPropagation(); handleAddWithNumber(product, idx); }}
+                  onClick={e => { e.stopPropagation(); handleAdd(product, idx); }}
                   className={`mt-2 h-8 w-full py-2 rounded text-sm flex items-center justify-center gap-2 focus:outline-none ${!selectedSizes[idx] ? 'bg-white cursor-not-allowed text-gray-300' : 'bg-pink-800 text-white hover:bg-pink-800 cursor-pointer'}`}
                 >
                   {t("product.add")}

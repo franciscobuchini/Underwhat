@@ -196,44 +196,50 @@ function Header() {
             )}
           </div>
           {/* Listado de productos */}
-          <ul className="divide-y divide-gray-300">
-            {cartItems.map((item, index) => (
-              <li key={index} className="flex items-center gap-2 border-b p-2 sm:p-3 last:border-b-0">
-                {/* Imagen del producto */}
-                <img 
-                  src={item.image} 
-                  alt={item.product_name} 
-                  className="w-12 sm:w-16 h-full object-cover rounded-2xl"
-                  loading="lazy"
-                />
-                
-                <div className="flex flex-col flex-grow pr-4">
-                  <h6 className="text-gray-600 font-medium text-xs sm:text-sm">{item.product_name}</h6>
-                  <p className="text-gray-400 text-xs sm:text-sm">{item.product_category}</p>
-                  <p className="text-gray-400 text-xs sm:text-sm">
-                    {t("cart.size")}: {item.selectedSize}
-                  </p>
-                  <p className="text-gray-400 text-xs sm:text-sm">
-                    {t("cart.pieces")}: {item.quantity}
-                  </p>
-                </div>
+<ul className="divide-y divide-gray-300">
+  {cartItems.map((item, index) => (
+    <li key={index} className="flex items-center gap-2 border-b p-2 sm:p-3 last:border-b-0">
+      {/* Imagen del producto */}
+      <img 
+        src={item.image} 
+        alt={item.product_name} 
+        className="w-12 sm:w-16 h-full object-cover rounded-2xl"
+        loading="lazy"
+      />
       
-                <div className="flex flex-col items-end">
-                  <span className="text-gray-600 text-xs sm:text-sm">
-                    ${(item.product_selling * item.quantity).toFixed(2)} USD
-                  </span>
-                  
-                  {/* Botón para eliminar producto */}
-                  <button
-                    className="text-red-500 hover:text-red-700 text-xs sm:text-sm cursor-pointer"
-                    onClick={() => handleRemoveFromCart(index)}
-                  >
-                    {t("cart.remove")}
-                  </button>
-                </div>
-              </li>
-            ))}
-          </ul>
+      <div className="flex flex-col flex-grow pr-4">
+        <h6 className="text-gray-600 font-medium text-xs sm:text-sm">{item.product_name}</h6>
+        <p className="text-gray-400 text-xs sm:text-sm">{item.product_category}</p>
+        <p className="text-gray-400 text-xs sm:text-sm">
+          {t("cart.size")}: {item.selectedSize}
+        </p>
+        <p className="text-gray-400 text-xs sm:text-sm">
+          {t("cart.pieces")}: {item.quantity}
+        </p>
+        {/* Aquí mostramos el número de la espalda si existe */}
+        {item.backNumber != null && (
+          <p className="text-gray-400 text-xs sm:text-sm">
+            {t("product.number")} {item.backNumber}
+          </p>
+        )}
+      </div>
+
+      <div className="flex flex-col items-end">
+        <span className="text-gray-600 text-xs sm:text-sm">
+          {(item.product_selling * item.quantity).toFixed(2)} USD
+        </span>
+        {/* Botón para eliminar producto */}
+        <button
+          className="text-red-500 hover:text-red-700 text-xs sm:text-sm cursor-pointer"
+          onClick={() => handleRemoveFromCart(index)}
+        >
+          {t("cart.remove")}
+        </button>
+      </div>
+    </li>
+  ))}
+</ul>
+
         </>
       )}
     </div>

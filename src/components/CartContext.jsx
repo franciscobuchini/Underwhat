@@ -20,11 +20,11 @@ export const CartProvider = ({ children }) => {
   const addToCart = (product) => {
     setCartItems((prevItems) => {
       const existingItemIndex = prevItems.findIndex(
-        (item) =>
-          item.product_name === product.product_name &&
-          item.selectedSize === product.selectedSize
-      );
-
+  (item) =>
+    item.product_name === product.product_name &&
+    item.selectedSize === product.selectedSize &&
+    item.backNumber === product.backNumber
+  );
       if (existingItemIndex > -1) {
         return prevItems.map((item, index) =>
           index === existingItemIndex

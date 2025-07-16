@@ -46,17 +46,18 @@ const CheckoutForm = ({
       const quantity = Number(item.quantity) || 0;
       const totalForItem = price * quantity;
       overallTotal += totalForItem;
-      return `Item ${index + 1}:
+       return `Item ${index + 1}:
 - Name: ${item.product_name}
 - Quantity: ${quantity}
 - Unit Price: $${price.toFixed(2)}
 - Size: ${item.selectedSize || "N/A"}
+${item.backNumber ? `- Number: ${item.backNumber}` : ""}
 - Total: $${totalForItem.toFixed(2)}`;
-    }).join("\n\n")
-      + `\n\nSubtotal: $${overallTotal.toFixed(2)}`
-      + (discountPercent
-          ? `\nCoupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
-          : `\nTotal: $${overallTotal.toFixed(2)}`);
+}).join("\n\n")
++ `\n\nSubtotal: $${overallTotal.toFixed(2)}`
++ (discountPercent
+    ? `\nCoupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
+    : `\nTotal: $${overallTotal.toFixed(2)}`);
 
     // Inputs ocultos
     const appendHidden = (name, value) => {
