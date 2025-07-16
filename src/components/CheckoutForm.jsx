@@ -48,7 +48,7 @@ const CheckoutForm = ({
       overallTotal += totalForItem;
        return `Item ${index + 1}:
 - Name: ${item.product_name}
-- Category: ${item.product_category}
+- Type: ${t(item.product_category_key)}
 - Quantity: ${quantity}
 - Unit Price: $${price.toFixed(2)}
 - Size: ${item.selectedSize || "N/A"}
