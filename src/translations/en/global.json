@@ -50,7 +50,8 @@
     "size_placeholder": "Size",
     "add": "Add",
     "add_to_cart": "Product added to cart!",
-    "remove_from_cart": "Product removed from cart!"
+    "remove_from_cart": "Product removed from cart!",
+    "number": "No."
   },
   "filtersort": {
     "default": "Default",

@@ -52,7 +52,8 @@
     "size_placeholder": "Talla",
     "add": "Agregar",
     "add_to_cart": "¡Producto añadido al carrito!",
-    "remove_from_cart": "¡Producto eliminado!"
+    "remove_from_cart": "¡Producto eliminado!",
+    "number": "Nº"
   },
   "filtersort": {
     "default": "Por defecto",

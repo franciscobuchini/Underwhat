@@ -42,7 +42,7 @@ return (
           <select
             value={filters.category}
             onChange={handleFilter("category")}
-            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-900 bg-white rounded-md"
+            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-800 bg-white rounded-md"
           >
             <option value="">{t("filtersort.all")}</option>
             {categories.map((c) => (
@@ -68,7 +68,7 @@ return (
           <select
             value={filters.year}
             onChange={handleFilter("year")}
-            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-900 bg-white rounded-md"
+            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-800 bg-white rounded-md"
           >
             <option value="">{t("filtersort.all")}</option>
             {years.map((y) => (
@@ -94,14 +94,16 @@ return (
           <select
             value={filters.team}
             onChange={handleFilter("team")}
-            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-900 bg-white rounded-md"
+            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-800 bg-white rounded-md"
           >
             <option value="">{t("filtersort.all")}</option>
             <option value="ONLY_TEAMS">{t("filtersort.onlyteams")}</option>
-            {teams.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
+            {teams
+              .filter((team) => team && team.trim() !== "")   // descartamos valores vacíos
+              .map((team) => (
+                <option key={team} value={team}>
+                  {team}
+                </option>
             ))}
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-2 flex items-center text-gray-400">
@@ -121,7 +123,7 @@ return (
           <select
             value={sort}
             onChange={handleSort}
-            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-900 bg-white rounded-md"
+            className="text-sm appearance-none px-2 py-1 border-none focus:outline-none w-full text-pink-800 bg-white rounded-md"
           >
             <option value="">{t("filtersort.relevance")}</option>
             <option value="cheapfirst">{t("filtersort.cheap_first")}</option>

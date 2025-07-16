@@ -15,44 +15,50 @@ export default function ProductList() {
   const notyf = new Notyf({ types: [{ type: "success", background: "#4caf50", duration: 2000 }] });
 
   const sizeOptionsByCategory = {
-    regular_tshirt: ["XS","S","M","L","XL","2XL","3XL"],
-    sleeveless_shirt: ["XS","S","M","L","XL","2XL","3XL"],
-    oversized_tshirt: ["XS","S","M","L","XL"],
-    zip_hoodie: ["XS","S","M","L","XL","2XL","3XL"],
-    hoodie: ["XS","S","M","L","XL","2XL"],
-    sweatshirt: ["XS","S","M","L","XL","2XL"],
+    regular_tshirt: ["XS","S","M","L","XL","2XL"],
+    sleeveless_shirt: ["XS","S","M","L","XL","2XL"],
+    oversized_tshirt: ["S","M","L","XL","2XL"],
+    zip_hoodie: ["XS","S","M","L","XL","2XL"],
+    hoodie: ["XS","S","M","L","XL"],
+    sweatshirt: ["XS","S","M","L","XL"],
+    shorts: ["US 28","US 29","US 30","US 32","US 33","US 34","US 36"],
   };
 
   const [selectedSizes, setSelectedSizes] = useState({});
+  const [selectedBackNumbers, setSelectedBackNumbers] = useState({});
   const [hoveredIdx, setHoveredIdx] = useState(null);
   const [filter, setFilter] = useState({ category: "", year: "", team: "" });
   const [sortOrder, setSortOrder] = useState("");
-  const selectRefs = useRef([]);
 
-  // precarga imágenes
   useEffect(() => { products.forEach(p => new Image().src = p.product_image02); }, []);
 
-  // datos únicos para filtros
   const categories = useMemo(() => [...new Set(products.map(p => p.product_category_key))], []);
-  const years      = useMemo(() => [...new Set(products.map(p => p.product_year))], []);
-  const teams      = useMemo(() => [...new Set(products.map(p => p.product_team))], []);
+  const years = useMemo(() => [...new Set(products.map(p => p.product_year))], []);
+  const teams = useMemo(() => [...new Set(products.map(p => p.product_team))], []);
 
-  // filtrado y orden
   const visible = useMemo(() => {
     let arr = products;
     if (filter.category) arr = arr.filter(p => p.product_category_key === filter.category);
     if (filter.year)     arr = arr.filter(p => String(p.product_year) === filter.year);
-    if (filter.team)     arr = arr.filter(p => p.product_team === filter.team);
-    if (sortOrder === "cheapfirst") arr = [...arr].sort((a,b) => a.product_selling - b.product_selling);
-    if (sortOrder === "cheaplast")  arr = [...arr].sort((a,b) => b.product_selling - a.product_selling);
+    if (filter.team === "ONLY_TEAMS") {
+      arr = arr.filter(p => p.product_team && p.product_team.trim() !== "");
+    } else if (filter.team) {
+      arr = arr.filter(p => p.product_team === filter.team);
+    }
+    if (sortOrder === "cheapfirst") arr = [...arr].sort((a,b)=>a.product_selling-b.product_selling);
+    if (sortOrder === "cheaplast")  arr = [...arr].sort((a,b)=>b.product_selling-a.product_selling);
     return arr;
   }, [filter, sortOrder]);
 
-  const handleSizeChange = (idx, size) => {
-    setSelectedSizes(s => ({ ...s, [idx]: size }));
-  };
-  const handleAdd = (product, size) => {
-    addToCart({ ...product, selectedSize: size, image: product.product_image });
+  const handleSizeChange = (idx, size) => setSelectedSizes(s => ({ ...s, [idx]: size }));
+  const handleBackNumberChange = (idx, num) => setSelectedBackNumbers(n => ({ ...n, [idx]: num }));
+  const handleAdd = (product, idx) => {
+    addToCart({
+      ...product,
+      selectedSize: selectedSizes[idx],
+      backNumber: product.product_number ? selectedBackNumbers[idx] || null : null,
+      image: product.product_image
+    });
     notyf.success(t("product.add_to_cart"));
   };
 
@@ -84,53 +90,34 @@ export default function ProductList() {
             </div>
             <hr className="border-gray-300 mx-4 my-1 sm:mx-6 sm:my-2" />
 
-            <div className="p-4 sm:p-6 text-gray-600">
-              <p className="flex items-center gap-2 text-base sm:text-xl font-semibold mb-1">
-                {product.product_icon && (
-                  <Icon icon={product.product_icon} className="w-4 h-4 sm:w-5 sm:h-5 text-pink-800" />
-                )}
-                {product.product_name}
-              </p>
-              <p className="text-xs sm:text-sm text-gray-400">
-                {t(product.product_category_key)}
-              </p>
-              <p className="text-xs sm:text-sm text-gray-400 mb-1">
-                {product.product_year}
-              </p>
-              <p className="mb-2 sm:mb-4 text-sm">
-                {product.product_selling.toFixed(2)} USD
-              </p>
+            <div className="p-4 sm:p-6 text-gray-600 flex flex-col gap-2 justify-between">
+              <div className="flex flex-col gap-2">
+                <p className="flex items-center gap-2 font-semibold sm:text-lg">
+                  {product.product_icon && (
+                    <Icon icon={product.product_icon} className="w-4 h-4 sm:w-5 sm:h-5 text-pink-800" />
+                  )}
+                  {product.product_name}
+                </p>
+                <p className="text-sm">{product.product_selling.toFixed(2)} USD</p>
+                <p className="text-xs sm:text-sm text-gray-400 mb-1">
+                  {t(product.product_category_key)} - {product.product_year}
+                </p>
+              </div>
 
-              {/* Responsive: Select + Botón */}
-              <div className="flex gap-1 mt-1 sm:gap-2 sm:mt-2 h-8 sm:h-10 w-full">
-                {/* Talle */}
-                <div className="relative flex-[2]">
-                  <Listbox
-                    value={selectedSizes[idx] || ""}
-                    onChange={sz => handleSizeChange(idx, sz)}
-                  >
-                    <Listbox.Button className="flex items-center justify-between w-full h-full px-2 border border-gray-200 bg-white rounded text-xs sm:text-sm cursor-pointer">
+              <div className="flex items-center gap-2 w-full mt-auto">
+                <div className="relative flex-1">
+                  <Listbox value={selectedSizes[idx] || ""} onChange={sz => handleSizeChange(idx, sz)}>
+                    <Listbox.Button className={`flex items-center justify-between w-full h-8 px-2 border focus:outline-none ${selectedSizes[idx] ? 'border-pink-800 bg-white' : 'border-gray-200'} rounded text-xs sm:text-sm cursor-pointer`}>                    
                       <span className={!selectedSizes[idx] ? "text-gray-400" : ""}>
                         {selectedSizes[idx] || t("product.size_placeholder")}
                       </span>
-                      <svg
-                        className="w-3 h-3 sm:w-4 sm:h-4 text-gray-400 pointer-events-none"
-                        fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"
-                      >
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <Icon icon="mdi:chevron-down" className="w-4 h-4 text-gray-400" />
                     </Listbox.Button>
-                    <Listbox.Options className="absolute z-10 mt-1 w-full bg-white border border-gray-200 rounded shadow-sm max-h-36 overflow-auto text-xs sm:text-sm list-none">
+                    <Listbox.Options className="absolute z-10 mt-1 focus:outline-none w-full bg-white border border-gray-200 rounded shadow-sm overflow-auto text-xs sm:text-sm list-none">
                       {sizeOptionsByCategory[product.product_category_key].map(sz => (
                         <Listbox.Option key={sz} value={sz} as={Fragment}>
                           {({ active, selected }) => (
-                            <li
-                              className={`px-2 py-1 cursor-pointer ${
-                                active ? "bg-pink-50" : ""
-                              } ${selected ? "font-semibold" : ""}`}
-                            >
-                              {sz}
-                            </li>
+                            <li className={`px-2 py-1 cursor-pointer ${active ? "bg-gray-100" : ""} ${selected ? "font-semibold" : ""}`}>{sz}</li>
                           )}
                         </Listbox.Option>
                       ))}
@@ -138,20 +125,45 @@ export default function ProductList() {
                   </Listbox>
                 </div>
 
-                {/* Agregar */}
+{product.product_number && (
+  <input
+    type="number"
+    min="0" max="99"
+    placeholder={t("product.number")}
+    className={`
+      w-1/3 h-8 px-2 rounded 
+      border-gray-200 border 
+      appearance-none
+      text-xs sm:text-sm text-center focus:outline-none
+      ${selectedBackNumbers[idx] ? 'border-pink-800' : ''}
+    `}
+    value={selectedBackNumbers[idx] || ""}
+    onChange={e => handleBackNumberChange(idx, e.target.value)}
+  />
+)}
+
+                {!product.product_number && (
+                  <button
+                    disabled={!selectedSizes[idx]}
+                    onClick={e => { e.stopPropagation(); handleAdd(product, idx); }}
+                    className={`flex-2 h-8 w-full py-2 rounded text-sm flex items-center justify-center gap-2 focus:outline-none ${!selectedSizes[idx] ? 'bg-white cursor-not-allowed text-gray-300' : 'bg-pink-800 text-white hover:bg-pink-800 cursor-pointer'}`}
+                  >
+                    {t("product.add")}
+                    <Icon icon="icon-park-twotone:shopping" className="w-4 h-4" />
+                  </button>
+                )}
+              </div>
+
+              {product.product_number && (
                 <button
                   disabled={!selectedSizes[idx]}
-                  onClick={e => { e.stopPropagation(); handleAdd(product, selectedSizes[idx]); }}
-                  className={`flex items-center justify-center h-full px-2 sm:px-3 border border-gray-200 rounded text-xs sm:text-sm flex-[3] gap-1 sm:gap-2
-                    ${selectedSizes[idx]
-                      ? "text-green-600 bg-green-50 hover:bg-green-100"
-                      : "text-gray-300 bg-white cursor-not-allowed"
-                    }`}
+                  onClick={e => { e.stopPropagation(); handleAddWithNumber(product, idx); }}
+                  className={`mt-2 h-8 w-full py-2 rounded text-sm flex items-center justify-center gap-2 focus:outline-none ${!selectedSizes[idx] ? 'bg-white cursor-not-allowed text-gray-300' : 'bg-pink-800 text-white hover:bg-pink-800 cursor-pointer'}`}
                 >
                   {t("product.add")}
-                  <Icon icon="icon-park-twotone:shopping" className="w-4 h-4" />
+                  <Icon icon="icon-park-twotone:shopping" className="w-5 h-5" />
                 </button>
-              </div>
+              )}
             </div>
           </div>
         ))}

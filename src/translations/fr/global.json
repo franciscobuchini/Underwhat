@@ -44,7 +44,8 @@
     "size_placeholder": "Taille",
     "add": "Ajouter",
     "add_to_cart": "Produit ajouté au panier !",
-    "remove_from_cart": "Produit retiré du panier !"
+    "remove_from_cart": "Produit retiré du panier !",
+    "number": "Nº"
   },
   "filtersort": {
     "default": "Par défaut",

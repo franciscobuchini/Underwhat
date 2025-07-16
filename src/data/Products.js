@@ -7,9 +7,10 @@ const products = [
     product_icon: "arcticons:aoe2companion",
     product_name: "Celt",
     product_category_key: "oversized_tshirt",
-    product_selling: 34.98,
+    product_selling: 33.98,
     product_year: 2024,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748806521/viking01_edjnxi.webp",
@@ -17,9 +18,10 @@ const products = [
     product_icon: "arcticons:aoe2companion",
     product_name: "Viking",
     product_category_key: "oversized_tshirt",
-    product_selling: 34.98,
+    product_selling: 33.98,
     product_year: 2024,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748808521/burgundian01_hqekos.webp",
@@ -27,9 +29,10 @@ const products = [
     product_icon: "arcticons:aoe2companion",
     product_name: "Burgundian",
     product_category_key: "oversized_tshirt",
-    product_selling: 34.98,
+    product_selling: 33.98,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748809778/persian01_a1rqcr.webp",
@@ -37,9 +40,10 @@ const products = [
     product_icon: "arcticons:aoe2companion",
     product_name: "Persian",
     product_category_key: "oversized_tshirt",
-    product_selling: 34.98,
+    product_selling: 33.98,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725697/rt_f_lightblue_rqpkvu.webp",
@@ -50,6 +54,7 @@ const products = [
     product_selling: 31.75,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725698/rt_f_sakura_xstwev.webp",
@@ -60,6 +65,7 @@ const products = [
     product_selling: 31.75,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725700/rt_f_aquamarine_e5agat.webp",
@@ -70,6 +76,7 @@ const products = [
     product_selling: 31.75,
     product_year: 2024,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725697/rt_f_pastelpurple_hq2gir.webp",
@@ -80,6 +87,7 @@ const products = [
     product_selling: 31.75,
     product_year: 2024,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351363/ho_f_black_ufiehu.webp",
@@ -90,6 +98,7 @@ const products = [
     product_selling: 44.98,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351363/ho_f_deepgreen_wxks5o.webp",
@@ -100,6 +109,7 @@ const products = [
     product_selling: 45.98,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351364/ho_f_white_nzndta.webp",
@@ -110,6 +120,7 @@ const products = [
     product_selling: 45.98,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
   {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351364/ho_f_navyblue_wwo56j.webp",
@@ -120,6 +131,7 @@ const products = [
     product_selling: 45.98,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
     {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752353261/sl_f_maplered_ihokz7.webp",
@@ -130,6 +142,7 @@ const products = [
     product_selling: 31.75,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
     {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752353261/sl_f_seagull_ezxrrj.webp",
@@ -140,6 +153,7 @@ const products = [
     product_selling: 31.75,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
     {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752353261/sl_f_black_gezkaw.webp",
@@ -150,6 +164,7 @@ const products = [
     product_selling: 31.75,
     product_year: 2025,
     product_team: "",
+    product_number: "",
   },
     {
     product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752353261/sl_f_gray_qjtzix.webp",
@@ -160,6 +175,51 @@ const products = [
     product_selling: 31.75,
     product_year: 2025,
     product_team: "",
+    product_number: "",
+  },
+      {
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670075/ov_f_white_srgbtn.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670071/ov_b_white_qddbwc.webp",
+    product_icon: "circle-flags:es-ib",
+    product_name: "Mallorca UWH",
+    product_category_key: "oversized_tshirt",
+    product_selling: 33.98,
+    product_year: 2025,
+    product_team: "Mallorca",
+    product_number: "yes",
+  },
+      {
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670072/rt_f_white_uz2wly.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670071/rt_b_white_zmvxk5.webp",
+    product_icon: "circle-flags:es-ib",
+    product_name: "Mallorca UWH",
+    product_category_key: "regular_tshirt",
+    product_selling: 31.75,
+    product_year: 2025,
+    product_team: "Mallorca",
+    product_number: "yes",
+  },
+      {
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670072/sl_f_white_bmzywx.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670071/sl_b_white_dfidbt.webp",
+    product_icon: "circle-flags:es-ib",
+    product_name: "Mallorca UWH",
+    product_category_key: "sleeveless_shirt",
+    product_selling: 31.75,
+    product_year: 2025,
+    product_team: "Mallorca",
+    product_number: "yes",
+  },
+      {
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670071/s_f_black_uub9wa.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752670072/s_f_black2_h9uxqu.webp",
+    product_icon: "circle-flags:es-ib",
+    product_name: "Mallorca UWH",
+    product_category_key: "shorts",
+    product_selling: 31.75,
+    product_year: 2025,
+    product_team: "Mallorca",
+    product_number: "yes",
   },
 ];
 
