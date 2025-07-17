@@ -46,6 +46,13 @@
     "minimum_order": "Min: 2 products",
     "subtotal_without_shipping": "Subtotal (without shipping):"
   },
+
+  "stats": {
+    "tagline": "Building a performance community.",
+    "products_made": "Products made",
+    "clubs_using": "Clubs using our gear"
+  },
+
   "product": {
     "size_placeholder": "Size",
     "add": "Add",

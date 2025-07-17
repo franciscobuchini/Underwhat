@@ -40,7 +40,7 @@
   "cart": {
       "empty": "Carrito vacío",
       "subtotal": "Subtotal: $",
-      "checkout": "Pagar",
+      "checkout": "Continuar",
       "size": "Talla",
       "pieces": "Piezas",
       "remove": "Eliminar",
@@ -48,9 +48,15 @@
       "subtotal_without_shipping": "Subtotal (sin envío):"
   },
 
+  "stats": {
+    "tagline": "Construyendo una comunidad de rendimiento.",
+    "products_made": "Productos fabricados",
+    "clubs_using": "Clubes usando nuestro equipamiento"
+  },
+
   "product": {
     "size_placeholder": "Talla",
-    "add": "Agregar",
+    "add": "Añadir",
     "add_to_cart": "¡Producto añadido al carrito!",
     "remove_from_cart": "¡Producto eliminado!",
     "number": "Nº"

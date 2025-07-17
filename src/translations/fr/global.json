@@ -39,6 +39,12 @@
     "minimum_order": "Min: 2 products",
     "subtotal_without_shipping": "Sous-total (sans frais de port):"
   },
+
+  "stats": {
+    "tagline": "Construire une communauté de performance.",
+    "products_made": "Produits fabriqués",
+    "clubs_using": "Clubs utilisant notre équipement"
+  },
   
   "product": {
     "size_placeholder": "Taille",
