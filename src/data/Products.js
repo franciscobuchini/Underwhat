@@ -200,8 +200,8 @@ const products = [
     product_number: "",
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725700/rt_f_aquamarine_e5agat.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725592/rt_f_aquamarine_2_h1c1jt.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1753222316/rt_f_navyblue_t7afp8.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1753222313/rt_b_navyblue_mxj7u5.webp",
     product_icon: "arcticons:dbz",
     product_name: "Bojack",
     product_category_key: "regular_tshirt",
