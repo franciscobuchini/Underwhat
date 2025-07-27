@@ -10,8 +10,8 @@ const Home = () => {
   const { t } = useTranslation("global");
 
   return (
-    <div className="container mx-auto sm:px-6 mt-10">
-      <div className="flex flex-col gap-20">
+    <div className="container mx-auto sm:px-6 mt-2">
+      <div className="flex flex-col gap-4 sm:gap-20">
         {/* <StatsHeader /> */}
         <Title title={t("home.featured_products")} />
         <ProductList />
