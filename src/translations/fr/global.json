@@ -63,7 +63,9 @@
     "label_category": "Catégorie:",
     "label_year": "Année:",
     "label_team": "Équipe:",
-    "label_sort": "Trier par:"
+    "label_sort": "Trier par:",
+    "apply": "Appliquer",
+    "filters": "Filtres"
   },
   "about": {
     "title": "Qui sommes-nous !?",

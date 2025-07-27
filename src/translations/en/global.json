@@ -70,7 +70,9 @@
     "label_category": "Category:",
     "label_year": "Year:",
     "label_team": "Team:",
-    "label_sort": "Sort by:"
+    "label_sort": "Sort by:",
+    "apply": "Apply",
+    "filters": "Filters"
   },
   "about": {
     "title": "Who we are!?",
