@@ -61,11 +61,11 @@ function AppContent() {
           <Header />
           {/* Banner solo en Home */}
           {location.pathname === '/' && (
-            <div className="w-screen absolute top-0 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] max-w-none" style={{ position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}>
+            <div className="w-screen relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] max-w-none">
               <img
                 src="https://res.cloudinary.com/dpleitc1d/image/upload/v1753640394/instagram_post_9_qlmerg.webp"
                 alt="Banner"
-                className="w-full object-cover transition-all duration-300 ease-in-out"
+                className="w-full object-cover transition-all duration-300 ease-in-out h-[400px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[450px]"
               />
             </div>
           )}
