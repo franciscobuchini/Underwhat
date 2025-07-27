@@ -14,6 +14,15 @@ export default function ProductList() {
   const { addToCart } = useCart();
   const notyf = new Notyf({ types: [{ type: "success", background: "#4caf50", duration: 2000 }] });
 
+  // Detectar si es dispositivo táctil
+  const [isTouch, setIsTouch] = useState(false);
+  useEffect(() => {
+    setIsTouch('ontouchstart' in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  // Estado para alternar imágenes en mobile
+  const [toggledImages, setToggledImages] = useState({});
+
   const sizeOptionsByCategory = {
     regular_tshirt: ["XS","S","M","L","XL","2XL"],
     sleeveless_shirt: ["XS","S","M","L","XL","2XL"],
@@ -63,7 +72,7 @@ export default function ProductList() {
   };
 
   return (
-    <div className="flex flex-col gap-6 sm:gap-12 w-full">
+    <div className="flex flex-col gap-6 sm:gap-12 w-full mt-8 mb-12 sm:mt-16 sm:mb-20 px-2 sm:px-8">
       <FilterSort
         categories={categories}
         years={years}
@@ -72,25 +81,39 @@ export default function ProductList() {
         onSortChange={setSortOrder}
       />
 
-      <div className="flex flex-wrap justify-around gap-y-2 sm:gap-6 sm:px-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 px-4 sm:gap-10 sm:px-8">
         {visible.map((product, idx) => (
           <div
             key={idx}
-            className="bg-white border border-gray-300 rounded-lg sm:rounded-2xl w-[48%] sm:w-64 hover:shadow-lg transition-shadow"
-            onMouseEnter={() => setHoveredIdx(idx)}
-            onMouseLeave={() => setHoveredIdx(null)}
+            className="bg-white border border-gray-300 rounded-lg sm:rounded-2xl w-full hover:shadow-lg transition-shadow"
+            onMouseEnter={() => !isTouch && setHoveredIdx(idx)}
+            onMouseLeave={() => !isTouch && setHoveredIdx(null)}
           >
             <div className="overflow-hidden rounded-t-2xl">
               <img
-                src={hoveredIdx === idx ? product.product_image02 : product.product_image}
+                src={
+                  isTouch
+                    ? toggledImages[idx]
+                      ? product.product_image02
+                      : product.product_image
+                    : hoveredIdx === idx
+                      ? product.product_image02
+                      : product.product_image
+                }
                 alt={product.product_name}
                 className="object-cover w-full h-auto transition-transform duration-200 hover:scale-105"
                 loading="lazy"
+                onClick={() => {
+                  if (isTouch) {
+                    setToggledImages(prev => ({ ...prev, [idx]: !prev[idx] }));
+                  }
+                }}
+                style={{ cursor: isTouch ? 'pointer' : 'default' }}
               />
             </div>
             <hr className="border-gray-300 mx-4 my-1 sm:mx-6 sm:my-2" />
 
-            <div className="p-4 sm:p-6 text-gray-600 flex flex-col gap-2 justify-between">
+            <div className="p-6 sm:p-8 text-gray-600 flex flex-col gap-2 justify-between">
               <div className="flex flex-col gap-2">
                 <p className="flex items-center gap-2 font-semibold sm:text-lg">
                   {product.product_icon && (

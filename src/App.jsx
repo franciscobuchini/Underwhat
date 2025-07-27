@@ -1,5 +1,5 @@
 //App.jsx
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 import Header from './components/Header';
@@ -43,53 +43,65 @@ i18next
     }
   });
 
-function App() {
+function AppContent() {
   const { t } = useTranslation("global");
   const [count, setCount] = useState(() => {
     return parseInt(localStorage.getItem("count")) || 0;
   });
+  const location = useLocation();
 
   useEffect(() => {
     localStorage.setItem("count", count.toString());
   }, [count]);
 
- return (
+  return (
+    <I18nextProvider i18n={i18next}>
+      <CartProvider>
+        <div className="flex flex-col min-h-screen bg-gray-50 overflow-x-hidden">
+          <Header />
+          {/* Banner solo en Home */}
+          {location.pathname === '/' && (
+            <div className="w-screen absolute top-0 left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] max-w-none" style={{ position: "relative", left: "50%", right: "50%", marginLeft: "-50vw", marginRight: "-50vw" }}>
+              <img
+                src="https://res.cloudinary.com/dpleitc1d/image/upload/v1753640394/instagram_post_9_qlmerg.webp"
+                alt="Banner"
+                className="w-full object-cover transition-all duration-300 ease-in-out"
+              />
+            </div>
+          )}
+          <ScrollToTop />
+          <main className="flex-1 mt-20 mx-1 md:mx-4">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/team-outfit" element={<TeamOutfit />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/about" element={<AboutUs />} />
+              <Route path="/checkout" element={<Checkout />} />
+              <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+              <Route path="/successfull" element={<Successfull />} />
+              <Route path="/shipping-calculator" element={<ShippingCalculator />} />
+              <Route
+                path="*"
+                element={
+                  <ErrorPage
+                    statusCode={404}
+                    message={t("error.notFound")}
+                  />
+                }
+              />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </CartProvider>
+    </I18nextProvider>
+  );
+}
+
+function App() {
+  return (
     <Router>
-      <I18nextProvider i18n={i18next}>
-        <CartProvider>
-          <div className="flex flex-col min-h-screen mx-1 md:mx-4 bg-gray-50">
-            <Header />
-
-            {/* Este componente no renderiza nada visual, 
-                pero hace scrollTo(0,0) en cada cambio de ruta */}
-            <ScrollToTop />
-
-            <main className="flex-1 mt-20">
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/team-outfit" element={<TeamOutfit />} />
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/about" element={<AboutUs />} />
-                <Route path="/checkout" element={<Checkout />} />
-                <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-                <Route path="/successfull" element={<Successfull />} />
-                <Route path="/shipping-calculator" element={<ShippingCalculator />} />
-                <Route
-                  path="*"
-                  element={
-                    <ErrorPage
-                      statusCode={404}
-                      message={t("error.notFound")}
-                    />
-                  }
-                />
-              </Routes>
-            </main>
-
-            <Footer />
-          </div>
-        </CartProvider>
-      </I18nextProvider>
+      <AppContent />
     </Router>
   );
 }
