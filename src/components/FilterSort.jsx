@@ -145,9 +145,9 @@ export default function FilterSort({
   return (
     <>
       {/* Mobile: botón para abrir filtros */}
-      <div className="w-full sm:hidden mb-4">
+      <div className="sm:hidden mb-4">
         <button
-          className="w-full bg-white text-pink-800 py-3 rounded-xl font-semibold shadow-md text-lg flex items-center justify-center gap-2"
+          className="max-w-[160px] mx-auto w-full bg-white text-pink-800 py-3 rounded-xl font-semibold text-lg flex items-center justify-center gap-2 border border-gray-300"
           onClick={() => setShowModal(true)}
         >
           <Icon icon="icon-park-twotone:filter" className="w-6 h-6" />
