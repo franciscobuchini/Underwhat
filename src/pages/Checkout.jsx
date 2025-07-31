@@ -9,7 +9,7 @@ import 'notyf/notyf.min.css';
 
 const COUPON_MAP = {
   DISCOUNT10: 10,
-  SUMMER20: 20,
+  UWH15: 15,
 };
 
 const Checkout = () => {
