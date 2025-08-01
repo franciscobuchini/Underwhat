@@ -39,26 +39,34 @@ const CheckoutForm = ({
     if (!formValid || isSubmitting) return;
     setIsSubmitting(true);
 
-    // Calcula subtotal
-    let overallTotal = 0;
-    const orderDetails = cartItems.map((item, index) => {
-      const price = Number(item.product_selling) || 0;
-      const quantity = Number(item.quantity) || 0;
-      const totalForItem = price * quantity;
-      overallTotal += totalForItem;
-       return `Item ${index + 1}:
-- Name: ${item.product_name}
-- Type: ${t(item.product_category_key)}
-- Quantity: ${quantity}
-- Unit Price: $${price.toFixed(2)}
-- Size: ${item.selectedSize || "N/A"}
-${item.backNumber ? `- Number: ${item.backNumber}` : ""}
-- Total: $${totalForItem.toFixed(2)}`;
-}).join("\n\n")
-+ `\n\nSubtotal: $${overallTotal.toFixed(2)}`
-+ (discountPercent
-    ? `\nCoupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
-    : `\nTotal: $${overallTotal.toFixed(2)}`);
+let overallTotal = 0;
+let counter = 1;
+
+const orderDetails = cartItems.flatMap((item) => {
+  const price = Number(item.product_selling) || 0;
+  return Array.from({ length: item.quantity }, () => {
+    const line = [
+      `Item ${counter++}:`,
+      `- Name: ${item.product_name}`,
+      `- Type: ${t(item.product_category_key)}`,
+      `- Unit Price: $${price.toFixed(2)}`,
+      `- Size: ${item.selectedSize || "N/A"}`,
+      ...(item.backNumber ? [`- Number: ${item.backNumber}`] : []),
+      `- Total: $${price.toFixed(2)}`
+    ].join("\n");
+    overallTotal += price;
+    return line;
+  });
+}).join("\n\n");
+
+const finalDetails = [
+  orderDetails,
+  `\nSubtotal: $${overallTotal.toFixed(2)}`,
+  discountPercent
+    ? `Coupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
+    : `Total: $${overallTotal.toFixed(2)}`
+].join("\n\n");
+
 
     // Inputs ocultos
     const appendHidden = (name, value) => {
