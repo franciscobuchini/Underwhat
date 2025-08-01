@@ -206,7 +206,7 @@ const products = [
     product_name: "Bojack",
     product_category_key: "regular_tshirt",
     product_selling: 31.75,
-    product_year: 2024,
+    product_year: 2025,
     product_team: "",
     product_number: "",
   },
