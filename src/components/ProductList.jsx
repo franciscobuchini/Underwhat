@@ -149,20 +149,29 @@ export default function ProductList() {
                 </div>
 
 {product.product_number && (
-  <input
-    type="number"
-    min="0" max="99"
-    placeholder={product.product_number}
-    className={`
-      w-1/3 h-8 px-2 rounded 
-      border-gray-200 border 
-      appearance-none
-      text-xs sm:text-sm text-center focus:outline-none
-      ${selectedBackNumbers[idx] ? 'border-pink-800' : ''}
-    `}
-    value={selectedBackNumbers[idx] || ""}
-    onChange={e => handleBackNumberChange(idx, e.target.value)}
-  />
+<input
+  type="number"
+  min="0"
+  max="99"
+  inputMode="numeric"
+  pattern="\d{1,2}"
+  maxLength="2"
+  placeholder={product.product_number}
+  className={`
+    w-1/3 h-8 px-2 rounded 
+    border-gray-200 border 
+    appearance-none
+    text-xs sm:text-sm text-center focus:outline-none
+    ${selectedBackNumbers[idx] ? 'border-pink-800' : ''}
+  `}
+  value={selectedBackNumbers[idx] || ""}
+  onChange={e => {
+    const value = e.target.value;
+    if (/^\d{0,2}$/.test(value)) {
+      handleBackNumberChange(idx, value);
+    }
+  }}
+/>
 )}
 
                 {!product.product_number && (
