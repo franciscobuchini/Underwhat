@@ -34,64 +34,56 @@ const CheckoutForm = ({
       );
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formValid || isSubmitting) return;
-    setIsSubmitting(true);
+const handleSubmit = (e) => {
+  e.preventDefault();
+  if (!formValid || isSubmitting) return;
+  setIsSubmitting(true);
 
-let overallTotal = 0;
-let counter = 1;
+  let overallTotal = 0;
+  let counter = 1;
 
-const orderDetails = cartItems.flatMap((item) => {
-  const price = Number(item.product_selling) || 0;
-  return Array.from({ length: item.quantity }, () => {
-    const line = [
-      `Item ${counter++}:`,
-      `- Name: ${item.product_name}`,
-      `- Type: ${t(item.product_category_key)}`,
-      `- Unit Price: $${price.toFixed(2)}`,
-      `- Size: ${item.selectedSize || "N/A"}`,
-      ...(item.backNumber ? [`- Number: ${item.backNumber}`] : []),
-      `- Total: $${price.toFixed(2)}`
-    ].join("\n");
-    overallTotal += price;
-    return line;
+  const itemLines = cartItems.flatMap((item) => {
+    const price = Number(item.product_selling) || 0;
+    return Array.from({ length: item.quantity }, () => {
+      const line = [
+        `Item ${counter++}:`,
+        `- Name: ${item.product_name}`,
+        `- Type: ${t(item.product_category_key)}`,
+        `- Unit Price: $${price.toFixed(2)}`,
+        `- Size: ${item.selectedSize || "N/A"}`,
+        ...(item.backNumber ? [`- Number: ${item.backNumber}`] : []),
+        `- Total: $${price.toFixed(2)}`
+      ].join("\n");
+      overallTotal += price;
+      return line;
+    });
   });
-}).join("\n\n");
 
-const finalDetails = [
-  orderDetails,
-  `\nSubtotal: $${overallTotal.toFixed(2)}`,
-  discountPercent
+  const subtotalLine = `Subtotal: $${overallTotal.toFixed(2)}`;
+  const discountLine = discountPercent
     ? `Coupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
-    : `Total: $${overallTotal.toFixed(2)}`
-].join("\n\n");
+    : `Total: $${overallTotal.toFixed(2)}`;
 
+  const finalDetails = [...itemLines, subtotalLine, discountLine].join("\n\n");
 
-    // Inputs ocultos
-    const appendHidden = (name, value) => {
-      const inp = document.createElement("input");
-      inp.type = "hidden";
-      inp.name = name;
-      inp.value = value;
-      e.target.appendChild(inp);
-    };
+  const appendHidden = (name, value) => {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    e.target.appendChild(input);
+  };
 
-    appendHidden("order_details", orderDetails);
-    appendHidden("coupon_code", couponCode);
-    // Usa overallTotal si no hay descuento
-    const finalTotal = discountPercent
-      ? discountedTotal.toFixed(2)
-      : overallTotal.toFixed(2);
-    appendHidden("order_total", finalTotal);
+  appendHidden("order_details", finalDetails);
+  appendHidden("coupon_code", couponCode);
+  appendHidden("order_total", discountPercent ? discountedTotal.toFixed(2) : overallTotal.toFixed(2));
 
-    // Envío con EmailJS
-    emailjs.sendForm(
-      "service_mxgszmr",
-      "template_wiufec1",
-      e.target,
-      "DDTayKSsIeSLZhvSH"
-    )
+  emailjs.sendForm(
+    "service_mxgszmr",
+    "template_wiufec1",
+    e.target,
+    "DDTayKSsIeSLZhvSH"
+  )
     .then(() => {
       clearCart();
       navigate("/successfull");
@@ -100,7 +92,8 @@ const finalDetails = [
       console.error("Error sending email:", err.text);
       setIsSubmitting(false);
     });
-  };
+};
+
 
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300">
