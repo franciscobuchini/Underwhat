@@ -11,25 +11,26 @@ const SizesTable = () => {
       name: t("regular_tshirt"),
       weight: t("faq.table.regular_tshirt_weight"),
       sizes: [
-        ["XS", "48 cm", "43 cm", "66 cm"],
-        ["S", "50 cm", "45 cm", "68 cm"],
-        ["M", "52 cm", "47 cm", "70 cm"],
-        ["L", "54 cm", "49 cm", "72 cm"],
-        ["XL", "56 cm", "50 cm", "74 cm"],
-        ["2XL", "58 cm", "51 cm", "76 cm"],
-        ["3XL", "60 cm", "54.5 cm", "78 cm"],
+        ["2XS", "48 cm", "43 cm", "66 cm"],
+        ["XS", "50 cm", "45 cm", "68 cm"],
+        ["S", "52 cm", "47 cm", "70 cm"],
+        ["M", "54 cm", "49 cm", "72 cm"],
+        ["L", "56 cm", "50 cm", "74 cm"],
+        ["XL", "58 cm", "51 cm", "76 cm"],
+        ["2XL", "60 cm", "54.5 cm", "78 cm"],
       ]
     },
     {
       name: t("sleeveless_shirt"),
       weight: t("faq.table.sleeveless_shirt_weight"),
       sizes: [
+        ["2XS", "48 cm", "40 cm", "66 cm"],
         ["XS", "50 cm", "41 cm", "68 cm"],
         ["S", "52 cm", "41.5 cm", "70 cm"],
         ["M", "54 cm", "43 cm", "72 cm"],
         ["L", "56 cm", "44 cm", "74 cm"],
         ["XL", "58 cm", "45 cm", "76 cm"],
-        ["2XL", "60 cm", "43.5 cm", "78 cm"],
+        ["2XL", "60 cm", "46.5 cm", "78 cm"],
       ]
     },
     {
@@ -59,11 +60,14 @@ const SizesTable = () => {
       name: t("hoodie"),
       weight: t("faq.table.hoodie_weight"),
       sizes: [
-        ["XS", "54 cm", "54 cm", "67 cm"],
-        ["S", "57 cm", "57 cm", "69 cm"],
-        ["M", "60 cm", "60 cm", "71 cm"],
-        ["L", "63 cm", "63 cm", "73 cm"],
-        ["XL", "66 cm", "66 cm", "75 cm"],
+        ["2XS", "48 cm", "48 cm", "65 cm"],
+        ["XS", "51 cm", "51 cm", "67 cm"],
+        ["S", "54 cm", "54 cm", "69 cm"],
+        ["M", "57 cm", "57 cm", "71 cm"],
+        ["L", "60 cm", "60 cm", "73 cm"],
+        ["XL", "63 cm", "63 cm", "75 cm"],
+        ["2XL", "66 cm", "66 cm", "77 cm"],
+        ["3XL", "69 cm", "69 cm", "79 cm"],
       ]
     },
     {
