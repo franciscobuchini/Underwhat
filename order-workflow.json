@@ -1,0 +1,117 @@
+{
+  "nodes": [
+    {
+      "parameters": {
+        "mailbox": "INBOX",
+        "postProcessAction": "nothing",
+        "options": {
+          "exposeHeaders": false,
+          "criteria": "UNSEEN",
+          "downloadAttachments": false
+        }
+      },
+      "name": "IMAP Email Trigger",
+      "type": "n8n-nodes-base.emailReadImap",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ],
+      "credentials": {
+        "imap": {
+          "id": "imap_cred",
+          "name": "IMAP Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "functionCode": "\nconst text = $json.textPlain || $json.textHtml || '';\nconst blocks = text.split(/Item \\d+:/).slice(1);\nconst output = [];\nfor (const block of blocks) {\n  const nameMatch = block.match(/- Name: (.+)/);\n  const typeMatch = block.match(/- Type: (.+)/);\n  const sizeMatch = block.match(/- Size: (.+)/);\n  if (nameMatch && typeMatch && sizeMatch) {\n    output.push({\n      json: {\n        product_name: nameMatch[1].trim(),\n        product_type: typeMatch[1].trim(),\n        product_size: sizeMatch[1].trim()\n      }\n    });\n  }\n}\nreturn output;\n"
+      },
+      "name": "Parse Items",
+      "type": "n8n-nodes-base.function",
+      "typeVersion": 1,
+      "position": [
+        500,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "sheetId": "GOOGLE_SHEET_ID",
+        "range": "Products!A:D",
+        "lookupColumn": "Product Name",
+        "lookupValue": "={{$json.product_name}}"
+      },
+      "name": "Lookup Product Info",
+      "type": "n8n-nodes-base.googleSheetsLookup",
+      "typeVersion": 1,
+      "position": [
+        750,
+        300
+      ],
+      "credentials": {
+        "googleApi": {
+          "id": "google_sheets_cred",
+          "name": "Google Sheets OAuth2"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "tu-tienda@dominio.com",
+        "toEmail": "fabricante@dominio.com",
+        "subject": "Nuevo producto para fabricar: {{$json['Product Name']}}",
+        "text": "\nPedido de producci\u00f3n\n\nWear & Color: {{$json['Wear & Color']}}\nWear Size: {{$json.product_size}}\nPrint: {{$json.Print}}\nPrint Size: {{$json['Print Size']}}\n"
+      },
+      "name": "Send to Manufacturer",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [
+        1000,
+        300
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "smtp_cred",
+          "name": "SMTP Credenciales"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "IMAP Email Trigger": {
+      "main": [
+        [
+          {
+            "node": "Parse Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Items": {
+      "main": [
+        [
+          {
+            "node": "Lookup Product Info",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Lookup Product Info": {
+      "main": [
+        [
+          {
+            "node": "Send to Manufacturer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  }
+}
