@@ -67,7 +67,7 @@ const products = [
     units_sold: 1,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752351363/ho_f_deepgreen_wxks5o.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755983227/ho_f_navyblue_pk19dv.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1754247316/ho_b_deepgreen_jln4jd.webp",
     product_icon: "arcticons:mini-militia",
     product_name: "Piranesi",
