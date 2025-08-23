@@ -1,3 +1,4 @@
+// CheckoutForm.jsx
 import { useTranslation } from 'react-i18next';
 import React, { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
@@ -34,71 +35,70 @@ const CheckoutForm = ({
       );
   }, []);
 
-const handleSubmit = (e) => {
-  e.preventDefault();
-  if (!formValid || isSubmitting) return;
-  setIsSubmitting(true);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formValid || isSubmitting) return;
+    setIsSubmitting(true);
 
-  let overallTotal = 0;
-  let counter = 1;
+    let overallTotal = 0;
+    let counter = 1;
 
-  const itemLines = cartItems.flatMap((item) => {
-    const price = Number(item.product_selling) || 0;
-    return Array.from({ length: item.quantity }, () => {
-      const line = [
-        `Item ${counter++}:`,
-        `- Name: ${item.product_name}`,
-        `- Type: ${t(item.product_category_key)}`,
-        `- Unit Price: $${price.toFixed(2)}`,
-        `- Size: ${item.selectedSize || "N/A"}`,
-        ...(item.backNumber ? [`- Number: ${item.backNumber}`] : []),
-        `- Total: $${price.toFixed(2)}`
-      ].join("\n");
-      overallTotal += price;
-      return line;
+    const itemLines = cartItems.flatMap((item) => {
+      const price = Number(item.product_selling) || 0;
+      return Array.from({ length: item.quantity }, () => {
+        const line = [
+          `Item ${counter++}:`,
+          `- Name: ${item.product_name}`,
+          `- Type: ${t(item.product_category_key)}`,
+          `- Unit Price: $${price.toFixed(2)}`,
+          `- Size: ${item.selectedSize || "N/A"}`,
+          ...(item.backNumber ? [`- Number: ${item.backNumber}`] : []),
+          `- Total: $${price.toFixed(2)}`
+        ].join("\n");
+        overallTotal += price;
+        return line;
+      });
     });
-  });
 
-  const subtotalLine = `Subtotal: $${overallTotal.toFixed(2)}`;
-  const discountLine = discountPercent
-    ? `Coupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
-    : `Total: $${overallTotal.toFixed(2)}`;
+    const subtotalLine = `Subtotal: $${overallTotal.toFixed(2)}`;
+    const discountLine = discountPercent
+      ? `Coupon: ${couponCode} (${discountPercent}% off)\nTotal after discount: $${discountedTotal.toFixed(2)}`
+      : `Total: $${overallTotal.toFixed(2)}`;
 
-  const finalDetails = [...itemLines, subtotalLine, discountLine].join("\n\n");
+    const finalDetails = [...itemLines, subtotalLine, discountLine].join("\n\n");
 
-  const appendHidden = (name, value) => {
-    const input = document.createElement("input");
-    input.type = "hidden";
-    input.name = name;
-    input.value = value;
-    e.target.appendChild(input);
+    const appendHidden = (name, value) => {
+      const input = document.createElement("input");
+      input.type = "hidden";
+      input.name = name;
+      input.value = value;
+      e.target.appendChild(input);
+    };
+
+    appendHidden("order_details", finalDetails);
+    appendHidden("coupon_code", couponCode);
+    appendHidden("order_total", discountPercent ? discountedTotal.toFixed(2) : overallTotal.toFixed(2));
+
+    emailjs.sendForm(
+      "service_mxgszmr",
+      "template_wiufec1",
+      e.target,
+      "DDTayKSsIeSLZhvSH"
+    )
+      .then(() => {
+        clearCart();
+        navigate("/successfull");
+      })
+      .catch((err) => {
+        console.error("Error sending email:", err.text);
+        setIsSubmitting(false);
+      });
   };
-
-  appendHidden("order_details", finalDetails);
-  appendHidden("coupon_code", couponCode);
-  appendHidden("order_total", discountPercent ? discountedTotal.toFixed(2) : overallTotal.toFixed(2));
-
-  emailjs.sendForm(
-    "service_mxgszmr",
-    "template_wiufec1",
-    e.target,
-    "DDTayKSsIeSLZhvSH"
-  )
-    .then(() => {
-      clearCart();
-      navigate("/successfull");
-    })
-    .catch((err) => {
-      console.error("Error sending email:", err.text);
-      setIsSubmitting(false);
-    });
-};
-
 
   return (
     <div className="bg-white w-full rounded-2xl border border-gray-300">
-      <div className="w-full p-6"> {/* Aumentamos el padding */}
-        <form className="needs-validation grid gap-y-8" noValidate onSubmit={handleSubmit}> {/* gap-y aumentado */}
+      <div className="w-full p-6">
+        <form className="needs-validation grid gap-y-8" noValidate onSubmit={handleSubmit}>
           {/* Shipping Details */}
           <div className="w-full mt-4">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
@@ -107,49 +107,49 @@ const handleSubmit = (e) => {
             </h6>
             <hr className="mt-2" />
           </div>
-  
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-  <div>
-    <label className="block text-sm font-medium text-gray-600" htmlFor="userCountry">
-      {t("checkout.select_country")} *
-    </label>
-    <select
-      id="userCountry"
-      name="userCountry"
-      required
-      defaultValue="US"
-      onChange={(e) => {
-        const selected = e.target.value;
-        setShowOtherCountry(selected === 'OTHER');
-      }}
-      className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
-    >
-      {countries.map(({ code, label }) => (
-        <option key={code} value={code}>
-          {label}
-        </option>
-      ))}
-      <option value="OTHER">{t("checkout.other")}</option>
-    </select>
-  </div>
 
-  {showOtherCountry && (
-    <div>
-      <label className="block text-sm font-medium text-gray-600" htmlFor="otherCountry">
-        {t("checkout.other_country")} *
-      </label>
-      <input
-        id="otherCountry"
-        name="otherCountry"
-        type="text"
-        placeholder="Andorra"
-        required
-        className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
-      />
-    </div>
-  )}
-</div>
-  
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label className="block text-sm font-medium text-gray-600" htmlFor="userCountry">
+                {t("checkout.select_country")} *
+              </label>
+              <select
+                id="userCountry"
+                name="userCountry"
+                required
+                defaultValue="US"
+                onChange={(e) => {
+                  const selected = e.target.value;
+                  setShowOtherCountry(selected === 'OTHER');
+                }}
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+              >
+                {countries.map(({ code, label }) => (
+                  <option key={code} value={code}>
+                    {label}
+                  </option>
+                ))}
+                <option value="OTHER">{t("checkout.other")}</option>
+              </select>
+            </div>
+
+            {showOtherCountry && (
+              <div>
+                <label className="block text-sm font-medium text-gray-600" htmlFor="otherCountry">
+                  {t("checkout.other_country")} *
+                </label>
+                <input
+                  id="otherCountry"
+                  name="otherCountry"
+                  type="text"
+                  placeholder="Andorra"
+                  required
+                  className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+                />
+              </div>
+            )}
+          </div>
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="state">
@@ -178,7 +178,7 @@ const handleSubmit = (e) => {
               />
             </div>
           </div>
-  
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="street">
@@ -232,7 +232,7 @@ const handleSubmit = (e) => {
               />
             </div>
           </div>
-  
+
           <div className="w-full">
             <label className="block text-sm font-medium text-gray-600" htmlFor="shippingInfo">
               {t("checkout.relevant_shipping_info")}
@@ -245,7 +245,7 @@ const handleSubmit = (e) => {
               className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800 resize-none"
             ></textarea>
           </div>
-  
+
           <div className="w-full">
             <label className="block text-sm font-medium text-gray-600" htmlFor="forUsInfo">
               {t("checkout.relevant_forUs_info")}
@@ -267,7 +267,37 @@ const handleSubmit = (e) => {
             </h6>
             <hr className="mt-2" />
           </div>
-  
+
+          {/* NEW: First + Last name fields */}
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <label className="block text-sm font-medium text-gray-600" htmlFor="firstName">
+                {t("checkout.first_name")} *
+              </label>
+              <input
+                id="firstName"
+                name="firstName"
+                type="text"
+                required
+                placeholder={t("checkout.first_name_placeholder") || "Nombre"}
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+              />
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-600" htmlFor="lastName">
+                {t("checkout.last_name")} *
+              </label>
+              <input
+                id="lastName"
+                name="lastName"
+                type="text"
+                required
+                placeholder={t("checkout.last_name_placeholder") || "Apellido"}
+                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+              />
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="email">
@@ -311,7 +341,7 @@ const handleSubmit = (e) => {
               </div>
             </div>
           </div>
-  
+
           {/* Validations */}
           <div className="w-full mt-6">
             <h6 className="text-lg font-bold text-gray-600 flex items-center gap-4">
@@ -320,6 +350,7 @@ const handleSubmit = (e) => {
             </h6>
             <hr className="mt-2" />
           </div>
+
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div>
               <label className="block text-sm font-medium text-gray-600" htmlFor="teamName">
@@ -333,21 +364,22 @@ const handleSubmit = (e) => {
                 className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
               />
             </div>
-           </div>
+          </div>
+
           <div className="flex items-center gap-4 mt-4">
             <input type="checkbox" id="userAgree" required className="h-4 cursor-pointer" />
             <label htmlFor="userAgree" className="text-gray-600 text-sm">
               {t("checkout.validation_text")}
             </label>
           </div>
-  
+
           <div className="flex items-center gap-4">
             <input type="checkbox" id="priceAgree" required className="h-4 cursor-pointer" />
             <label htmlFor="priceAgree" className="text-gray-600 text-sm">
               {t("checkout.final_price_text")}
             </label>
           </div>
-  
+
           <div className="flex items-center gap-4">
             <input type="checkbox" id="termsAgree" required className="h-4 cursor-pointer" />
             <label htmlFor="termsAgree" className="text-gray-600 text-sm">
@@ -356,8 +388,8 @@ const handleSubmit = (e) => {
               </a>
             </label>
           </div>
-  
-          {/* Botón de envío */}
+
+          {/* Submit */}
           <div className="mt-6 flex justify-center">
             <button
               type="submit"
@@ -382,6 +414,6 @@ const handleSubmit = (e) => {
       </div>
     </div>
   );
-  };
-  
-  export default CheckoutForm;
+};
+
+export default CheckoutForm;
