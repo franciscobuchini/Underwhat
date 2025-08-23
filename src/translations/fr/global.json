@@ -143,6 +143,8 @@
       "order_details": "Détails de la commande",
       "shipping_details": "Détails de l'expédition",
       "select_country": "Sélectionner un pays",
+      "popular_countries": "Pays populaires",
+      "all_countries": "Tous les pays",
       "other": "Autre...",
       "other_country": "Autre pays",
       "state": "État / Province / Région",

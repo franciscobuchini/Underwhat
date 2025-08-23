@@ -150,6 +150,8 @@
       "order_details": "Order Details",
       "shipping_details": "Shipping Details",
       "select_country": "Select Country",
+      "popular_countries": "Popular Countries",
+      "all_countries": "All Countries",
       "other": "Other...",
       "other_country": "Other Country",
       "state": "State / Province / Region",

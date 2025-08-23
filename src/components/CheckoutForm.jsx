@@ -109,29 +109,43 @@ const CheckoutForm = ({
           </div>
 
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <label className="block text-sm font-medium text-gray-600" htmlFor="userCountry">
-                {t("checkout.select_country")} *
-              </label>
-              <select
-                id="userCountry"
-                name="userCountry"
-                required
-                defaultValue="US"
-                onChange={(e) => {
-                  const selected = e.target.value;
-                  setShowOtherCountry(selected === 'OTHER');
-                }}
-                className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
-              >
-                {countries.map(({ code, label }) => (
-                  <option key={code} value={code}>
-                    {label}
-                  </option>
-                ))}
-                <option value="OTHER">{t("checkout.other")}</option>
-              </select>
-            </div>
+<div>
+  <label
+    className="block text-sm font-medium text-gray-600"
+    htmlFor="userCountry"
+  >
+    {t("checkout.select_country")} *
+  </label>
+  <select
+    id="userCountry"
+    name="userCountry"
+    required
+    defaultValue="US"
+    className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
+  >
+    <optgroup label={t("checkout.popular_countries")}>
+      {["AR", "AU", "CA", "CN", "CO", "FR", "DE", "HU", "IT", "IE", "NL", "NZ", "PL", "PT", "SG", "ZA", "ES", "TR", "GB", "US"].map(code => {
+        const country = countries.find(c => c.code === code)
+        return (
+          <option key={code} value={code}>
+            {country?.label}
+          </option>
+        )
+      })}
+    </optgroup>
+
+    <optgroup label={t("checkout.all_countries")}>
+      {countries
+        .filter(c => !["AR", "AU", "CA", "CN", "CO", "FR", "DE", "HU", "IT", "IE", "NL", "NZ", "PL", "PT", "SG", "ZA", "ES", "TR", "GB", "US"].includes(c.code))
+        .map(({ code, label }) => (
+          <option key={code} value={code}>
+            {label}
+          </option>
+        ))}
+    </optgroup>
+  </select>
+</div>
+
 
             {showOtherCountry && (
               <div>
