@@ -210,8 +210,8 @@ const products = [
     units_sold: 0,
   },
     {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725697/rt_f_lightblue_rqpkvu.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725593/rt_f_lightblue_2_ivdeyh.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978536/rt_f_sakufra_bi8tji.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978532/rt_b_sakurfsa_koizgv.webp",
     product_icon: "arcticons:dbz",
     product_name: "Frieza",
     product_category_key: "regular_tshirt",
@@ -223,8 +223,8 @@ const products = [
     units_sold: 1,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725698/rt_f_sakura_xstwev.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1751725593/rt_f_sakura_2_ndkl7h.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978538/rt_f_sakura_b4s9df.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978536/rt_b_sakura_zawhng.webp",
     product_icon: "arcticons:dbz",
     product_name: "Majin Buu",
     product_category_key: "regular_tshirt",
@@ -236,8 +236,8 @@ const products = [
     units_sold: 1,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1753222316/rt_f_navyblue_t7afp8.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1753222313/rt_b_navyblue_mxj7u5.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978536/rt_f_sakfffura_mcrkzx.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978531/rt_b_saddkura_f5dfio.webp",
     product_icon: "arcticons:dbz",
     product_name: "Bojack",
     product_category_key: "regular_tshirt",
@@ -249,8 +249,8 @@ const products = [
     units_sold: 0,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752873222/rt_f_pastelpurple_t0bz9o.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1752873222/rt_f_pastelpurple_2_t7ci77.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978532/rt_f_sak44ura_odpftn.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978532/rt_b_sak4ura_qudzxv.webp",
     product_icon: "arcticons:dbz",
     product_name: "Cell",
     product_category_key: "regular_tshirt",
