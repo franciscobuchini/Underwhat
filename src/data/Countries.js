@@ -185,7 +185,7 @@ const countries = [
   { code: "UA", label: "Ukraine" },
   { code: "AE", label: "United Arab Emirates" },
   { code: "GB", label: "United Kingdom" },
-  { code: "US", label: "United States" },
+  { code: "US", label: "United States of America" },
   { code: "UY", label: "Uruguay" },
   { code: "UZ", label: "Uzbekistan" },
   { code: "VU", label: "Vanuatu" },

@@ -120,14 +120,14 @@ const CheckoutForm = ({
     id="userCountry"
     name="userCountry"
     required
-    defaultValue="US"
+    defaultValue="United States of America"
     className="mt-2 block w-full rounded-md border border-gray-300 bg-white px-4 py-3 text-gray-600 focus:border-pink-800"
   >
     <optgroup label={t("checkout.popular_countries")}>
-      {["AR", "AU", "CA", "CN", "CO", "FR", "DE", "HU", "IT", "IE", "NL", "NZ", "PL", "PT", "SG", "ZA", "ES", "TR", "GB", "US"].map(code => {
+      {["AR", "AU", "CA", "CO", "FR", "DE", "HU", "IT", "IE", "NL", "NZ", "PL", "PT", "SG", "ZA", "ES", "TR", "GB", "US"].map(code => {
         const country = countries.find(c => c.code === code)
         return (
-          <option key={code} value={code}>
+          <option key={code} value={country?.label}>
             {country?.label}
           </option>
         )
@@ -136,16 +136,15 @@ const CheckoutForm = ({
 
     <optgroup label={t("checkout.all_countries")}>
       {countries
-        .filter(c => !["AR", "AU", "CA", "CN", "CO", "FR", "DE", "HU", "IT", "IE", "NL", "NZ", "PL", "PT", "SG", "ZA", "ES", "TR", "GB", "US"].includes(c.code))
+        .filter(c => !["AR", "AU", "CA", "CO", "FR", "DE", "HU", "IT", "IE", "NL", "NZ", "PL", "PT", "SG", "ZA", "ES", "TR", "GB", "US"].includes(c.code))
         .map(({ code, label }) => (
-          <option key={code} value={code}>
+          <option key={code} value={label}>
             {label}
           </option>
         ))}
     </optgroup>
   </select>
 </div>
-
 
             {showOtherCountry && (
               <div>
