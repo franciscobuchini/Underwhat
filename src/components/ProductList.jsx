@@ -116,7 +116,7 @@ useLayoutEffect(() => {
       {/* Indicador animado (background que se mueve) */}
       <div
         ref={indicatorRef}
-        className="absolute rounded-full bg-pink-800 transition-all duration-300 ease-in-out"
+        className="absolute rounded-full bg-pink-800 transition-all duration-300 ease-in-out shadow-lg"
         style={{ height: "36px", left: 0, width: 0, top: "2px", zIndex: 0 }}
         aria-hidden="true"
       />
@@ -124,7 +124,7 @@ useLayoutEffect(() => {
       <button
         ref={originalsRef}
         onClick={() => setViewMode("originals")}
-        className={`relative px-4 py-2 rounded-full font-medium focus:outline-none cursor-pointer text-lg z-10 transition-colors duration-200 ${
+        className={`relative px-4 py-2 rounded-full font-medium focus:outline-none cursor-pointer text-lg z-10 duration-200 ${
           viewMode === "originals" ? "text-white" : "text-gray-600"
         }`}
         aria-pressed={viewMode === "originals"}
@@ -137,7 +137,7 @@ useLayoutEffect(() => {
       <button
         ref={teamsRef}
         onClick={() => setViewMode("teams")}
-        className={`relative px-4 py-2 rounded-full font-medium focus:outline-none cursor-pointer text-lg z-10 transition-colors duration-200 ${
+        className={`relative px-4 py-2 rounded-full font-medium focus:outline-none cursor-pointer text-lg z-10 duration-200 ${
           viewMode === "teams" ? "text-white" : "text-gray-600"
         }`}
         aria-pressed={viewMode === "teams"}
