@@ -1,13 +1,13 @@
 // src/components/ProductList.jsx
-import { useState, useEffect, useMemo, useRef, Fragment } from "react";
+import { useState, useEffect, useMemo, useRef, useLayoutEffect } from "react";
 import { useCart } from "./CartContext";
 import { Notyf } from "notyf";
 import "notyf/notyf.min.css";
 import { useTranslation } from "react-i18next";
 import { Icon } from "@iconify/react";
-import { Listbox } from "@headlessui/react";
 import products from "../data/Products";
-import FilterSort from "./FilterSort";
+import { Listbox } from '@headlessui/react'
+import { Fragment } from "react";
 
 export default function ProductList() {
   const { t } = useTranslation("global");
@@ -36,28 +36,25 @@ export default function ProductList() {
   const [selectedSizes, setSelectedSizes] = useState({});
   const [selectedBackNumbers, setSelectedBackNumbers] = useState({});
   const [hoveredIdx, setHoveredIdx] = useState(null);
-  const [filter, setFilter] = useState({ category: "", year: "", team: "" });
-  const [sortOrder, setSortOrder] = useState("");
+  
+
+  // NUEVO: modo de vista (originals | teams )
+  const [viewMode, setViewMode] = useState("originals");
 
   useEffect(() => { products.forEach(p => new Image().src = p.product_image02); }, []);
 
-  const categories = useMemo(() => [...new Set(products.map(p => p.product_category_key))], []);
-  const years = useMemo(() => [...new Set(products.map(p => p.product_year))], []);
-  const teams = useMemo(() => [...new Set(products.map(p => p.product_team))], []);
-
   const visible = useMemo(() => {
     let arr = products;
-    if (filter.category) arr = arr.filter(p => p.product_category_key === filter.category);
-    if (filter.year)     arr = arr.filter(p => String(p.product_year) === filter.year);
-    if (filter.team === "ONLY_TEAMS") {
+
+    // aplica modo (teams/originals/all)
+    if (viewMode === "teams") {
       arr = arr.filter(p => p.product_team && p.product_team.trim() !== "");
-    } else if (filter.team) {
-      arr = arr.filter(p => p.product_team === filter.team);
+    } else if (viewMode === "originals") {
+      arr = arr.filter(p => !p.product_team || p.product_team.trim() === "");
     }
-    if (sortOrder === "cheapfirst") arr = [...arr].sort((a,b)=>a.product_selling-b.product_selling);
-    if (sortOrder === "cheaplast")  arr = [...arr].sort((a,b)=>b.product_selling-a.product_selling);
+
     return arr;
-  }, [filter, sortOrder]);
+  }, [viewMode]);
 
   const handleSizeChange = (idx, size) => setSelectedSizes(s => ({ ...s, [idx]: size }));
   const handleBackNumberChange = (idx, num) => setSelectedBackNumbers(n => ({ ...n, [idx]: num }));
@@ -71,15 +68,76 @@ export default function ProductList() {
     notyf.success(t("product.add_to_cart"));
   };
 
+  const originalsRef = useRef(null);
+const teamsRef = useRef(null);
+const indicatorRef = useRef(null);
+
+useLayoutEffect(() => {
+  function updateIndicator() {
+    const activeRef = viewMode === "originals" ? originalsRef.current : teamsRef.current;
+    const container = originalsRef.current?.parentElement;
+    if (!activeRef || !indicatorRef.current || !container) return;
+
+    const rect = activeRef.getBoundingClientRect();
+    const parentRect = container.getBoundingClientRect();
+
+    const left = rect.left - parentRect.left;
+    const width = rect.width;
+
+    // Ajustes visuales para que la pastilla no ocupe todo el alto exacto (se ve mejor con un padding)
+    indicatorRef.current.style.left = `${left}px`;
+    indicatorRef.current.style.width = `${width}px`;
+    indicatorRef.current.style.height = `${parentRect.height - 4}px`; // 2px padding arriba y abajo
+    indicatorRef.current.style.top = `2px`;
+  }
+
+  // set initially and on mode change
+  updateIndicator();
+
+  // recalc on resize to keep todo alineado
+  window.addEventListener("resize", updateIndicator);
+  return () => window.removeEventListener("resize", updateIndicator);
+}, [viewMode]);
+
   return (
-    <div className="flex flex-col gap-6 sm:gap-12 w-full mt-8 mb-12 sm:mt-16 sm:mb-20 px-2 sm:px-8">
-      <FilterSort
-        categories={categories}
-        years={years}
-        teams={teams}
-        onFilterChange={setFilter}
-        onSortChange={setSortOrder}
+    <div className="flex flex-col gap-6 sm:gap-12 w-full mt-8 mb-6 sm:mt-8 sm:mb-10 px-2 sm:px-8">
+    {/* SWITCHER: Originals / Teams (con indicador animado) */}
+    <div className="relative flex items-center justify-center gap-3 mb-4">
+      {/* Indicador animado (background que se mueve) */}
+      <div
+        ref={indicatorRef}
+        className="absolute rounded-full bg-pink-800 transition-all duration-300 ease-in-out"
+        style={{ height: "36px", left: 0, width: 0, top: "2px", zIndex: 0 }}
+        aria-hidden="true"
       />
+
+      <button
+        ref={originalsRef}
+        onClick={() => setViewMode("originals")}
+        className={`relative px-4 py-2 rounded-full font-medium focus:outline-none cursor-pointer text-lg z-10 transition-colors duration-200 ${
+          viewMode === "originals" ? "text-white" : "text-gray-600"
+        }`}
+        aria-pressed={viewMode === "originals"}
+        title="Show originals (no team)"
+        type="button"
+      >
+        Originals
+      </button>
+
+      <button
+        ref={teamsRef}
+        onClick={() => setViewMode("teams")}
+        className={`relative px-4 py-2 rounded-full font-medium focus:outline-none cursor-pointer text-lg z-10 transition-colors duration-200 ${
+          viewMode === "teams" ? "text-white" : "text-gray-600"
+        }`}
+        aria-pressed={viewMode === "teams"}
+        title="Show team gear"
+        type="button"
+      >
+        Teams
+      </button>
+    </div>
+
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 px-4 sm:gap-10 sm:px-8">
         {visible.map((product, idx) => (
@@ -148,31 +206,30 @@ export default function ProductList() {
                   </Listbox>
                 </div>
 
-{product.product_number && (
-<input
-  type="number"
-  min="0"
-  max="99"
-  inputMode="numeric"
-  pattern="\d{1,2}"
-  maxLength="2"
-  placeholder={product.product_number}
-  className={`
-    w-1/3 h-8 px-2 rounded 
-    border-gray-200 border 
-    appearance-none
-    text-xs sm:text-sm text-center focus:outline-none
-    ${selectedBackNumbers[idx] ? 'border-pink-800' : ''}
-  `}
-  value={selectedBackNumbers[idx] || ""}
-  onChange={e => {
-    const value = e.target.value;
-    if (/^\d{0,2}$/.test(value)) {
-      handleBackNumberChange(idx, value);
-    }
-  }}
-/>
-)}
+                {product.product_number && (
+                  <input
+                    type="number"
+                    min="0"
+                    max="99"
+                    inputMode="numeric"
+                    pattern="\d{1,2}"
+                    placeholder={product.product_number}
+                    className={`
+                      w-1/3 h-8 px-2 rounded 
+                      border-gray-200 border 
+                      appearance-none
+                      text-xs sm:text-sm text-center focus:outline-none
+                      ${selectedBackNumbers[idx] ? 'border-pink-800' : ''}
+                    `}
+                    value={selectedBackNumbers[idx] || ""}
+                    onChange={e => {
+                      const value = e.target.value;
+                      if (/^\d{0,2}$/.test(value)) {
+                        handleBackNumberChange(idx, value);
+                      }
+                    }}
+                  />
+                )}
 
                 {!product.product_number && (
                   <button
