@@ -58,7 +58,9 @@
     "add": "Add",
     "add_to_cart": "Product added to cart!",
     "remove_from_cart": "Product removed from cart!",
-    "number": "No."
+    "number": "No.",
+    "originals": "Originals",
+    "teams": "Teams"
   },
   "filtersort": {
     "default": "Default",
@@ -127,7 +129,10 @@
   },
   "home": {
     "featured_products": "Featured Products",
-    "table_sizes": "Sizes Table"
+    "table_sizes": "Sizes Table",
+    "originals": "Originals",
+    "teams": "Teams"
+    
   },
   "team": {
     "title": "Outfits for UWH teams",

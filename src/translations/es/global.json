@@ -59,7 +59,9 @@
     "add": "Añadir",
     "add_to_cart": "¡Producto añadido al carrito!",
     "remove_from_cart": "¡Producto eliminado!",
-    "number": "Nº"
+    "number": "Nº",
+    "originals": "Originales",
+    "teams": "Equipos"
   },
   "filtersort": {
     "default": "Por defecto",
@@ -128,7 +130,9 @@
   },
   "home": {
     "featured_products": "Productos destacados",
-    "table_sizes": "Tabla de tallas"
+    "table_sizes": "Tabla de tallas",
+    "originals": "Originales",
+    "teams": "Equipos"
   },
 
   "team": {

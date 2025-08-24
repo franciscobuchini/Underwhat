@@ -10,7 +10,7 @@ import { Listbox } from '@headlessui/react'
 import { Fragment } from "react";
 
 export default function ProductList() {
-  const { t } = useTranslation("global");
+  const { t, i18n } = useTranslation("global");
   const { addToCart } = useCart();
   const notyf = new Notyf({ types: [{ type: "success", background: "#4caf50", duration: 2000 }] });
 
@@ -73,6 +73,8 @@ const teamsRef = useRef(null);
 const indicatorRef = useRef(null);
 
 useLayoutEffect(() => {
+  let rafId = null;
+
   function updateIndicator() {
     const activeRef = viewMode === "originals" ? originalsRef.current : teamsRef.current;
     const container = originalsRef.current?.parentElement;
@@ -84,20 +86,28 @@ useLayoutEffect(() => {
     const left = rect.left - parentRect.left;
     const width = rect.width;
 
-    // Ajustes visuales para que la pastilla no ocupe todo el alto exacto (se ve mejor con un padding)
+    // Ajustes visuales para que la pastilla se vea bien
     indicatorRef.current.style.left = `${left}px`;
     indicatorRef.current.style.width = `${width}px`;
-    indicatorRef.current.style.height = `${parentRect.height - 4}px`; // 2px padding arriba y abajo
+    indicatorRef.current.style.height = `${parentRect.height - 4}px`;
     indicatorRef.current.style.top = `2px`;
   }
 
-  // set initially and on mode change
-  updateIndicator();
+  // medir en el siguiente frame (asegura que cualquier cambio de texto/DOM ya se aplicó)
+  rafId = window.requestAnimationFrame(updateIndicator);
 
-  // recalc on resize to keep todo alineado
-  window.addEventListener("resize", updateIndicator);
-  return () => window.removeEventListener("resize", updateIndicator);
-}, [viewMode]);
+  const onResize = () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = window.requestAnimationFrame(updateIndicator);
+  };
+
+  window.addEventListener("resize", onResize);
+
+  return () => {
+    if (rafId) cancelAnimationFrame(rafId);
+    window.removeEventListener("resize", onResize);
+  };
+}, [viewMode, i18n.language]);
 
   return (
     <div className="flex flex-col gap-6 sm:gap-12 w-full mt-8 mb-6 sm:mt-8 sm:mb-10 px-2 sm:px-8">
@@ -121,7 +131,7 @@ useLayoutEffect(() => {
         title="Show originals (no team)"
         type="button"
       >
-        Originals
+        {t("product.originals")}
       </button>
 
       <button
@@ -134,10 +144,9 @@ useLayoutEffect(() => {
         title="Show team gear"
         type="button"
       >
-        Teams
+        {t("product.teams")}
       </button>
     </div>
-
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 px-4 sm:gap-10 sm:px-8">
         {visible.map((product, idx) => (

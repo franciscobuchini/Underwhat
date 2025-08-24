@@ -51,7 +51,9 @@
     "add": "Ajouter",
     "add_to_cart": "Produit ajouté au panier !",
     "remove_from_cart": "Produit retiré du panier !",
-    "number": "Nº"
+    "number": "Nº",
+    "originals": "Originals",
+    "teams": "Équipes"
   },
   "filtersort": {
     "default": "Par défaut",
@@ -120,7 +122,9 @@
   },
   "home": {
     "featured_products": "Produits en vedette",
-    "table_sizes": "Tableau des tailles"
+    "table_sizes": "Tableau des tailles",
+    "originals": "Originals",
+    "teams": "Équipes"
   },
   "team": {
     "title": "Vêtements de l'équipe UWH",
