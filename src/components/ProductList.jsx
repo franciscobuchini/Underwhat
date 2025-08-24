@@ -244,7 +244,7 @@ useLayoutEffect(() => {
                   <button
                     disabled={!selectedSizes[idx]}
                     onClick={e => { e.stopPropagation(); handleAdd(product, idx); }}
-                    className={`flex-2 h-8 w-full py-2 rounded text-sm flex items-center justify-center gap-2 focus:outline-none ${!selectedSizes[idx] ? 'bg-white cursor-not-allowed text-gray-300' : 'bg-pink-800 text-white cursor-pointer'}`}
+                    className={`flex-2 h-8 w-full py-2 rounded text-sm flex items-center justify-center gap-2 focus:outline-none ${!selectedSizes[idx] ? 'border border-gray-200 cursor-not-allowed text-gray-200' : 'bg-pink-800 text-white cursor-pointer'}`}
                   >
                     {t("product.add")}
                     <Icon icon="icon-park-twotone:shopping" className="w-4 h-4" />
@@ -257,7 +257,7 @@ useLayoutEffect(() => {
                 <button
                   disabled={!selectedSizes[idx]}
                   onClick={e => { e.stopPropagation(); handleAdd(product, idx); }}
-                  className={`mt-2 h-8 w-min px-6 py-2 rounded text-sm flex items-center justify-center gap-2 focus:outline-none ${!selectedSizes[idx] ? 'bg-white cursor-not-allowed text-gray-300' : 'bg-pink-800 text-white cursor-pointer'}`}
+                  className={`mt-2 h-8 w-min px-6 py-2 rounded text-sm flex items-center justify-center gap-2 focus:outline-none ${!selectedSizes[idx] ? 'border border-gray-200 cursor-not-allowed text-gray-200' : 'bg-pink-800 text-white cursor-pointer'}`}
                 >
                   {t("product.add")}
                   <Icon icon="icon-park-twotone:shopping" className="w-5 h-5" />
