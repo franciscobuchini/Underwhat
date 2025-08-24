@@ -14,6 +14,7 @@ import Checkout from './pages/Checkout';
 import TermsAndConditions from './pages/TermsAndConditions';
 import Successfull from './pages/Successfull';
 import ShippingCalculator from './pages/ShippingCalculator';
+import WorkWithUs from './pages/WorkWithUs';
 import ErrorPage from './pages/ErrorPage';
 
 
@@ -80,6 +81,7 @@ function AppContent() {
               <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
               <Route path="/successfull" element={<Successfull />} />
               <Route path="/shipping-calculator" element={<ShippingCalculator />} />
+              <Route path="/work-with-us" element={<WorkWithUs />} />
               <Route
                 path="*"
                 element={

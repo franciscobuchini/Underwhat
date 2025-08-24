@@ -27,7 +27,8 @@
       "about": "About Us",
       "shipping-calculator": "Shipping Cost",
       "conditions": "Conditions",
-      "language": "Language"
+      "language": "Language",
+      "work-with-us": "Collaborators"
     },
     "language_options": {
       "en": "English",
@@ -213,7 +214,7 @@
   },
   "successfull": {
     "order_completed": "Order received successfully!",
-    "thank_you": "Thank you for completing your order. We have forwarded your request to our logistics team, who will handle the shipment with the manufacturer. Shortly, you will receive an email with the shipping cost and a secure link to finalize your payment. If you need assistance or have any questions, please don’t hesitate to contact us at: underwhat.uwh@gmail.com.",
+    "thank_you": "Thank you for completing your order. We have forwarded your request to our logistics team, who will handle the shipment with the manufacturer. Shortly, you will receive an email with the shipping cost and a secure link to finalize your payment. If you need assistance or have any questions, please don't hesitate to contact us at: underwhat.uwh@gmail.com.",
     "continue_shopping": "Continue Shopping"
   },
   "shippingCalculator": {
@@ -223,5 +224,10 @@
   "error": {
     "notFound": "Page not found",
     "return": "Return"
-  }  
+  },
+
+  "workWhitUs": {
+    "title": "Collaborators",
+    "content": "At Underwhat, we'd like to invite players and creatives to contribute a little to our project: whether it's design, marketing, video editing, community management, or any other ideas you'd like to share. We want to be completely transparent: right now, we cannot offer financial compensation. We'd love to in the future, but we're not there yet. Still, we truly value every contribution, which is why we offer big discounts on our products as a way of saying thank you. Collaboration doesn't have to be permanent: you can help with something specific, leave your mark, and take your discount along with our sincere gratitude. If you're interested in collaborating, write to us at: underwhat.uwh@gmail.com"
+  }
 }

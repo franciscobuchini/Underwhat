@@ -29,7 +29,8 @@
       "about": "Nosotros",
       "shipping-calculator": "Costo de envío",
       "conditions": "Condiciones",
-      "language": "Idioma"
+      "language": "Idioma",
+      "work-with-us": "Colaboradores"
     },
     "language_options": {
       "en": "Inglés",
@@ -225,6 +226,10 @@
   "error": {
     "notFound": "Página no encontrada",
     "return": "Volver"
-  }  
+  },
+  "workWhitUs": {
+    "title": "Colaboradores",
+    "content": "En Underwhat queremos invitar a jugadores y creativos a aportar un granito de arena a nuestro proyecto: ya sea diseño, marketing, edición de video, community management u otras ideas que quieras compartir. Queremos ser totalmente transparentes: hoy no podemos ofrecer una remuneración económica. Nos encantaría hacerlo en el futuro, pero aún no estamos en ese punto. Aun así, valoramos cada aporte, por eso ofrecemos grandes descuentos en nuestros productos como forma de agradecimiento. La colaboración no tiene que ser permanente: podés ayudarnos con algo puntual, dejar tu huella y llevarte tu descuento junto con nuestro sincero agradecimiento. Si te interesa colaborar, escribinos a: underwhat.uwh@gmail.com"
+  }
 
 }

@@ -122,6 +122,14 @@ function Header() {
                   </span>
                 </Link>
               </li>
+                            <li>
+                <Link className="block px-4 py-2 text-gray-600 hover:bg-gray-100 rounded-2xl" to="/work-with-us">
+                  <span className="flex items-center gap-x-2">
+                    <Icon icon="icon-park-twotone:concept-sharing" className="w-6 h-6 flex-shrink-0 text-pink-800" />
+                    {t("header.menu.work-with-us")}
+                  </span>
+                </Link>
+              </li>
   
               {/* Botón de selección de idioma */}
               <div ref={languageRef}>
