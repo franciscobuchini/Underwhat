@@ -28,8 +28,8 @@ const products = [
     units_sold: 2,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748808521/burgundian01_hqekos.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1748809567/burgundian02_idzuqt.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756828441/burgundian01_hqekos.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756828449/burgundian02_idzuqt.webp",
     product_icon: "arcticons:aoe2companion",
     product_name: "Burgundian",
     product_category_key: "oversized_tshirt",
