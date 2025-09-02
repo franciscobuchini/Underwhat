@@ -197,8 +197,8 @@ const products = [
     units_sold: 1,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978538/rt_f_sakura_b4s9df.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978536/rt_b_sakura_zawhng.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756822448/rt_f_sakura_b4s9df.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756822458/rt_b_sakura_zawhng.webp",
     product_icon: "arcticons:dbz",
     product_name: "Majin Buu",
     product_category_key: "regular_tshirt",
