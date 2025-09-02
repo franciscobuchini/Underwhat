@@ -210,8 +210,8 @@ const products = [
     units_sold: 1,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978536/rt_f_sakfffura_mcrkzx.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978531/rt_b_saddkura_f5dfio.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756824331/rt_f_sakfffura_mcrkzx.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756824350/rt_b_saddkura_f5dfio.webp",
     product_icon: "arcticons:dbz",
     product_name: "Bojack",
     product_category_key: "regular_tshirt",
