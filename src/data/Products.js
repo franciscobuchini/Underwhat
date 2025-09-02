@@ -223,8 +223,8 @@ const products = [
     units_sold: 0,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978532/rt_f_sak44ura_odpftn.webp",
-    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1755978532/rt_b_sak4ura_qudzxv.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756823187/rt_f_sak44ura_odpftn.webp",
+    product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756823204/rt_b_sak4ura_qudzxv.webp",
     product_icon: "arcticons:dbz",
     product_name: "Cell",
     product_category_key: "regular_tshirt",
