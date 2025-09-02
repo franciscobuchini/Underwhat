@@ -184,7 +184,7 @@ const products = [
     units_sold: 5,
   },
   {
-    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756819339/F-FRIEZA_uuk2pg.webp",
+    product_image: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756821121/F-FRIEZA_uuk2pg.webp",
     product_image02: "https://res.cloudinary.com/dpleitc1d/image/upload/v1756819339/B-FRIEZA_xcbllv.webp",
     product_icon: "arcticons:dbz",
     product_name: "Frieza",
